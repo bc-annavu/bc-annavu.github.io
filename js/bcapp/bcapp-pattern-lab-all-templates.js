@@ -278,19 +278,6 @@ try { module = angular.module("bcapp-pattern-lab-templates"); }
 catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/js/bigcommerce/loading-notification/loading-notification.tpl.html",
-    "<div class=\"loadingNotification\" ng-show=\"requestInProgress\">\n" +
-    "    <div class=\"loadingNotification-label\" translate>Loading&hellip;</div>\n" +
-    "</div>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
   $templateCache.put("src/js/bigcommerce/switch/switch.tpl.html",
     "<div\n" +
     "    class=\"switch\"\n" +
@@ -337,6 +324,19 @@ module.run(["$templateCache", function($templateCache) {
     "        ng-class=\"{'switch-ariaDescription': switchCtrl.ariaDescription }\">\n" +
     "        {{ switchCtrl.ariaDescription || 'Please use aria-description to describe this switch to screen readers' }}\n" +
     "    </span>\n" +
+    "</div>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/js/bigcommerce/loading-notification/loading-notification.tpl.html",
+    "<div class=\"loadingNotification\" ng-show=\"requestInProgress\">\n" +
+    "    <div class=\"loadingNotification-label\" translate>Loading&hellip;</div>\n" +
     "</div>\n" +
     "");
 }]);
