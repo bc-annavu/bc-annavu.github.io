@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/">
+                                Overview
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/')}">
+                                        <a class="asideNav-link" href="/">Principles</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/definitions.html')}">
+                                        <a class="asideNav-link" href="/definitions.html">Definitions</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Welcome to Pattern Lab</h1>
+
+             
+        <div ui-view>
+            <p>BC Pattern Lab reflects the patterns and components that underpin the BigCommerce product. These patterns and components provide a unified language and consistent look and feel when designing apps and products within our ecosystem.</p>
+
+            <section class="panel labPanel">
+                <h3 class="labPanel-heading">Design Principles</h3>
+                <div class="panel-body">
+                    <div class="labPanel-row">
+                        <div class="labPanel-column">
+                            <div class="labPanel-figure">
+                                <img src="/images/intro_experiences.png" />
+                            </div>
+                            <div class="labPanel-content">
+                                <h4 class="labPanel-title">Experiences over Screens</h4>
+                                <p>We create visual solutions that are meant to be used and experienced, not viewed. We believe in thinking through all of the entries, exits, and edge cases to ensure that every path is thoughtful and elegant. We stress test our solutions through use, not empathy.</p>
+                            </div>
+                        </div>
+                        <div class="labPanel-column">
+                            <div class="labPanel-figure">
+                                <img src="/images/intro_clarity.png" />
+                            </div>
+                            <div class="labPanel-content">
+                                <h4 class="labPanel-title">Clarity over Simplicity</h4>
+                                <p>We favor the clear over the concise. Simplicity obfuscates complexity whereas we make the complex clear.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="labPanel-row"">
+                        <div class="labPanel-column">
+                            <div class="labPanel-figure">
+                                <img src="/images/intro_demostrative.png" />
+                            </div>
+                            <div class="labPanel-content">
+                                <h4 class="labPanel-title">Demonstrable over Directional</h4>
+                                <p>We speak the language of benefits before features. We show users the way to success rather than providing them the option to fail.</p>
+                            </div>
+                        </div>
+                        <div class="labPanel-column">
+                            <div class="labPanel-figure">
+                                <img src="/images/intro_familiarity.png" />
+                            </div>
+                            <div class="labPanel-content">
+                                <h4 class="labPanel-title">Familiarity over Consistency</h4>
+                                <p>We have many users with disparate needs. To create frictionless experiences for everyone, we must favor the clear and familiar over consistency for consistency’s-sake.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel labPanel">
+                <h3 class="labPanel-heading">Designer Track Summary</h3>
+                <div class="panel-body">
+                    <div class="labPanel-content">
+                        <p>
+                            Think of the user. While integrating Pattern Lab into designs, focus on the experience and empathize with our users. Make sure you adopt their mental model as you come up with a solution.
+                        </p>
+                    </div>
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">What do designers need?</h4>
+                        <ul>
+                            <li>UX Strategy and user centered methodologies for ideation and concepts</li>
+                            <li>Sketch  - Wireframes and Detailed Design</li>
+                            <li>Zeplin - Redlining</li>
+                            <li>Principle - Prototypes and Micro Interactions/Animations</li>
+                            <li>Grid system and UI Kit</li>
+                        </ul>
+                    </div>
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">Useful links</h4>
+                        <ul>
+                            <li>
+                                <a href="https://drive.google.com/open?id=0B7UWoDTkLBjUWDdiQXJvNV9leGc" target="_blank">Product Design Lifecycle</a>
+                            </li>
+                            <li>
+                                <a href="http://www.aremycoloursaccessible.com/" target="_blank">Are my colors accessible?</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel labPanel">
+                <h3 class="labPanel-heading">Developer Track Summary</h3>
+                <div class="panel-body">
+                    <div class="labPanel-content">
+                        <p>
+                            Pattern Lab is a way to create accessible and user centric experiences on the BC Platform. It allows developers to be more efficient by providing them with well-defined reusable components and patterns.
+                        </p>
+                    </div>
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">Areas of focus</h4>
+                        <ul>
+                            <li>Responsive Web Design (RWD)</li>
+                            <li>Accessibility - WCAG 2.0 AA</li>
+                            <li>Site performance</li>
+                            <li>Search Engine Optimization (SEO)</li>
+                            <li>Reusability & scalability</li>
+                            <li>Consistent UI experience</li>
+                            <li>Maintainability</li>
+                        </ul>
+                    </div>
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">Useful links</h4>
+                        <ul>
+                            <li>
+                                <a href="http://foundation.zurb.com/sites/docs/v/5.5.3/" target="_blank">Foundation</a> (5.5.3)
+                            </li>
+                            <li>
+                                <a href="https://github.com/bigcommerce/citadel" target="_blank">Citadel</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/bigcommerce/sass-style-guide" target="_blank">Sass Coding Guidelines</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/" target="_blank">BCApp Pattern Lab</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

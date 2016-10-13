@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/components.html">
+                                Components
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/accordion.html')}">
+                                        <a class="asideNav-link" href="/accordion.html">Accordion</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/buttons.html')}">
+                                        <a class="asideNav-link" href="/buttons.html">Buttons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/cards.html')}">
+                                        <a class="asideNav-link" href="/cards.html">Cards</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/dropdowns.html')}">
+                                        <a class="asideNav-link" href="/dropdowns.html">Dropdowns</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/forms.html')}">
+                                        <a class="asideNav-link" href="/forms.html">Forms</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/modals.html')}">
+                                        <a class="asideNav-link" href="/modals.html">Modals</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/pagination.html')}">
+                                        <a class="asideNav-link" href="/pagination.html">Pagination</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/panels.html')}">
+                                        <a class="asideNav-link" href="/panels.html">Panels</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/progress-bars.html')}">
+                                        <a class="asideNav-link" href="/progress-bars.html">Progress Bars</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/tabs.html')}">
+                                        <a class="asideNav-link" href="/tabs.html">Tabs</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/tooltips.html')}">
+                                        <a class="asideNav-link" href="/tooltips.html">Tooltips</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/tables.html')}">
+                                        <a class="asideNav-link" href="/tables.html">Tables</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Buttons</h1>
+
+                     <p>
+            The basic button component. Used for basic interactions with applications; sometimes used to style links when the resulting action is to navigate to another page.
+        </p>
+        <hr>
+        <section class="panel labPanel">
+        <h3 class="labPanel-heading">Standard Buttons</h3>
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab select="modalCtrl.handleTabSelect('structure')">
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content demo">
+                            <button class="button button--primary">Primary Button</button>
+                            <button class="button button--primary" disabled>Disabled Primary Button</button>
+                            <button class="button">Default Button</button>
+                            <button class="button" disabled>Disabled Button</button>
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.button</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The default button component.</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    2. <code>.button--primary</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The modifier to style the primary button on a page.</li>
+                                        <li>Only one primary button should exist per form/interaction.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+
+                    <tab select="modalCtrl.handleTabSelect('html')">
+                        <tab-heading>HTML</tab-heading>
+                        <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<button class="button button--primary">Primary Button</button>
+
+<button class="button button--primary" disabled>Disabled Primary Button</button>
+
+<button class="button">Default Button</button>
+
+<button class="button" disabled>Disabled Button</button></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.button</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The default button component.</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    2. <code>.button--primary</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The modifier to style the primary button on a page.</li>
+                                        <li>Only one primary button should exist per form/interaction.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
+
+        <section class="panel labPanel">
+        <h3 class="labPanel-heading">Slab Buttons</h3>
+
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab select="">
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content demo">
+                            <button class="button button--slab">Slab</button>
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.button--slab</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The Slab Button modifier. Displays the button as a block level element, and sets its width to 100%.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+
+                    <tab select="">
+                        <tab-heading>HTML</tab-heading>
+                        <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<button class="button button--slab">Slab</button></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.button--slab</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The Slab Button modifier. Displays the button as a block level element, and sets its width to 100%.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
+
+        <section class="panel labPanel">
+        <h3 class="labPanel-heading">Button Groups</h3>
+
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab select="">
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content demo">
+                            <div class="buttonGroup">
+                                <button class="button">Button 1</button>
+                                <button class="button">Button 2</button>
+                                <button class="button">Button 3</button>
+                                <button class="button">Button 4</button>
+                                <button class="button">Button 5</button>
+                                <button class="button">Button 6</button>
+                            </div>
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.buttonGroup</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Organizes buttons visually in a group. Set to a wrapping parent div.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+
+                    <tab select="">
+                        <tab-heading>HTML</tab-heading>
+                        <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<div class="buttonGroup">
+    <button class="button">Button 1</button>
+    <button class="button">Button 2</button>
+    <button class="button">Button 3</button>
+    <button class="button">Button 4</button>
+    <button class="button">Button 5</button>
+    <button class="button">Button 6</button>
+</div></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.buttonGroup</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Organizes buttons visually in a group. Set to a wrapping parent div.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
+
+        <section class="panel labPanel">
+        <h3 class="labPanel-heading">Icon Buttons</h3>
+
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab select="">
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content demo">
+                            <button class="button button--icon">
+                                <span class="is-srOnly">Search products</span>
+                                <icon glyph="ic-search"></icon>
+                            </button>
+                            <button class="button button--icon">
+                                <span class="is-srOnly">Filter products</span>
+                                <icon glyph="ic-filter"></icon>
+                            </button>
+                            <button class="button button--icon">
+                                <span class="is-srOnly">Home</span>
+                                <icon glyph="ic-home"></icon>
+                            </button>
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.button--icon</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Modifier for icon buttons. Reduced padding to suit icon size.</li>
+                                        <li>Must contain <code>icon</code> element, and as per best practice, a <code>span.is-srOnly</code> element which contains a readable label for the button.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+
+                    <tab select="">
+                        <tab-heading>HTML</tab-heading>
+                        <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<button class="button button--icon">
+    <span class="is-srOnly">Search products</span>
+    <icon glyph="ic-search"></icon>
+</button>
+<button class="button button--icon">
+    <span class="is-srOnly">Filter products</span>
+    <icon glyph="ic-filter"></icon>
+</button>
+<button class="button button--icon">
+    <span class="is-srOnly">Home</span>
+    <icon glyph="ic-home"></icon>
+</button></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.button--icon</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Modifier for icon buttons. Reduced padding to suit icon size.</li>
+                                        <li>Must contain <code>icon</code> element, and as per best practice, a <code>span.is-srOnly</code> element which contains a readable label for the button.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+        </section>
+
+        <section class="panel labPanel">
+        <h3 class="labPanel-heading">Marketing Button</h3>
+
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab select="">
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content demo">
+                            <button class="button button--marketing">Learn More</button>
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.button--marketing</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>This type of button can only be used in a marketing element (Banner / page) as a primary action.</li>
+                                        <li>There can only be 1 of this type of button in the context of the pattern it has been used in. It can be duplicated in a marketing landing page but the action has to be the same.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+
+                    <tab select="">
+                        <tab-heading>HTML</tab-heading>
+                        <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<button class="button button--marketing">Marketing Button</button>
+</textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.button--marketing</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>This type of button can only be used in a marketing element (Banner / page) as a primary action.</li>
+                                        <li>There can only be 1 of this type of button in the context of the pattern it has been used in. It can be duplicated in a marketing landing page but the action has to be the same.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+        </section>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Accessibility</h3>
+            <div class="panel-body">
+                <p>
+                    Take into consideration the role your button will play in the interaction of your application when deciding which semantic element to use.
+                </p>
+
+                <ul>
+                    <li>
+                        If you expect to be able to open a new tab when middle-clicking the button, or the result you generate is able to be accessed/shared via a link, then you may use an anchor tag with the button class applied.
+                    </li>
+                    <li>
+                        For most other cases, you should use a button tag when creating a button.
+                    </li>
+                    <li>
+                        Don't forget to set the button's <code>[type]</code> attribute to define what it does in the context of your application.
+                    </li>
+                </ul>
+
+                <h5>Icon Buttons</h5>
+                <p>When creating an icon button, you must add a label for your icon so that it can be readable by screenreaders. This should be in the form of a <code>span.is-srOnly</code> as a sibling of the icon.</p>
+
+                <h5>Keyboard interactions:</h5>
+                <p>A button should be keyboard accessible via the Tab or Arrow keys, and actionable via the Enter or Space key. If you're using an anchor tag as a button, you lose keyborard indexing if your <code>[href]</code> attribute is missing or empty.</p>
+            </div>
+        </section>
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

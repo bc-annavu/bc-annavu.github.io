@@ -1,0 +1,1510 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/style.html">
+                                Style
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/palette.html')}">
+                                        <a class="asideNav-link" href="/palette.html">Color</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/interface-icons.html')}">
+                                        <a class="asideNav-link" href="/interface-icons.html">Interface Icons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/illustrative-icons.html')}">
+                                        <a class="asideNav-link" href="/illustrative-icons.html">Illustrative Icons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/typography.html')}">
+                                        <a class="asideNav-link" href="/typography.html">Typography</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Illustrative Icons</h1>
+
+                     <p>
+            Design icons are a set of icons that are more illustrative and informative than instructional, unlike the UI icons set. These are not designed to be used as actions, but more like cues to the user.
+        </p>
+
+        <p>
+            Unlike the UI icon set, not all of these icons are not vector based and  as such, we unfortunately have 2 ways to call the icons in this set.
+        </p>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">SVG based icons</h3>
+            <div class="panel-body">
+                <p class="labPanel-description">
+                    Still the preferred way to include iconography into the Control Panel is via individual SVGs using the <code>&lt;icon /&gt;</code> component. Below are the collections of vector based design icons, with any special treatments they require.
+                </p>
+                <div class="labPanel-row">
+                    <div class="labPanel-column--thirds">
+                        <div class="labBlock">
+                            <div class="labBlock-preview">
+                                <icon glyph="ic-payment-mastercard" class="icon--medium"></icon>
+                            </div>
+                            <pre class="labBlock-example u-bgGreysLightest">&lt;icon glyph="ic-payment-mastercard" class="icon--medium"&gt;&lt;/icon&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div class="labPanel-column--thirds">
+                        <div class="labBlock">
+                            <div class="labBlock-preview">
+                                <icon glyph="ic-payment-cvc" class="icon--medium"></icon>
+                            </div>
+                            <pre class="labBlock-example u-bgGreysLightest">&lt;icon glyph="ic-payment-cvc" class="icon--medium"&gt;&lt;/icon&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div class="labPanel-column--thirds">
+                        <div class="labBlock">
+                            <div class="labBlock-preview">
+                                <icon glyph="ic-payment-visa" class="icon--medium"></icon>
+                            </div>
+                            <pre class="labBlock-example u-bgGreysLightest">&lt;icon glyph="ic-payment-visa" class="icon--medium"&gt;&lt;/icon&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<icon glyph="ic-payment-mastercard" class="icon--medium"></icon>
+
+<icon glyph="ic-payment-cvc" class="icon--medium"></icon>
+
+<icon glyph="ic-payment-visa" class="icon--medium"></icon></textarea>
+                </div>
+                <div class="labPanel-content">
+                    <h5 class="labPanel-title">Notes:</h5>
+                    <p>
+                        Identical to UI Icons, the <code>glyph</code> attribute
+                        specifies which icon you would like, by name, from the list below.
+                        You should probably use <code>icon--medium</code> modifier for
+                        a slightly bigger size.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+            <section class="panel labPanel">
+                <h3 class="labPanel-heading">logo icons</h3>
+                <div class="panel-body">
+                    <ul class="iconExample">
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-logo-amazon" class="icon--medium"></icon>
+                            </span>
+                            ic-logo-amazon
+                        </li>
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-logo-ebay" class="icon--medium"></icon>
+                            </span>
+                            ic-logo-ebay
+                        </li>
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-logo-facebook" class="icon--medium"></icon>
+                            </span>
+                            ic-logo-facebook
+                        </li>
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-logo-pinterest" class="icon--medium"></icon>
+                            </span>
+                            ic-logo-pinterest
+                        </li>
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-logo-twitter" class="icon--medium"></icon>
+                            </span>
+                            ic-logo-twitter
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="panel labPanel">
+                <h3 class="labPanel-heading">payment icons</h3>
+                <div class="panel-body">
+                    <ul class="iconExample">
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-payment-amex" class="icon--medium"></icon>
+                            </span>
+                            ic-payment-amex
+                        </li>
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-payment-cvc" class="icon--medium"></icon>
+                            </span>
+                            ic-payment-cvc
+                        </li>
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-payment-cvv-amex" class="icon--medium"></icon>
+                            </span>
+                            ic-payment-cvv-amex
+                        </li>
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-payment-cvv-visa" class="icon--medium"></icon>
+                            </span>
+                            ic-payment-cvv-visa
+                        </li>
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-payment-dinersclub" class="icon--medium"></icon>
+                            </span>
+                            ic-payment-dinersclub
+                        </li>
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-payment-discover" class="icon--medium"></icon>
+                            </span>
+                            ic-payment-discover
+                        </li>
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-payment-mastercard" class="icon--medium"></icon>
+                            </span>
+                            ic-payment-mastercard
+                        </li>
+                        <li class="iconExample-item">
+                            <span class="iconExample-glyph">
+                                <icon glyph="ic-payment-visa" class="icon--medium"></icon>
+                            </span>
+                            ic-payment-visa
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Sprite based icons</h3>
+
+            <div class="panel-body">
+                <p class="labPanel-description">
+                    We created a rasterized image sprite to be used as a background image of our <code>&lt;sprite /&gt;</code> component.
+                </p>
+
+                <div class="labPanel-row">
+                    <div class="labPanel-column--thirds">
+                        <div class="labBlock">
+                            <div class="labBlock-preview">
+                                <sprite glyph="ic-australia"></sprite>
+                            </div>
+                            <pre class="labBlock-example u-bgGreysLightest">&lt;sprite glyph="ic-australia"&gt;&lt;/sprite&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div class="labPanel-column--thirds">
+                        <div class="labBlock">
+                            <div class="labBlock-preview">
+                                <sprite glyph="ic-united-kingdom"></sprite>
+                            </div>
+                            <pre class="labBlock-example u-bgGreysLightest">&lt;sprite glyph="ic-united-kingdom"&gt;&lt;/sprite&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div class="labPanel-column--thirds">
+                        <div class="labBlock">
+                            <div class="labBlock-preview">
+                                <sprite glyph="ic-new-zealand"></sprite>
+                            </div>
+                            <pre class="labBlock-example u-bgGreysLightest">&lt;sprite glyph="ic-new-zealand"&gt;&lt;/sprite&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<sprite glyph="ic-australia"></sprite>
+
+<sprite glyph="ic-united-kingdom"></sprite>
+
+<sprite glyph="ic-new-zealand"></sprite></textarea>
+                </div>
+                <div class="labPanel-content">
+                    <h5 class="labPanel-title">Notes:</h5>
+                    <p>
+                        Similar to <code>&lt;icon /&gt;</code>, the <code>glyph</code> attribute
+                        specifies which icon you would like, by name, from the list below.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">flag icons</h3>
+            <div class="panel-body">
+                <ul class="iconExample">
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-afghanistan"></sprite>
+                        </span>
+                        ic-afghanistan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-albania"></sprite>
+                        </span>
+                        ic-albania
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-algeria"></sprite>
+                        </span>
+                        ic-algeria
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-andorra"></sprite>
+                        </span>
+                        ic-andorra
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-antigua-and-barbuda"></sprite>
+                        </span>
+                        ic-antigua-and-barbuda
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-argentina"></sprite>
+                        </span>
+                        ic-argentina
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-armenia"></sprite>
+                        </span>
+                        ic-armenia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-australia"></sprite>
+                        </span>
+                        ic-australia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-austria"></sprite>
+                        </span>
+                        ic-austria
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-azerbaijan"></sprite>
+                        </span>
+                        ic-azerbaijan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-bahamas"></sprite>
+                        </span>
+                        ic-bahamas
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-bahrain"></sprite>
+                        </span>
+                        ic-bahrain
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-bangladesh"></sprite>
+                        </span>
+                        ic-bangladesh
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-barbados"></sprite>
+                        </span>
+                        ic-barbados
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-belarus"></sprite>
+                        </span>
+                        ic-belarus
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-belgium"></sprite>
+                        </span>
+                        ic-belgium
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-belize"></sprite>
+                        </span>
+                        ic-belize
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-benin"></sprite>
+                        </span>
+                        ic-benin
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-bhutan"></sprite>
+                        </span>
+                        ic-bhutan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-bolivia"></sprite>
+                        </span>
+                        ic-bolivia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-bosnia-and-herzegovina"></sprite>
+                        </span>
+                        ic-bosnia-and-herzegovina
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-botswana"></sprite>
+                        </span>
+                        ic-botswana
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-brazil"></sprite>
+                        </span>
+                        ic-brazil
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-brunei"></sprite>
+                        </span>
+                        ic-brunei
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-bulgaria"></sprite>
+                        </span>
+                        ic-bulgaria
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-burkina-faso"></sprite>
+                        </span>
+                        ic-burkina-faso
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-burundi"></sprite>
+                        </span>
+                        ic-burundi
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-cambodia"></sprite>
+                        </span>
+                        ic-cambodia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-cameroon"></sprite>
+                        </span>
+                        ic-cameroon
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-canada"></sprite>
+                        </span>
+                        ic-canada
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-cape-verde"></sprite>
+                        </span>
+                        ic-cape-verde
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-central-african-republic"></sprite>
+                        </span>
+                        ic-central-african-republic
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-chad"></sprite>
+                        </span>
+                        ic-chad
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-chile"></sprite>
+                        </span>
+                        ic-chile
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-china"></sprite>
+                        </span>
+                        ic-china
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-colombia"></sprite>
+                        </span>
+                        ic-colombia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-comoros"></sprite>
+                        </span>
+                        ic-comoros
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-congo-democratic"></sprite>
+                        </span>
+                        ic-congo-democratic
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-congo-republic"></sprite>
+                        </span>
+                        ic-congo-republic
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-costa-rica"></sprite>
+                        </span>
+                        ic-costa-rica
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-cote-divoire"></sprite>
+                        </span>
+                        ic-cote-divoire
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-croatia"></sprite>
+                        </span>
+                        ic-croatia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-cuba"></sprite>
+                        </span>
+                        ic-cuba
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-cyprus"></sprite>
+                        </span>
+                        ic-cyprus
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-czech-republic"></sprite>
+                        </span>
+                        ic-czech-republic
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-denmark"></sprite>
+                        </span>
+                        ic-denmark
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-djibouti"></sprite>
+                        </span>
+                        ic-djibouti
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-dominica"></sprite>
+                        </span>
+                        ic-dominica
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-dominican-republic"></sprite>
+                        </span>
+                        ic-dominican-republic
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-east-timor"></sprite>
+                        </span>
+                        ic-east-timor
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-ecuador"></sprite>
+                        </span>
+                        ic-ecuador
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-egypt"></sprite>
+                        </span>
+                        ic-egypt
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-el-salvador"></sprite>
+                        </span>
+                        ic-el-salvador
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-equatorial-guinea"></sprite>
+                        </span>
+                        ic-equatorial-guinea
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-eritrea"></sprite>
+                        </span>
+                        ic-eritrea
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-estonia"></sprite>
+                        </span>
+                        ic-estonia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-ethiopia"></sprite>
+                        </span>
+                        ic-ethiopia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-fiji"></sprite>
+                        </span>
+                        ic-fiji
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-finland"></sprite>
+                        </span>
+                        ic-finland
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-france"></sprite>
+                        </span>
+                        ic-france
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-gabon"></sprite>
+                        </span>
+                        ic-gabon
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-gambia"></sprite>
+                        </span>
+                        ic-gambia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-georgia"></sprite>
+                        </span>
+                        ic-georgia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-germany"></sprite>
+                        </span>
+                        ic-germany
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-ghana"></sprite>
+                        </span>
+                        ic-ghana
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-grecee"></sprite>
+                        </span>
+                        ic-grecee
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-grenada"></sprite>
+                        </span>
+                        ic-grenada
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-guatemala"></sprite>
+                        </span>
+                        ic-guatemala
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-guinea-bissau"></sprite>
+                        </span>
+                        ic-guinea-bissau
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-guinea"></sprite>
+                        </span>
+                        ic-guinea
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-guyana"></sprite>
+                        </span>
+                        ic-guyana
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-haiti"></sprite>
+                        </span>
+                        ic-haiti
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-honduras"></sprite>
+                        </span>
+                        ic-honduras
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-hungary"></sprite>
+                        </span>
+                        ic-hungary
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-iceland"></sprite>
+                        </span>
+                        ic-iceland
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-india"></sprite>
+                        </span>
+                        ic-india
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-indonesia"></sprite>
+                        </span>
+                        ic-indonesia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-iran"></sprite>
+                        </span>
+                        ic-iran
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-iraq"></sprite>
+                        </span>
+                        ic-iraq
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-ireland"></sprite>
+                        </span>
+                        ic-ireland
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-israel"></sprite>
+                        </span>
+                        ic-israel
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-italy"></sprite>
+                        </span>
+                        ic-italy
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-jamaica"></sprite>
+                        </span>
+                        ic-jamaica
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-japan"></sprite>
+                        </span>
+                        ic-japan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-jordan"></sprite>
+                        </span>
+                        ic-jordan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-kazakhstan"></sprite>
+                        </span>
+                        ic-kazakhstan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-kenya"></sprite>
+                        </span>
+                        ic-kenya
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-kiribati"></sprite>
+                        </span>
+                        ic-kiribati
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-korea-north"></sprite>
+                        </span>
+                        ic-korea-north
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-korea-south"></sprite>
+                        </span>
+                        ic-korea-south
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-kosovo"></sprite>
+                        </span>
+                        ic-kosovo
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-kuwait"></sprite>
+                        </span>
+                        ic-kuwait
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-kyrgyzstan"></sprite>
+                        </span>
+                        ic-kyrgyzstan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-laos"></sprite>
+                        </span>
+                        ic-laos
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-latvia"></sprite>
+                        </span>
+                        ic-latvia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-lebanon"></sprite>
+                        </span>
+                        ic-lebanon
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-lesotho"></sprite>
+                        </span>
+                        ic-lesotho
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-liberia"></sprite>
+                        </span>
+                        ic-liberia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-libya"></sprite>
+                        </span>
+                        ic-libya
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-liechtenstein"></sprite>
+                        </span>
+                        ic-liechtenstein
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-lithuania"></sprite>
+                        </span>
+                        ic-lithuania
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-luxembourg"></sprite>
+                        </span>
+                        ic-luxembourg
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-macedonia"></sprite>
+                        </span>
+                        ic-macedonia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-madagascar"></sprite>
+                        </span>
+                        ic-madagascar
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-malawi"></sprite>
+                        </span>
+                        ic-malawi
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-malaysia"></sprite>
+                        </span>
+                        ic-malaysia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-maldives"></sprite>
+                        </span>
+                        ic-maldives
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-mali"></sprite>
+                        </span>
+                        ic-mali
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-malta"></sprite>
+                        </span>
+                        ic-malta
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-marshall-islands"></sprite>
+                        </span>
+                        ic-marshall-islands
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-mauritania"></sprite>
+                        </span>
+                        ic-mauritania
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-mauritius"></sprite>
+                        </span>
+                        ic-mauritius
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-mexico"></sprite>
+                        </span>
+                        ic-mexico
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-micronesia-federated"></sprite>
+                        </span>
+                        ic-micronesia-federated
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-moldova"></sprite>
+                        </span>
+                        ic-moldova
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-monaco"></sprite>
+                        </span>
+                        ic-monaco
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-mongolia"></sprite>
+                        </span>
+                        ic-mongolia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-montenegro"></sprite>
+                        </span>
+                        ic-montenegro
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-morocco"></sprite>
+                        </span>
+                        ic-morocco
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-mozambique"></sprite>
+                        </span>
+                        ic-mozambique
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-myanmar"></sprite>
+                        </span>
+                        ic-myanmar
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-namibia"></sprite>
+                        </span>
+                        ic-namibia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-nauru"></sprite>
+                        </span>
+                        ic-nauru
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-nepal"></sprite>
+                        </span>
+                        ic-nepal
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-netherlands"></sprite>
+                        </span>
+                        ic-netherlands
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-new-zealand"></sprite>
+                        </span>
+                        ic-new-zealand
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-nicaragua"></sprite>
+                        </span>
+                        ic-nicaragua
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-niger"></sprite>
+                        </span>
+                        ic-niger
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-nigeria"></sprite>
+                        </span>
+                        ic-nigeria
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-norway"></sprite>
+                        </span>
+                        ic-norway
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-oman"></sprite>
+                        </span>
+                        ic-oman
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-pakistan"></sprite>
+                        </span>
+                        ic-pakistan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-palau"></sprite>
+                        </span>
+                        ic-palau
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-panama"></sprite>
+                        </span>
+                        ic-panama
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-papua-new-guinea"></sprite>
+                        </span>
+                        ic-papua-new-guinea
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-paraguay"></sprite>
+                        </span>
+                        ic-paraguay
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-peru"></sprite>
+                        </span>
+                        ic-peru
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-philippines"></sprite>
+                        </span>
+                        ic-philippines
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-poland"></sprite>
+                        </span>
+                        ic-poland
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-portugal"></sprite>
+                        </span>
+                        ic-portugal
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-qatar"></sprite>
+                        </span>
+                        ic-qatar
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-romania"></sprite>
+                        </span>
+                        ic-romania
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-russia"></sprite>
+                        </span>
+                        ic-russia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-rwanda"></sprite>
+                        </span>
+                        ic-rwanda
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-saint-kitts-and-nevis"></sprite>
+                        </span>
+                        ic-saint-kitts-and-nevis
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-saint-lucia"></sprite>
+                        </span>
+                        ic-saint-lucia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-saint-vincent-and-the-grenadines"></sprite>
+                        </span>
+                        ic-saint-vincent-and-the-grenadines
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-samoa"></sprite>
+                        </span>
+                        ic-samoa
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-san-marino"></sprite>
+                        </span>
+                        ic-san-marino
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-sao-tome-and-principe"></sprite>
+                        </span>
+                        ic-sao-tome-and-principe
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-saudi-arabia"></sprite>
+                        </span>
+                        ic-saudi-arabia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-senegal"></sprite>
+                        </span>
+                        ic-senegal
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-serbia"></sprite>
+                        </span>
+                        ic-serbia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-seychelles"></sprite>
+                        </span>
+                        ic-seychelles
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-sierra-leone"></sprite>
+                        </span>
+                        ic-sierra-leone
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-singapore"></sprite>
+                        </span>
+                        ic-singapore
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-slovakia"></sprite>
+                        </span>
+                        ic-slovakia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-slovenia"></sprite>
+                        </span>
+                        ic-slovenia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-solomon-islands"></sprite>
+                        </span>
+                        ic-solomon-islands
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-somalia"></sprite>
+                        </span>
+                        ic-somalia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-south-africa"></sprite>
+                        </span>
+                        ic-south-africa
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-south-sudan"></sprite>
+                        </span>
+                        ic-south-sudan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-spain"></sprite>
+                        </span>
+                        ic-spain
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-sri-lanka"></sprite>
+                        </span>
+                        ic-sri-lanka
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-sudan"></sprite>
+                        </span>
+                        ic-sudan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-suriname"></sprite>
+                        </span>
+                        ic-suriname
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-swaziland"></sprite>
+                        </span>
+                        ic-swaziland
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-sweden"></sprite>
+                        </span>
+                        ic-sweden
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-switzerland"></sprite>
+                        </span>
+                        ic-switzerland
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-syria"></sprite>
+                        </span>
+                        ic-syria
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-taiwan"></sprite>
+                        </span>
+                        ic-taiwan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-tajikistan"></sprite>
+                        </span>
+                        ic-tajikistan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-tanzania"></sprite>
+                        </span>
+                        ic-tanzania
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-thailand"></sprite>
+                        </span>
+                        ic-thailand
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-togo"></sprite>
+                        </span>
+                        ic-togo
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-tonga"></sprite>
+                        </span>
+                        ic-tonga
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-trinidad-and-tobago"></sprite>
+                        </span>
+                        ic-trinidad-and-tobago
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-tunisia"></sprite>
+                        </span>
+                        ic-tunisia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-turkey"></sprite>
+                        </span>
+                        ic-turkey
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-turkmenistan"></sprite>
+                        </span>
+                        ic-turkmenistan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-tuvalu"></sprite>
+                        </span>
+                        ic-tuvalu
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-uganda"></sprite>
+                        </span>
+                        ic-uganda
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-ukraine"></sprite>
+                        </span>
+                        ic-ukraine
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-united-arab-emirates"></sprite>
+                        </span>
+                        ic-united-arab-emirates
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-united-kingdom"></sprite>
+                        </span>
+                        ic-united-kingdom
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-united-states"></sprite>
+                        </span>
+                        ic-united-states
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-uruguay"></sprite>
+                        </span>
+                        ic-uruguay
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-uzbekistan"></sprite>
+                        </span>
+                        ic-uzbekistan
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-vanuatu"></sprite>
+                        </span>
+                        ic-vanuatu
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-vatican-city"></sprite>
+                        </span>
+                        ic-vatican-city
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-venezuela"></sprite>
+                        </span>
+                        ic-venezuela
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-vietnam"></sprite>
+                        </span>
+                        ic-vietnam
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-yemen"></sprite>
+                        </span>
+                        ic-yemen
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-zambia"></sprite>
+                        </span>
+                        ic-zambia
+                    </li>
+                    <li class="iconExample-item">
+                        <span class="iconExample-glyph">
+                            <sprite glyph="ic-zimbabwe"></sprite>
+                        </span>
+                        ic-zimbabwe
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

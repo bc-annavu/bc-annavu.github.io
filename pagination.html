@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/components.html">
+                                Components
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/accordion.html')}">
+                                        <a class="asideNav-link" href="/accordion.html">Accordion</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/buttons.html')}">
+                                        <a class="asideNav-link" href="/buttons.html">Buttons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/cards.html')}">
+                                        <a class="asideNav-link" href="/cards.html">Cards</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/dropdowns.html')}">
+                                        <a class="asideNav-link" href="/dropdowns.html">Dropdowns</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/forms.html')}">
+                                        <a class="asideNav-link" href="/forms.html">Forms</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/modals.html')}">
+                                        <a class="asideNav-link" href="/modals.html">Modals</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/pagination.html')}">
+                                        <a class="asideNav-link" href="/pagination.html">Pagination</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/panels.html')}">
+                                        <a class="asideNav-link" href="/panels.html">Panels</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/progress-bars.html')}">
+                                        <a class="asideNav-link" href="/progress-bars.html">Progress Bars</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/tabs.html')}">
+                                        <a class="asideNav-link" href="/tabs.html">Tabs</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/tooltips.html')}">
+                                        <a class="asideNav-link" href="/tooltips.html">Tooltips</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/tables.html')}">
+                                        <a class="asideNav-link" href="/tables.html">Tables</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Pagination</h1>
+
+                     <p>
+            Pagination is a form of navigation that is used to move across 2 or more pages of related content.
+        </p>
+
+        <section class="panel labPanel">
+            <h4 class="labPanel-title">Related Patterns</h4>
+            <ul class="u-listNoBullet labRelated-list">
+                <li><a href="/action-bar.html">Action Bar</a></li>
+            </ul>
+        </section>
+        <hr>
+        <section class="panel labPanel">
+
+            <div class="labPanel-docs">
+                <div class="labPanel-docsDemo">
+                    <a href="/demo.html#/components/bc-pagination" class="button--icon demo-button" target="_blank">
+                        View Demo <icon glyph="ic-open-in-new"></icon>
+                    </a>
+                </div>
+                <tabset class="labPanel-docsTabs">
+                    <tab select="modalCtrl.handleTabSelect('structure')">
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content demo">
+                            <img class="labPanel-docsTabs-figure" src="images/pagination_screen.png">
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.pagination</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The primary styling class for the pagination component.</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    Pagination has a vast amount of options available, most can be
+                                    <a href="http://pineconellc.github.io/angular-foundation/#/pagination">viewed here</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+
+                    <tab select="modalCtrl.handleTabSelect('html')">
+                        <tab-heading>HTML</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<bc-pagination
+    total-items="totalItems"
+    page="currentPage"
+    items-per-page="itemsPerPage"
+    on-change="onSelectPage"
+    rotate="false"
+    max-size="maxSize"
+    limits="customLimits"
+    class="pagination">
+</bc-pagination></textarea>
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.pagination</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The primary styling class for the pagination component.</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    Pagination has a vast amount of options available, most can be
+                                    <a href="http://pineconellc.github.io/angular-foundation/#/pagination">viewed here</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+        </section>
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Accessibility</h3>
+            <div class="panel-body">
+                <p>
+                    As a simplistic navigation interface which relies heavily on visual design to convey meaning, it's very important that this component gets the appropriate treatment by screen readers.
+                </p>
+
+                <h4 class="labPanel-title">Accessibility Markup:</h4>
+                <ul>
+                    <li>
+                        Pagination <code>ul</code> has <code>role="navigation"</code> and <code>[aria-labelledby]</code> a label which should be hidden from the user.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

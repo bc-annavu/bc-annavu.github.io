@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/utils.html">
+                                Developer Utilities
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/breakpoints.html')}">
+                                        <a class="asideNav-link" href="/breakpoints.html">Breakpoints</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/containers.html')}">
+                                        <a class="asideNav-link" href="/containers.html">Containers</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-display.html')}">
+                                        <a class="asideNav-link" href="/utilities-display.html">Display</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/elevation.html')}">
+                                        <a class="asideNav-link" href="/elevation.html">Elevation</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-grid.html')}">
+                                        <a class="asideNav-link" href="/utilities-grid.html">Grid</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-heading-styles.html')}">
+                                        <a class="asideNav-link" href="/utilities-heading-styles.html">Heading Styles</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-media.html')}">
+                                        <a class="asideNav-link" href="/utilities-media.html">Media object</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-layout.html')}">
+                                        <a class="asideNav-link" href="/utilities-layout.html">Layout</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-lists.html')}">
+                                        <a class="asideNav-link" href="/utilities-lists.html">Lists</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-position.html')}">
+                                        <a class="asideNav-link" href="/utilities-position.html">Position</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-shapes.html')}">
+                                        <a class="asideNav-link" href="/utilities-shapes.html">Shapes</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-sizing.html')}">
+                                        <a class="asideNav-link" href="/utilities-sizing.html">Sizing</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/spacing.html')}">
+                                        <a class="asideNav-link" href="/spacing.html">Spacing</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-text.html')}">
+                                        <a class="asideNav-link" href="/utilities-text.html">Text</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/z-index.html')}">
+                                        <a class="asideNav-link" href="/z-index.html">Z-index</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Text</h1>
+
+             
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Font Family</h3>
+
+            <table class="table">
+                <thead class="table-thead">
+                    <tr>
+                        <th>Token</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody class="table-tbody">
+                    <tr>
+                        <td>
+                            <code>fontFamily("sans")</code>
+                        </td>
+                        <td class="u-token-fontFamilySans">
+                            "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>fontFamily("headings")</code>
+                        </td>
+                        <td class="u-token-fontFamilyHeading">
+                            "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Font Weight</h3>
+
+            <table class="table">
+                <thead class="table-thead">
+                    <tr>
+                        <th>Token</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody class="table-tbody">
+                    <tr>
+                        <td>
+                            <code>fontWeight("thin")</code>
+                        </td>
+                        <td class="u-token-fontWeightthin">
+                            300
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>fontWeight("normal")</code>
+                        </td>
+                        <td class="u-token-fontWeightnormal">
+                            400
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>fontWeight("bold")</code>
+                        </td>
+                        <td class="u-token-fontWeightbold">
+                            600
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Font Size</h3>
+
+            <table class="table">
+                <thead class="table-thead">
+                    <tr>
+                        <th>Token</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody class="table-tbody">
+                    <tr>
+                        <td>
+                            <code>fontSize("tiny")</code>
+                        </td>
+                        <td class="u-token-fontSizeTiny">
+                            0.8rem ~ 12px
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>fontSize("base")</code>
+                        </td>
+                        <td class="u-token-fontSizeBase">
+                            1rem ~ 15px
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>fontSize("smallest")</code>
+                        </td>
+                        <td class="u-token-fontSizeSmallest">
+                            1rem ~ 15px
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>fontSize("smaller")</code>
+                        </td>
+                        <td class="u-token-fontSizeSmaller">
+                            1.06667rem ~16px
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>fontSize("small")</code>
+                        </td>
+                        <td class="u-token-fontSizeSmall">
+                            1.2rem ~ 18px
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>fontSize("large")</code>
+                        </td>
+                        <td class="u-token-fontSizeLarge">
+                            1.33333rem ~ 20px
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>fontSize("larger")</code>
+                        </td>
+                        <td class="u-token-fontSizeLarger">
+                            1.6rem ~ 24px
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>fontSize("largest")</code>
+                        </td>
+                        <td class="u-token-fontSizeLargest">
+                            2rem ~ 30px
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Line Height</h3>
+
+            <table class="table">
+                <thead class="table-thead">
+                    <tr>
+                        <th>Token</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody class="table-tbody">
+                    <tr>
+                        <td>
+                            <code>lineHeight("tiny")</code>
+                        </td>
+                        <td class="u-token-lineHeightTiny">
+                            1.3334
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>lineHeight("base")</code>
+                        </td>
+                        <td class="u-token-lineHeightBase">
+                            1.6
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>lineHeight("smallest")</code>
+                        </td>
+                        <td class="u-token-lineHeightSmallest">
+                            1.6
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>lineHeight("smaller")</code>
+                        </td>
+                        <td class="u-token-lineHeightSmaller">
+                            1.5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>lineHeight("small")</code>
+                        </td>
+                        <td class="u-token-lineHeightSmall">
+                            1.25
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>lineHeight("large")</code>
+                        </td>
+                        <td class="u-token-lineHeightLarge">
+                            1.2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>lineHeight("larger")</code>
+                        </td>
+                        <td class="u-token-lineHeightLarger">
+                            1.1667
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>lineHeight("largest")</code>
+                        </td>
+                        <td class="u-token-lineHeightLargest">
+                            1.0667
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Text Transformation Utilities</h3>
+
+            <table class="table">
+                <thead class="tbale-thead">
+                    <tr>
+                        <th>Mixin</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody class="table-tbody">
+                    <tr>
+                        <td>
+                            <code>u-textTruncate()</code>
+                        </td>
+                        <td>
+                            Used to prevent long, unbroken strings from overflowing
+                            their containers by using an ellipsis (&hellip;)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/patterns.html">
+                                Patterns
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/action-bar.html')}">
+                                        <a class="asideNav-link" href="/action-bar.html">Action Bar</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/color-picker.html')}">
+                                        <a class="asideNav-link" href="/color-picker.html">Color Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/credit-card.html')}">
+                                        <a class="asideNav-link" href="/credit-card.html">Credit Card Payment</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/data-tables.html')}">
+                                        <a class="asideNav-link" href="/data-tables.html">Data Tables</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/date-picker.html')}">
+                                        <a class="asideNav-link" href="/date-picker.html">Date Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/loading-states.html')}">
+                                        <a class="asideNav-link" href="/loading-states.html">Loading States</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/prompt.html')}">
+                                        <a class="asideNav-link" href="/prompt.html">Prompts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/navigation.html')}">
+                                        <a class="asideNav-link" href="/navigation.html">Navigation</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/alerts.html')}">
+                                        <a class="asideNav-link" href="/alerts.html">Notifications and Alerts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/warning-button.html')}">
+                                        <a class="asideNav-link" href="/warning-button.html">Warning Button</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Patterns</h1>
+
+                     <p>Patterns are component(s) coming together to form an interaction with the user, thereby gaining a purpose. They have specific rules, attributes and behaviours, as defined by our design language and style guides.</p>
+                <div class="panel">
+                    <div class="panel-body">
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/actionBar.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/action-bar.html">Action Bar</a></h2>
+                            		<p>The Action Bar pattern is a form that sits on top of a visual dataset; like a data table or a grid of product cards, for example. It modifies its dataset on submission. Common actions include filtering, searching and paginating.</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/colorPicker.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/color-picker.html">Color Picker</a></h2>
+                            		<p>Color Picker are used to select the color of an element (text, background color).</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/creditCardPayment.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/credit-card.html">Credit Card Payment</a></h2>
+                            		<p>The standard Form pattern for when you&#x27;d like to take a user&#x27;s credit card details.</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/dataTables.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/data-tables.html">Data Tables</a></h2>
+                            		<p>A data table is composed of at least two column headers row and at least one data row (and occasionally a column footer). It is used to organize large volumes of data.</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/datePicker.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/date-picker.html">Date Picker</a></h2>
+                            		<p>Allows the user to select a date from a calendar format as an alternative to manual input.</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/placeholder.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/loading-states.html">Loading States</a></h2>
+                            		<p>A program that is loaded may itself contain components that are not initially loaded into main storage, but can be loaded if and when their logic is needed. Once loading state is triggered, a symbol is usually shown as a feedback to the user.</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/prompts.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/prompt.html">Prompts</a></h2>
+                            		<p>A prompt is a notification that requires action from the user to proceed. Prompts are used to communicate system-related messaging to the user.</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/navigation.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/navigation.html">Navigation</a></h2>
+                            		<p>A navigation allows users to quickly visit any section within the site or multiple sections within a container.</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/notifications.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/alerts.html">Notifications and Alerts</a></h2>
+                            		<p>A message that pops up on your screen to warn you that your computer is about to perform an operation with potentially damaging consequences. It is a safeguard for users, preventing us from doing things we wish we hadn&#x27;t.</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/placeholder.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/warning-button.html">Warning Button</a></h2>
+                            		<p>The warning button is used as a revert action and is required to be followed up with a prompt to confirm that the user is okay with taking this action (i.e. Remove, Delete, or Disconnect).</p>
+                            	</div>
+                            </div>
+                    </div>
+                </div>
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

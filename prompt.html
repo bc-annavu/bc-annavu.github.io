@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/patterns.html">
+                                Patterns
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/action-bar.html')}">
+                                        <a class="asideNav-link" href="/action-bar.html">Action Bar</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/color-picker.html')}">
+                                        <a class="asideNav-link" href="/color-picker.html">Color Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/credit-card.html')}">
+                                        <a class="asideNav-link" href="/credit-card.html">Credit Card Payment</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/data-tables.html')}">
+                                        <a class="asideNav-link" href="/data-tables.html">Data Tables</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/date-picker.html')}">
+                                        <a class="asideNav-link" href="/date-picker.html">Date Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/loading-states.html')}">
+                                        <a class="asideNav-link" href="/loading-states.html">Loading States</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/prompt.html')}">
+                                        <a class="asideNav-link" href="/prompt.html">Prompts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/navigation.html')}">
+                                        <a class="asideNav-link" href="/navigation.html">Navigation</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/alerts.html')}">
+                                        <a class="asideNav-link" href="/alerts.html">Notifications and Alerts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/warning-button.html')}">
+                                        <a class="asideNav-link" href="/warning-button.html">Warning Button</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Prompt</h1>
+
+                     <p>
+           A prompt is a notification that requires action from the user to proceed. Prompts are used to communicate system-related messaging to the user.
+        </p>
+        <section class="panel labPanel">
+            <h4 class="labPanel-title">Subcomponents:</h4>
+            <ul class="u-listNoBullet labRelated-list">
+                <li><a href="/modals.html">Modal</a></li>
+                <li><a href="/buttons.html">Buttons</a></li>
+            </ul>
+        </section>
+        <hr>
+        <section class="panel labPanel">
+
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content demo">
+                            <img class="labPanel-docsTabs-figure" src="images/prompt_screen.png">
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>Provide the user with one or more options to proceed.</p>
+                            <p>Prompts behave like a modal in that it sits on top of a mask that obscures the rest of the UI.</p>
+                            <p>Size the prompt at 292px width. The content inside the prompt determines the height.</p>
+                            <p>The prompt does not have a header, and the footer is styled differently to our regular modal. The body does not scroll, so be mindful of the space you create with your content. Keep the text short and effective.</p>
+                        </div>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>Developer</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<div class="modal-background"></div>
+<section class="modal prompt">
+<!-- The following section is taken from the template you specify -->
+<div class="prompt-body">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
+    </p>
+</div>
+<div class="prompt-footer">
+    <a class="prompt-footer-link" ng-click="modalContentCtrl.cancel($event)" href="#">Cancel</a>
+    <a class="button button--small button--primary prompt-footer-button" ng-click="modalContentCtrl.ok($event)" href="#">OK</a>
+</div>
+</section></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4>Classes</h4>
+                            <p>
+                                1.<code>prompt</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Component class used for the prompt modal, as the modal's `windowClass`.</li>
+                                    <li>Reduces the width of the entire <code>modal</code></li>
+                                    <li>Changes behaviour of height to be dependent on content</li>
+                                    <li>Contains the same subcomponents as the Modal component, except the header and title.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                2.<code>prompt-footer</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Background color and borders are removed as part of the prompt pattern.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+        </section>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

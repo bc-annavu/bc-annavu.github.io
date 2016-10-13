@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/patterns.html">
+                                Patterns
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/action-bar.html')}">
+                                        <a class="asideNav-link" href="/action-bar.html">Action Bar</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/color-picker.html')}">
+                                        <a class="asideNav-link" href="/color-picker.html">Color Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/credit-card.html')}">
+                                        <a class="asideNav-link" href="/credit-card.html">Credit Card Payment</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/data-tables.html')}">
+                                        <a class="asideNav-link" href="/data-tables.html">Data Tables</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/date-picker.html')}">
+                                        <a class="asideNav-link" href="/date-picker.html">Date Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/loading-states.html')}">
+                                        <a class="asideNav-link" href="/loading-states.html">Loading States</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/prompt.html')}">
+                                        <a class="asideNav-link" href="/prompt.html">Prompts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/navigation.html')}">
+                                        <a class="asideNav-link" href="/navigation.html">Navigation</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/alerts.html')}">
+                                        <a class="asideNav-link" href="/alerts.html">Notifications and Alerts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/warning-button.html')}">
+                                        <a class="asideNav-link" href="/warning-button.html">Warning Button</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Date Picker and Inputs</h1>
+
+                     <p>
+            Allows the user to select a date from a calendar format as an alternative to manual input.
+        </p>
+        <section class="panel labPanel">
+            <h4 class="labPanel-title">Subcomponents</h4>
+            <ul class="u-listNoBullet labRelated-list">
+                <li><a href="/buttons.html">Buttons</a></li>
+                <li><a href="/interface-icons">Icons</a></li>
+                <li><a href="/forms.html">Forms</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="panel labPanel">
+
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content">
+                            <div class="labBlock-preview">
+                                <form action="#" class="form">
+                                    <fieldset class="form-fieldset">
+                                        <div class="form-field">
+                                            <label class="form-label" for="datepicker">Select a Date</label>
+                                            <input class="form-input has-action" id="datepicker" type="text" bc-datepicker ng-model="date" options="bcDatepickerCtrl.options"/>
+                                            <button class="button button--icon button--inputAction">
+                                                <span class="u-hiddenVisually">Select a Date</span>
+                                                <icon glyph="ic-event"></icon>
+                                            </button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>A date picker includes a grid of distinct calendar values, each of which has a single selected value—appearing in primary color circular background with value in the center. In addition each value has a single on hover state with a gray color circular background. Off-state hover background turns to none.</p>
+                            <p>A picker is often displayed at the bottom of the text field when the user is editing a field or tapping on the calendar icon. Pickers can also appear inline, such as while editing a date in a Calendar event. The height of a picker is roughly the height of five rows of list values. The width of a picker is either the width of the screen or its enclosing view, depending on the device and context.</p>
+                        </div>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>Developer</tab-heading>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+autoClearEmptyLines: true
+}">
+<input
+    class="form-input"
+    type="text"
+    bc-datepicker
+    options="bcDatepickerCtrl.options"
+    ng-model="date"
+/>
+
+<div bc-datepicker ng-model="date2"></div></textarea>
+                            </div>
+                            <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'javascript',
+autoClearEmptyLines: true
+}">
+{
+    'appendTo': document.body,
+    'autoClose': true,
+    'autoHideOnBlur': true,
+    'autoHideOnClick': true,
+    'date': true,
+    'dateValidator': Function.prototype,
+    'dayFormat': 'DD',
+    'initialValue': null,
+    'inputFormat': moment.localeData().longDateFormat('L'),
+    'invalidate': true,
+    'max': null,
+    'min': null,
+    'monthFormat': 'MMM YYYY',
+    'monthsInCalendar': 1,
+    'required': false,
+    'styles': {
+        back: 'datepicker-back',
+        container: 'datepicker',
+        date: 'datepicker-date',
+        dayBody: 'datepicker-days-body',
+        dayBodyElem: 'datepicker-day',
+        dayConcealed: 'datepicker-day-concealed',
+        dayDisabled: 'is-disabled',
+        dayHead: 'datepicker-days-head',
+        dayHeadElem: 'datepicker-day-name',
+        dayPrevMonth: 'datepicker-day-prev-month',
+        dayNextMonth: 'datepicker-day-next-month',
+        dayRow: 'datepicker-days-row',
+        dayTable: 'datepicker-days',
+        month: 'datepicker-month',
+        monthLabel: 'datepicker-month',
+        next: 'datepicker-next',
+        positioned: 'datepicker-attachment',
+        selectedDay: 'is-selected',
+        selectedTime: 'datepicker-time-selected',
+        time: 'datepicker-time',
+        timeList: 'datepicker-time-list',
+        timeOption: 'datepicker-time-option'
+    },
+    'time': false,
+    'timeFormat': 'HH:mm',
+    'timeInterval': 1800,
+    'timeValidator': Function.prototype,
+    'weekdayFormat': 'short',
+    'weekStart': moment().weekday(0).day()
+}</textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    Datepickers are added with an attribute directive to a input element.
+                                    It can also be displayed in line if the directive is in a non-input element.
+                                </p>
+                                <p>
+                                    BC Datepicker directive can be called with bc-datepicker attribute. I can be placed on a text input or a basic <code>&lt;div/&gt;</code>
+                                </p>
+                                <p>
+                                    It takes an optional attribute of options, which you can a JSON object to as defined below.
+                                    Description of each option can be found in Rome's (Calendar) Repo
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

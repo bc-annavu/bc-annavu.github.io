@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/style.html">
+                                Style
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/palette.html')}">
+                                        <a class="asideNav-link" href="/palette.html">Color</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/interface-icons.html')}">
+                                        <a class="asideNav-link" href="/interface-icons.html">Interface Icons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/illustrative-icons.html')}">
+                                        <a class="asideNav-link" href="/illustrative-icons.html">Illustrative Icons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/typography.html')}">
+                                        <a class="asideNav-link" href="/typography.html">Typography</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Style</h1>
+
+                             <div class="panel">
+                    <div class="panel-body">
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/colorPalette.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/palette.html">Color</a></h2>
+                            		<p>Brand and application colors.</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/interfaceIcons.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/interface-icons.html">Interface Icons</a></h2>
+                            		<p>The BigCommerce control panel icon set is based on the open source Google Material Design icon set. It is imported via Bower, and the task gulp icons processes these into our folder structure for distribution and better naming.</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/illustrativeIcons.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/illustrative-icons.html">Illustrative Icons</a></h2>
+                            		<p>Design icons are a set of icons that are more illustrative and informative than instructional, unlike the UI icons set. These are not designed to be used as actions, but more like cues to the user.</p>
+                            	</div>
+                            </div>
+                            <div class="tocBlock">
+                            	<div class="tocBlock-figure">
+                            			<img src="/images/toc/typography.png" />
+                            	</div>
+                            	<div class="tocBlock-body">
+                            		<h2 class="tocBlock-title"><a href="/typography.html">Typography</a></h2>
+                            		<p>Heading, body, and blockquote styles.</p>
+                            	</div>
+                            </div>
+                    </div>
+                </div>
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

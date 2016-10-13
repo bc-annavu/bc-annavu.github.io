@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/style.html">
+                                Style
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/palette.html')}">
+                                        <a class="asideNav-link" href="/palette.html">Color</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/interface-icons.html')}">
+                                        <a class="asideNav-link" href="/interface-icons.html">Interface Icons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/illustrative-icons.html')}">
+                                        <a class="asideNav-link" href="/illustrative-icons.html">Illustrative Icons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/typography.html')}">
+                                        <a class="asideNav-link" href="/typography.html">Typography</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Color Palette</h1>
+
+             
+        <section class="panel labPanel">
+            <h3 class="labPanel-title">Brand Palette</h3>
+            <p class="labPanel-description">To use the colours in this palette, use the <code>palette("palette",value)</code> map. (e.g. <code>palette("primary",500)</code> for <code>#4b71fc</code>).</p>
+            <table class="table">
+                <thead class="table-thead">
+                    <tr>
+                        <th></th>
+                        <th>Primary</th>
+                        <th>Secondary</th>
+                        <th>Tertiary</th>
+                        <th>Accent</th>
+                    </tr>
+                </thead>
+                <tbody class="table-tbody">
+                    <tr>
+                        <td>50</td>
+                        <td><span class="swatch u-bgPrimary50"></span>#edf1ff</td>
+                        <td><span class="swatch u-bgSecondary50"></span>#ebebec</td>
+                        <td><span class="swatch u-bgTertiary50"></span>#f1f8fe</td>
+                        <td><span class="swatch u-bgAccent50"></span>#eee6f9</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td><span class="swatch u-bgPrimary100"></span>#dbe3fe</td>
+                        <td><span class="swatch u-bgSecondary100"></span>#d7d6d9</td>
+                        <td><span class="swatch u-bgTertiary100"></span>#e3f1fc</td>
+                        <td><span class="swatch u-bgAccent100"></span>#dcccf3</td>
+                    </tr>
+                    <tr>
+                        <td>200</td>
+                        <td><span class="swatch u-bgPrimary200"></span>#b7c6fe</td>
+                        <td><span class="swatch u-bgSecondary200"></span>#aeadb3</td>
+                        <td><span class="swatch u-bgTertiary200"></span>#c7e2f8</td>
+                        <td><span class="swatch u-bgAccent200"></span>#b999e6</td>
+                    </tr>
+                    <tr>
+                        <td>300</td>
+                        <td><span class="swatch u-bgPrimary300"></span>#93aafd</td>
+                        <td><span class="swatch u-bgSecondary300"></span>#86848c</td>
+                        <td><span class="swatch u-bgTertiary300"></span>#abd3f5</td>
+                        <td><span class="swatch u-bgAccent300"></span>#9566da</td>
+                    </tr>
+                    <tr>
+                        <td>400</td>
+                        <td><span class="swatch u-bgPrimary400"></span>#6f8dfd</td>
+                        <td><span class="swatch u-bgSecondary400"></span>#5d5b66</td>
+                        <td><span class="swatch u-bgTertiary400"></span>#8fc4f1</td>
+                        <td><span class="swatch u-bgAccent400"></span>#7233cd</td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td><span class="swatch u-bgPrimary500"></span>#4b71fc</td>
+                        <td><span class="swatch u-bgSecondary500"></span>#34313f</td>
+                        <td><span class="swatch u-bgTertiary500"></span>#72b5ed</td>
+                        <td><span class="swatch u-bgAccent500"></span>#4e00c0</td>
+                    </tr>
+                    <tr>
+                        <td>600</td>
+                        <td><span class="swatch u-bgPrimary600"></span>#3e5ed6</td>
+                        <td><span class="swatch u-bgSecondary600"></span>#2b2935</td>
+                        <td><span class="swatch u-bgTertiary600"></span>#5f97c9</td>
+                        <td><span class="swatch u-bgAccent600"></span>#4100a3</td>
+                    </tr>
+                    <tr>
+                        <td>700</td>
+                        <td><span class="swatch u-bgPrimary700"></span>#334caf</td>
+                        <td><span class="swatch u-bgSecondary700"></span>#23212b</td>
+                        <td><span class="swatch u-bgTertiary700"></span>#4d7aa5</td>
+                        <td><span class="swatch u-bgAccent700"></span>#350086</td>
+                    </tr>
+                    <tr>
+                        <td>800</td>
+                        <td><span class="swatch u-bgPrimary800"></span>#273a8a</td>
+                        <td><span class="swatch u-bgSecondary800"></span>#1b1922</td>
+                        <td><span class="swatch u-bgTertiary800"></span>#3b5c82</td>
+                        <td><span class="swatch u-bgAccent800"></span>#280069</td>
+                    </tr>
+                    <tr>
+                        <td>900</td>
+                        <td><span class="swatch u-bgPrimary900"></span>#1b2763</td>
+                        <td><span class="swatch u-bgSecondary900"></span>#121118</td>
+                        <td><span class="swatch u-bgTertiary900"></span>#293f5d</td>
+                        <td><span class="swatch u-bgAccent900"></span>#1c004c</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-title">Basic Palette</h3>
+            <p class="labPanel-description">These palettes only have one value, which means you can use the <code>palette("color")</code> map with one parameter. The default value for our palette map is 500.</p>
+            <table class="table">
+                <thead class="table-thead">
+                    <th></th>
+                    <th>White</th>
+                    <th>Black</th>
+                </thead>
+                <tbody class="table-tbody">
+                    <tr>
+                        <td>500</td>
+                        <td><span class="swatch u-bgWhite500"></span>#fff</td>
+                        <td><span class="swatch u-bgBlack500"></span>#000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-title">Grey Palette</h3>
+            <p class="labPanel-description">To use the colours in this palette, use the <code>palette("grey",value)</code> map. For the alternate palette, prefix the value with an "a" (e.g. <code>palette("grey",a500)</code> for <code>#919596</code>).</p>
+            <table class="table">
+                <thead class="table-thead">
+                    <th></th>
+                    <th>Grey</th>
+                    <th>Alternate</th>
+                </thead>
+                <tbody class="table-tbody">
+                    <tr>
+                        <td>50</td>
+                        <td><span class="swatch u-bgGrey50"></span>#fbfbfc</td>
+                        <td><span class="swatch u-bgGreya50"></span>#f4f5f5</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td><span class="swatch u-bgGrey100"></span>#f6f7f9</td>
+                        <td><span class="swatch u-bgGreya100"></span>#e9eaea</td>
+                    </tr>
+                    <tr>
+                        <td>200</td>
+                        <td><span class="swatch u-bgGrey200"></span>#edeff3</td>
+                        <td><span class="swatch u-bgGreya200"></span>#d3d5d5</td>
+                    </tr>
+                    <tr>
+                        <td>300</td>
+                        <td><span class="swatch u-bgGrey300"></span>#e4e7ed</td>
+                        <td><span class="swatch u-bgGreya300"></span>#bdc0c0</td>
+                    </tr>
+                    <tr>
+                        <td>400</td>
+                        <td><span class="swatch u-bgGrey400"></span>#dbdfe7</td>
+                        <td><span class="swatch u-bgGreya400"></span>#a7abab</td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td><span class="swatch u-bgGrey500"></span>#d1d7e0</td>
+                        <td><span class="swatch u-bgGreya500"></span>#919596</td>
+                    </tr>
+                    <tr>
+                        <td>600</td>
+                        <td><span class="swatch u-bgGrey600"></span>#afb4be</td>
+                        <td><span class="swatch u-bgGreya600"></span>#797d7f</td>
+                    </tr>
+                    <tr>
+                        <td>700</td>
+                        <td><span class="swatch u-bgGrey700"></span>#8e919c</td>
+                        <td><span class="swatch u-bgGreya700"></span>#626568</td>
+                    </tr>
+                    <tr>
+                        <td>800</td>
+                        <td><span class="swatch u-bgGrey800"></span>#6d6e7a</td>
+                        <td><span class="swatch u-bgGreya800"></span>#4b4c52</td>
+                    </tr>
+                    <tr>
+                        <td>900</td>
+                        <td><span class="swatch u-bgGrey900"></span>#4c4b58</td>
+                        <td><span class="swatch u-bgGreya900"></span>#34343b</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-title">States Palette</h3>
+            <p class="labPanel-description">To use the colours in this palette, use the <code>palette("palette",value)</code> map. (e.g. <code>palette("success", 500)</code> for <code>#65c96d</code>). Prefix your <code>value</code> with "a" for alternate values (e.g. <code>palette("warning", a600)</code> for <code>#f1b900</code>.</p>
+             <table class="table">
+                <thead class="table-thead">
+                    <tr>
+                        <th></th>
+                        <th>Success</th>
+                        <th>Error</th>
+                        <th>Warning</th>
+                    </tr>
+                </thead>
+                <tbody class="table-tbody">
+                    <tr>
+                        <td>50</td>
+                        <td><span class="swatch u-bgSuccess50"></span>#f0faf1</td>
+                        <td><span class="swatch u-bgError50"></span>#fef0ec</td>
+                        <td><span class="swatch u-bgWarning50"></span>#fefbec</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td><span class="swatch u-bgSuccess100"></span>#e1f5e2</td>
+                        <td><span class="swatch u-bgError100"></span>#fce0d8</td>
+                        <td><span class="swatch u-bgWarning100"></span>#fdf6d9</td>
+                    </tr>
+                    <tr>
+                        <td>200</td>
+                        <td><span class="swatch u-bgSuccess200"></span>#c2eac5</td>
+                        <td><span class="swatch u-bgError200"></span>#f9c0b1</td>
+                        <td><span class="swatch u-bgWarning200"></span>#faecb2</td>
+                    </tr>
+                    <tr>
+                        <td>300</td>
+                        <td><span class="swatch u-bgSuccess300"></span>#a3dfa8</td>
+                        <td><span class="swatch u-bgError300"></span>#f6a08a</td>
+                        <td><span class="swatch u-bgWarning300"></span>#f8e28b</td>
+                    </tr>
+                    <tr>
+                        <td>400</td>
+                        <td><span class="swatch u-bgSuccess400"></span>#84d48b</td>
+                        <td><span class="swatch u-bgError400"></span>#f38063</td>
+                        <td><span class="swatch u-bgWarning400"></span>#f5d864</td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td><span class="swatch u-bgSuccess500"></span>#65c96d</td>
+                        <td><span class="swatch u-bgError500"></span>#f0603c</td>
+                        <td><span class="swatch u-bgWarning500"></span>#f2ce3d</td>
+                    </tr>
+                    <tr>
+                        <td>600</td>
+                        <td><span class="swatch u-bgSuccess600"></span>#5baa64</td>
+                        <td><span class="swatch u-bgError600"></span>#cb563d</td>
+                        <td><span class="swatch u-bgWarning600"></span>#ccae3d (Alt: <span class="swatch u-bgWarninga600"></span>#f1b900)</td>
+                    </tr>
+                    <tr>
+                        <td>700</td>
+                        <td><span class="swatch u-bgSuccess700"></span>#518c5b</td>
+                        <td><span class="swatch u-bgError700"></span>#a54d3e</td>
+                        <td><span class="swatch u-bgWarning700"></span>#a68f3e (Alt: <span class="swatch u-bgWarninga700"></span>#f1a500)</td>
+                    </tr>
+                    <tr>
+                        <td>800</td>
+                        <td><span class="swatch u-bgSuccess800"></span>#486e51</td>
+                        <td><span class="swatch u-bgError800"></span>#80443e</td>
+                        <td><span class="swatch u-bgWarning800"></span>#80703e (Alt: <span class="swatch u-bgWarninga800"></span>#f19100)</td>
+                    </tr>
+                    <tr>
+                        <td>900</td>
+                        <td><span class="swatch u-bgSuccess900"></span>#3e5048</td>
+                        <td><span class="swatch u-bgError900"></span>#5a3b3f</td>
+                        <td><span class="swatch u-bgWarning900"></span>#5a513f (Alt: <span class="swatch u-bgWarninga900"></span>#f17c00)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-title">Order Status Colors</h3>
+            <p class="labPanel-description">You can call these using the <code>color("orderStatus","value")</code> function. E.g. <code>color("orderStatus", "awaitingFulfilment")</code> returns <code>#6eccfc</code>.</p>
+            <table class="table">
+                <thead class="table-thead">
+                    <tr>
+                        <th></th>
+                        <th>orderStatus</th>
+                    </tr>
+                </thead>
+                <tbody class="table-tbody">
+                    <tr>
+                        <td>awaitingFulfilment</td>
+                        <td><span class="swatch u-bgOrderStatusAwaitingFulfilment"></span>#6eccfc</td>
+                    </tr>
+                    <tr>
+                        <td>awaitingPayment</td>
+                        <td><span class="swatch u-bgOrderStatusAwaitingPayment"></span>#ff8800</td>
+                    </tr>
+                    <tr>
+                        <td>awaitingPickup</td>
+                        <td><span class="swatch u-bgOrderStatusAwaitingPickup"></span>#b186cb</td>
+                    </tr>
+                    <tr>
+                        <td>awaitingShipment</td>
+                        <td><span class="swatch u-bgOrderStatusAwaitingShipment"></span>#ca2f3a</td>
+                    </tr>
+                    <tr>
+                        <td>cancelled</td>
+                        <td><span class="swatch u-bgOrderStatusCancelled"></span>#3c4043</td>
+                    </tr>
+                    <tr>
+                        <td>completed</td>
+                        <td><span class="swatch u-bgOrderStatusCompleted"></span>#95db89</td>
+                    </tr>
+                    <tr>
+                        <td>declined</td>
+                        <td><span class="swatch u-bgOrderStatusDeclined"></span>#955831</td>
+                    </tr>
+                    <tr>
+                        <td>disputed</td>
+                        <td><span class="swatch u-bgOrderStatusDisputed"></span>#9960ff</td>
+                    </tr>
+                    <tr>
+                        <td>partiallyShipped</td>
+                        <td><span class="swatch u-bgOrderStatusPartiallyShipped"></span>#3e62a1</td>
+                    </tr>
+                    <tr>
+                        <td>pending</td>
+                        <td><span class="swatch u-bgOrderStatusPending"></span>#acb4be</td>
+                    </tr>
+                    <tr>
+                        <td>shipped</td>
+                        <td><span class="swatch u-bgOrderStatusShipped"></span>#95db89</td>
+                    </tr>
+                    <tr>
+                        <td>refunded</td>
+                        <td><span class="swatch u-bgOrderStatusRefunded"></span>#ffb800</td>
+                    </tr>
+                    <tr>
+                        <td>verificationRequired</td>
+                        <td><span class="swatch u-bgOrderStatusVerificationRequired"></span>#e89fae</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

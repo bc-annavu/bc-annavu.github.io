@@ -1,0 +1,1282 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/components.html">
+                                Components
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/accordion.html')}">
+                                        <a class="asideNav-link" href="/accordion.html">Accordion</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/buttons.html')}">
+                                        <a class="asideNav-link" href="/buttons.html">Buttons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/cards.html')}">
+                                        <a class="asideNav-link" href="/cards.html">Cards</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/dropdowns.html')}">
+                                        <a class="asideNav-link" href="/dropdowns.html">Dropdowns</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/forms.html')}">
+                                        <a class="asideNav-link" href="/forms.html">Forms</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/modals.html')}">
+                                        <a class="asideNav-link" href="/modals.html">Modals</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/pagination.html')}">
+                                        <a class="asideNav-link" href="/pagination.html">Pagination</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/panels.html')}">
+                                        <a class="asideNav-link" href="/panels.html">Panels</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/progress-bars.html')}">
+                                        <a class="asideNav-link" href="/progress-bars.html">Progress Bars</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/tabs.html')}">
+                                        <a class="asideNav-link" href="/tabs.html">Tabs</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/tooltips.html')}">
+                                        <a class="asideNav-link" href="/tooltips.html">Tooltips</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/tables.html')}">
+                                        <a class="asideNav-link" href="/tables.html">Tables</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Form Elements</h1>
+
+                     <p>
+            The structure and states for the various form elements used in the BigCommerce Pattern Lab and applications.
+        </p>
+
+        <section class="panel labPanel">
+            <h4 class="labPanel-title">Related Patterns</h4>
+            <ul class="u-listNoBullet labRelated-list">
+                <li>
+                    <a href="/credit-card.html">Credit Card Form</a>
+                </li>
+            </ul>
+
+        </section>
+        <hr>
+        <section class="panel labPanel">
+
+        <h2>The Form</h2>
+
+        <div class="labPanel-docs">
+            <tabset class="labPanel-docsTabs">
+                <tab>
+                    <tab-heading>HTML</tab-heading>
+                    <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    'autoClearEmptyLines': true
+}">
+<form action="#" class="form">
+    <fieldset class="form-fieldset">
+        &hellip;
+    </fieldset>
+</form></textarea>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <p>As we don't style elements directly, the presence of the following form classes are extremely important.</p>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.form</code>
+                                <ul class="u-listNoBullet">
+                                    <li>The container class for the form component. Must be applied to the wrapping form element.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.form-fieldset</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Logical groups of form elemets must be wrapped in a <code>fieldset.form-fieldset</code>. There must be at least one fieldset present per form.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+
+</section>
+
+<section class="panel labPanel" name="inputs">
+
+
+        <h2>Form Rows</h2>
+
+        <div class="labPanel-docs">
+            <tabset class="labPanel-docsTabs">
+                <tab>
+                    <tab-heading>Design</tab-heading>
+                    <div class="labPanel-content">
+                        <form action="#" class="form">
+                            <fieldset class="form-fieldset">
+
+                                <div class="form-body">
+
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <label class="form-label" for="input12">Input Label</label>
+                                            <input class="form-input" id="input12" type="text" placeholder="Placeholder text">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="form-field">
+                                            <label class="form-label" for="input12">Input Label</label>
+                                            <input class="form-input" id="input12" type="text" placeholder="Placeholder text">
+                                        </div>
+
+                                        <div class="form-field">
+                                            <label for="formRow_select" class="form-label">Native Select label</label>
+                                            <select class="form-select" name="formRow_select" id="formRow_select">
+                                                <option>Please select a value</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="form-field">
+                                            <label class="form-label" for="input12">Input Label</label>
+                                            <input class="form-input" id="input12" type="text" placeholder="Placeholder text">
+                                        </div>
+
+                                        <div class="form-field">
+                                            <label class="form-label" for="input4">Prefixed Label</label>
+                                            <div class="form-prefixPostfix">
+                                                <span class="form-prefixPostfix-label form-prefixPostfix-label--prefix" id="prefixDesc1">$</span>
+                                                <input class="form-input form-prefixPostfix-input" id="input4" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc1">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-field">
+                                            <label class="form-label" for="input12">Input Label</label>
+                                            <input class="form-input" id="input12" type="text" placeholder="Placeholder text">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="form-field">
+                                            <label class="form-label" for="input12">Input Label</label>
+                                            <input class="form-input" id="input12" type="text" placeholder="Placeholder text">
+                                        </div>
+
+                                        <div class="form-field">
+                                            <label class="form-label" for="input4">Postfixed Label</label>
+                                            <div class="form-prefixPostfix">
+                                                <input class="form-input form-prefixPostfix-input" id="input4" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc1">
+                                                <span class="form-prefixPostfix-label form-prefixPostfix-label--postfix" id="prefixDesc1">KG</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-field">
+                                            <label class="form-label" for="input12">Input Label</label>
+                                            <input class="form-input" id="input12" type="text" placeholder="Placeholder text">
+                                        </div>
+
+                                        <div class="form-field">
+                                            <label class="form-label" for="input4">Prefixed Label</label>
+                                            <div class="form-prefixPostfix">
+                                                <span class="form-prefixPostfix-label form-prefixPostfix-label--prefix" id="prefixDesc1">$</span>
+                                                <input class="form-input form-prefixPostfix-input" id="input4" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc1">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </fieldset>
+
+                        </form>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <p>This is a useful component for trying to create flexible form layouts, but should be used with caution due to flexbox support. If in doubt, you should style your form using the <a href="/utilities-grid.html">grid</a> mixins.</p>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.form-row</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Container class which is applied to the container element of a group of horizontally aligned form fields.</li>
+                                    <li>Do not align more than four form fields using this method, for usability purposes.</li>
+                                    <li>Form field widths are equally divided by <code>flexbox</code>. Be wary of browser support when using this component.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+                <tab>
+                    <tab-heading>HTML</tab-heading>
+                    <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<div class="form-body">
+
+    <div class="form-row">
+        <div class="form-field">...</div>
+        <div class="form-field">...</div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-field">...</div>
+        <div class="form-field">...</div>
+        <div class="form-field">...</div>
+    </div>
+
+</div></textarea>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <p>This is a useful component for trying to create flexible form layouts, but should be used with caution due to flexbox support. If in doubt, you should style your form using the <a href="/utilities-grid.html">grid</a> mixins.</p>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.form-row</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Container class which is applied to the container element of a group of horizontally aligned form fields.</li>
+                                    <li>Do not align more than four form fields using this method, for usability purposes.</li>
+                                    <li>Form field widths are equally divided by <code>flexbox</code>. Be wary of browser support when using this component.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+    </div>
+
+</section>
+
+        <section class="panel labPanel">
+
+        <h2>Input Fields</h2>
+
+        <div class="labPanel-docs">
+            <tabset class="labPanel-docsTabs">
+                <tab>
+                    <tab-heading>Design</tab-heading>
+                    <div class="labPanel-content">
+                        <form>
+
+                            <fieldset class="form-fieldset">
+
+                                <form-field>
+                                    <label class="form-label" for="input1">Input Label</label>
+                                    <input class="form-input" id="input1" type="text" placeholder="Placeholder text">
+                                </form-field>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="input2readonly">Readonly Input</label>
+                                    <input class="form-input" id="input2readonly" readonly type="text" value="Readonly Value">
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="input2">Disabled Input</label>
+                                    <input class="form-input" id="input2" disabled type="text" placeholder="Placeholder text" value="Disabled Value">
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="input3">Textarea Label <small>additional context</small></label>
+                                    <textarea class="form-input" id="input3" placeholder="Placeholder text" rows="3"></textarea>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="input1">Number input Label</label>
+                                    <input class="form-input" id="input1" type="number" placeholder="Number input">
+                                </div>
+
+                            </fieldset>
+
+                        </form>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <p>As we don't style elements directly, the presence of the following form classes are extremely important.</p>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.form-field</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The container class for the form field component. Must be applied to the wrapping form element of the input and its corresponding label.
+                                    </li>
+                                    <li>
+                                        Modifications for the <code>disabled</code> state are styled using the <code>:disabled</code> pseudoclass, you should always use the attribute. <strong>No modifier class is necessary</strong>.
+                                    </li>
+                                    <li>
+                                        The above is also true for the <code>readonly</code> attribute.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.form-label</code> and <code>.form-input</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Classes for the label and input elements. You must associate these with each other by using the <code>[for=""]</code> attribute in the label, which refers to the input's id.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+                <tab>
+                    <tab-heading>HTML</tab-heading>
+                    <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    'autoClearEmptyLines': true
+}">
+<form-field>
+    <label class="form-label" for="input1">Input Label</label>
+    <input class="form-input" id="input1" type="text" placeholder="Placeholder text">
+</form-field>
+
+<div class="form-field">
+    <label class="form-label" for="input2">Disabled Input</label>
+    <input class="form-input" id="input2" disabled type="text" placeholder="Placeholder text" value="Disabled Value">
+</div>
+
+<div class="form-field">
+    <label class="form-label" for="input3">Textarea Label <small>additional context</small></label>
+    &lt;textarea class="form-input" id="input3" placeholder="Placeholder text" rows="3">&lt;/textarea>
+</div></textarea>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <p>As we don't style elements directly, the presence of the following form classes are extremely important.</p>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.form-field</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The container class for the form field component. Must be applied to the wrapping form element of the input and its corresponding label.
+                                    </li>
+                                    <li>
+                                        Modifications for the <code>disabled</code> state are styled using the <code>:disabled</code> pseudoclass, you should always use the attribute. <strong>No modifier class is necessary</strong>.
+                                    </li>
+                                    <li>
+                                        The above is also true for the <code>readonly</code> attribute.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.form-label</code> and <code>.form-input</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Classes for the label and input elements. You must associate these with each other by using the <code>[for=""]</code> attribute in the label, which refers to the input's id.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+
+</section>
+
+<section class="panel labPanel">
+
+        <h2>Inputs with Pre/Postfixes</h2>
+
+        <div class="labPanel-docs">
+            <tabset class="labPanel-docsTabs">
+                <tab>
+                    <tab-heading>Design</tab-heading>
+                    <div class="labPanel-content">
+                        <form action="#" class="form">
+
+                            <fieldset class="form-fieldset">
+
+                                <div class="form-field">
+                                    <label class="form-label" for="input4">Prefixed Label <small>(Inc. tax)</small></label>
+                                    <div class="form-prefixPostfix">
+                                        <span class="form-prefixPostfix-label form-prefixPostfix-label--prefix" id="prefixDesc1">AUD $</span>
+                                        <input class="form-input form-prefixPostfix-input" id="input4" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc1">
+                                    </div>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="input5">Postfixed Label</label>
+                                    <div class="form-prefixPostfix">
+                                        <input class="form-input form-prefixPostfix-input" id="input5" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc2">
+                                        <span class="form-prefixPostfix-label form-prefixPostfix-label--postfix" id="prefixDesc2">KG</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="input7">Postfixed Button</label>
+                                    <div class="form-prefixPostfix">
+                                        <input class="form-input" id="input7" type="text" placeholder="Placeholder text">
+                                        <input class="button form-prefixPostfix-button--postfix" type="submit" value="Save">
+                                    </div>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="input8">All of the things</label>
+                                    <div class="form-prefixPostfix">
+                                        <input class="form-input form-prefixPostfix-input" id="input8" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc4">
+                                        <span class="form-prefixPostfix-label form-prefixPostfix-label--postfix" id="prefixDesc5">KG</span>
+                                        <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="Save">
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+                        </form>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.form-prefixPostfix</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The container class for the form input component, which will have a prefix OR postfix. This container lives inside the <code>form-field</code> and contains a <code>form-input</code> and the prefixed/postfixed element.
+                                    </li>
+                                    <li>
+                                        This solution also uses <code>flexbox</code> to achieve the structure. Be aware of flexbox support for your browsers.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.form-prefixPostfix-input</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The classname for the input component to which you are applying your pre/postfix.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.form-prefixPostfix-label</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The classname for the component which will be pre/postfixed, using either the <code>--postfix</code> or <code>--prefix</code> modifier.
+                                    </li>
+                                    <li>
+                                        <strong>Note:</strong> While it is possible to apply a <code>form-prefixPostfix-button--prefix</code>, it is not recommended for usability purposes. Unless you are building an RTL interface.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+                <tab>
+                    <tab-heading>HTML</tab-heading>
+                    <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    'autoClearEmptyLines': true
+}">
+<div class="form-field">
+    <label class="form-label" for="input4">Prefixed Label <small>(Inc. tax)</small></label>
+    <div class="form-prefixPostfix">
+        <span class="form-prefixPostfix-label form-prefixPostfix-label--prefix" id="prefixDesc1">AUD $</span>
+        <input class="form-input form-prefixPostfix-input" id="input4" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc1">
+    </div>
+</div>
+
+<div class="form-field">
+    <label class="form-label" for="input5">Postfixed Label</label>
+    <div class="form-prefixPostfix">
+        <input class="form-input form-prefixPostfix-input" id="input5" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc2">
+        <span class="form-prefixPostfix-label form-prefixPostfix-label--postfix" id="prefixDesc2">KG</span>
+    </div>
+</div>
+
+<div class="form-field">
+    <label class="form-label" for="input7">Postfixed Button</label>
+    <div class="form-prefixPostfix">
+        <input class="form-input" id="input7" type="text" placeholder="Placeholder text">
+        <input class="button form-prefixPostfix-button--postfix" type="submit" value="Save">
+    </div>
+</div>
+
+<div class="form-field">
+    <label class="form-label" for="input8">All of the things</label>
+    <div class="form-prefixPostfix">
+        <input class="form-input form-prefixPostfix-input" id="input8" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc4">
+        <span class="form-prefixPostfix-label form-prefixPostfix-label--postfix" id="prefixDesc5">KG</span>
+        <input class="button button--primary form-prefixPostfix-button--postfix" type="submit" value="Save">
+    </div>
+</div></textarea>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.form-prefixPostfix</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The container class for the form input component, which will have a prefix OR postfix. This container lives inside the <code>form-field</code> and contains a <code>form-input</code> and the prefixed/postfixed element.
+                                    </li>
+                                    <li>
+                                        This solution also uses <code>flexbox</code> to achieve the structure. Be aware of flexbox support for your browsers.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.form-prefixPostfix-input</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The classname for the input component to which you are applying your pre/postfix.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.form-prefixPostfix-label</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The classname for the component which will be pre/postfixed, using either the <code>--postfix</code> or <code>--prefix</code> modifier.
+                                    </li>
+                                    <li>
+                                        <strong>Note:</strong> While it is possible to apply a <code>form-prefixPostfix-button--prefix</code>, it is not recommended for usability purposes. Unless you are building an RTL interface.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+</section>
+
+<section class="panel labPanel">
+
+        <h2>Inputs with Inset Icons</h2>
+
+        <div class="labPanel-docs">
+            <tabset class="labPanel-docsTabs">
+                <tab>
+                    <tab-heading>Design</tab-heading>
+                    <div class="labPanel-content">
+                        <form action="#" class="form">
+                            <fieldset class="form-fieldset">
+
+                                <div class="form-field">
+                                    <label class="form-label" for="input9">Input with Action</label>
+                                    <input class="form-input has-action" type="search" id="input9" placeholder="Search for something&hellip;">
+                                    <button class="button button--icon button--inputAction">
+                                        <span class="u-hiddenVisually">Search</span>
+                                        <icon glyph="ic-search"></icon>
+                                    </button>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="input10">Input with informative icon</label>
+                                    <input class="form-input has-icon" type="search" id="input10" readonly>
+                                    <icon glyph="ic-lock"></icon>
+                                </div>
+
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.has-action</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The state class applied to the input which will have an inset icon as an action, meaning the button can be used to submit the value in the input. Particularly useful in search fields.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.button--inputAction</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The modifier class applied to the sibling <code>.button--icon</code> of the <code>input.has-action</code>. The button follows the same format as the <a href="/buttons.html">icon buttons</a>.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                1. <code>.has-icon</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The state class applied to the input which will have an inset icon as a non-interactive, informative icon. Simply place an <code>.icon</code> as a sibling to this element for the desired effect
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+                <tab>
+                    <tab-heading>HTML</tab-heading>
+                    <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    'autoClearEmptyLines': true
+}">
+<div class="form-field">
+    <label class="form-label" for="input9">Input with Action</label>
+    <input class="form-input has-action" type="search" id="input9" placeholder="Search for something&hellip;">
+    <button class="button button--icon button--inputAction">
+        <span class="u-hiddenVisually">Search</span>
+        <icon glyph="ic-search"></icon>
+    </button>
+</div>
+
+<div class="form-field">
+    <label class="form-label" for="input10">Input with informative icon</label>
+    <input class="form-input has-icon" type="search" id="input10" readonly>
+    <icon glyph="ic-lock"></icon>
+</div></textarea>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.has-action</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The state class applied to the input which will have an inset icon as an action, meaning the button can be used to submit the value in the input. Particularly useful in search fields.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.button--inputAction</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The modifier class applied to the sibling <code>.button--icon</code> of the <code>input.has-action</code>. The button follows the same format as the <a href="/buttons.html">icon buttons</a>.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                1. <code>.has-icon</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The state class applied to the input which will have an inset icon as a non-interactive, informative icon. Simply place an <code>.icon</code> as a sibling to this element for the desired effect
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+    </div>
+
+</section>
+
+        <section class="panel labPanel">
+
+        <h2>Selects</h2>
+
+        <div class="labPanel-docs">
+            <tabset class="labPanel-docsTabs">
+                <tab>
+                    <tab-heading>Design</tab-heading>
+                    <div class="labPanel-content">
+                        <form action="#" class="form">
+                            <fieldset class="form-fieldset">
+
+                                <div class="form-field">
+                                    <label for="select1" class="form-label">Native Select label</label>
+                                    <select class="form-select" name="select1" id="select1">
+                                        <option>Please select a value</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label for="select2" class="form-label">Native Select Multiple label</label>
+                                    <select class="form-select" multiple name="select2" id="select2">
+                                        <option>Please select a value</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                        <option value="4">Option 4</option>
+                                    </select>
+                                </div>
+
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.form-select</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The only required class for the native select styling. This is used for both <code>[multiple]</code> and single <code>select</code>.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+                <tab>
+                    <tab-heading>HTML</tab-heading>
+                    <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    'autoClearEmptyLines': true
+}">
+<div class="form-field">
+    <label for="select1" class="form-label">Native Select label</label>
+    <select class="form-select" name="select1" id="select1">
+        <option>Please select a value</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+    </select>
+</div>
+
+<div class="form-field">
+    <label for="select2" class="form-label">Native Select Multiple label</label>
+    <select class="form-select" multiple name="select2" id="select2">
+        <option>Please select a value</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+    </select>
+</div></textarea>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.form-select</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The only required class for the native select styling. This is used for both <code>[multiple]</code> and single <code>select</code>.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+
+</section>
+
+        <section class="panel labPanel">
+
+
+    <h2>Checkboxes and Radios</h2>
+
+        <div class="labPanel-docs">
+            <tabset class="labPanel-docsTabs">
+                <tab>
+                    <tab-heading>Design</tab-heading>
+                    <div class="labPanel-content">
+                        <form action="#" class="form">
+                            <fieldset class="form-fieldset">
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label class="form-label">Checkbox label</label>
+                                        <input class="form-checkbox" type="checkbox" id="check1">
+                                        <label for="check1" class="form-label">Checkbox 1 label</label>
+                                        <input class="form-checkbox" type="checkbox" id="check2">
+                                        <label for="check2" class="form-label">Checkbox 2 label</label>
+                                    </div>
+                                    <div class="form-field">
+                                        <label class="form-label">Radio label</label>
+                                        <input class="form-radio" type="radio" name="radio_example" id="radio1">
+                                        <label for="radio1" class="form-label">Radio 1 label</label>
+                                        <input class="form-radio" type="radio" name="radio_example" id="radio2">
+                                        <label for="radio2" class="form-label">Radio 2 label</label>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label class="form-label">Disabled Checkboxes</label>
+                                        <input class="form-checkbox" type="checkbox" id="check11" disabled>
+                                        <label for="check11" class="form-label">Checkbox 1 label</label>
+                                        <input class="form-checkbox" type="checkbox" id="check21" disabled checked>
+                                        <label for="check21" class="form-label">Checkbox 2 label</label>
+                                    </div>
+                                    <div class="form-field">
+                                        <label class="form-label">Disabled Radios</label>
+                                        <input class="form-radio" type="radio" name="radio_example2" id="radio11" disabled checked>
+                                        <label for="radio11" class="form-label">Radio 1 label</label>
+                                        <input class="form-radio"  type="radio" name="radio_example2" id="radio21" disabled>
+                                        <label for="radio21" class="form-label">Radio 2 label</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <p>
+                            As we use the native HTML elements for our checkbox and radio buttons, the same rules apply. Corresponding <code>.form-label</code>s must have a <code>[for=""]</code> which corresponds to the radio/checkbox's id.
+                        </p>
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.form-checkbox</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The component class for our native checkbox component.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.form-radio</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The component class for our native radio component.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+                <tab>
+                    <tab-heading>HTML</tab-heading>
+                    <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    'autoClearEmptyLines': true
+}">
+<div class="form-field">
+    <label class="form-label">Checkbox label</label>
+    <input class="form-checkbox" type="checkbox" id="check1">
+    <label for="check1" class="form-label">Checkbox 1 label</label>
+    <input class="form-checkbox" type="checkbox" id="check2">
+    <label for="check2" class="form-label">Checkbox 2 label</label>
+</div>
+<div class="form-field">
+    <label class="form-label">Radio label</label>
+    <input class="form-radio" type="radio" name="radio_example" id="radio1">
+    <label for="radio1" class="form-label">Radio 1 label</label>
+    <input class="form-radio" type="radio" name="radio_example" id="radio2">
+    <label for="radio2" class="form-label">Radio 2 label</label>
+</div></textarea>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <p>
+                            As we use the native HTML elements for our checkbox and radio buttons, the same rules apply. Corresponding <code>.form-label</code>s must have a <code>[for=""]</code> which corresponds to the radio/checkbox's id.
+                        </p>
+                        <h4 class="labPanel-title">CSS Classes:</h4>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>.form-checkbox</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The component class for our native checkbox component.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.form-radio</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        The component class for our native checkbox component.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+
+</section>
+
+        <section class="panel labPanel">
+
+        <h2>Switches</h2>
+
+        <div class="labPanel-docs">
+            <tabset class="labPanel-docsTabs">
+                <tab>
+                    <tab-heading>Design</tab-heading>
+                    <div class="labPanel-content">
+                        <form>
+
+                            <fieldset class="form-fieldset">
+                                <div class="form-field">
+    <label class="form-label">Switch</label>
+    <switch
+        aria-description="Switching this setting off will..."
+        ng-model="ptswitchCtrl.switchOne"></switch>
+</div>
+
+<div class="form-field">
+    <label class="form-label">Disabled switch</label>
+    <switch
+        aria-description="Switching this setting off will..."
+        toggle-off-label="Off"
+        toggle-on-label="On"
+        ng-disabled="ptswitchCtrl.isSwitchSixDisabled"
+        ng-model="ptswitchCtrl.switchSix">
+    </switch>
+</div>
+
+<div class="form-field">
+    <label class="form-label">Important switch</label>
+    <switch
+        is-important
+        left-description="Down for Maintenance"
+        right-description="Open"
+        aria-description="Switching this setting to off will enter your store into maintenance mode."
+        ng-model="ptswitchCtrl.switchFour">
+    </switch>
+</div>
+
+                            </fieldset>
+
+                        </form>
+                    </div>
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">Usage:</h4>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>ng-model</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        This is a required attribute, and must be a boolean value.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>toggle-off-label</code> and <code>toggle-on-label</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        Optional labels for both the on and off position of the switch.
+                                    </li>
+                                    <li>
+                                        Regardless of whether or not these are set, you should describe your switch using <code>[aria-description]</code>.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                3. <code>has-icon</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        Optional setting which enables the tick/cross indicator for the switch.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                4. <code>left-description</code> and <code>right-description</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        Displays descriptions to the left/right of the switch, visible to the user.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+                <tab>
+                    <tab-heading>JS</tab-heading>
+                    <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    'autoClearEmptyLines': true
+}"><div class="form-field">
+    <label class="form-label">Switch</label>
+    <switch
+        aria-description="Switching this setting off will..."
+        ng-model="ptswitchCtrl.switchOne"></switch>
+</div>
+
+<div class="form-field">
+    <label class="form-label">Disabled switch</label>
+    <switch
+        aria-description="Switching this setting off will..."
+        toggle-off-label="Off"
+        toggle-on-label="On"
+        ng-disabled="ptswitchCtrl.isSwitchSixDisabled"
+        ng-model="ptswitchCtrl.switchSix">
+    </switch>
+</div>
+
+<div class="form-field">
+    <label class="form-label">Important switch</label>
+    <switch
+        is-important
+        left-description="Down for Maintenance"
+        right-description="Open"
+        aria-description="Switching this setting to off will enter your store into maintenance mode."
+        ng-model="ptswitchCtrl.switchFour">
+    </switch>
+</div>
+</textarea>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h4 class="labPanel-title">Usage:</h4>
+                        <div class="labPanel-classDefs">
+                            <p>
+                                1. <code>ng-model</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        This is a required attribute, and must be a boolean value.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>toggle-off-label</code> and <code>toggle-on-label</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        Optional labels for both the on and off position of the switch.
+                                    </li>
+                                    <li>
+                                        Regardless of whether or not these are set, you should describe your switch using <code>[aria-description]</code>.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                3. <code>has-icon</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        Optional setting which enables the tick/cross indicator for the switch.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                4. <code>left-description</code> and <code>right-description</code>
+                                <ul class="u-listNoBullet">
+                                    <li>
+                                        Displays descriptions to the left/right of the switch, visible to the user.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+
+</section>
+
+        <section class="panel labPanel">
+
+    <h2>Form Actions</h2>
+    <div class="">
+        <div class="labPanel-docs">
+            <tabset class="labPanel-docsTabs">
+                <tab>
+                    <tab-heading>Design</tab-heading>
+                    <div class="labPanel-content">
+                        <form action="#" class="form">
+
+                            <fieldset class="form-fieldset">
+
+                                <div class="form-body">
+
+                                    <div class="form-field">
+                                        <label class="form-label" for="input1">Input Label</label>
+                                        <input class="form-input" id="input1" type="text" placeholder="Placeholder text">
+                                    </div>
+
+                                    <div class="form-field">
+                                        <label class="form-label" for="input2">Disabled Input</label>
+                                        <input class="form-input" id="input2" disabled type="text" placeholder="Placeholder text" value="Disabled Value">
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <a href="#">Cancel</a>
+                                        <button class="button">Reset</button>
+                                        <button class="button button--primary">Submit</button>
+                                    </div>
+
+                                </div>
+
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h5>Notes:</h5>
+                        <p>
+                            Form actions contain the default actions for the form – like Submit, Reset or Cancel, for example.
+                        </p>
+                        <p>
+                            Form actions can be displayed within a form panel, or act as the actions for the entire page by adding the <code>form-actions--fixed</code> modifier class to the <code>form-actions</code> element. It will then display as a fixed-position bar along the bottom of the page.
+                        </p>
+                        <p>
+                            Regardless of display, the element should live inside the form.
+                        </p>
+                    </div>
+                </tab>
+                <tab>
+                    <tab-heading>HTML</tab-heading>
+                    <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    'autoClearEmptyLines': true
+}"><form action="#" class="form">
+    <fieldset class="form-fieldset">
+        <legend class="form-legend">
+            Example form
+        </legend>
+        <div class="form-body">
+            <!-- Form field inside form-body -->
+            &vellip;
+            <div class="form-actions form-actions--fixed">
+                <a href="#">Cancel</a>
+                <button class="button">Reset</button>
+                <button class="button button--primary">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form></textarea>
+                    </div>
+
+                    <div class="labPanel-content">
+                        <h5>Notes:</h5>
+                        <p>
+                            Form actions contain the default actions for the form – like Submit, Reset or Cancel, for example.
+                        </p>
+                        <p>
+                            Form actions can be displayed within a form panel, or act as the actions for the entire page by adding the <code>form-actions--fixed</code> modifier class to the <code>form-actions</code> element. It will then display as a fixed-position bar along the bottom of the page.
+                        </p>
+                        <p>
+                            Regardless of display, the element should live inside the form.
+                        </p>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+
+</section>
+
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

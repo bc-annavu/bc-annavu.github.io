@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/style.html">
+                                Style
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/palette.html')}">
+                                        <a class="asideNav-link" href="/palette.html">Color</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/interface-icons.html')}">
+                                        <a class="asideNav-link" href="/interface-icons.html">Interface Icons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/illustrative-icons.html')}">
+                                        <a class="asideNav-link" href="/illustrative-icons.html">Illustrative Icons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/typography.html')}">
+                                        <a class="asideNav-link" href="/typography.html">Typography</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Typography</h1>
+
+                     <section class="panel labPanel">
+            <h3 class="labPanel-heading">Headings</h3>
+            <div class="panel-body">
+                <h1>Heading One: Source Sans Pro 300 &ndash; 30px</h1>
+                <h2>Heading Two: Source Sans Pro 600 &ndash; 24px</h2>
+                <h3>Heading Three: Source Sans Pro 600 &ndash; 20px</h3>
+                <h4>Heading Four: Source Sans Pro 600 &ndash; 18px</h4>
+                <h5>Heading Five: Source Sans Pro 600 &ndash; 16px</h5>
+            </div>
+        </section>
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Body Copy</h3>
+            <div class="panel-body">
+                <h1>Heading One: Source Sans Pro 300 &ndash; 30px</h1>
+                <h2>Heading Two: Source Sans Pro 600 &ndash; 24px</h2>
+                <h3>Heading Three: Source Sans Pro 600 &ndash; 20px</h3>
+                <h4>Heading Four: Source Sans Pro 600 &ndash; 18px</h4>
+                <h5>Heading Five: Source Sans Pro 600 &ndash; 16px</h5>
+            </div>
+        </section>
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Blockquote</h3>
+            <div class="panel-body">
+                <blockquote>
+                    I do not fear computers. I fear the lack of them. Maecenas faucibus
+                    mollis interdum. Aenean lacinia bibendum nulla sed consectetur.
+                    <cite>Isaac Asimov</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

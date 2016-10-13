@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Ordered List</h1>
+
+             
+        <section class="panel labPanel">
+            <div class="panel-body">
+            <h5>Example</h5>
+                <ol class="orderedList">
+                    <li class="orderedList-item"><a href="#">Sign up</a> to integrate Braintree payments with your store.</li>
+                    <li class="orderedList-item">To integrate Braintree payments with your store.</li>
+                    <li class="orderedList-item">To integrate Braintree payments with your store.</li>
+                    <li class="orderedList-item">Navigate to <em>[Your Username] > My user</em></li>
+                    <li class="orderedList-item">To integrate Braintree payments with your store.</li>
+                    <li class="orderedList-item">Cut and paste <strong>Merchant ID </strong>with <strong>Public Key</strong>, your store and <strong>Private Key</strong>.</li>
+                </ol>
+
+            <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'sass',
+    'autoClearEmptyLines': true
+}">
+// =============================================================================
+// ORDERED-LIST (Tools)
+// =============================================================================
+
+
+// Bigcommerce Mixins
+// -----------------------------------------------------------------------------
+
+@mixin orderedList($style-type) {
+    counter-reset: item-counter;
+    list-style-type: $style-type;
+}
+
+@mixin orderedListItem($border-bot, $font-size, $padding) {
+    border-bottom: $border-bot;
+    font-size: $font-size;
+    list-style-type: none;
+    padding: $padding;
+}
+
+@mixin orderedListItemCounter($color, $font-family, $font-size, $font-weight, $margin) {
+    color: $color;
+    content: counter(item-counter);
+    counter-increment: item-counter;
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    margin: $margin;
+}
+</textarea>
+            </div>
+
+            <div class="labPanel-content">
+                <h5>Notes:</h5>
+                <p>
+                    To apply standard styles as above, add the <code>orderList</code> class to all <code>ol</code> elements and the <code>orderedList-item</code> class to all their child <code>li</code> elements. The mixins described on the left can be used for style modification as appropriate.
+                </p>
+            </div>
+            </div>
+
+        </section>
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

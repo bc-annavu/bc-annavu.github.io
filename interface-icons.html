@@ -1,0 +1,4073 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/style.html">
+                                Style
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/palette.html')}">
+                                        <a class="asideNav-link" href="/palette.html">Color</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/interface-icons.html')}">
+                                        <a class="asideNav-link" href="/interface-icons.html">Interface Icons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/illustrative-icons.html')}">
+                                        <a class="asideNav-link" href="/illustrative-icons.html">Illustrative Icons</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/typography.html')}">
+                                        <a class="asideNav-link" href="/typography.html">Typography</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Interface Icons</h1>
+
+             
+        <p>
+            The BigCommerce control panel icon set is based on the open source <a href="https://github.com/google/material-design-icons">Google Material Design icon set</a>. It is imported via Bower, and the task <code>gulp icons</code> processes these into our folder structure for distribution and better naming.
+        </p>
+        <p>
+            With a custom Angular directive we can call the icons as inline elements, which will transclude the raw SVG into the DOM. This allows us to manipulate the SVG with CSS, giving more flexibility than traditional icon fonts.
+        </p>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Standard icons</h3>
+
+                <div class="labPanel-row">
+                    <div class="labPanel-column--thirds">
+                        <div class="labBlock">
+                            <div class="labBlock-preview">
+                                <icon glyph="ic-clear"></icon>
+                            </div>
+                            <pre class="labBlock-example u-bgGreysLightest">&lt;icon glyph="ic-clear"&gt;&lt;/icon&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div class="labPanel-column--thirds">
+                        <div class="labBlock">
+                            <div class="labBlock-preview">
+                                <icon glyph="ic-local-grocery-store"></icon>
+                            </div>
+                            <pre class="labBlock-example u-bgGreysLightest">&lt;icon glyph="ic-local-grocery-store"&gt;&lt;/icon&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div class="labPanel-column--thirds">
+                        <div class="labBlock">
+                            <div class="labBlock-preview">
+                                <icon glyph="ic-home"></icon>
+                            </div>
+                            <pre class="labBlock-example u-bgGreysLightest">&lt;icon glyph="ic-home"&gt;&lt;/icon&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <alert type="'info'">
+                    SVG icons can be styled by setting stroke and fill properties via CSS. If you require customised versions of basic icons, please clear with the design team <strong><em>first</em></strong>.
+                </alert>
+        </section>
+
+        <section class="panel labPanel">
+            <div class="panel-body">
+                <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<icon glyph="ic-clear"></icon>
+
+<icon glyph="ic-local-grocery-store"></icon>
+
+<icon glyph="ic-home"></icon></textarea>
+                </div>
+                <div class="labPanel-content">
+                    <h5>Notes:</h5>
+                    <p>
+                        The <code>glyph</code> attribute specifies which icon you would
+                        like, by name, from the list below.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="panel labPanel">
+            <div class="panel-body">
+                <p>A non-curated list of <a href="http://google.github.io/material-design-icons/">Google Material Design Icons</a> below (we&rsquo;ll do better than this soon):</p>
+                <icons-list></icons-list>
+
+                <script>
+                    var icons = [];
+                    icons.push({
+                        name: 'ic-3d-rotation',
+                        src: 'ic-3d-rotation.svg'
+                    });
+                    icons.push({
+                        name: 'ic-ac-unit',
+                        src: 'ic-ac-unit.svg'
+                    });
+                    icons.push({
+                        name: 'ic-access-alarm',
+                        src: 'ic-access-alarm.svg'
+                    });
+                    icons.push({
+                        name: 'ic-access-alarms',
+                        src: 'ic-access-alarms.svg'
+                    });
+                    icons.push({
+                        name: 'ic-access-time',
+                        src: 'ic-access-time.svg'
+                    });
+                    icons.push({
+                        name: 'ic-accessibility',
+                        src: 'ic-accessibility.svg'
+                    });
+                    icons.push({
+                        name: 'ic-accessible',
+                        src: 'ic-accessible.svg'
+                    });
+                    icons.push({
+                        name: 'ic-account-balance-wallet',
+                        src: 'ic-account-balance-wallet.svg'
+                    });
+                    icons.push({
+                        name: 'ic-account-balance',
+                        src: 'ic-account-balance.svg'
+                    });
+                    icons.push({
+                        name: 'ic-account-box',
+                        src: 'ic-account-box.svg'
+                    });
+                    icons.push({
+                        name: 'ic-account-child',
+                        src: 'ic-account-child.svg'
+                    });
+                    icons.push({
+                        name: 'ic-account-circle',
+                        src: 'ic-account-circle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-adb',
+                        src: 'ic-adb.svg'
+                    });
+                    icons.push({
+                        name: 'ic-add-a-photo',
+                        src: 'ic-add-a-photo.svg'
+                    });
+                    icons.push({
+                        name: 'ic-add-alarm',
+                        src: 'ic-add-alarm.svg'
+                    });
+                    icons.push({
+                        name: 'ic-add-alert',
+                        src: 'ic-add-alert.svg'
+                    });
+                    icons.push({
+                        name: 'ic-add-box',
+                        src: 'ic-add-box.svg'
+                    });
+                    icons.push({
+                        name: 'ic-add-circle-outline',
+                        src: 'ic-add-circle-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-add-circle',
+                        src: 'ic-add-circle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-add-location',
+                        src: 'ic-add-location.svg'
+                    });
+                    icons.push({
+                        name: 'ic-add-shopping-cart',
+                        src: 'ic-add-shopping-cart.svg'
+                    });
+                    icons.push({
+                        name: 'ic-add-to-photos',
+                        src: 'ic-add-to-photos.svg'
+                    });
+                    icons.push({
+                        name: 'ic-add-to-queue',
+                        src: 'ic-add-to-queue.svg'
+                    });
+                    icons.push({
+                        name: 'ic-add',
+                        src: 'ic-add.svg'
+                    });
+                    icons.push({
+                        name: 'ic-adjust',
+                        src: 'ic-adjust.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airline-seat-flat-angled',
+                        src: 'ic-airline-seat-flat-angled.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airline-seat-flat',
+                        src: 'ic-airline-seat-flat.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airline-seat-individual-suite',
+                        src: 'ic-airline-seat-individual-suite.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airline-seat-legroom-extra',
+                        src: 'ic-airline-seat-legroom-extra.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airline-seat-legroom-normal',
+                        src: 'ic-airline-seat-legroom-normal.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airline-seat-legroom-reduced',
+                        src: 'ic-airline-seat-legroom-reduced.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airline-seat-recline-extra',
+                        src: 'ic-airline-seat-recline-extra.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airline-seat-recline-normal',
+                        src: 'ic-airline-seat-recline-normal.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airplanemode-active',
+                        src: 'ic-airplanemode-active.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airplanemode-inactive',
+                        src: 'ic-airplanemode-inactive.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airplanemode-off',
+                        src: 'ic-airplanemode-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airplanemode-on',
+                        src: 'ic-airplanemode-on.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airplay',
+                        src: 'ic-airplay.svg'
+                    });
+                    icons.push({
+                        name: 'ic-airport-shuttle',
+                        src: 'ic-airport-shuttle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-alarm-add',
+                        src: 'ic-alarm-add.svg'
+                    });
+                    icons.push({
+                        name: 'ic-alarm-off',
+                        src: 'ic-alarm-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-alarm-on',
+                        src: 'ic-alarm-on.svg'
+                    });
+                    icons.push({
+                        name: 'ic-alarm',
+                        src: 'ic-alarm.svg'
+                    });
+                    icons.push({
+                        name: 'ic-album',
+                        src: 'ic-album.svg'
+                    });
+                    icons.push({
+                        name: 'ic-all-inclusive',
+                        src: 'ic-all-inclusive.svg'
+                    });
+                    icons.push({
+                        name: 'ic-all-out',
+                        src: 'ic-all-out.svg'
+                    });
+                    icons.push({
+                        name: 'ic-android',
+                        src: 'ic-android.svg'
+                    });
+                    icons.push({
+                        name: 'ic-announcement',
+                        src: 'ic-announcement.svg'
+                    });
+                    icons.push({
+                        name: 'ic-apps',
+                        src: 'ic-apps.svg'
+                    });
+                    icons.push({
+                        name: 'ic-archive',
+                        src: 'ic-archive.svg'
+                    });
+                    icons.push({
+                        name: 'ic-arrow-back',
+                        src: 'ic-arrow-back.svg'
+                    });
+                    icons.push({
+                        name: 'ic-arrow-downward',
+                        src: 'ic-arrow-downward.svg'
+                    });
+                    icons.push({
+                        name: 'ic-arrow-drop-down-circle',
+                        src: 'ic-arrow-drop-down-circle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-arrow-drop-down',
+                        src: 'ic-arrow-drop-down.svg'
+                    });
+                    icons.push({
+                        name: 'ic-arrow-drop-up',
+                        src: 'ic-arrow-drop-up.svg'
+                    });
+                    icons.push({
+                        name: 'ic-arrow-forward',
+                        src: 'ic-arrow-forward.svg'
+                    });
+                    icons.push({
+                        name: 'ic-arrow-upward',
+                        src: 'ic-arrow-upward.svg'
+                    });
+                    icons.push({
+                        name: 'ic-art-track',
+                        src: 'ic-art-track.svg'
+                    });
+                    icons.push({
+                        name: 'ic-aspect-ratio',
+                        src: 'ic-aspect-ratio.svg'
+                    });
+                    icons.push({
+                        name: 'ic-assessment',
+                        src: 'ic-assessment.svg'
+                    });
+                    icons.push({
+                        name: 'ic-assignment-ind',
+                        src: 'ic-assignment-ind.svg'
+                    });
+                    icons.push({
+                        name: 'ic-assignment-late',
+                        src: 'ic-assignment-late.svg'
+                    });
+                    icons.push({
+                        name: 'ic-assignment-return',
+                        src: 'ic-assignment-return.svg'
+                    });
+                    icons.push({
+                        name: 'ic-assignment-returned',
+                        src: 'ic-assignment-returned.svg'
+                    });
+                    icons.push({
+                        name: 'ic-assignment-turned-in',
+                        src: 'ic-assignment-turned-in.svg'
+                    });
+                    icons.push({
+                        name: 'ic-assignment',
+                        src: 'ic-assignment.svg'
+                    });
+                    icons.push({
+                        name: 'ic-assistant-photo',
+                        src: 'ic-assistant-photo.svg'
+                    });
+                    icons.push({
+                        name: 'ic-assistant',
+                        src: 'ic-assistant.svg'
+                    });
+                    icons.push({
+                        name: 'ic-attach-file',
+                        src: 'ic-attach-file.svg'
+                    });
+                    icons.push({
+                        name: 'ic-attach-money',
+                        src: 'ic-attach-money.svg'
+                    });
+                    icons.push({
+                        name: 'ic-attachment',
+                        src: 'ic-attachment.svg'
+                    });
+                    icons.push({
+                        name: 'ic-audiotrack',
+                        src: 'ic-audiotrack.svg'
+                    });
+                    icons.push({
+                        name: 'ic-autorenew',
+                        src: 'ic-autorenew.svg'
+                    });
+                    icons.push({
+                        name: 'ic-av-timer',
+                        src: 'ic-av-timer.svg'
+                    });
+                    icons.push({
+                        name: 'ic-backspace',
+                        src: 'ic-backspace.svg'
+                    });
+                    icons.push({
+                        name: 'ic-backup',
+                        src: 'ic-backup.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-20',
+                        src: 'ic-battery-20.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-30',
+                        src: 'ic-battery-30.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-50',
+                        src: 'ic-battery-50.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-60',
+                        src: 'ic-battery-60.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-80',
+                        src: 'ic-battery-80.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-90',
+                        src: 'ic-battery-90.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-alert',
+                        src: 'ic-battery-alert.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-charging-20',
+                        src: 'ic-battery-charging-20.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-charging-30',
+                        src: 'ic-battery-charging-30.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-charging-50',
+                        src: 'ic-battery-charging-50.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-charging-60',
+                        src: 'ic-battery-charging-60.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-charging-80',
+                        src: 'ic-battery-charging-80.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-charging-90',
+                        src: 'ic-battery-charging-90.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-charging-full',
+                        src: 'ic-battery-charging-full.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-full',
+                        src: 'ic-battery-full.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-std',
+                        src: 'ic-battery-std.svg'
+                    });
+                    icons.push({
+                        name: 'ic-battery-unknown',
+                        src: 'ic-battery-unknown.svg'
+                    });
+                    icons.push({
+                        name: 'ic-beach-access',
+                        src: 'ic-beach-access.svg'
+                    });
+                    icons.push({
+                        name: 'ic-beenhere',
+                        src: 'ic-beenhere.svg'
+                    });
+                    icons.push({
+                        name: 'ic-block',
+                        src: 'ic-block.svg'
+                    });
+                    icons.push({
+                        name: 'ic-bluetooth-audio',
+                        src: 'ic-bluetooth-audio.svg'
+                    });
+                    icons.push({
+                        name: 'ic-bluetooth-connected',
+                        src: 'ic-bluetooth-connected.svg'
+                    });
+                    icons.push({
+                        name: 'ic-bluetooth-disabled',
+                        src: 'ic-bluetooth-disabled.svg'
+                    });
+                    icons.push({
+                        name: 'ic-bluetooth-searching',
+                        src: 'ic-bluetooth-searching.svg'
+                    });
+                    icons.push({
+                        name: 'ic-bluetooth',
+                        src: 'ic-bluetooth.svg'
+                    });
+                    icons.push({
+                        name: 'ic-blur-circular',
+                        src: 'ic-blur-circular.svg'
+                    });
+                    icons.push({
+                        name: 'ic-blur-linear',
+                        src: 'ic-blur-linear.svg'
+                    });
+                    icons.push({
+                        name: 'ic-blur-off',
+                        src: 'ic-blur-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-blur-on',
+                        src: 'ic-blur-on.svg'
+                    });
+                    icons.push({
+                        name: 'ic-book',
+                        src: 'ic-book.svg'
+                    });
+                    icons.push({
+                        name: 'ic-bookmark-border',
+                        src: 'ic-bookmark-border.svg'
+                    });
+                    icons.push({
+                        name: 'ic-bookmark-outline',
+                        src: 'ic-bookmark-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-bookmark',
+                        src: 'ic-bookmark.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-all',
+                        src: 'ic-border-all.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-bottom',
+                        src: 'ic-border-bottom.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-clear',
+                        src: 'ic-border-clear.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-color',
+                        src: 'ic-border-color.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-horizontal',
+                        src: 'ic-border-horizontal.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-inner',
+                        src: 'ic-border-inner.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-left',
+                        src: 'ic-border-left.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-outer',
+                        src: 'ic-border-outer.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-right',
+                        src: 'ic-border-right.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-style',
+                        src: 'ic-border-style.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-top',
+                        src: 'ic-border-top.svg'
+                    });
+                    icons.push({
+                        name: 'ic-border-vertical',
+                        src: 'ic-border-vertical.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brightness-1',
+                        src: 'ic-brightness-1.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brightness-2',
+                        src: 'ic-brightness-2.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brightness-3',
+                        src: 'ic-brightness-3.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brightness-4',
+                        src: 'ic-brightness-4.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brightness-5',
+                        src: 'ic-brightness-5.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brightness-6',
+                        src: 'ic-brightness-6.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brightness-7',
+                        src: 'ic-brightness-7.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brightness-auto',
+                        src: 'ic-brightness-auto.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brightness-high',
+                        src: 'ic-brightness-high.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brightness-low',
+                        src: 'ic-brightness-low.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brightness-medium',
+                        src: 'ic-brightness-medium.svg'
+                    });
+                    icons.push({
+                        name: 'ic-broken-image',
+                        src: 'ic-broken-image.svg'
+                    });
+                    icons.push({
+                        name: 'ic-brush',
+                        src: 'ic-brush.svg'
+                    });
+                    icons.push({
+                        name: 'ic-bug-report',
+                        src: 'ic-bug-report.svg'
+                    });
+                    icons.push({
+                        name: 'ic-build',
+                        src: 'ic-build.svg'
+                    });
+                    icons.push({
+                        name: 'ic-business-center',
+                        src: 'ic-business-center.svg'
+                    });
+                    icons.push({
+                        name: 'ic-business',
+                        src: 'ic-business.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cached',
+                        src: 'ic-cached.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cake',
+                        src: 'ic-cake.svg'
+                    });
+                    icons.push({
+                        name: 'ic-call-end',
+                        src: 'ic-call-end.svg'
+                    });
+                    icons.push({
+                        name: 'ic-call-made',
+                        src: 'ic-call-made.svg'
+                    });
+                    icons.push({
+                        name: 'ic-call-merge',
+                        src: 'ic-call-merge.svg'
+                    });
+                    icons.push({
+                        name: 'ic-call-missed-outgoing',
+                        src: 'ic-call-missed-outgoing.svg'
+                    });
+                    icons.push({
+                        name: 'ic-call-missed',
+                        src: 'ic-call-missed.svg'
+                    });
+                    icons.push({
+                        name: 'ic-call-received',
+                        src: 'ic-call-received.svg'
+                    });
+                    icons.push({
+                        name: 'ic-call-split',
+                        src: 'ic-call-split.svg'
+                    });
+                    icons.push({
+                        name: 'ic-call',
+                        src: 'ic-call.svg'
+                    });
+                    icons.push({
+                        name: 'ic-camera-alt',
+                        src: 'ic-camera-alt.svg'
+                    });
+                    icons.push({
+                        name: 'ic-camera-enhance',
+                        src: 'ic-camera-enhance.svg'
+                    });
+                    icons.push({
+                        name: 'ic-camera-front',
+                        src: 'ic-camera-front.svg'
+                    });
+                    icons.push({
+                        name: 'ic-camera-rear',
+                        src: 'ic-camera-rear.svg'
+                    });
+                    icons.push({
+                        name: 'ic-camera-roll',
+                        src: 'ic-camera-roll.svg'
+                    });
+                    icons.push({
+                        name: 'ic-camera',
+                        src: 'ic-camera.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cancel',
+                        src: 'ic-cancel.svg'
+                    });
+                    icons.push({
+                        name: 'ic-card-giftcard',
+                        src: 'ic-card-giftcard.svg'
+                    });
+                    icons.push({
+                        name: 'ic-card-membership',
+                        src: 'ic-card-membership.svg'
+                    });
+                    icons.push({
+                        name: 'ic-card-travel',
+                        src: 'ic-card-travel.svg'
+                    });
+                    icons.push({
+                        name: 'ic-casino',
+                        src: 'ic-casino.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cast-connected',
+                        src: 'ic-cast-connected.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cast',
+                        src: 'ic-cast.svg'
+                    });
+                    icons.push({
+                        name: 'ic-center-focus-strong',
+                        src: 'ic-center-focus-strong.svg'
+                    });
+                    icons.push({
+                        name: 'ic-center-focus-weak',
+                        src: 'ic-center-focus-weak.svg'
+                    });
+                    icons.push({
+                        name: 'ic-change-history',
+                        src: 'ic-change-history.svg'
+                    });
+                    icons.push({
+                        name: 'ic-chat-bubble-outline',
+                        src: 'ic-chat-bubble-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-chat-bubble',
+                        src: 'ic-chat-bubble.svg'
+                    });
+                    icons.push({
+                        name: 'ic-chat',
+                        src: 'ic-chat.svg'
+                    });
+                    icons.push({
+                        name: 'ic-check-box-outline-blank',
+                        src: 'ic-check-box-outline-blank.svg'
+                    });
+                    icons.push({
+                        name: 'ic-check-box',
+                        src: 'ic-check-box.svg'
+                    });
+                    icons.push({
+                        name: 'ic-check-circle',
+                        src: 'ic-check-circle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-check',
+                        src: 'ic-check.svg'
+                    });
+                    icons.push({
+                        name: 'ic-chevron-left',
+                        src: 'ic-chevron-left.svg'
+                    });
+                    icons.push({
+                        name: 'ic-chevron-right',
+                        src: 'ic-chevron-right.svg'
+                    });
+                    icons.push({
+                        name: 'ic-child-care',
+                        src: 'ic-child-care.svg'
+                    });
+                    icons.push({
+                        name: 'ic-child-friendly',
+                        src: 'ic-child-friendly.svg'
+                    });
+                    icons.push({
+                        name: 'ic-chrome-reader-mode',
+                        src: 'ic-chrome-reader-mode.svg'
+                    });
+                    icons.push({
+                        name: 'ic-class',
+                        src: 'ic-class.svg'
+                    });
+                    icons.push({
+                        name: 'ic-clear-all',
+                        src: 'ic-clear-all.svg'
+                    });
+                    icons.push({
+                        name: 'ic-clear',
+                        src: 'ic-clear.svg'
+                    });
+                    icons.push({
+                        name: 'ic-close',
+                        src: 'ic-close.svg'
+                    });
+                    icons.push({
+                        name: 'ic-closed-caption',
+                        src: 'ic-closed-caption.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cloud-circle',
+                        src: 'ic-cloud-circle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cloud-done',
+                        src: 'ic-cloud-done.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cloud-download',
+                        src: 'ic-cloud-download.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cloud-off',
+                        src: 'ic-cloud-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cloud-queue',
+                        src: 'ic-cloud-queue.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cloud-upload',
+                        src: 'ic-cloud-upload.svg'
+                    });
+                    icons.push({
+                        name: 'ic-cloud',
+                        src: 'ic-cloud.svg'
+                    });
+                    icons.push({
+                        name: 'ic-code',
+                        src: 'ic-code.svg'
+                    });
+                    icons.push({
+                        name: 'ic-collections-bookmark',
+                        src: 'ic-collections-bookmark.svg'
+                    });
+                    icons.push({
+                        name: 'ic-collections',
+                        src: 'ic-collections.svg'
+                    });
+                    icons.push({
+                        name: 'ic-color-lens',
+                        src: 'ic-color-lens.svg'
+                    });
+                    icons.push({
+                        name: 'ic-colorize',
+                        src: 'ic-colorize.svg'
+                    });
+                    icons.push({
+                        name: 'ic-comment',
+                        src: 'ic-comment.svg'
+                    });
+                    icons.push({
+                        name: 'ic-compare-arrows',
+                        src: 'ic-compare-arrows.svg'
+                    });
+                    icons.push({
+                        name: 'ic-compare',
+                        src: 'ic-compare.svg'
+                    });
+                    icons.push({
+                        name: 'ic-computer',
+                        src: 'ic-computer.svg'
+                    });
+                    icons.push({
+                        name: 'ic-confirmation-number',
+                        src: 'ic-confirmation-number.svg'
+                    });
+                    icons.push({
+                        name: 'ic-contact-mail',
+                        src: 'ic-contact-mail.svg'
+                    });
+                    icons.push({
+                        name: 'ic-contact-phone',
+                        src: 'ic-contact-phone.svg'
+                    });
+                    icons.push({
+                        name: 'ic-contacts',
+                        src: 'ic-contacts.svg'
+                    });
+                    icons.push({
+                        name: 'ic-content-copy',
+                        src: 'ic-content-copy.svg'
+                    });
+                    icons.push({
+                        name: 'ic-content-cut',
+                        src: 'ic-content-cut.svg'
+                    });
+                    icons.push({
+                        name: 'ic-content-paste',
+                        src: 'ic-content-paste.svg'
+                    });
+                    icons.push({
+                        name: 'ic-control-point-duplicate',
+                        src: 'ic-control-point-duplicate.svg'
+                    });
+                    icons.push({
+                        name: 'ic-control-point',
+                        src: 'ic-control-point.svg'
+                    });
+                    icons.push({
+                        name: 'ic-copyright',
+                        src: 'ic-copyright.svg'
+                    });
+                    icons.push({
+                        name: 'ic-create-new-folder',
+                        src: 'ic-create-new-folder.svg'
+                    });
+                    icons.push({
+                        name: 'ic-create',
+                        src: 'ic-create.svg'
+                    });
+                    icons.push({
+                        name: 'ic-credit-card',
+                        src: 'ic-credit-card.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop-16-9',
+                        src: 'ic-crop-16-9.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop-3-2',
+                        src: 'ic-crop-3-2.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop-5-4',
+                        src: 'ic-crop-5-4.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop-7-5',
+                        src: 'ic-crop-7-5.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop-din',
+                        src: 'ic-crop-din.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop-free',
+                        src: 'ic-crop-free.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop-landscape',
+                        src: 'ic-crop-landscape.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop-original',
+                        src: 'ic-crop-original.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop-portrait',
+                        src: 'ic-crop-portrait.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop-rotate',
+                        src: 'ic-crop-rotate.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop-square',
+                        src: 'ic-crop-square.svg'
+                    });
+                    icons.push({
+                        name: 'ic-crop',
+                        src: 'ic-crop.svg'
+                    });
+                    icons.push({
+                        name: 'ic-dashboard',
+                        src: 'ic-dashboard.svg'
+                    });
+                    icons.push({
+                        name: 'ic-data-usage',
+                        src: 'ic-data-usage.svg'
+                    });
+                    icons.push({
+                        name: 'ic-date-range',
+                        src: 'ic-date-range.svg'
+                    });
+                    icons.push({
+                        name: 'ic-dehaze',
+                        src: 'ic-dehaze.svg'
+                    });
+                    icons.push({
+                        name: 'ic-delete',
+                        src: 'ic-delete.svg'
+                    });
+                    icons.push({
+                        name: 'ic-description',
+                        src: 'ic-description.svg'
+                    });
+                    icons.push({
+                        name: 'ic-desktop-mac',
+                        src: 'ic-desktop-mac.svg'
+                    });
+                    icons.push({
+                        name: 'ic-desktop-windows',
+                        src: 'ic-desktop-windows.svg'
+                    });
+                    icons.push({
+                        name: 'ic-details',
+                        src: 'ic-details.svg'
+                    });
+                    icons.push({
+                        name: 'ic-developer-board',
+                        src: 'ic-developer-board.svg'
+                    });
+                    icons.push({
+                        name: 'ic-developer-mode',
+                        src: 'ic-developer-mode.svg'
+                    });
+                    icons.push({
+                        name: 'ic-device-hub',
+                        src: 'ic-device-hub.svg'
+                    });
+                    icons.push({
+                        name: 'ic-devices-other',
+                        src: 'ic-devices-other.svg'
+                    });
+                    icons.push({
+                        name: 'ic-devices',
+                        src: 'ic-devices.svg'
+                    });
+                    icons.push({
+                        name: 'ic-dialer-sip',
+                        src: 'ic-dialer-sip.svg'
+                    });
+                    icons.push({
+                        name: 'ic-dialpad',
+                        src: 'ic-dialpad.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions-bike',
+                        src: 'ic-directions-bike.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions-boat',
+                        src: 'ic-directions-boat.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions-bus',
+                        src: 'ic-directions-bus.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions-car',
+                        src: 'ic-directions-car.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions-ferry',
+                        src: 'ic-directions-ferry.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions-railway',
+                        src: 'ic-directions-railway.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions-run',
+                        src: 'ic-directions-run.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions-subway',
+                        src: 'ic-directions-subway.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions-train',
+                        src: 'ic-directions-train.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions-transit',
+                        src: 'ic-directions-transit.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions-walk',
+                        src: 'ic-directions-walk.svg'
+                    });
+                    icons.push({
+                        name: 'ic-directions',
+                        src: 'ic-directions.svg'
+                    });
+                    icons.push({
+                        name: 'ic-disc-full',
+                        src: 'ic-disc-full.svg'
+                    });
+                    icons.push({
+                        name: 'ic-dnd-forwardslash',
+                        src: 'ic-dnd-forwardslash.svg'
+                    });
+                    icons.push({
+                        name: 'ic-dnd-on',
+                        src: 'ic-dnd-on.svg'
+                    });
+                    icons.push({
+                        name: 'ic-dns',
+                        src: 'ic-dns.svg'
+                    });
+                    icons.push({
+                        name: 'ic-do-not-disturb-alt',
+                        src: 'ic-do-not-disturb-alt.svg'
+                    });
+                    icons.push({
+                        name: 'ic-do-not-disturb',
+                        src: 'ic-do-not-disturb.svg'
+                    });
+                    icons.push({
+                        name: 'ic-dock',
+                        src: 'ic-dock.svg'
+                    });
+                    icons.push({
+                        name: 'ic-domain',
+                        src: 'ic-domain.svg'
+                    });
+                    icons.push({
+                        name: 'ic-done-all',
+                        src: 'ic-done-all.svg'
+                    });
+                    icons.push({
+                        name: 'ic-done',
+                        src: 'ic-done.svg'
+                    });
+                    icons.push({
+                        name: 'ic-donut-large',
+                        src: 'ic-donut-large.svg'
+                    });
+                    icons.push({
+                        name: 'ic-donut-small',
+                        src: 'ic-donut-small.svg'
+                    });
+                    icons.push({
+                        name: 'ic-drafts',
+                        src: 'ic-drafts.svg'
+                    });
+                    icons.push({
+                        name: 'ic-drag-handle',
+                        src: 'ic-drag-handle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-drive-eta',
+                        src: 'ic-drive-eta.svg'
+                    });
+                    icons.push({
+                        name: 'ic-dvr',
+                        src: 'ic-dvr.svg'
+                    });
+                    icons.push({
+                        name: 'ic-edit-location',
+                        src: 'ic-edit-location.svg'
+                    });
+                    icons.push({
+                        name: 'ic-edit',
+                        src: 'ic-edit.svg'
+                    });
+                    icons.push({
+                        name: 'ic-eject',
+                        src: 'ic-eject.svg'
+                    });
+                    icons.push({
+                        name: 'ic-email',
+                        src: 'ic-email.svg'
+                    });
+                    icons.push({
+                        name: 'ic-enhanced-encryption',
+                        src: 'ic-enhanced-encryption.svg'
+                    });
+                    icons.push({
+                        name: 'ic-equalizer',
+                        src: 'ic-equalizer.svg'
+                    });
+                    icons.push({
+                        name: 'ic-error-outline',
+                        src: 'ic-error-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-error',
+                        src: 'ic-error.svg'
+                    });
+                    icons.push({
+                        name: 'ic-event-available',
+                        src: 'ic-event-available.svg'
+                    });
+                    icons.push({
+                        name: 'ic-event-busy',
+                        src: 'ic-event-busy.svg'
+                    });
+                    icons.push({
+                        name: 'ic-event-note',
+                        src: 'ic-event-note.svg'
+                    });
+                    icons.push({
+                        name: 'ic-event-seat',
+                        src: 'ic-event-seat.svg'
+                    });
+                    icons.push({
+                        name: 'ic-event',
+                        src: 'ic-event.svg'
+                    });
+                    icons.push({
+                        name: 'ic-exit-to-app',
+                        src: 'ic-exit-to-app.svg'
+                    });
+                    icons.push({
+                        name: 'ic-expand-less',
+                        src: 'ic-expand-less.svg'
+                    });
+                    icons.push({
+                        name: 'ic-expand-more',
+                        src: 'ic-expand-more.svg'
+                    });
+                    icons.push({
+                        name: 'ic-explicit',
+                        src: 'ic-explicit.svg'
+                    });
+                    icons.push({
+                        name: 'ic-explore',
+                        src: 'ic-explore.svg'
+                    });
+                    icons.push({
+                        name: 'ic-exposure-minus-1',
+                        src: 'ic-exposure-minus-1.svg'
+                    });
+                    icons.push({
+                        name: 'ic-exposure-minus-2',
+                        src: 'ic-exposure-minus-2.svg'
+                    });
+                    icons.push({
+                        name: 'ic-exposure-neg-1',
+                        src: 'ic-exposure-neg-1.svg'
+                    });
+                    icons.push({
+                        name: 'ic-exposure-neg-2',
+                        src: 'ic-exposure-neg-2.svg'
+                    });
+                    icons.push({
+                        name: 'ic-exposure-plus-1',
+                        src: 'ic-exposure-plus-1.svg'
+                    });
+                    icons.push({
+                        name: 'ic-exposure-plus-2',
+                        src: 'ic-exposure-plus-2.svg'
+                    });
+                    icons.push({
+                        name: 'ic-exposure-zero',
+                        src: 'ic-exposure-zero.svg'
+                    });
+                    icons.push({
+                        name: 'ic-exposure',
+                        src: 'ic-exposure.svg'
+                    });
+                    icons.push({
+                        name: 'ic-extension',
+                        src: 'ic-extension.svg'
+                    });
+                    icons.push({
+                        name: 'ic-face',
+                        src: 'ic-face.svg'
+                    });
+                    icons.push({
+                        name: 'ic-fast-forward',
+                        src: 'ic-fast-forward.svg'
+                    });
+                    icons.push({
+                        name: 'ic-fast-rewind',
+                        src: 'ic-fast-rewind.svg'
+                    });
+                    icons.push({
+                        name: 'ic-favorite-border',
+                        src: 'ic-favorite-border.svg'
+                    });
+                    icons.push({
+                        name: 'ic-favorite-outline',
+                        src: 'ic-favorite-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-favorite',
+                        src: 'ic-favorite.svg'
+                    });
+                    icons.push({
+                        name: 'ic-feedback',
+                        src: 'ic-feedback.svg'
+                    });
+                    icons.push({
+                        name: 'ic-fiber-dvr',
+                        src: 'ic-fiber-dvr.svg'
+                    });
+                    icons.push({
+                        name: 'ic-fiber-manual-record',
+                        src: 'ic-fiber-manual-record.svg'
+                    });
+                    icons.push({
+                        name: 'ic-fiber-new',
+                        src: 'ic-fiber-new.svg'
+                    });
+                    icons.push({
+                        name: 'ic-fiber-pin',
+                        src: 'ic-fiber-pin.svg'
+                    });
+                    icons.push({
+                        name: 'ic-fiber-smart-record',
+                        src: 'ic-fiber-smart-record.svg'
+                    });
+                    icons.push({
+                        name: 'ic-file-download',
+                        src: 'ic-file-download.svg'
+                    });
+                    icons.push({
+                        name: 'ic-file-upload',
+                        src: 'ic-file-upload.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-1',
+                        src: 'ic-filter-1.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-2',
+                        src: 'ic-filter-2.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-3',
+                        src: 'ic-filter-3.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-4',
+                        src: 'ic-filter-4.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-5',
+                        src: 'ic-filter-5.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-6',
+                        src: 'ic-filter-6.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-7',
+                        src: 'ic-filter-7.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-8',
+                        src: 'ic-filter-8.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-9-plus',
+                        src: 'ic-filter-9-plus.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-9',
+                        src: 'ic-filter-9.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-b-and-w',
+                        src: 'ic-filter-b-and-w.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-center-focus',
+                        src: 'ic-filter-center-focus.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-drama',
+                        src: 'ic-filter-drama.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-frames',
+                        src: 'ic-filter-frames.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-hdr',
+                        src: 'ic-filter-hdr.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-list',
+                        src: 'ic-filter-list.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-none',
+                        src: 'ic-filter-none.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-tilt-shift',
+                        src: 'ic-filter-tilt-shift.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter-vintage',
+                        src: 'ic-filter-vintage.svg'
+                    });
+                    icons.push({
+                        name: 'ic-filter',
+                        src: 'ic-filter.svg'
+                    });
+                    icons.push({
+                        name: 'ic-find-in-page',
+                        src: 'ic-find-in-page.svg'
+                    });
+                    icons.push({
+                        name: 'ic-find-replace',
+                        src: 'ic-find-replace.svg'
+                    });
+                    icons.push({
+                        name: 'ic-fingerprint',
+                        src: 'ic-fingerprint.svg'
+                    });
+                    icons.push({
+                        name: 'ic-fitness-center',
+                        src: 'ic-fitness-center.svg'
+                    });
+                    icons.push({
+                        name: 'ic-flag',
+                        src: 'ic-flag.svg'
+                    });
+                    icons.push({
+                        name: 'ic-flare',
+                        src: 'ic-flare.svg'
+                    });
+                    icons.push({
+                        name: 'ic-flash-auto',
+                        src: 'ic-flash-auto.svg'
+                    });
+                    icons.push({
+                        name: 'ic-flash-off',
+                        src: 'ic-flash-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-flash-on',
+                        src: 'ic-flash-on.svg'
+                    });
+                    icons.push({
+                        name: 'ic-flight-land',
+                        src: 'ic-flight-land.svg'
+                    });
+                    icons.push({
+                        name: 'ic-flight-takeoff',
+                        src: 'ic-flight-takeoff.svg'
+                    });
+                    icons.push({
+                        name: 'ic-flight',
+                        src: 'ic-flight.svg'
+                    });
+                    icons.push({
+                        name: 'ic-flip-to-back',
+                        src: 'ic-flip-to-back.svg'
+                    });
+                    icons.push({
+                        name: 'ic-flip-to-front',
+                        src: 'ic-flip-to-front.svg'
+                    });
+                    icons.push({
+                        name: 'ic-flip',
+                        src: 'ic-flip.svg'
+                    });
+                    icons.push({
+                        name: 'ic-folder-open',
+                        src: 'ic-folder-open.svg'
+                    });
+                    icons.push({
+                        name: 'ic-folder-shared',
+                        src: 'ic-folder-shared.svg'
+                    });
+                    icons.push({
+                        name: 'ic-folder-special',
+                        src: 'ic-folder-special.svg'
+                    });
+                    icons.push({
+                        name: 'ic-folder',
+                        src: 'ic-folder.svg'
+                    });
+                    icons.push({
+                        name: 'ic-font-download',
+                        src: 'ic-font-download.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-align-center',
+                        src: 'ic-format-align-center.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-align-justify',
+                        src: 'ic-format-align-justify.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-align-left',
+                        src: 'ic-format-align-left.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-align-right',
+                        src: 'ic-format-align-right.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-bold',
+                        src: 'ic-format-bold.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-clear',
+                        src: 'ic-format-clear.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-color-fill',
+                        src: 'ic-format-color-fill.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-color-reset',
+                        src: 'ic-format-color-reset.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-color-text',
+                        src: 'ic-format-color-text.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-indent-decrease',
+                        src: 'ic-format-indent-decrease.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-indent-increase',
+                        src: 'ic-format-indent-increase.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-italic',
+                        src: 'ic-format-italic.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-line-spacing',
+                        src: 'ic-format-line-spacing.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-list-bulleted',
+                        src: 'ic-format-list-bulleted.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-list-numbered',
+                        src: 'ic-format-list-numbered.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-paint',
+                        src: 'ic-format-paint.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-quote',
+                        src: 'ic-format-quote.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-shapes',
+                        src: 'ic-format-shapes.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-size',
+                        src: 'ic-format-size.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-strikethrough',
+                        src: 'ic-format-strikethrough.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-textdirection-l-to-r',
+                        src: 'ic-format-textdirection-l-to-r.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-textdirection-r-to-l',
+                        src: 'ic-format-textdirection-r-to-l.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-underline',
+                        src: 'ic-format-underline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-format-underlined',
+                        src: 'ic-format-underlined.svg'
+                    });
+                    icons.push({
+                        name: 'ic-forum',
+                        src: 'ic-forum.svg'
+                    });
+                    icons.push({
+                        name: 'ic-forward-10',
+                        src: 'ic-forward-10.svg'
+                    });
+                    icons.push({
+                        name: 'ic-forward-30',
+                        src: 'ic-forward-30.svg'
+                    });
+                    icons.push({
+                        name: 'ic-forward-5',
+                        src: 'ic-forward-5.svg'
+                    });
+                    icons.push({
+                        name: 'ic-forward',
+                        src: 'ic-forward.svg'
+                    });
+                    icons.push({
+                        name: 'ic-free-breakfast',
+                        src: 'ic-free-breakfast.svg'
+                    });
+                    icons.push({
+                        name: 'ic-fullscreen-exit',
+                        src: 'ic-fullscreen-exit.svg'
+                    });
+                    icons.push({
+                        name: 'ic-fullscreen',
+                        src: 'ic-fullscreen.svg'
+                    });
+                    icons.push({
+                        name: 'ic-functions',
+                        src: 'ic-functions.svg'
+                    });
+                    icons.push({
+                        name: 'ic-gamepad',
+                        src: 'ic-gamepad.svg'
+                    });
+                    icons.push({
+                        name: 'ic-games',
+                        src: 'ic-games.svg'
+                    });
+                    icons.push({
+                        name: 'ic-gavel',
+                        src: 'ic-gavel.svg'
+                    });
+                    icons.push({
+                        name: 'ic-gesture',
+                        src: 'ic-gesture.svg'
+                    });
+                    icons.push({
+                        name: 'ic-get-app',
+                        src: 'ic-get-app.svg'
+                    });
+                    icons.push({
+                        name: 'ic-gif',
+                        src: 'ic-gif.svg'
+                    });
+                    icons.push({
+                        name: 'ic-golf-course',
+                        src: 'ic-golf-course.svg'
+                    });
+                    icons.push({
+                        name: 'ic-gps-fixed',
+                        src: 'ic-gps-fixed.svg'
+                    });
+                    icons.push({
+                        name: 'ic-gps-not-fixed',
+                        src: 'ic-gps-not-fixed.svg'
+                    });
+                    icons.push({
+                        name: 'ic-gps-off',
+                        src: 'ic-gps-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-grade',
+                        src: 'ic-grade.svg'
+                    });
+                    icons.push({
+                        name: 'ic-gradient',
+                        src: 'ic-gradient.svg'
+                    });
+                    icons.push({
+                        name: 'ic-grain',
+                        src: 'ic-grain.svg'
+                    });
+                    icons.push({
+                        name: 'ic-graphic-eq',
+                        src: 'ic-graphic-eq.svg'
+                    });
+                    icons.push({
+                        name: 'ic-grid-off',
+                        src: 'ic-grid-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-grid-on',
+                        src: 'ic-grid-on.svg'
+                    });
+                    icons.push({
+                        name: 'ic-group-add',
+                        src: 'ic-group-add.svg'
+                    });
+                    icons.push({
+                        name: 'ic-group-work',
+                        src: 'ic-group-work.svg'
+                    });
+                    icons.push({
+                        name: 'ic-group',
+                        src: 'ic-group.svg'
+                    });
+                    icons.push({
+                        name: 'ic-hd',
+                        src: 'ic-hd.svg'
+                    });
+                    icons.push({
+                        name: 'ic-hdr-off',
+                        src: 'ic-hdr-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-hdr-on',
+                        src: 'ic-hdr-on.svg'
+                    });
+                    icons.push({
+                        name: 'ic-hdr-strong',
+                        src: 'ic-hdr-strong.svg'
+                    });
+                    icons.push({
+                        name: 'ic-hdr-weak',
+                        src: 'ic-hdr-weak.svg'
+                    });
+                    icons.push({
+                        name: 'ic-headset-mic',
+                        src: 'ic-headset-mic.svg'
+                    });
+                    icons.push({
+                        name: 'ic-headset',
+                        src: 'ic-headset.svg'
+                    });
+                    icons.push({
+                        name: 'ic-healing',
+                        src: 'ic-healing.svg'
+                    });
+                    icons.push({
+                        name: 'ic-hearing',
+                        src: 'ic-hearing.svg'
+                    });
+                    icons.push({
+                        name: 'ic-help-outline',
+                        src: 'ic-help-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-help',
+                        src: 'ic-help.svg'
+                    });
+                    icons.push({
+                        name: 'ic-high-quality',
+                        src: 'ic-high-quality.svg'
+                    });
+                    icons.push({
+                        name: 'ic-highlight-off',
+                        src: 'ic-highlight-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-highlight-remove',
+                        src: 'ic-highlight-remove.svg'
+                    });
+                    icons.push({
+                        name: 'ic-highlight',
+                        src: 'ic-highlight.svg'
+                    });
+                    icons.push({
+                        name: 'ic-history',
+                        src: 'ic-history.svg'
+                    });
+                    icons.push({
+                        name: 'ic-home',
+                        src: 'ic-home.svg'
+                    });
+                    icons.push({
+                        name: 'ic-hot-tub',
+                        src: 'ic-hot-tub.svg'
+                    });
+                    icons.push({
+                        name: 'ic-hotel',
+                        src: 'ic-hotel.svg'
+                    });
+                    icons.push({
+                        name: 'ic-hourglass-empty',
+                        src: 'ic-hourglass-empty.svg'
+                    });
+                    icons.push({
+                        name: 'ic-hourglass-full',
+                        src: 'ic-hourglass-full.svg'
+                    });
+                    icons.push({
+                        name: 'ic-http',
+                        src: 'ic-http.svg'
+                    });
+                    icons.push({
+                        name: 'ic-https',
+                        src: 'ic-https.svg'
+                    });
+                    icons.push({
+                        name: 'ic-image-aspect-ratio',
+                        src: 'ic-image-aspect-ratio.svg'
+                    });
+                    icons.push({
+                        name: 'ic-image',
+                        src: 'ic-image.svg'
+                    });
+                    icons.push({
+                        name: 'ic-import-contacts',
+                        src: 'ic-import-contacts.svg'
+                    });
+                    icons.push({
+                        name: 'ic-import-export',
+                        src: 'ic-import-export.svg'
+                    });
+                    icons.push({
+                        name: 'ic-important-devices',
+                        src: 'ic-important-devices.svg'
+                    });
+                    icons.push({
+                        name: 'ic-inbox',
+                        src: 'ic-inbox.svg'
+                    });
+                    icons.push({
+                        name: 'ic-indeterminate-check-box',
+                        src: 'ic-indeterminate-check-box.svg'
+                    });
+                    icons.push({
+                        name: 'ic-info-outline',
+                        src: 'ic-info-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-info',
+                        src: 'ic-info.svg'
+                    });
+                    icons.push({
+                        name: 'ic-input',
+                        src: 'ic-input.svg'
+                    });
+                    icons.push({
+                        name: 'ic-insert-chart',
+                        src: 'ic-insert-chart.svg'
+                    });
+                    icons.push({
+                        name: 'ic-insert-comment',
+                        src: 'ic-insert-comment.svg'
+                    });
+                    icons.push({
+                        name: 'ic-insert-drive-file',
+                        src: 'ic-insert-drive-file.svg'
+                    });
+                    icons.push({
+                        name: 'ic-insert-emoticon',
+                        src: 'ic-insert-emoticon.svg'
+                    });
+                    icons.push({
+                        name: 'ic-insert-invitation',
+                        src: 'ic-insert-invitation.svg'
+                    });
+                    icons.push({
+                        name: 'ic-insert-link',
+                        src: 'ic-insert-link.svg'
+                    });
+                    icons.push({
+                        name: 'ic-insert-photo',
+                        src: 'ic-insert-photo.svg'
+                    });
+                    icons.push({
+                        name: 'ic-invert-colors-off',
+                        src: 'ic-invert-colors-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-invert-colors-on',
+                        src: 'ic-invert-colors-on.svg'
+                    });
+                    icons.push({
+                        name: 'ic-invert-colors',
+                        src: 'ic-invert-colors.svg'
+                    });
+                    icons.push({
+                        name: 'ic-iso',
+                        src: 'ic-iso.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-alt',
+                        src: 'ic-keyboard-alt.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-arrow-down',
+                        src: 'ic-keyboard-arrow-down.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-arrow-left',
+                        src: 'ic-keyboard-arrow-left.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-arrow-right',
+                        src: 'ic-keyboard-arrow-right.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-arrow-up',
+                        src: 'ic-keyboard-arrow-up.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-backspace',
+                        src: 'ic-keyboard-backspace.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-capslock',
+                        src: 'ic-keyboard-capslock.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-control',
+                        src: 'ic-keyboard-control.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-hide',
+                        src: 'ic-keyboard-hide.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-return',
+                        src: 'ic-keyboard-return.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-tab',
+                        src: 'ic-keyboard-tab.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard-voice',
+                        src: 'ic-keyboard-voice.svg'
+                    });
+                    icons.push({
+                        name: 'ic-keyboard',
+                        src: 'ic-keyboard.svg'
+                    });
+                    icons.push({
+                        name: 'ic-kitchen',
+                        src: 'ic-kitchen.svg'
+                    });
+                    icons.push({
+                        name: 'ic-label-outline',
+                        src: 'ic-label-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-label',
+                        src: 'ic-label.svg'
+                    });
+                    icons.push({
+                        name: 'ic-landscape',
+                        src: 'ic-landscape.svg'
+                    });
+                    icons.push({
+                        name: 'ic-language',
+                        src: 'ic-language.svg'
+                    });
+                    icons.push({
+                        name: 'ic-laptop-chromebook',
+                        src: 'ic-laptop-chromebook.svg'
+                    });
+                    icons.push({
+                        name: 'ic-laptop-mac',
+                        src: 'ic-laptop-mac.svg'
+                    });
+                    icons.push({
+                        name: 'ic-laptop-windows',
+                        src: 'ic-laptop-windows.svg'
+                    });
+                    icons.push({
+                        name: 'ic-laptop',
+                        src: 'ic-laptop.svg'
+                    });
+                    icons.push({
+                        name: 'ic-launch',
+                        src: 'ic-launch.svg'
+                    });
+                    icons.push({
+                        name: 'ic-layers-clear',
+                        src: 'ic-layers-clear.svg'
+                    });
+                    icons.push({
+                        name: 'ic-layers',
+                        src: 'ic-layers.svg'
+                    });
+                    icons.push({
+                        name: 'ic-leak-add',
+                        src: 'ic-leak-add.svg'
+                    });
+                    icons.push({
+                        name: 'ic-leak-remove',
+                        src: 'ic-leak-remove.svg'
+                    });
+                    icons.push({
+                        name: 'ic-lens',
+                        src: 'ic-lens.svg'
+                    });
+                    icons.push({
+                        name: 'ic-library-add',
+                        src: 'ic-library-add.svg'
+                    });
+                    icons.push({
+                        name: 'ic-library-books',
+                        src: 'ic-library-books.svg'
+                    });
+                    icons.push({
+                        name: 'ic-library-music',
+                        src: 'ic-library-music.svg'
+                    });
+                    icons.push({
+                        name: 'ic-lightbulb-outline',
+                        src: 'ic-lightbulb-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-line-style',
+                        src: 'ic-line-style.svg'
+                    });
+                    icons.push({
+                        name: 'ic-line-weight',
+                        src: 'ic-line-weight.svg'
+                    });
+                    icons.push({
+                        name: 'ic-linear-scale',
+                        src: 'ic-linear-scale.svg'
+                    });
+                    icons.push({
+                        name: 'ic-link',
+                        src: 'ic-link.svg'
+                    });
+                    icons.push({
+                        name: 'ic-linked-camera',
+                        src: 'ic-linked-camera.svg'
+                    });
+                    icons.push({
+                        name: 'ic-list',
+                        src: 'ic-list.svg'
+                    });
+                    icons.push({
+                        name: 'ic-live-help',
+                        src: 'ic-live-help.svg'
+                    });
+                    icons.push({
+                        name: 'ic-live-tv',
+                        src: 'ic-live-tv.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-activity',
+                        src: 'ic-local-activity.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-airport',
+                        src: 'ic-local-airport.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-atm',
+                        src: 'ic-local-atm.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-attraction',
+                        src: 'ic-local-attraction.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-bar',
+                        src: 'ic-local-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-cafe',
+                        src: 'ic-local-cafe.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-car-wash',
+                        src: 'ic-local-car-wash.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-convenience-store',
+                        src: 'ic-local-convenience-store.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-dining',
+                        src: 'ic-local-dining.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-drink',
+                        src: 'ic-local-drink.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-florist',
+                        src: 'ic-local-florist.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-gas-station',
+                        src: 'ic-local-gas-station.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-grocery-store',
+                        src: 'ic-local-grocery-store.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-hospital',
+                        src: 'ic-local-hospital.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-hotel',
+                        src: 'ic-local-hotel.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-laundry-service',
+                        src: 'ic-local-laundry-service.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-library',
+                        src: 'ic-local-library.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-mall',
+                        src: 'ic-local-mall.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-movies',
+                        src: 'ic-local-movies.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-offer',
+                        src: 'ic-local-offer.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-parking',
+                        src: 'ic-local-parking.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-pharmacy',
+                        src: 'ic-local-pharmacy.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-phone',
+                        src: 'ic-local-phone.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-pizza',
+                        src: 'ic-local-pizza.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-play',
+                        src: 'ic-local-play.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-post-office',
+                        src: 'ic-local-post-office.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-print-shop',
+                        src: 'ic-local-print-shop.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-printshop',
+                        src: 'ic-local-printshop.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-restaurant',
+                        src: 'ic-local-restaurant.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-see',
+                        src: 'ic-local-see.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-shipping',
+                        src: 'ic-local-shipping.svg'
+                    });
+                    icons.push({
+                        name: 'ic-local-taxi',
+                        src: 'ic-local-taxi.svg'
+                    });
+                    icons.push({
+                        name: 'ic-location-city',
+                        src: 'ic-location-city.svg'
+                    });
+                    icons.push({
+                        name: 'ic-location-disabled',
+                        src: 'ic-location-disabled.svg'
+                    });
+                    icons.push({
+                        name: 'ic-location-history',
+                        src: 'ic-location-history.svg'
+                    });
+                    icons.push({
+                        name: 'ic-location-off',
+                        src: 'ic-location-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-location-on',
+                        src: 'ic-location-on.svg'
+                    });
+                    icons.push({
+                        name: 'ic-location-searching',
+                        src: 'ic-location-searching.svg'
+                    });
+                    icons.push({
+                        name: 'ic-lock-open',
+                        src: 'ic-lock-open.svg'
+                    });
+                    icons.push({
+                        name: 'ic-lock-outline',
+                        src: 'ic-lock-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-lock',
+                        src: 'ic-lock.svg'
+                    });
+                    icons.push({
+                        name: 'ic-looks-3',
+                        src: 'ic-looks-3.svg'
+                    });
+                    icons.push({
+                        name: 'ic-looks-4',
+                        src: 'ic-looks-4.svg'
+                    });
+                    icons.push({
+                        name: 'ic-looks-5',
+                        src: 'ic-looks-5.svg'
+                    });
+                    icons.push({
+                        name: 'ic-looks-6',
+                        src: 'ic-looks-6.svg'
+                    });
+                    icons.push({
+                        name: 'ic-looks-one',
+                        src: 'ic-looks-one.svg'
+                    });
+                    icons.push({
+                        name: 'ic-looks-two',
+                        src: 'ic-looks-two.svg'
+                    });
+                    icons.push({
+                        name: 'ic-looks',
+                        src: 'ic-looks.svg'
+                    });
+                    icons.push({
+                        name: 'ic-loop',
+                        src: 'ic-loop.svg'
+                    });
+                    icons.push({
+                        name: 'ic-loupe',
+                        src: 'ic-loupe.svg'
+                    });
+                    icons.push({
+                        name: 'ic-loyalty',
+                        src: 'ic-loyalty.svg'
+                    });
+                    icons.push({
+                        name: 'ic-mail-outline',
+                        src: 'ic-mail-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-mail',
+                        src: 'ic-mail.svg'
+                    });
+                    icons.push({
+                        name: 'ic-map',
+                        src: 'ic-map.svg'
+                    });
+                    icons.push({
+                        name: 'ic-markunread-mailbox',
+                        src: 'ic-markunread-mailbox.svg'
+                    });
+                    icons.push({
+                        name: 'ic-markunread',
+                        src: 'ic-markunread.svg'
+                    });
+                    icons.push({
+                        name: 'ic-memory',
+                        src: 'ic-memory.svg'
+                    });
+                    icons.push({
+                        name: 'ic-menu',
+                        src: 'ic-menu.svg'
+                    });
+                    icons.push({
+                        name: 'ic-merge-type',
+                        src: 'ic-merge-type.svg'
+                    });
+                    icons.push({
+                        name: 'ic-message',
+                        src: 'ic-message.svg'
+                    });
+                    icons.push({
+                        name: 'ic-messenger',
+                        src: 'ic-messenger.svg'
+                    });
+                    icons.push({
+                        name: 'ic-mic-none',
+                        src: 'ic-mic-none.svg'
+                    });
+                    icons.push({
+                        name: 'ic-mic-off',
+                        src: 'ic-mic-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-mic',
+                        src: 'ic-mic.svg'
+                    });
+                    icons.push({
+                        name: 'ic-mms',
+                        src: 'ic-mms.svg'
+                    });
+                    icons.push({
+                        name: 'ic-mode-comment',
+                        src: 'ic-mode-comment.svg'
+                    });
+                    icons.push({
+                        name: 'ic-mode-edit',
+                        src: 'ic-mode-edit.svg'
+                    });
+                    icons.push({
+                        name: 'ic-money-off',
+                        src: 'ic-money-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-monochrome-photos',
+                        src: 'ic-monochrome-photos.svg'
+                    });
+                    icons.push({
+                        name: 'ic-mood-bad',
+                        src: 'ic-mood-bad.svg'
+                    });
+                    icons.push({
+                        name: 'ic-mood',
+                        src: 'ic-mood.svg'
+                    });
+                    icons.push({
+                        name: 'ic-more-horiz',
+                        src: 'ic-more-horiz.svg'
+                    });
+                    icons.push({
+                        name: 'ic-more-vert',
+                        src: 'ic-more-vert.svg'
+                    });
+                    icons.push({
+                        name: 'ic-more',
+                        src: 'ic-more.svg'
+                    });
+                    icons.push({
+                        name: 'ic-motorcycle',
+                        src: 'ic-motorcycle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-mouse',
+                        src: 'ic-mouse.svg'
+                    });
+                    icons.push({
+                        name: 'ic-move-to-inbox',
+                        src: 'ic-move-to-inbox.svg'
+                    });
+                    icons.push({
+                        name: 'ic-movie-creation',
+                        src: 'ic-movie-creation.svg'
+                    });
+                    icons.push({
+                        name: 'ic-movie-filter',
+                        src: 'ic-movie-filter.svg'
+                    });
+                    icons.push({
+                        name: 'ic-movie',
+                        src: 'ic-movie.svg'
+                    });
+                    icons.push({
+                        name: 'ic-multitrack-audio',
+                        src: 'ic-multitrack-audio.svg'
+                    });
+                    icons.push({
+                        name: 'ic-music-note',
+                        src: 'ic-music-note.svg'
+                    });
+                    icons.push({
+                        name: 'ic-music-video',
+                        src: 'ic-music-video.svg'
+                    });
+                    icons.push({
+                        name: 'ic-my-library-add',
+                        src: 'ic-my-library-add.svg'
+                    });
+                    icons.push({
+                        name: 'ic-my-library-books',
+                        src: 'ic-my-library-books.svg'
+                    });
+                    icons.push({
+                        name: 'ic-my-library-music',
+                        src: 'ic-my-library-music.svg'
+                    });
+                    icons.push({
+                        name: 'ic-my-location',
+                        src: 'ic-my-location.svg'
+                    });
+                    icons.push({
+                        name: 'ic-nature-people',
+                        src: 'ic-nature-people.svg'
+                    });
+                    icons.push({
+                        name: 'ic-nature',
+                        src: 'ic-nature.svg'
+                    });
+                    icons.push({
+                        name: 'ic-navigate-before',
+                        src: 'ic-navigate-before.svg'
+                    });
+                    icons.push({
+                        name: 'ic-navigate-next',
+                        src: 'ic-navigate-next.svg'
+                    });
+                    icons.push({
+                        name: 'ic-navigation',
+                        src: 'ic-navigation.svg'
+                    });
+                    icons.push({
+                        name: 'ic-near-me',
+                        src: 'ic-near-me.svg'
+                    });
+                    icons.push({
+                        name: 'ic-network-cell',
+                        src: 'ic-network-cell.svg'
+                    });
+                    icons.push({
+                        name: 'ic-network-check',
+                        src: 'ic-network-check.svg'
+                    });
+                    icons.push({
+                        name: 'ic-network-locked',
+                        src: 'ic-network-locked.svg'
+                    });
+                    icons.push({
+                        name: 'ic-network-wifi',
+                        src: 'ic-network-wifi.svg'
+                    });
+                    icons.push({
+                        name: 'ic-new-releases',
+                        src: 'ic-new-releases.svg'
+                    });
+                    icons.push({
+                        name: 'ic-next-week',
+                        src: 'ic-next-week.svg'
+                    });
+                    icons.push({
+                        name: 'ic-nfc',
+                        src: 'ic-nfc.svg'
+                    });
+                    icons.push({
+                        name: 'ic-no-encryption',
+                        src: 'ic-no-encryption.svg'
+                    });
+                    icons.push({
+                        name: 'ic-no-sim',
+                        src: 'ic-no-sim.svg'
+                    });
+                    icons.push({
+                        name: 'ic-not-interested',
+                        src: 'ic-not-interested.svg'
+                    });
+                    icons.push({
+                        name: 'ic-note-add',
+                        src: 'ic-note-add.svg'
+                    });
+                    icons.push({
+                        name: 'ic-notifications-active',
+                        src: 'ic-notifications-active.svg'
+                    });
+                    icons.push({
+                        name: 'ic-notifications-none',
+                        src: 'ic-notifications-none.svg'
+                    });
+                    icons.push({
+                        name: 'ic-notifications-off',
+                        src: 'ic-notifications-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-notifications-on',
+                        src: 'ic-notifications-on.svg'
+                    });
+                    icons.push({
+                        name: 'ic-notifications-paused',
+                        src: 'ic-notifications-paused.svg'
+                    });
+                    icons.push({
+                        name: 'ic-notifications',
+                        src: 'ic-notifications.svg'
+                    });
+                    icons.push({
+                        name: 'ic-now-wallpaper',
+                        src: 'ic-now-wallpaper.svg'
+                    });
+                    icons.push({
+                        name: 'ic-now-widgets',
+                        src: 'ic-now-widgets.svg'
+                    });
+                    icons.push({
+                        name: 'ic-offline-pin',
+                        src: 'ic-offline-pin.svg'
+                    });
+                    icons.push({
+                        name: 'ic-ondemand-video',
+                        src: 'ic-ondemand-video.svg'
+                    });
+                    icons.push({
+                        name: 'ic-opacity',
+                        src: 'ic-opacity.svg'
+                    });
+                    icons.push({
+                        name: 'ic-open-in-browser',
+                        src: 'ic-open-in-browser.svg'
+                    });
+                    icons.push({
+                        name: 'ic-open-in-new',
+                        src: 'ic-open-in-new.svg'
+                    });
+                    icons.push({
+                        name: 'ic-open-with',
+                        src: 'ic-open-with.svg'
+                    });
+                    icons.push({
+                        name: 'ic-pages',
+                        src: 'ic-pages.svg'
+                    });
+                    icons.push({
+                        name: 'ic-pageview',
+                        src: 'ic-pageview.svg'
+                    });
+                    icons.push({
+                        name: 'ic-palette',
+                        src: 'ic-palette.svg'
+                    });
+                    icons.push({
+                        name: 'ic-pan-tool',
+                        src: 'ic-pan-tool.svg'
+                    });
+                    icons.push({
+                        name: 'ic-panorama-fish-eye',
+                        src: 'ic-panorama-fish-eye.svg'
+                    });
+                    icons.push({
+                        name: 'ic-panorama-fisheye',
+                        src: 'ic-panorama-fisheye.svg'
+                    });
+                    icons.push({
+                        name: 'ic-panorama-horizontal',
+                        src: 'ic-panorama-horizontal.svg'
+                    });
+                    icons.push({
+                        name: 'ic-panorama-vertical',
+                        src: 'ic-panorama-vertical.svg'
+                    });
+                    icons.push({
+                        name: 'ic-panorama-wide-angle',
+                        src: 'ic-panorama-wide-angle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-panorama',
+                        src: 'ic-panorama.svg'
+                    });
+                    icons.push({
+                        name: 'ic-party-mode',
+                        src: 'ic-party-mode.svg'
+                    });
+                    icons.push({
+                        name: 'ic-pause-circle-fill',
+                        src: 'ic-pause-circle-fill.svg'
+                    });
+                    icons.push({
+                        name: 'ic-pause-circle-filled',
+                        src: 'ic-pause-circle-filled.svg'
+                    });
+                    icons.push({
+                        name: 'ic-pause-circle-outline',
+                        src: 'ic-pause-circle-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-pause',
+                        src: 'ic-pause.svg'
+                    });
+                    icons.push({
+                        name: 'ic-payment',
+                        src: 'ic-payment.svg'
+                    });
+                    icons.push({
+                        name: 'ic-people-outline',
+                        src: 'ic-people-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-people',
+                        src: 'ic-people.svg'
+                    });
+                    icons.push({
+                        name: 'ic-perm-camera-mic',
+                        src: 'ic-perm-camera-mic.svg'
+                    });
+                    icons.push({
+                        name: 'ic-perm-contact-cal',
+                        src: 'ic-perm-contact-cal.svg'
+                    });
+                    icons.push({
+                        name: 'ic-perm-contact-calendar',
+                        src: 'ic-perm-contact-calendar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-perm-data-setting',
+                        src: 'ic-perm-data-setting.svg'
+                    });
+                    icons.push({
+                        name: 'ic-perm-device-info',
+                        src: 'ic-perm-device-info.svg'
+                    });
+                    icons.push({
+                        name: 'ic-perm-device-information',
+                        src: 'ic-perm-device-information.svg'
+                    });
+                    icons.push({
+                        name: 'ic-perm-identity',
+                        src: 'ic-perm-identity.svg'
+                    });
+                    icons.push({
+                        name: 'ic-perm-media',
+                        src: 'ic-perm-media.svg'
+                    });
+                    icons.push({
+                        name: 'ic-perm-phone-msg',
+                        src: 'ic-perm-phone-msg.svg'
+                    });
+                    icons.push({
+                        name: 'ic-perm-scan-wifi',
+                        src: 'ic-perm-scan-wifi.svg'
+                    });
+                    icons.push({
+                        name: 'ic-person-add',
+                        src: 'ic-person-add.svg'
+                    });
+                    icons.push({
+                        name: 'ic-person-outline',
+                        src: 'ic-person-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-person-pin-circle',
+                        src: 'ic-person-pin-circle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-person-pin',
+                        src: 'ic-person-pin.svg'
+                    });
+                    icons.push({
+                        name: 'ic-person',
+                        src: 'ic-person.svg'
+                    });
+                    icons.push({
+                        name: 'ic-personal-video',
+                        src: 'ic-personal-video.svg'
+                    });
+                    icons.push({
+                        name: 'ic-pets',
+                        src: 'ic-pets.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phone-android',
+                        src: 'ic-phone-android.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phone-bluetooth-speaker',
+                        src: 'ic-phone-bluetooth-speaker.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phone-forwarded',
+                        src: 'ic-phone-forwarded.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phone-in-talk',
+                        src: 'ic-phone-in-talk.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phone-iphone',
+                        src: 'ic-phone-iphone.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phone-locked',
+                        src: 'ic-phone-locked.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phone-missed',
+                        src: 'ic-phone-missed.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phone-paused',
+                        src: 'ic-phone-paused.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phone',
+                        src: 'ic-phone.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phonelink-erase',
+                        src: 'ic-phonelink-erase.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phonelink-lock',
+                        src: 'ic-phonelink-lock.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phonelink-off',
+                        src: 'ic-phonelink-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phonelink-ring',
+                        src: 'ic-phonelink-ring.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phonelink-setup',
+                        src: 'ic-phonelink-setup.svg'
+                    });
+                    icons.push({
+                        name: 'ic-phonelink',
+                        src: 'ic-phonelink.svg'
+                    });
+                    icons.push({
+                        name: 'ic-photo-album',
+                        src: 'ic-photo-album.svg'
+                    });
+                    icons.push({
+                        name: 'ic-photo-camera',
+                        src: 'ic-photo-camera.svg'
+                    });
+                    icons.push({
+                        name: 'ic-photo-filter',
+                        src: 'ic-photo-filter.svg'
+                    });
+                    icons.push({
+                        name: 'ic-photo-library',
+                        src: 'ic-photo-library.svg'
+                    });
+                    icons.push({
+                        name: 'ic-photo-size-select-actual',
+                        src: 'ic-photo-size-select-actual.svg'
+                    });
+                    icons.push({
+                        name: 'ic-photo-size-select-large',
+                        src: 'ic-photo-size-select-large.svg'
+                    });
+                    icons.push({
+                        name: 'ic-photo-size-select-small',
+                        src: 'ic-photo-size-select-small.svg'
+                    });
+                    icons.push({
+                        name: 'ic-photo',
+                        src: 'ic-photo.svg'
+                    });
+                    icons.push({
+                        name: 'ic-picture-as-pdf',
+                        src: 'ic-picture-as-pdf.svg'
+                    });
+                    icons.push({
+                        name: 'ic-picture-in-picture-alt',
+                        src: 'ic-picture-in-picture-alt.svg'
+                    });
+                    icons.push({
+                        name: 'ic-picture-in-picture',
+                        src: 'ic-picture-in-picture.svg'
+                    });
+                    icons.push({
+                        name: 'ic-pin-drop',
+                        src: 'ic-pin-drop.svg'
+                    });
+                    icons.push({
+                        name: 'ic-place',
+                        src: 'ic-place.svg'
+                    });
+                    icons.push({
+                        name: 'ic-play-arrow',
+                        src: 'ic-play-arrow.svg'
+                    });
+                    icons.push({
+                        name: 'ic-play-circle-fill',
+                        src: 'ic-play-circle-fill.svg'
+                    });
+                    icons.push({
+                        name: 'ic-play-circle-filled',
+                        src: 'ic-play-circle-filled.svg'
+                    });
+                    icons.push({
+                        name: 'ic-play-circle-outline',
+                        src: 'ic-play-circle-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-play-download',
+                        src: 'ic-play-download.svg'
+                    });
+                    icons.push({
+                        name: 'ic-play-for-work',
+                        src: 'ic-play-for-work.svg'
+                    });
+                    icons.push({
+                        name: 'ic-play-install',
+                        src: 'ic-play-install.svg'
+                    });
+                    icons.push({
+                        name: 'ic-play-shopping-bag',
+                        src: 'ic-play-shopping-bag.svg'
+                    });
+                    icons.push({
+                        name: 'ic-playlist-add-check',
+                        src: 'ic-playlist-add-check.svg'
+                    });
+                    icons.push({
+                        name: 'ic-playlist-add',
+                        src: 'ic-playlist-add.svg'
+                    });
+                    icons.push({
+                        name: 'ic-playlist-play',
+                        src: 'ic-playlist-play.svg'
+                    });
+                    icons.push({
+                        name: 'ic-plus-one',
+                        src: 'ic-plus-one.svg'
+                    });
+                    icons.push({
+                        name: 'ic-poll',
+                        src: 'ic-poll.svg'
+                    });
+                    icons.push({
+                        name: 'ic-polymer',
+                        src: 'ic-polymer.svg'
+                    });
+                    icons.push({
+                        name: 'ic-pool',
+                        src: 'ic-pool.svg'
+                    });
+                    icons.push({
+                        name: 'ic-portable-wifi-off',
+                        src: 'ic-portable-wifi-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-portrait',
+                        src: 'ic-portrait.svg'
+                    });
+                    icons.push({
+                        name: 'ic-power-input',
+                        src: 'ic-power-input.svg'
+                    });
+                    icons.push({
+                        name: 'ic-power-settings-new',
+                        src: 'ic-power-settings-new.svg'
+                    });
+                    icons.push({
+                        name: 'ic-power',
+                        src: 'ic-power.svg'
+                    });
+                    icons.push({
+                        name: 'ic-pregnant-woman',
+                        src: 'ic-pregnant-woman.svg'
+                    });
+                    icons.push({
+                        name: 'ic-present-to-all',
+                        src: 'ic-present-to-all.svg'
+                    });
+                    icons.push({
+                        name: 'ic-print',
+                        src: 'ic-print.svg'
+                    });
+                    icons.push({
+                        name: 'ic-public',
+                        src: 'ic-public.svg'
+                    });
+                    icons.push({
+                        name: 'ic-publish',
+                        src: 'ic-publish.svg'
+                    });
+                    icons.push({
+                        name: 'ic-query-builder',
+                        src: 'ic-query-builder.svg'
+                    });
+                    icons.push({
+                        name: 'ic-question-answer',
+                        src: 'ic-question-answer.svg'
+                    });
+                    icons.push({
+                        name: 'ic-queue-music',
+                        src: 'ic-queue-music.svg'
+                    });
+                    icons.push({
+                        name: 'ic-queue-play-next',
+                        src: 'ic-queue-play-next.svg'
+                    });
+                    icons.push({
+                        name: 'ic-queue',
+                        src: 'ic-queue.svg'
+                    });
+                    icons.push({
+                        name: 'ic-quick-contacts-dialer',
+                        src: 'ic-quick-contacts-dialer.svg'
+                    });
+                    icons.push({
+                        name: 'ic-quick-contacts-mail',
+                        src: 'ic-quick-contacts-mail.svg'
+                    });
+                    icons.push({
+                        name: 'ic-radio-button-checked',
+                        src: 'ic-radio-button-checked.svg'
+                    });
+                    icons.push({
+                        name: 'ic-radio-button-off',
+                        src: 'ic-radio-button-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-radio-button-on',
+                        src: 'ic-radio-button-on.svg'
+                    });
+                    icons.push({
+                        name: 'ic-radio-button-unchecked',
+                        src: 'ic-radio-button-unchecked.svg'
+                    });
+                    icons.push({
+                        name: 'ic-radio',
+                        src: 'ic-radio.svg'
+                    });
+                    icons.push({
+                        name: 'ic-rate-review',
+                        src: 'ic-rate-review.svg'
+                    });
+                    icons.push({
+                        name: 'ic-receipt',
+                        src: 'ic-receipt.svg'
+                    });
+                    icons.push({
+                        name: 'ic-recent-actors',
+                        src: 'ic-recent-actors.svg'
+                    });
+                    icons.push({
+                        name: 'ic-record-voice-over',
+                        src: 'ic-record-voice-over.svg'
+                    });
+                    icons.push({
+                        name: 'ic-redeem',
+                        src: 'ic-redeem.svg'
+                    });
+                    icons.push({
+                        name: 'ic-redo',
+                        src: 'ic-redo.svg'
+                    });
+                    icons.push({
+                        name: 'ic-refresh',
+                        src: 'ic-refresh.svg'
+                    });
+                    icons.push({
+                        name: 'ic-remove-circle-outline',
+                        src: 'ic-remove-circle-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-remove-circle',
+                        src: 'ic-remove-circle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-remove-from-queue',
+                        src: 'ic-remove-from-queue.svg'
+                    });
+                    icons.push({
+                        name: 'ic-remove-red-eye',
+                        src: 'ic-remove-red-eye.svg'
+                    });
+                    icons.push({
+                        name: 'ic-remove',
+                        src: 'ic-remove.svg'
+                    });
+                    icons.push({
+                        name: 'ic-reorder',
+                        src: 'ic-reorder.svg'
+                    });
+                    icons.push({
+                        name: 'ic-repeat-one',
+                        src: 'ic-repeat-one.svg'
+                    });
+                    icons.push({
+                        name: 'ic-repeat',
+                        src: 'ic-repeat.svg'
+                    });
+                    icons.push({
+                        name: 'ic-replay-10',
+                        src: 'ic-replay-10.svg'
+                    });
+                    icons.push({
+                        name: 'ic-replay-30',
+                        src: 'ic-replay-30.svg'
+                    });
+                    icons.push({
+                        name: 'ic-replay-5',
+                        src: 'ic-replay-5.svg'
+                    });
+                    icons.push({
+                        name: 'ic-replay',
+                        src: 'ic-replay.svg'
+                    });
+                    icons.push({
+                        name: 'ic-reply-all',
+                        src: 'ic-reply-all.svg'
+                    });
+                    icons.push({
+                        name: 'ic-reply',
+                        src: 'ic-reply.svg'
+                    });
+                    icons.push({
+                        name: 'ic-report-problem',
+                        src: 'ic-report-problem.svg'
+                    });
+                    icons.push({
+                        name: 'ic-report',
+                        src: 'ic-report.svg'
+                    });
+                    icons.push({
+                        name: 'ic-restaurant-menu',
+                        src: 'ic-restaurant-menu.svg'
+                    });
+                    icons.push({
+                        name: 'ic-restore',
+                        src: 'ic-restore.svg'
+                    });
+                    icons.push({
+                        name: 'ic-ring-volume',
+                        src: 'ic-ring-volume.svg'
+                    });
+                    icons.push({
+                        name: 'ic-room-service',
+                        src: 'ic-room-service.svg'
+                    });
+                    icons.push({
+                        name: 'ic-room',
+                        src: 'ic-room.svg'
+                    });
+                    icons.push({
+                        name: 'ic-rotate-90-degrees-ccw',
+                        src: 'ic-rotate-90-degrees-ccw.svg'
+                    });
+                    icons.push({
+                        name: 'ic-rotate-left',
+                        src: 'ic-rotate-left.svg'
+                    });
+                    icons.push({
+                        name: 'ic-rotate-right',
+                        src: 'ic-rotate-right.svg'
+                    });
+                    icons.push({
+                        name: 'ic-rounded-corner',
+                        src: 'ic-rounded-corner.svg'
+                    });
+                    icons.push({
+                        name: 'ic-router',
+                        src: 'ic-router.svg'
+                    });
+                    icons.push({
+                        name: 'ic-rowing',
+                        src: 'ic-rowing.svg'
+                    });
+                    icons.push({
+                        name: 'ic-rv-hookup',
+                        src: 'ic-rv-hookup.svg'
+                    });
+                    icons.push({
+                        name: 'ic-satellite',
+                        src: 'ic-satellite.svg'
+                    });
+                    icons.push({
+                        name: 'ic-save',
+                        src: 'ic-save.svg'
+                    });
+                    icons.push({
+                        name: 'ic-scanner',
+                        src: 'ic-scanner.svg'
+                    });
+                    icons.push({
+                        name: 'ic-schedule',
+                        src: 'ic-schedule.svg'
+                    });
+                    icons.push({
+                        name: 'ic-school',
+                        src: 'ic-school.svg'
+                    });
+                    icons.push({
+                        name: 'ic-screen-lock-landscape',
+                        src: 'ic-screen-lock-landscape.svg'
+                    });
+                    icons.push({
+                        name: 'ic-screen-lock-portrait',
+                        src: 'ic-screen-lock-portrait.svg'
+                    });
+                    icons.push({
+                        name: 'ic-screen-lock-rotation',
+                        src: 'ic-screen-lock-rotation.svg'
+                    });
+                    icons.push({
+                        name: 'ic-screen-rotation',
+                        src: 'ic-screen-rotation.svg'
+                    });
+                    icons.push({
+                        name: 'ic-screen-share',
+                        src: 'ic-screen-share.svg'
+                    });
+                    icons.push({
+                        name: 'ic-sd-card',
+                        src: 'ic-sd-card.svg'
+                    });
+                    icons.push({
+                        name: 'ic-sd-storage',
+                        src: 'ic-sd-storage.svg'
+                    });
+                    icons.push({
+                        name: 'ic-search',
+                        src: 'ic-search.svg'
+                    });
+                    icons.push({
+                        name: 'ic-security',
+                        src: 'ic-security.svg'
+                    });
+                    icons.push({
+                        name: 'ic-select-all',
+                        src: 'ic-select-all.svg'
+                    });
+                    icons.push({
+                        name: 'ic-send',
+                        src: 'ic-send.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-applications',
+                        src: 'ic-settings-applications.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-backup-restore',
+                        src: 'ic-settings-backup-restore.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-bluetooth',
+                        src: 'ic-settings-bluetooth.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-brightness',
+                        src: 'ic-settings-brightness.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-cell',
+                        src: 'ic-settings-cell.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-display',
+                        src: 'ic-settings-display.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-ethernet',
+                        src: 'ic-settings-ethernet.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-input-antenna',
+                        src: 'ic-settings-input-antenna.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-input-component',
+                        src: 'ic-settings-input-component.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-input-composite',
+                        src: 'ic-settings-input-composite.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-input-hdmi',
+                        src: 'ic-settings-input-hdmi.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-input-svideo',
+                        src: 'ic-settings-input-svideo.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-overscan',
+                        src: 'ic-settings-overscan.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-phone',
+                        src: 'ic-settings-phone.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-power',
+                        src: 'ic-settings-power.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-remote',
+                        src: 'ic-settings-remote.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-system-daydream',
+                        src: 'ic-settings-system-daydream.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings-voice',
+                        src: 'ic-settings-voice.svg'
+                    });
+                    icons.push({
+                        name: 'ic-settings',
+                        src: 'ic-settings.svg'
+                    });
+                    icons.push({
+                        name: 'ic-share',
+                        src: 'ic-share.svg'
+                    });
+                    icons.push({
+                        name: 'ic-shop-two',
+                        src: 'ic-shop-two.svg'
+                    });
+                    icons.push({
+                        name: 'ic-shop',
+                        src: 'ic-shop.svg'
+                    });
+                    icons.push({
+                        name: 'ic-shopping-basket',
+                        src: 'ic-shopping-basket.svg'
+                    });
+                    icons.push({
+                        name: 'ic-shopping-cart',
+                        src: 'ic-shopping-cart.svg'
+                    });
+                    icons.push({
+                        name: 'ic-short-text',
+                        src: 'ic-short-text.svg'
+                    });
+                    icons.push({
+                        name: 'ic-shuffle',
+                        src: 'ic-shuffle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-0-bar',
+                        src: 'ic-signal-cellular-0-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-1-bar',
+                        src: 'ic-signal-cellular-1-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-2-bar',
+                        src: 'ic-signal-cellular-2-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-3-bar',
+                        src: 'ic-signal-cellular-3-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-4-bar',
+                        src: 'ic-signal-cellular-4-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-connected-no-internet-0-bar',
+                        src: 'ic-signal-cellular-connected-no-internet-0-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-connected-no-internet-1-bar',
+                        src: 'ic-signal-cellular-connected-no-internet-1-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-connected-no-internet-2-bar',
+                        src: 'ic-signal-cellular-connected-no-internet-2-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-connected-no-internet-3-bar',
+                        src: 'ic-signal-cellular-connected-no-internet-3-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-connected-no-internet-4-bar',
+                        src: 'ic-signal-cellular-connected-no-internet-4-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-no-sim',
+                        src: 'ic-signal-cellular-no-sim.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-null',
+                        src: 'ic-signal-cellular-null.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-cellular-off',
+                        src: 'ic-signal-cellular-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-wifi-0-bar',
+                        src: 'ic-signal-wifi-0-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-wifi-1-bar-lock',
+                        src: 'ic-signal-wifi-1-bar-lock.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-wifi-1-bar',
+                        src: 'ic-signal-wifi-1-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-wifi-2-bar-lock',
+                        src: 'ic-signal-wifi-2-bar-lock.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-wifi-2-bar',
+                        src: 'ic-signal-wifi-2-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-wifi-3-bar-lock',
+                        src: 'ic-signal-wifi-3-bar-lock.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-wifi-3-bar',
+                        src: 'ic-signal-wifi-3-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-wifi-4-bar-lock',
+                        src: 'ic-signal-wifi-4-bar-lock.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-wifi-4-bar',
+                        src: 'ic-signal-wifi-4-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-signal-wifi-off',
+                        src: 'ic-signal-wifi-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-sim-card-alert',
+                        src: 'ic-sim-card-alert.svg'
+                    });
+                    icons.push({
+                        name: 'ic-sim-card',
+                        src: 'ic-sim-card.svg'
+                    });
+                    icons.push({
+                        name: 'ic-skip-next',
+                        src: 'ic-skip-next.svg'
+                    });
+                    icons.push({
+                        name: 'ic-skip-previous',
+                        src: 'ic-skip-previous.svg'
+                    });
+                    icons.push({
+                        name: 'ic-slideshow',
+                        src: 'ic-slideshow.svg'
+                    });
+                    icons.push({
+                        name: 'ic-slow-motion-video',
+                        src: 'ic-slow-motion-video.svg'
+                    });
+                    icons.push({
+                        name: 'ic-smartphone',
+                        src: 'ic-smartphone.svg'
+                    });
+                    icons.push({
+                        name: 'ic-smoke-free',
+                        src: 'ic-smoke-free.svg'
+                    });
+                    icons.push({
+                        name: 'ic-smoking-rooms',
+                        src: 'ic-smoking-rooms.svg'
+                    });
+                    icons.push({
+                        name: 'ic-sms-failed',
+                        src: 'ic-sms-failed.svg'
+                    });
+                    icons.push({
+                        name: 'ic-sms',
+                        src: 'ic-sms.svg'
+                    });
+                    icons.push({
+                        name: 'ic-snooze',
+                        src: 'ic-snooze.svg'
+                    });
+                    icons.push({
+                        name: 'ic-sort-by-alpha',
+                        src: 'ic-sort-by-alpha.svg'
+                    });
+                    icons.push({
+                        name: 'ic-sort',
+                        src: 'ic-sort.svg'
+                    });
+                    icons.push({
+                        name: 'ic-spa',
+                        src: 'ic-spa.svg'
+                    });
+                    icons.push({
+                        name: 'ic-space-bar',
+                        src: 'ic-space-bar.svg'
+                    });
+                    icons.push({
+                        name: 'ic-speaker-group',
+                        src: 'ic-speaker-group.svg'
+                    });
+                    icons.push({
+                        name: 'ic-speaker-notes',
+                        src: 'ic-speaker-notes.svg'
+                    });
+                    icons.push({
+                        name: 'ic-speaker-phone',
+                        src: 'ic-speaker-phone.svg'
+                    });
+                    icons.push({
+                        name: 'ic-speaker',
+                        src: 'ic-speaker.svg'
+                    });
+                    icons.push({
+                        name: 'ic-spellcheck',
+                        src: 'ic-spellcheck.svg'
+                    });
+                    icons.push({
+                        name: 'ic-star-border',
+                        src: 'ic-star-border.svg'
+                    });
+                    icons.push({
+                        name: 'ic-star-half',
+                        src: 'ic-star-half.svg'
+                    });
+                    icons.push({
+                        name: 'ic-star-outline',
+                        src: 'ic-star-outline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-star-rate',
+                        src: 'ic-star-rate.svg'
+                    });
+                    icons.push({
+                        name: 'ic-star',
+                        src: 'ic-star.svg'
+                    });
+                    icons.push({
+                        name: 'ic-stars',
+                        src: 'ic-stars.svg'
+                    });
+                    icons.push({
+                        name: 'ic-stay-current-landscape',
+                        src: 'ic-stay-current-landscape.svg'
+                    });
+                    icons.push({
+                        name: 'ic-stay-current-portrait',
+                        src: 'ic-stay-current-portrait.svg'
+                    });
+                    icons.push({
+                        name: 'ic-stay-primary-landscape',
+                        src: 'ic-stay-primary-landscape.svg'
+                    });
+                    icons.push({
+                        name: 'ic-stay-primary-portrait',
+                        src: 'ic-stay-primary-portrait.svg'
+                    });
+                    icons.push({
+                        name: 'ic-stop-screen-share',
+                        src: 'ic-stop-screen-share.svg'
+                    });
+                    icons.push({
+                        name: 'ic-stop',
+                        src: 'ic-stop.svg'
+                    });
+                    icons.push({
+                        name: 'ic-storage',
+                        src: 'ic-storage.svg'
+                    });
+                    icons.push({
+                        name: 'ic-store-mall-directory',
+                        src: 'ic-store-mall-directory.svg'
+                    });
+                    icons.push({
+                        name: 'ic-store',
+                        src: 'ic-store.svg'
+                    });
+                    icons.push({
+                        name: 'ic-straighten',
+                        src: 'ic-straighten.svg'
+                    });
+                    icons.push({
+                        name: 'ic-strikethrough-s',
+                        src: 'ic-strikethrough-s.svg'
+                    });
+                    icons.push({
+                        name: 'ic-style',
+                        src: 'ic-style.svg'
+                    });
+                    icons.push({
+                        name: 'ic-subdirectory-arrow-left',
+                        src: 'ic-subdirectory-arrow-left.svg'
+                    });
+                    icons.push({
+                        name: 'ic-subdirectory-arrow-right',
+                        src: 'ic-subdirectory-arrow-right.svg'
+                    });
+                    icons.push({
+                        name: 'ic-subject',
+                        src: 'ic-subject.svg'
+                    });
+                    icons.push({
+                        name: 'ic-subscriptions',
+                        src: 'ic-subscriptions.svg'
+                    });
+                    icons.push({
+                        name: 'ic-subtitles',
+                        src: 'ic-subtitles.svg'
+                    });
+                    icons.push({
+                        name: 'ic-supervisor-account',
+                        src: 'ic-supervisor-account.svg'
+                    });
+                    icons.push({
+                        name: 'ic-surround-sound',
+                        src: 'ic-surround-sound.svg'
+                    });
+                    icons.push({
+                        name: 'ic-swap-calls',
+                        src: 'ic-swap-calls.svg'
+                    });
+                    icons.push({
+                        name: 'ic-swap-horiz',
+                        src: 'ic-swap-horiz.svg'
+                    });
+                    icons.push({
+                        name: 'ic-swap-vert-circle',
+                        src: 'ic-swap-vert-circle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-swap-vert',
+                        src: 'ic-swap-vert.svg'
+                    });
+                    icons.push({
+                        name: 'ic-swap-vertical-circle',
+                        src: 'ic-swap-vertical-circle.svg'
+                    });
+                    icons.push({
+                        name: 'ic-switch-camera',
+                        src: 'ic-switch-camera.svg'
+                    });
+                    icons.push({
+                        name: 'ic-switch-video',
+                        src: 'ic-switch-video.svg'
+                    });
+                    icons.push({
+                        name: 'ic-sync-disabled',
+                        src: 'ic-sync-disabled.svg'
+                    });
+                    icons.push({
+                        name: 'ic-sync-problem',
+                        src: 'ic-sync-problem.svg'
+                    });
+                    icons.push({
+                        name: 'ic-sync',
+                        src: 'ic-sync.svg'
+                    });
+                    icons.push({
+                        name: 'ic-system-update-alt',
+                        src: 'ic-system-update-alt.svg'
+                    });
+                    icons.push({
+                        name: 'ic-system-update-tv',
+                        src: 'ic-system-update-tv.svg'
+                    });
+                    icons.push({
+                        name: 'ic-system-update',
+                        src: 'ic-system-update.svg'
+                    });
+                    icons.push({
+                        name: 'ic-tab-unselected',
+                        src: 'ic-tab-unselected.svg'
+                    });
+                    icons.push({
+                        name: 'ic-tab',
+                        src: 'ic-tab.svg'
+                    });
+                    icons.push({
+                        name: 'ic-tablet-android',
+                        src: 'ic-tablet-android.svg'
+                    });
+                    icons.push({
+                        name: 'ic-tablet-mac',
+                        src: 'ic-tablet-mac.svg'
+                    });
+                    icons.push({
+                        name: 'ic-tablet',
+                        src: 'ic-tablet.svg'
+                    });
+                    icons.push({
+                        name: 'ic-tag-faces',
+                        src: 'ic-tag-faces.svg'
+                    });
+                    icons.push({
+                        name: 'ic-tap-and-play',
+                        src: 'ic-tap-and-play.svg'
+                    });
+                    icons.push({
+                        name: 'ic-terrain',
+                        src: 'ic-terrain.svg'
+                    });
+                    icons.push({
+                        name: 'ic-text-fields',
+                        src: 'ic-text-fields.svg'
+                    });
+                    icons.push({
+                        name: 'ic-text-format',
+                        src: 'ic-text-format.svg'
+                    });
+                    icons.push({
+                        name: 'ic-textsms',
+                        src: 'ic-textsms.svg'
+                    });
+                    icons.push({
+                        name: 'ic-texture',
+                        src: 'ic-texture.svg'
+                    });
+                    icons.push({
+                        name: 'ic-theaters',
+                        src: 'ic-theaters.svg'
+                    });
+                    icons.push({
+                        name: 'ic-thumb-down',
+                        src: 'ic-thumb-down.svg'
+                    });
+                    icons.push({
+                        name: 'ic-thumb-up',
+                        src: 'ic-thumb-up.svg'
+                    });
+                    icons.push({
+                        name: 'ic-thumbs-up-down',
+                        src: 'ic-thumbs-up-down.svg'
+                    });
+                    icons.push({
+                        name: 'ic-time-to-leave',
+                        src: 'ic-time-to-leave.svg'
+                    });
+                    icons.push({
+                        name: 'ic-timelapse',
+                        src: 'ic-timelapse.svg'
+                    });
+                    icons.push({
+                        name: 'ic-timeline',
+                        src: 'ic-timeline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-timer-10',
+                        src: 'ic-timer-10.svg'
+                    });
+                    icons.push({
+                        name: 'ic-timer-3',
+                        src: 'ic-timer-3.svg'
+                    });
+                    icons.push({
+                        name: 'ic-timer-auto',
+                        src: 'ic-timer-auto.svg'
+                    });
+                    icons.push({
+                        name: 'ic-timer-off',
+                        src: 'ic-timer-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-timer',
+                        src: 'ic-timer.svg'
+                    });
+                    icons.push({
+                        name: 'ic-toc',
+                        src: 'ic-toc.svg'
+                    });
+                    icons.push({
+                        name: 'ic-today',
+                        src: 'ic-today.svg'
+                    });
+                    icons.push({
+                        name: 'ic-toll',
+                        src: 'ic-toll.svg'
+                    });
+                    icons.push({
+                        name: 'ic-tonality',
+                        src: 'ic-tonality.svg'
+                    });
+                    icons.push({
+                        name: 'ic-touch-app',
+                        src: 'ic-touch-app.svg'
+                    });
+                    icons.push({
+                        name: 'ic-toys',
+                        src: 'ic-toys.svg'
+                    });
+                    icons.push({
+                        name: 'ic-track-changes',
+                        src: 'ic-track-changes.svg'
+                    });
+                    icons.push({
+                        name: 'ic-traffic',
+                        src: 'ic-traffic.svg'
+                    });
+                    icons.push({
+                        name: 'ic-transform',
+                        src: 'ic-transform.svg'
+                    });
+                    icons.push({
+                        name: 'ic-translate',
+                        src: 'ic-translate.svg'
+                    });
+                    icons.push({
+                        name: 'ic-trending-down',
+                        src: 'ic-trending-down.svg'
+                    });
+                    icons.push({
+                        name: 'ic-trending-flat',
+                        src: 'ic-trending-flat.svg'
+                    });
+                    icons.push({
+                        name: 'ic-trending-neutral',
+                        src: 'ic-trending-neutral.svg'
+                    });
+                    icons.push({
+                        name: 'ic-trending-up',
+                        src: 'ic-trending-up.svg'
+                    });
+                    icons.push({
+                        name: 'ic-tune',
+                        src: 'ic-tune.svg'
+                    });
+                    icons.push({
+                        name: 'ic-turned-in-not',
+                        src: 'ic-turned-in-not.svg'
+                    });
+                    icons.push({
+                        name: 'ic-turned-in',
+                        src: 'ic-turned-in.svg'
+                    });
+                    icons.push({
+                        name: 'ic-tv',
+                        src: 'ic-tv.svg'
+                    });
+                    icons.push({
+                        name: 'ic-unarchive',
+                        src: 'ic-unarchive.svg'
+                    });
+                    icons.push({
+                        name: 'ic-undo',
+                        src: 'ic-undo.svg'
+                    });
+                    icons.push({
+                        name: 'ic-unfold-less',
+                        src: 'ic-unfold-less.svg'
+                    });
+                    icons.push({
+                        name: 'ic-unfold-more',
+                        src: 'ic-unfold-more.svg'
+                    });
+                    icons.push({
+                        name: 'ic-update',
+                        src: 'ic-update.svg'
+                    });
+                    icons.push({
+                        name: 'ic-usb',
+                        src: 'ic-usb.svg'
+                    });
+                    icons.push({
+                        name: 'ic-verified-user',
+                        src: 'ic-verified-user.svg'
+                    });
+                    icons.push({
+                        name: 'ic-vertical-align-bottom',
+                        src: 'ic-vertical-align-bottom.svg'
+                    });
+                    icons.push({
+                        name: 'ic-vertical-align-center',
+                        src: 'ic-vertical-align-center.svg'
+                    });
+                    icons.push({
+                        name: 'ic-vertical-align-top',
+                        src: 'ic-vertical-align-top.svg'
+                    });
+                    icons.push({
+                        name: 'ic-vibration',
+                        src: 'ic-vibration.svg'
+                    });
+                    icons.push({
+                        name: 'ic-video-collection',
+                        src: 'ic-video-collection.svg'
+                    });
+                    icons.push({
+                        name: 'ic-video-library',
+                        src: 'ic-video-library.svg'
+                    });
+                    icons.push({
+                        name: 'ic-videocam-off',
+                        src: 'ic-videocam-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-videocam',
+                        src: 'ic-videocam.svg'
+                    });
+                    icons.push({
+                        name: 'ic-videogame-asset',
+                        src: 'ic-videogame-asset.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-agenda',
+                        src: 'ic-view-agenda.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-array',
+                        src: 'ic-view-array.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-carousel',
+                        src: 'ic-view-carousel.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-column',
+                        src: 'ic-view-column.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-comfy',
+                        src: 'ic-view-comfy.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-compact',
+                        src: 'ic-view-compact.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-day',
+                        src: 'ic-view-day.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-headline',
+                        src: 'ic-view-headline.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-list',
+                        src: 'ic-view-list.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-module',
+                        src: 'ic-view-module.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-quilt',
+                        src: 'ic-view-quilt.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-stream',
+                        src: 'ic-view-stream.svg'
+                    });
+                    icons.push({
+                        name: 'ic-view-week',
+                        src: 'ic-view-week.svg'
+                    });
+                    icons.push({
+                        name: 'ic-vignette',
+                        src: 'ic-vignette.svg'
+                    });
+                    icons.push({
+                        name: 'ic-visibility-off',
+                        src: 'ic-visibility-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-visibility',
+                        src: 'ic-visibility.svg'
+                    });
+                    icons.push({
+                        name: 'ic-voice-chat',
+                        src: 'ic-voice-chat.svg'
+                    });
+                    icons.push({
+                        name: 'ic-voicemail',
+                        src: 'ic-voicemail.svg'
+                    });
+                    icons.push({
+                        name: 'ic-volume-down',
+                        src: 'ic-volume-down.svg'
+                    });
+                    icons.push({
+                        name: 'ic-volume-mute',
+                        src: 'ic-volume-mute.svg'
+                    });
+                    icons.push({
+                        name: 'ic-volume-off',
+                        src: 'ic-volume-off.svg'
+                    });
+                    icons.push({
+                        name: 'ic-volume-up',
+                        src: 'ic-volume-up.svg'
+                    });
+                    icons.push({
+                        name: 'ic-vpn-key',
+                        src: 'ic-vpn-key.svg'
+                    });
+                    icons.push({
+                        name: 'ic-vpn-lock',
+                        src: 'ic-vpn-lock.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wallet-giftcard',
+                        src: 'ic-wallet-giftcard.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wallet-membership',
+                        src: 'ic-wallet-membership.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wallet-travel',
+                        src: 'ic-wallet-travel.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wallpaper',
+                        src: 'ic-wallpaper.svg'
+                    });
+                    icons.push({
+                        name: 'ic-warning',
+                        src: 'ic-warning.svg'
+                    });
+                    icons.push({
+                        name: 'ic-watch-later',
+                        src: 'ic-watch-later.svg'
+                    });
+                    icons.push({
+                        name: 'ic-watch',
+                        src: 'ic-watch.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wb-auto',
+                        src: 'ic-wb-auto.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wb-cloudy',
+                        src: 'ic-wb-cloudy.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wb-incandescent',
+                        src: 'ic-wb-incandescent.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wb-iridescent',
+                        src: 'ic-wb-iridescent.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wb-irradescent',
+                        src: 'ic-wb-irradescent.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wb-sunny',
+                        src: 'ic-wb-sunny.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wc',
+                        src: 'ic-wc.svg'
+                    });
+                    icons.push({
+                        name: 'ic-web-asset',
+                        src: 'ic-web-asset.svg'
+                    });
+                    icons.push({
+                        name: 'ic-web',
+                        src: 'ic-web.svg'
+                    });
+                    icons.push({
+                        name: 'ic-weekend',
+                        src: 'ic-weekend.svg'
+                    });
+                    icons.push({
+                        name: 'ic-whatshot',
+                        src: 'ic-whatshot.svg'
+                    });
+                    icons.push({
+                        name: 'ic-widgets',
+                        src: 'ic-widgets.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wifi-lock',
+                        src: 'ic-wifi-lock.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wifi-tethering',
+                        src: 'ic-wifi-tethering.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wifi',
+                        src: 'ic-wifi.svg'
+                    });
+                    icons.push({
+                        name: 'ic-work',
+                        src: 'ic-work.svg'
+                    });
+                    icons.push({
+                        name: 'ic-wrap-text',
+                        src: 'ic-wrap-text.svg'
+                    });
+                    icons.push({
+                        name: 'ic-youtube-searched-for',
+                        src: 'ic-youtube-searched-for.svg'
+                    });
+                    icons.push({
+                        name: 'ic-zoom-in',
+                        src: 'ic-zoom-in.svg'
+                    });
+                    icons.push({
+                        name: 'ic-zoom-out-map',
+                        src: 'ic-zoom-out-map.svg'
+                    });
+                    icons.push({
+                        name: 'ic-zoom-out',
+                        src: 'ic-zoom-out.svg'
+                    });
+                </script>
+            </div>
+        </section>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

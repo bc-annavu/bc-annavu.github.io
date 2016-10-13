@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/utils.html">
+                                Developer Utilities
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/breakpoints.html')}">
+                                        <a class="asideNav-link" href="/breakpoints.html">Breakpoints</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/containers.html')}">
+                                        <a class="asideNav-link" href="/containers.html">Containers</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-display.html')}">
+                                        <a class="asideNav-link" href="/utilities-display.html">Display</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/elevation.html')}">
+                                        <a class="asideNav-link" href="/elevation.html">Elevation</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-grid.html')}">
+                                        <a class="asideNav-link" href="/utilities-grid.html">Grid</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-heading-styles.html')}">
+                                        <a class="asideNav-link" href="/utilities-heading-styles.html">Heading Styles</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-media.html')}">
+                                        <a class="asideNav-link" href="/utilities-media.html">Media object</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-layout.html')}">
+                                        <a class="asideNav-link" href="/utilities-layout.html">Layout</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-lists.html')}">
+                                        <a class="asideNav-link" href="/utilities-lists.html">Lists</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-position.html')}">
+                                        <a class="asideNav-link" href="/utilities-position.html">Position</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-shapes.html')}">
+                                        <a class="asideNav-link" href="/utilities-shapes.html">Shapes</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-sizing.html')}">
+                                        <a class="asideNav-link" href="/utilities-sizing.html">Sizing</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/spacing.html')}">
+                                        <a class="asideNav-link" href="/spacing.html">Spacing</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-text.html')}">
+                                        <a class="asideNav-link" href="/utilities-text.html">Text</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/z-index.html')}">
+                                        <a class="asideNav-link" href="/z-index.html">Z-index</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Grid</h1>
+
+             
+        <p>
+            We are utilising the 12 column grid that comes with Foundation, with two
+            minor differences. The row width is 100% and you <strong>do not</strong> have the utility
+            classes available to you.
+        </p>
+
+        <section class="panel labPanel">
+            <div class="panel-body">
+                <div class="labPanel-content" id="labExampleGrid">
+                    <h5 class="labPanel-title">Example</h5>
+
+                    <div class="row">
+                        <div class="column grid-1"></div>
+                        <div class="column grid-1"></div>
+                        <div class="column grid-1"></div>
+                        <div class="column grid-1"></div>
+                        <div class="column grid-1"></div>
+                        <div class="column grid-1"></div>
+                        <div class="column grid-1"></div>
+                        <div class="column grid-1"></div>
+                        <div class="column grid-1"></div>
+                        <div class="column grid-1"></div>
+                        <div class="column grid-1"></div>
+                        <div class="column grid-1"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="column grid-2"></div>
+                        <div class="column grid-2"></div>
+                        <div class="column grid-2"></div>
+                        <div class="column grid-2"></div>
+                        <div class="column grid-2"></div>
+                        <div class="column grid-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="column grid-3"></div>
+                        <div class="column grid-3"></div>
+                        <div class="column grid-3"></div>
+                        <div class="column grid-3"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="column grid-4"></div>
+                        <div class="column grid-4"></div>
+                        <div class="column grid-4"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="column grid-6"></div>
+                        <div class="column grid-6"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="column grid-12"></div>
+                    </div>
+                </div>
+                <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'sass',
+    autoClearEmptyLines: true
+}">
+.container {
+    @include grid-row();
+}
+
+.aside {
+    @include grid-column(4)
+}
+
+.main {
+    @include grid-column(8)
+}
+</textarea>
+                </div>
+                <div class="labPanel-content">
+                    <h5 class="labPanel-title">Notes:</h5>
+                    <p>
+                        Fortunately Foundation comes with some <a href="http://foundation.zurb.com/docs/components/grid.html#row-mixin-options" target="_blank">excellent mixin support</a>
+                        for rolling your own layouts without littering the DOM with
+                        unmaintainable <code>span-4</code>'s or <code>sm-col-3</code>.
+                    </p>
+                    <p>
+                        Simply call the mixins to create grids based on your markup.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Mobile First</h3>
+
+            <div class="panel-body">
+                <p>
+                    The BigCommerce Pattern Lab is a mobile first library of design
+                    patterns and so should your layouts be.
+                </p>
+                <div class="labPanel-content">
+                    <h5 class="labPanel-title">Example:</h5>
+
+                    <div class="row">
+                        <div class="column column--mobile"></div>
+                        <div class="column column--mobile">
+                            <div class="row">
+                                <div class="column column--mobile"></div>
+                                <div class="column column--mobile"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'sass',
+    autoClearEmptyLines: true
+}">
+.row {
+    @include grid-row();
+
+    .row {
+        @include grid-row($behavior: nest);
+    }
+}
+
+.column--mobile {
+    @include grid-column(12);
+
+    @include breakpoint("xsmall") {
+        @include grid-column(6);
+    }
+
+    .column--mobile {
+        @include breakpoint("xsmall") {
+            @include grid-column(12);
+        }
+
+        @include breakpoint("medium") {
+            @include grid-column(6);
+        }
+    }
+}
+</textarea>
+                </div>
+
+                <div class="labPanel-content">
+                    <h5 class="labPanel-title">Notes:</h5>
+                    <p>
+                        An over simplified example (<strong>Don't name your classes like this</strong>)
+                        using mixins we can create a layout which progressively get's
+                        built as screen size increases.
+                    </p>
+                    <p>
+                        All columns start spanning 12 columns of the grid, and start
+                        condensing as the screen increases and you can fit more content
+                        horizontally.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

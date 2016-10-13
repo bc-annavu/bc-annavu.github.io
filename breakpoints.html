@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/utils.html">
+                                Developer Utilities
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/breakpoints.html')}">
+                                        <a class="asideNav-link" href="/breakpoints.html">Breakpoints</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/containers.html')}">
+                                        <a class="asideNav-link" href="/containers.html">Containers</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-display.html')}">
+                                        <a class="asideNav-link" href="/utilities-display.html">Display</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/elevation.html')}">
+                                        <a class="asideNav-link" href="/elevation.html">Elevation</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-grid.html')}">
+                                        <a class="asideNav-link" href="/utilities-grid.html">Grid</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-heading-styles.html')}">
+                                        <a class="asideNav-link" href="/utilities-heading-styles.html">Heading Styles</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-media.html')}">
+                                        <a class="asideNav-link" href="/utilities-media.html">Media object</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-layout.html')}">
+                                        <a class="asideNav-link" href="/utilities-layout.html">Layout</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-lists.html')}">
+                                        <a class="asideNav-link" href="/utilities-lists.html">Lists</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-position.html')}">
+                                        <a class="asideNav-link" href="/utilities-position.html">Position</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-shapes.html')}">
+                                        <a class="asideNav-link" href="/utilities-shapes.html">Shapes</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-sizing.html')}">
+                                        <a class="asideNav-link" href="/utilities-sizing.html">Sizing</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/spacing.html')}">
+                                        <a class="asideNav-link" href="/spacing.html">Spacing</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-text.html')}">
+                                        <a class="asideNav-link" href="/utilities-text.html">Text</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/z-index.html')}">
+                                        <a class="asideNav-link" href="/z-index.html">Z-index</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Breakpoints</h1>
+
+                     <p>
+            When building a component you should be thinking "mobile first".
+            When taking this approach you will often need to set breakpoints
+            for you component to change according to the increasing screen
+            real-estate it gets.
+        </p>
+
+        <p>
+            We provide you with a predefined set of breakpoints you can call
+            in your code. You should start at the "mobile" state first,
+            and modify your component as the screen size increases.
+        </p>
+
+        <p>
+            By using the predefined scale, a lot of components will adapt
+            to the screen in a uniform manor.
+        </p>
+
+
+        <section class="panel labPanel">
+            <div class="panel-body">
+                <div class="labPanel-content">
+
+    <textarea ui-codemirror="{
+        'lineNumbers': true,
+        'theme':'default',
+        'readOnly': 'true',
+        'lineWrapping' : false,
+        'mode': 'sass',
+        autoClearEmptyLines: true
+    }">
+    .component {
+        background-color: color("greys", "lighter");
+        font-size: fontSize("small");
+        padding: spacing("half");
+
+        @include breakpoint("medium") {
+            font-size: fontSize("large");
+            padding: spacing("base");
+        }
+
+        @include breakpoint("xlarge") {
+            padding: spacing("single");
+        }
+    }</textarea>
+
+                </div>
+
+                <div class="labPanel-content">
+                    <h5>Notes:</h5>
+                    <p>
+                        If your component is some what complex, the predefined scale
+                        may not cover all your needs.
+                    </p>
+                    <p>
+                        In this instance you can declare
+                        a custom size by passing in a pixel value into the mixin,
+                        <code>@include breakpoint(800px)</code>.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="panel labPanel">
+            <table class="table">
+                <thead class="table-thead">
+                    <tr>
+                        <th>Breakpoint</th>
+                        <th>Size</th>
+                    </tr>
+                </thead>
+                <tbody class="table-tbody">
+                    <tr>
+                        <td>
+                            <code>breakpoint("xxsmall")</code>
+                        </td>
+                        <td><code>@media (min-width: 320px)</code></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>breakpoint("xsmall")</code>
+                        </td>
+                        <td><code>@media (min-width: 481px)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>breakpoint("small")</code>
+                        </td>
+                        <td><code>@media (min-width: 769px)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>breakpoint("medium")</code>
+                        </td>
+                        <td><code>@media (min-width: 1025px)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>breakpoint("large")</code>
+                        </td>
+                        <td><code>@media (min-width: 1281px)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>breakpoint("xlarge")</code>
+                        </td>
+                        <td><code>@media (min-width: 1441px)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>breakpoint("xxlarge")</code>
+                        </td>
+                        <td><code>@media (min-width: 1681px)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>breakpoint("xxxlarge")</code>
+                        </td>
+                        <td><code>@media (min-width: 1920px)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>breakpoint(npx)</code>
+                        </td>
+                        <td><code>@media (min-width: npx)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

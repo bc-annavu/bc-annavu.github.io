@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/utils.html">
+                                Developer Utilities
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/breakpoints.html')}">
+                                        <a class="asideNav-link" href="/breakpoints.html">Breakpoints</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/containers.html')}">
+                                        <a class="asideNav-link" href="/containers.html">Containers</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-display.html')}">
+                                        <a class="asideNav-link" href="/utilities-display.html">Display</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/elevation.html')}">
+                                        <a class="asideNav-link" href="/elevation.html">Elevation</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-grid.html')}">
+                                        <a class="asideNav-link" href="/utilities-grid.html">Grid</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-heading-styles.html')}">
+                                        <a class="asideNav-link" href="/utilities-heading-styles.html">Heading Styles</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-media.html')}">
+                                        <a class="asideNav-link" href="/utilities-media.html">Media object</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-layout.html')}">
+                                        <a class="asideNav-link" href="/utilities-layout.html">Layout</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-lists.html')}">
+                                        <a class="asideNav-link" href="/utilities-lists.html">Lists</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-position.html')}">
+                                        <a class="asideNav-link" href="/utilities-position.html">Position</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-shapes.html')}">
+                                        <a class="asideNav-link" href="/utilities-shapes.html">Shapes</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-sizing.html')}">
+                                        <a class="asideNav-link" href="/utilities-sizing.html">Sizing</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/spacing.html')}">
+                                        <a class="asideNav-link" href="/spacing.html">Spacing</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/utilities-text.html')}">
+                                        <a class="asideNav-link" href="/utilities-text.html">Text</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/z-index.html')}">
+                                        <a class="asideNav-link" href="/z-index.html">Z-index</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Media Object</h1>
+
+                     <p>
+            The media object is a common UI pattern which is often used in
+            a lot of situations where you have a figure and some written content.
+        </p>
+
+        <p>
+            The figure usually appears to the left or the right of the
+            written content and sometimes can appear with some sort of action
+            a user should take.
+        </p>
+
+        <p>
+            To help speed up development, when you are presented with a new
+            media object like component, you can use the <code>media</code>
+            mixin to quickly scaffold the main structural components. Below are
+            illustrative examples of the two types of media object layouts
+            you can achieve. The <code>media</code> mixin doesn't provide
+            any kind of UI skin, <strong>only structure</strong>.
+        </p>
+
+        <p>
+            The media mixin takes the components CSS class name, and appends
+            pre-defined names to generate the CSS for a given media object
+            type, and it's associated HTML mark-up needed to achieve that layout.
+        </p>
+
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Media Object <small>default</small></h3>
+            <div class="panel-body">
+
+                <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'sass',
+    autoClearEmptyLines: true
+}">
+.componentName {
+    @include media;
+}</textarea>
+
+                </div>
+
+                <div class="labPanel-content">
+                    <p>
+                        By including the <code>media</code> mixin into your CSS component,
+                        it will generate some pre-defined mark-up structures detailed below.
+                    </p>
+                    <p>
+                        The default media object uses floats for layout.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel labPanel">
+            <div class="panel-body">
+                <div class="u-mediaDefault">
+                    <figure class="u-mediaDefault-figure">
+                        <img src="http://placehold.it/150x100.png" alt="">
+                    </figure>
+                    <div class="u-mediaDefault-body">
+                        <h2>Media Object Body</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore ipsum, atque praesentium ad ut perspiciatis aliquid recusandae quasi eum laudantium culpa, odio maxime, eveniet nam architecto. Aliquam illum nemo repudiandae.</p>
+                    </div>
+                </div>
+
+                <div class="labPanel-content">
+
+    <textarea ui-codemirror="{
+        'lineNumbers': true,
+        'theme':'default',
+        'readOnly': 'true',
+        'lineWrapping' : false,
+        'mode': 'text/html',
+        autoClearEmptyLines: true
+    }">
+    <div class="componentName">
+        <figure class="componentName-figure"> </figure>
+        <div class="componentName-body"> </div>
+    </div></textarea>
+
+                </div>
+
+                <div class="labPanel-content">
+                    <p>
+                        To attain the above layout, follow the simple HTML structure
+                        that is described by the Sass mixin. A media object comes with
+                        <code>componentName-figure</code> and <code>componentName-body</code>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel labPanel">
+            <div class="panel-body">
+                <div class="u-mediaDefault">
+                    <figure class="u-mediaDefault-figure u-mediaDefault-figure--opposite">
+                        <img src="http://placehold.it/150x100.png" alt="">
+                    </figure>
+                    <div class="u-mediaDefault-body">
+                        <h2>Media Object Body</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque minus, sint similique assumenda inventore, fugit, eos, dolore maxime natus vel magnam autem placeat numquam facere? Ab suscipit corporis, facere aut.</p>
+                    </div>
+                </div>
+                <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<div class="componentName">
+    <figure class="componentName-figure componentName-figure--opposite"> </figure>
+    <div class="componentName-body"> </div>
+</div></textarea>
+
+                </div>
+                <div class="labPanel-content">
+                    <p>
+                        To position the figure to the right of the text, use the
+                        <code>componentName-figure--opposite</code> modifier whilst keeping
+                        the mark-up structure the same.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Media object <small>table</small></h3>
+
+            <div class="panel-body">
+
+                <p>
+                    As an alternative, the table layout version may also be used.
+                    This gives better middle, vertical alignment to the content in
+                    the media object, and comes with an additional <code>actions</code>
+                    section.
+                </p>
+                <p>
+                    The name table comes from using <code>display: table</code>
+                    to achieve the vertical alignment, and as such each section is contained
+                    in a <code>componentName-column</code> which acts as a table cell
+                </p>
+                <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'sass',
+    autoClearEmptyLines: true
+}">
+.componentName {
+    @include media("table");
+}</textarea>
+                </div>
+                <div class="labPanel-content">
+                    <p>
+                        Pass in the string of <code>table</code> to the media mixin
+                        to change the pre-defined HTML structure outputted in the
+                        components CSS.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel labPanel">
+            <div class="panel-body">
+                <div class="labPanel-content">
+
+                    <div class="u-mediaTable">
+                        <figure class="u-mediaTable-column u-mediaTable-figure">
+                            <img src="http://placehold.it/150x100.png" alt="">
+                        </figure>
+                        <div class="u-mediaTable-column u-mediaTable-body">
+                            <h2>Media Object Table Body</h2>
+                            <p>Description</p>
+                        </div>
+                        <div class="u-mediaTable-column u-mediaTable-actions">
+                            <button class="button button--primary">Action</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<div class="componentName">
+    <figure class="componentName-column componentName-figure"> </figure>
+    <div class="componentName-column componentName-body"> </div>
+    <div class="componentName-column componentName-actions"> </div>
+</div></textarea>
+                </div>
+
+                <div class="labPanel-content">
+                    <p>
+                        Label each section of the media object as a <code>-column</code>.
+                        You then have the choice of a <code>-figure</code>, <code>-body</code>
+                        or <code>-actions</code> CSS class for the desired layout.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel labPanel">
+            <div class="panel-body">
+                <div class="labPanel-content">
+                    <div class="u-mediaTable">
+                        <div class="u-mediaTable-column u-mediaTable-body">
+                            <h2>Media Object Table Body</h2>
+                            <p>Description</p>
+                        </div>
+                        <figure class="u-mediaTable-column u-mediaTable-figure">
+                            <img src="http://placehold.it/150x100.png" alt="">
+                        </figure>
+                    </div>
+                </div>
+                <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+<div class="componentName">
+    <div class="componentName-column componentName-body"> </div>
+    <figure class="componentName-column componentName-figure"> </figure>
+</div></textarea>
+
+                </div>
+                <div class="labPanel-content">
+                    <p>
+                        Unlike the default media object, to achieve the figure being
+                        positioned to the right of the text content, no modifier class
+                        is required but the mark-up structure does need to be re-ordered.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

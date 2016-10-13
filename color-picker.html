@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/patterns.html">
+                                Patterns
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/action-bar.html')}">
+                                        <a class="asideNav-link" href="/action-bar.html">Action Bar</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/color-picker.html')}">
+                                        <a class="asideNav-link" href="/color-picker.html">Color Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/credit-card.html')}">
+                                        <a class="asideNav-link" href="/credit-card.html">Credit Card Payment</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/data-tables.html')}">
+                                        <a class="asideNav-link" href="/data-tables.html">Data Tables</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/date-picker.html')}">
+                                        <a class="asideNav-link" href="/date-picker.html">Date Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/loading-states.html')}">
+                                        <a class="asideNav-link" href="/loading-states.html">Loading States</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/prompt.html')}">
+                                        <a class="asideNav-link" href="/prompt.html">Prompts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/navigation.html')}">
+                                        <a class="asideNav-link" href="/navigation.html">Navigation</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/alerts.html')}">
+                                        <a class="asideNav-link" href="/alerts.html">Notifications and Alerts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/warning-button.html')}">
+                                        <a class="asideNav-link" href="/warning-button.html">Warning Button</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Color Picker</h1>
+
+                     <p>
+           Color Picker are used to select the color of an element (text, background color).
+        </p>
+        <section class="panel labPanel">
+            <h4 class="labPanel-title">Subcomponents</h4>
+            <ul class="u-listNoBullet labRelated-list">
+                <li><a href="/buttons.html">Buttons</a></li>
+                <li><a href="/interface-icons">Icons</a></li>
+                <li><a href="/forms.html">Forms</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="panel labPanel">
+
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content">
+                            <img class="labPanel-docsTabs-figure" src="images/colorPicker_screen.png">
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>Color picker are always associated to an input. The value of the input will show the hexadecimal value of the color selected from the color picker, or the default value.</p>
+                            <p>Clicking on any part of the input will open the color picker tooltip. Clicking on the color rectangle or outside of the input will close the color picker tooltip.</p>
+                            <p>Users can add prefered colors by selecting the color first and then click on the + button. Saved colors can be deleted by selecting the color and then clicking on the delete icon.</p>
+                        </div>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>Developer</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<form-input-color
+    label-text="inputLabelText"
+    ng-model="inputModelValue"
+    palette="inputPalette"
+    placeholder-text="inputPlaceholderText"
+>
+</form-input-color></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>Color picker are always associated to an input. The value of the input will show the hexadecimal value of the color selected from the color picker, or the default value.</p>
+                            <p>Clicking on any part of the input will open the color picker tooltip. Clicking on the color rectangle or outside of the input will close the color picker tooltip.</p>
+                            <p>Users can add prefered colors by selecting the color first and then click on the + button. Saved colors can be deleted by selecting the color and then clicking on the delete icon.</p>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

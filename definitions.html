@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/">
+                                Overview
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/')}">
+                                        <a class="asideNav-link" href="/">Principles</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/definitions.html')}">
+                                        <a class="asideNav-link" href="/definitions.html">Definitions</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Definitions</h1>
+
+             
+        <div ui-view>
+            <p>The Pattern Lab is a design-first tool that allows designers and developers speak the same language to each other. The designer should be able to set rules and guidelines which they can follow confidently to solve any interaction problem. The developer should be able to consume the pattern lab and design system in order to build any interaction the designer has created while also adhering to the design styleguide, using reusable code modules, and without repeating themselves.</p>
+
+            <section class="panel labPanel">
+                <h3 class="labPanel-heading">Atomic Design</h3>
+                <div class="panel-body">
+                    <p>In a lot of ways, this is how we’ve been doing things all along, even if we haven’t been consciously thinking about it in this specific way.</p>
+                    <p>Atomic design provides a clear methodology for crafting design systems. Clients and team members are able to better appreciate the concept of design systems by actually seeing the steps laid out in front of them.</p>
+                    <p>Atomic design gives us the ability to traverse from abstract to concrete. Because of this, we can create systems that promote consistency and scalability while simultaneously showing things in their final context. And by assembling rather than deconstructing, we’re crafting a system right out of the gate instead of cherry picking patterns after the fact.</p>
+                </div>
+            </section>
+            <section class="panel labPanel">
+                <h3 class="labPanel-heading">Components</h3>
+                <div class="panel-body">
+                    <p>The building blocks of our pattern lab. The smallest piece of UI you can divide your patterns into, without abstracting it or turning it into plain content. Components do not necessarily have specific behaviours, or purpose, on their own. They are abstractions – you will never have a single component on a page unless it’s part of a pattern with a specific purpose.</p>
+                    <p>A button is a component. It will have some sort of icon or text label in it to inform you of the action you’d be performing when you click it. It has a click input from you, and will output something to you as a result.</p>
+                    <p>From a development standpoint, a component does not necessarily have to mean a specific element in the HTML. A component can be made up of multiple logical elements that describe its attributes, like divs or spans.</p>
+                </div>
+            </section>
+            <section class="panel labPanel">
+                <h3 class="labPanel-heading">Patterns</h3>
+                <div class="panel-body">
+                    <p>Patterns are component(s) coming together to form an interaction with the user, thereby gaining a purpose. They have specific rules, attributes and behaviours, as defined by our design language and style guides.</p>
+                    <p>A login form is a pattern. It uses two form field components, and a button component. Its purpose is to authenticate the user by asking them for a username and password, and then getting them to submit the form via a submit button.</p>
+                    <p>Patterns may also exist within patterns. Depending on the use case, their attributes may change slightly, but their purpose will stay the same.</p>
+                </div>
+            </section>
+
+        </div>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

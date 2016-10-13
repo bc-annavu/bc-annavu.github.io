@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Account Details</h1>
+
+             
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Account address</h2>
+
+            <div class="panel-body">
+                <div class="labPanel-content">
+                    <ul class="account">
+                        <!-- l10n support, first and last name may switch-->
+                        <li class="account-name">
+                            <span class="account-firstName">David</span>
+                            <span class="account-lastName">Smith</span>
+                        </li>
+                        <li class="account-address-line1">150 Stockton St</li>
+                        <li>
+                            <span class="account-address-city">San Francisco</span>,
+                            <span class="account-address-state">CA</span>
+                            <span class="account-address-postalCode">94108</span>
+                        </li>
+                        <li class="account-address-country">United States</li>
+                    </ul>
+
+                    <ul class="account">
+                        <li class="account-phoneNumber">
+                            415-362-3900
+                        </li>
+                        <li class="account-email">
+                            <a href="mailto:david.smith@hotmail.com">david.smith@hotmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}"><ul class="account">
+    <li class="account-name">
+        <span class="account-firstName">David</span>
+        <span class="account-lastName">Smith</span>
+    </li>
+    <li class="account-address-line1">150 Stockton St</li>
+    <li>
+        <span class="account-address-city">San Francisco</span>,
+        <span class="account-address-state">CA</span>
+        <span class="account-address-postalCode">94108</span>
+    </li>
+    <li class="account-address-country">United States</li>
+</ul>
+
+<ul class="account">
+    <li class="account-phoneNumber">
+        415-362-3900
+    </li>
+    <li class="account-email">
+        <a href="mailto:david.smith@hotmail.com">david.smith@hotmail.com</a>
+    </li>
+</ul></textarea>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

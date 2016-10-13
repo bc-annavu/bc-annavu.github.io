@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/patterns.html">
+                                Patterns
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/action-bar.html')}">
+                                        <a class="asideNav-link" href="/action-bar.html">Action Bar</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/color-picker.html')}">
+                                        <a class="asideNav-link" href="/color-picker.html">Color Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/credit-card.html')}">
+                                        <a class="asideNav-link" href="/credit-card.html">Credit Card Payment</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/data-tables.html')}">
+                                        <a class="asideNav-link" href="/data-tables.html">Data Tables</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/date-picker.html')}">
+                                        <a class="asideNav-link" href="/date-picker.html">Date Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/loading-states.html')}">
+                                        <a class="asideNav-link" href="/loading-states.html">Loading States</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/prompt.html')}">
+                                        <a class="asideNav-link" href="/prompt.html">Prompts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/navigation.html')}">
+                                        <a class="asideNav-link" href="/navigation.html">Navigation</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/alerts.html')}">
+                                        <a class="asideNav-link" href="/alerts.html">Notifications and Alerts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/warning-button.html')}">
+                                        <a class="asideNav-link" href="/warning-button.html">Warning Button</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Notifications and Alerts</h1>
+
+                     <p>
+           A message that pops up on your screen to warn you that your computer is about to perform an operation with potentially damaging consequences. It is a safeguard for users, preventing us from doing things we wish we hadn't.
+        </p>
+
+        <hr>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Alerts</h3>
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content">
+                            <img class="labPanel-docsTabs-figure" src="images/alerts_screen.png">
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>Alerts can be used to inform users about the actions they perform. They can be displayed at a page level or inside a specific container.</p>
+                            <p>Please use the appropriate level alert for the message. Not everything is an error.
+                            Alerts have the ability to take HTML in their body so you can build more informative alerts.
+                            Just remember to use alertBox-heading for your alert title.</p>
+                        </div>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>Developer</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<alert
+    ng-repeat="alert in alerts"
+    type="alert.type"
+    close="closeAlert($index)"
+>
+    
+</alert></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>Alerts can be used to inform users about the actions they perform. They can be displayed at a page level or inside a specific container.</p>
+                            <p>Please use the appropriate level alert for the message. Not everything is an error.
+                            Alerts have the ability to take HTML in their body so you can build more informative alerts.
+                            Just remember to use alertBox-heading for your alert title.</p>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Banners</h3>
+            <div class="labPanel-docs">
+                <div class="labPanel-docsDemo">
+                    <a href="/demo.html#/components/banners" class="button--icon demo-button" target="_blank">
+                        View Demo <icon glyph="ic-open-in-new"></icon>
+                    </a>
+                </div>
+                <tabset class="labPanel-docsTabs">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content demo">
+                            <img class="labPanel-docsTabs-figure" src="images/banner_screen.png">
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>
+                                1. <code>.banner</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Default banners are similar to alerts, in that they are intended to notify the user of a contextually relevant piece of information or event. The Banner includes the media-table object as defined by the SASS Library. This is similar to the OOCSS media object, but displays like a table to allow vertical centering of its content.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.banner-column</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Banners can be divided into multiple sections which vertically align all of its content to the middle. The vertical alignment is a setting, and can be changed.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                3. <code>.banner-figure</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Optional promotional image with width=250 and height=120. It is hidden in mobile.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                4. <code>.banner-body</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Main content for the banner. Inner elements can include <code>.banner-title</code> and a description. The banner title has a max character count of 40; the banner description has a max character count of 110.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                5. <code>.banner-actions</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Call-to-actions for the banners lives in here. Can included call to action links and/or the dismiss button for the banner.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                5. <code>data-role=data-gsc-dismiss-XXX</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Data-role for the dismiss button where XXX is a unique identifier for the banner.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>Developer</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<div class="banner">
+    <div class="banner-figure">
+        <img src="https://placehold.it/250x120" alt="" width="250" height="120" />
+    </div>
+    <div class="banner-column banner-body">
+        <h4 class="banner-title">Banner Title</h4>
+        <p class="banner-description">Banner Description</p>
+    </div>
+    <div class="banner-column banner-actions">
+        <a class="button button--marketing">Learn More</a>
+        <p><a href="#" data-role="data-gsc-dismiss-XXX">Dismiss</a></p>
+    </div>
+</div></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>
+                                1. <code>.banner</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Default banners are similar to alerts, in that they are intended to notify the user of a contextually relevant piece of information or event. The Banner includes the media-table object as defined by the SASS Library. This is similar to the OOCSS media object, but displays like a table to allow vertical centering of its content.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>.banner-column</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Banners can be divided into multiple sections which vertically align all of its content to the middle. The vertical alignment is a setting, and can be changed.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                3. <code>.banner-figure</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Optional promotional image with width=250 and height=120. It is hidden in mobile.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                4. <code>.banner-body</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Main content for the banner. Inner elements can include <code>.banner-title</code> and a description. The banner title has a max character count of 40; the banner description has a max character count of 110.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                5. <code>.banner-actions</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Call-to-actions for the banners lives in here. Can included call to action links and/or the dismiss button for the banner.</li>
+                                    <li>To have the dismiss button be on a second line, add a paragraph tag to the dismiss button. If not, the two buttons will be on the same line.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                5. <code>data-role=data-gsc-dismiss-XXX</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Data-role for the dismiss button where XXX is a unique identifier for the banner.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Page Messaging</h3>
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content">
+                            <img class="labPanel-docsTabs-figure" src="images/pageMessage_screen.png">
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>
+                                The Page Message relays status messaging to the user from the app's services. This could include negative messaging ("service not available" errors), or positive messaging ("You've completed all your orders today!") etc.
+                            </p>
+                            <p>
+                                The pattern can also be accompanied by an icon or image to further describe the language of the messaging.
+                            </p>
+                        </div>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>Developer</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<div class="panel">
+    <div class="labPanel-docs">
+        <div class="pageMessage">
+            <h2>Lorem Ipsum Dolor Sit Amet</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+    </div>
+</div></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>
+                                The Page Message relays status messaging to the user from the app's services. This could include negative messaging ("service not available" errors), or positive messaging ("You've completed all your orders today!") etc.
+                            </p>
+                            <p>
+                                The pattern can also be accompanied by an icon or image to further describe the language of the messaging.
+                            </p>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

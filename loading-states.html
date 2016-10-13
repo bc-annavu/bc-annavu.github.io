@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.6.0)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item is-active">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/patterns.html">
+                                Patterns
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/action-bar.html')}">
+                                        <a class="asideNav-link" href="/action-bar.html">Action Bar</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/color-picker.html')}">
+                                        <a class="asideNav-link" href="/color-picker.html">Color Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/credit-card.html')}">
+                                        <a class="asideNav-link" href="/credit-card.html">Credit Card Payment</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/data-tables.html')}">
+                                        <a class="asideNav-link" href="/data-tables.html">Data Tables</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/date-picker.html')}">
+                                        <a class="asideNav-link" href="/date-picker.html">Date Picker</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/loading-states.html')}">
+                                        <a class="asideNav-link" href="/loading-states.html">Loading States</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/prompt.html')}">
+                                        <a class="asideNav-link" href="/prompt.html">Prompts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/navigation.html')}">
+                                        <a class="asideNav-link" href="/navigation.html">Navigation</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/alerts.html')}">
+                                        <a class="asideNav-link" href="/alerts.html">Notifications and Alerts</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/warning-button.html')}">
+                                        <a class="asideNav-link" href="/warning-button.html">Warning Button</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">Loading States</h1>
+
+                 <div ng-controller="LoadingIndicatorsCtrl as loadingIndicatorsCtrl">
+        <p>
+           A program that is loaded may itself contain components that are not initially loaded into main storage, but can be loaded if and when their logic is needed. Once loading state is triggered, a symbol is usually shown as a feedback to the user.
+        </p>
+        <section class="panel labPanel">
+            <h4 class="labPanel-title">Subcomponents</h4>
+            <ul class="u-listNoBullet labRelated-list">
+                <li><a href="/progress-bars.html">Progress Bars</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="panel labPanel">
+            <h3>Page Loading</h3>
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content">
+                            <button class="loading-request button" ng-click="loadingIndicatorsCtrl.fakeHttpRequest()">Simulate minor update</button>
+                            <loading-notification></loading-notification>
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4>Rules:</h4>
+                            <p>
+                                The loading notification should be used anywhere an interaction may
+                                cause a small delay, but doesn't stop the user interacting with the page.
+                            </p>
+                        </div>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>Developer</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}">
+
+<loading-notification></loading-notification>
+</textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <p>
+                                This will automatically listen for <code>ajaxRequestRunning</code> from
+                                <code>ng-common</code> when placed on the page. Placement should be near the top.
+                            </p>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
+
+        <section class="panel labPanel">
+        <h3>Loading Overlay</h3>
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content">
+                            <form class="form" id="loadingOverlay-example1">
+                                <fieldset class="form-fieldset">
+
+                                    <legend class="form-legend">
+                                        <a class="e2e-toggleLoading button" ng-click="loadingIndicatorsCtrl.toggleManualLoading()">Toggle a loading state on this form</a>
+                                    </legend>
+
+                                    <div class="form-body" loading-overlay="loadingIndicatorsCtrl.manualLoading">
+
+                                        <div class="form-field">
+                                            <label class="form-label" for="input12">Input Label</label>
+                                            <input class="form-input" id="input12" type="text" placeholder="Placeholder text">
+                                        </div>
+
+                                        <div class="form-field">
+                                            <label class="form-label" for="input4">Prefixed Label <small>(Inc. tax)</small></label>
+                                            <div class="form-prefixPostfix">
+                                                <span class="form-prefixPostfix-label form-prefixPostfix-label--prefix" id="prefixDesc1">AUD $</span>
+                                                <input class="form-input form-prefixPostfix-input" id="input4" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc1">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-field">
+                                            <label class="form-label" for="input7">Postfixed Button</label>
+                                            <div class="form-prefixPostfix">
+                                                <input class="form-input" id="input7" type="text" placeholder="Placeholder text">
+                                                <input class="button form-prefixPostfix-button--postfix" type="submit" value="Save">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4>Rules:</h4>
+                            <p>
+                                The <code>loading-overlay</code> <em>should</em> be able to be placed on any
+                                container, modal or panel.
+                            </p>
+                            <p>
+                                It is used to indicate a section change, page load, or full panel refresh,
+                                where the user will not be able to interact with the page during that change.
+                            </p>
+                        </div>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>Developer</tab-heading>
+                        <div class="labPanel-content">
+                            <div class="labPanel-content">
+
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+autoClearEmptyLines: true
+}"><div class="your-container" loading-overlay="loadingIndicatorsCtrl.manualLoading">
+&hellip;
+</div>
+
+<div class="form-body" loading-overlay use-ui-router="true">
+&hellip;
+</div></textarea>
+                            </div>
+                        </div>
+                        <div class="labPanel-content">
+                            <p>
+                                You can manually set the loading state by passing the directive a boolean.
+                                Or you set it to <code>use-ui-router</code>, where it will listen for
+                                <code>$stateChangeStart</code>, <code>$stateChangeSuccess</code> and <code>$stateChangeError</code>
+                            </p>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
+
+        <section class="panel labPanel">
+            <h3>Loading Progress</h3>
+            <div class="labPanel-docs">
+                <tabset class="labPanel-docsTabs">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content">
+                            <div class="progress">
+                                <span class="progress-meter" style="width: 75%;"></span>
+                            </div>
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4>Rules:</h4>
+                            <p>
+                                Progress loading should only be used when the progress of your loading has a direct impact on the users' interaction with your web application. For example, if progression of loading requires some sort of action from your users.
+                            </p>
+                            <p>
+                                This pattern may also be used when displaying progress throughout a form or process, rather than page load.
+                            </p>
+                        </div>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>Developer</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<progressbar max="100" value="10" type="info"></progressbar></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <p>
+                                Progress bars consist of a progress parent, with a progress-meter inner element. You can set the color of the meter by adding a modifier class to the progress class. For example: class="progress progress--success".
+                            </p>
+                            <p>
+                                To adjust the length of the progress bar, you'll want to inline a width into the HTML, for example: class="progress-meter" style="width: x%"
+                            </p>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
+    </div>
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>
