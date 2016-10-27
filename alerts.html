@@ -29,7 +29,7 @@
             </li>
             <li class="navBar-item topNavBar-item">
                 <div class="topNavBar-label">
-                    Pattern Lab (v2.6.0)
+                    Pattern Lab (v2.7.1)
                 </div>
             </li>
         </ul>
@@ -113,6 +113,11 @@
         <section class="panel labPanel">
             <h3 class="labPanel-heading">Alerts</h3>
             <div class="labPanel-docs">
+                <div class="labPanel-docsDemo">
+                    <a href="/demo.html#/components/alerts" class="button--icon demo-button" target="_blank">
+                        View Demo <icon glyph="ic-open-in-new"></icon>
+                    </a>
+                </div>
                 <tabset class="labPanel-docsTabs">
                     <tab>
                         <tab-heading>Design</tab-heading>
@@ -285,7 +290,6 @@
                     </tab>
                 </tabset>
             </div>
-
         </section>
         <section class="panel labPanel">
             <h3 class="labPanel-heading">Page Messaging</h3>
@@ -340,7 +344,97 @@
                     </tab>
                 </tabset>
             </div>
-
+        </section>
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Global Messaging</h3>
+            <div class="labPanel-docs">
+                <div class="labPanel-docsDemo">
+                    <a href="/demo.html#/components/global-message" class="button--icon demo-button" target="_blank">
+                        View Demo <icon glyph="ic-open-in-new"></icon>
+                    </a>
+                </div>
+                <tabset class="labPanel-docsTabs">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content">
+                            <img class="labPanel-docsTabs-figure" src="images/globalMessage_screen.png">
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <ul class="u-listNoBullet">
+                                <li>Success confirmation appears when user creates and completes a task successfully.</li>
+                                <li>Message will disappear automatically after 8 seconds.</li>
+                                <li>Message does not disappear on hover or focus. Timing starts again when the user hovers/focuses out.</li>
+                                <li>Message should be short and fit on 1 line (max 60 characters)</li>
+                                <li>0 to 2 actions (if there are 2 actions, one will always be DISMISS).</li>
+                            </ul>
+                        </div>
+                    </tab>
+                    <tab>
+                        <tab-heading>Developer</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<div class="globalMessage" tabindex="1">
+    <div class="globalMessage-column globalMessage-body">
+        Selected products deleted successfully
+    </div>
+    <div class="globalMessage-column globalMessage-actions">
+        <a href="" class="globalMessage-link" tabindex="2">Dismiss</a>
+    </div>
+</div></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <p>The markup for the global message should be inserted somewhere near the top. Default <code>[tabindex="1"]</code> so the user can focus on it quickly and thus when it is dismissed, the entire block of code either needs to be removed from the DOM or else tabindex needs to be changed to <code>[tabindex="-1"]</code>.</p>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.globalMessage</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Container class for the global message's outer <code>div</code> element.</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    2. <code>.globalMessage-column</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Divides global message content into sections.</li>
+                                        <li>Vertically aligns content to middle.</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    3. <code>.globalMessage-body</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Added to <code>globalMessage-column</code> wrapper.</li>
+                                        <li>Contains main body copy for global message (no longer than 60 characters).</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    3. <code>.globalMessage-actions</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Added to <code>globalMessage-column</code> wrapper.</li>
+                                        <li>Contains any actions that the global message may require. Optional component.</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    4. <code>.globalMessage-link</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Button or link that is added inside the <code>globalMessage-actions</code> component.</li>
+                                        <li>Max number of button/links that can be added is 2.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
         </section>
 
 

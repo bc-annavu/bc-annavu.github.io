@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="website">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>BigCommerce Pattern Lab</title>
+
+    <link rel="shortcut icon" href="https://cdn6.bigcommerce.com/r-d9855a91e0124a20a1d8b36949bceaafdb22a7f1/img/bc_favicon.ico" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,600italic">
+    <link rel="stylesheet" href="css/bcapp-pattern-lab.css" />
+    <link rel="stylesheet" href="css/website.css" />
+
+</head>
+
+<body>
+    <nav class="navBar topNavBar">
+    <div class="container">
+        <ul class="navBar-section topNavBar-section">
+            <li class="navBar-item topNavBar-item">
+                <a href="/">
+                    <picture class="navBar-picture">
+                        <img class="navBar-logo-condensed" src="/svg/logo.svg" alt="BigCommerce Logo" />
+                        <img class="navBar-logo" src="/svg/bclogo.svg" alt="BigCommerce Logo" />
+                    </picture>
+                </a>
+            </li>
+            <li class="navBar-item topNavBar-item">
+                <div class="topNavBar-label">
+                    Pattern Lab (v2.7.1)
+                </div>
+            </li>
+        </ul>
+        <ul class="navBar-section navBar-section--alt topNavBar-section--alt">
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/style.html">Style</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/components.html">Components</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/patterns.html">Patterns</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/app-containers.html">Layouts</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="/utils.html">Developer Utilities</a>
+                    </li>
+                    <li class="navBar-item topNavBar-item ">
+                        <a class="navBar-action topNavBar-action" href="https://github.com/bigcommerce-labs/bcapp-pattern-lab/releases">Change Log</a>
+                    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="container">
+        <aside class="aside" ng-controller="AsideNavCtrl">
+            <nav class="asideNav">
+                        <h2 class="asideNav-header">
+                            <a class="asideNav-header-link" href="/">
+                                Overview
+                            </a>
+                        </h2>
+                            <ul class="asideNav-list">
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/')}">
+                                        <a class="asideNav-link" href="/">Principles</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/definitions.html')}">
+                                        <a class="asideNav-link" href="/definitions.html">Definitions</a>
+                                    </li>
+                            </ul>
+            </nav>
+        </aside>
+
+        <main class="mainContent" role="main" ng-view>
+                <h1 class="mainContent-header">How To...</h1>
+
+             
+        <div ui-view>
+            <section class="panel labPanel">
+                <h3 class="labPanel-title">How do I introduce a new pattern (non project dependent)?</h3>
+                <div class="panel-body">
+                    <div class="labPanel-content">
+                        <ol class="labPanel-list">
+                            <li>Collaborate with a designer to create a new UI Pattern.</li>
+                            <li>Proposed pattern goes through the design review process.</li>
+                            <li>Approved pattern is documented with rules and specs.</li>
+                            <li>Documented pattern is reviewed with the UI Platform team during the weekly UI work session.</li>
+                            <li>UI Platform team builds the new pattern.</li>
+                            <li>Pattern is published to Pattern Lab.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <section class="panel labPanel">
+                <h3 class="labPanel-title">I’ve identified a pattern in my app that will be useful to others. How do I promote a pattern (to the Pattern Lab)?</h3>
+                <div class="panel-body">
+                    <div class="labPanel-content">
+                        <ol class="labPanel-list">
+                            <li>Design creates a new pattern for an DT project.</li>
+                            <li>Proposed pattern goes through the design review process.</li>
+                            <li>Approved pattern is handed over to the DT for development.</li>
+                            <li>DT develops the pattern.</li>
+                            <li>Design documents the pattern with rules and specs to promote the pattern.</li>
+                            <li>Documented pattern is reviewed with the UI Platform team during the weekly UI work session.</li>
+                            <li>UI Platform collaborates with the DT to move the necessary code to PL.</li>
+                            <li>Promoted pattern is published to Pattern Lab.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <section class="panel labPanel">
+                <h3 class="labPanel-title">How do I update a pattern?</h3>
+                <div class="panel-body">
+                    <div class="labPanel-content">
+                        <ol class="labPanel-list">
+                            <li>Design creates an updated pattern design.</li>
+                            <li>Design audits pattern use and assess the risk to updating the pattern.</li>
+                            <li>Proposed pattern goes through the design review process.</li>
+                            <li>Approved pattern is documented with rules and specs.</li>
+                            <li>Documented pattern is reviewed with the UI Platform team during the weekly UI work session.</li>
+                            <li>UI Platform updates the existing pattern.</li>
+                            <li>Updated pattern is published to Pattern Lab.</li>
+
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <section class="panel labPanel">
+                <h3 class="labPanel-title">How can design promote a pattern?</h3>
+                <div class="panel-body">
+                    <div class="labPanel-content">
+                        <ol class="labPanel-list">
+                            <li>
+                                <strong>Identify</strong><br />
+                                During design phase use Pattern Lab to search for component or pattern that fits the needs of your product. If a component or pattern cannot be identified then move towards creating a solution that can be used and foresee any products in the future who can benefit from this. Collaborate and communicate with your fellow designers and engineers to get their perspective and feedback.
+                            </li>
+                            <li>
+                                <strong>Document</strong><br />
+                                Once a component or pattern has been identified, provide documentation including:
+                                <ul>
+                                    <li>Description</li>
+                                    <li>Usage rules</li>
+                                    <li>Subcomponents (If applicable)</li>
+                                    <li>Accessibility rules</li>
+                                    <li>Wireframes/Screenshots</li>
+                                    <li>Mobile/Responsive behaviour</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Implement</strong>
+                                <ul>
+                                    <li>Review with Design and UI teams</li>
+                                    <li>Resourced, tested, released by UI team</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <section class="panel labPanel">
+                <h3 class="labPanel-title">Who do I contact about any questions concerning Pattern Lab?</h3>
+                <div class="panel-body">
+                    <div class="labPanel-content">
+                        <ul class="labPanel-list">
+                            <li>
+                                Miko Ademagic - Senior Front End Engineer (Sydney)
+                                <ul>
+                                    <li>e: <a href="mailto:miko.ademagic@bigcommerce.com">miko.ademagic@bigcommerce.com</a></li>
+                                    <li>s: miko</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Anna Vu - Front End Engineer (San Francisco)
+                                <ul>
+                                    <li>e: <a href="mailto:anna.vu@bigcommerce.com">anna.vu@bigcommerce.com</a></li>
+                                    <li>s: anna.vu</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Catherine Batacan - Product Design Lead (San Francisco)
+                                <ul>
+                                    <li>e: <a href="mailto:catherine.batacan@bigcommerce.com">catherine.batacan@bigcommerce.com</a></li>
+                                    <li>s: catherine.batacan</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Eddie Lou - Engineering Manager (San Francisco)
+                                <ul>
+                                    <li>e: <a href="mailto:eddie.lou@bigcommerce.com">eddie.lou@bigcommerce.com</a></li>
+                                    <li>s: edlou</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+        </main>
+    </div>
+        <script src="js/vendor.js"></script>
+
+    <!-- build:patternLabJS -->
+    <script src="js/bcapp/bcapp-pattern-lab-all-deps.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-all-templates.js"></script>
+    <script src="js/bcapp/bcapp-pattern-lab-components.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:websiteJS -->
+    <script src="js/website/website-templates.js"></script>
+    <script src="js/website/website.js"></script>
+    <!-- endbuild -->
+
+     
+
+</body>
+</html>

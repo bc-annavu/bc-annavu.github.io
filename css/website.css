@@ -388,6 +388,9 @@ body {
 .labPanel-description {
   margin-bottom: 1.6rem; }
 
+.labPanel-list > li {
+  margin-bottom: 0.4rem; }
+
 .labBlock {
   background: #fff;
   border: 1px solid #d1d7e0;

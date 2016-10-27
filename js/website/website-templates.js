@@ -52,6 +52,52 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
+  $templateCache.put("src/website/js/examples/alerts/alerts.tpl.html",
+    "<div class=\"container\">\n" +
+    "    <section class=\"panel labPanel\">\n" +
+    "        <h1>Alerts</h1>\n" +
+    "        <div class=\"labPanel-content\">\n" +
+    "            <alert ng-repeat=\"alert in alerts\" type=\"alert.type\" close=\"closeAlert($index)\">{{alert.msg}}</alert>\n" +
+    "            <button class=\"button\" ng-click=\"addAlert()\">Add Alert</button>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"labPanel-content\">\n" +
+    "            <h3>More complex example uses</h3>\n" +
+    "            <alert type=\"'success'\" close=\"closeAlert($index)\">\n" +
+    "                <h2 class=\"alertBox-heading\">Cool! You've received an order where your customer paid by PayPal!</h2>\n" +
+    "                To claim your funds, follow the instructions in the email Paypal has just sent you.\n" +
+    "            </alert>\n" +
+    "\n" +
+    "            <alert type=\"'warning'\" close=\"closeAlert($index)\">\n" +
+    "                <h2 class=\"alertBox-heading\">You have used 80B (80%) of your 100B monthly storage allowance</h2>\n" +
+    "                You can avoid charges and get extra features by <a href=\"#\">upgrading your plan</a>.\n" +
+    "            </alert>\n" +
+    "\n" +
+    "            <alert type=\"'error'\" close=\"closeAlert($index)\">\n" +
+    "                <h2 class=\"alertBox-heading\">Hey, the BigCommerce account owner has an unpaid invoice.</h2>\n" +
+    "                To avoid account suspension or termination, please pay your invoice or call <strong>1-808-699-0911 (US)</strong>.\n" +
+    "            </alert>\n" +
+    "\n" +
+    "            <alert type=\"'info'\" close=\"closeAlert($index)\">\n" +
+    "                Analytics just got a whole lot smarter. <button class=\"button button--primary button--small\">Learn More</button>\n" +
+    "            </alert>\n" +
+    "\n" +
+    "            <alert close=\"closeAlert($index)\">\n" +
+    "                You're cool\n" +
+    "            </alert>\n" +
+    "        </div>\n" +
+    "    </section>\n" +
+    "</div>\n" +
+    "\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
   $templateCache.put("src/website/js/examples/accordion/accordion-example.tpl.html",
     "<accordion close-others=\"oneAtATime\">\n" +
     "    <accordion-group heading=\"Static Header, initially expanded\" is-open=\"true\">\n" +
@@ -140,126 +186,6 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/website/js/examples/alerts/alerts.tpl.html",
-    "<div class=\"container\">\n" +
-    "<section class=\"panel labPanel\">\n" +
-    "\n" +
-    "    <h1>Alerts</h1>\n" +
-    "\n" +
-    "    <div class=\"panel-body\">\n" +
-    "        <alert ng-repeat=\"alert in alerts\" type=\"alert.type\" close=\"closeAlert($index)\">{{alert.msg}}</alert>\n" +
-    "\n" +
-    "        <button class=\"button\" ng-click=\"addAlert()\">Add Alert</button>\n" +
-    "\n" +
-    "        <div class=\"labPanel-content\">\n" +
-    "\n" +
-    "<textarea ui-codemirror=\"{\n" +
-    "    'lineNumbers': true,\n" +
-    "    'theme':'default',\n" +
-    "    'readOnly': 'true',\n" +
-    "    'lineWrapping' : false,\n" +
-    "    'mode': 'text/html',\n" +
-    "    autoClearEmptyLines: true\n" +
-    "}\">\n" +
-    "<alert\n" +
-    "    ng-repeat=\"alert in alerts\"\n" +
-    "    type=\"alert.type\"\n" +
-    "    close=\"closeAlert($index)\"\n" +
-    ">\n" +
-    "    {{alert.msg}}\n" +
-    "</alert></textarea>\n" +
-    "\n" +
-    "        </div>\n" +
-    "\n" +
-    "        <div class=\"labPanel-content\">\n" +
-    "            <h5>Notes:</h5>\n" +
-    "            <p>\n" +
-    "                Alerts can be used to inform users about the actions they perform.\n" +
-    "                They can be displayed at a page level or inside a specific container.\n" +
-    "            </p>\n" +
-    "            <p>\n" +
-    "                Please use the appropriate level alert for the message. <strong>Not everything is an error.</strong>\n" +
-    "            </p>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</section>\n" +
-    "\n" +
-    "\n" +
-    "<section class=\"panel labPanel\">\n" +
-    "\n" +
-    "    <h2 class=\"labPanel-heading\">More complex example uses</h2>\n" +
-    "    <div class=\"panel-body\">\n" +
-    "\n" +
-    "\n" +
-    "        <alert type=\"'success'\" close=\"closeAlert($index)\">\n" +
-    "            <h2 class=\"alertBox-heading\">Cool! You've received an order where your customer paid by PayPal!</h2>\n" +
-    "            To claim your funds, follow the instructions in the email Paypal has just sent you.\n" +
-    "        </alert>\n" +
-    "\n" +
-    "        <alert type=\"'warning'\" close=\"closeAlert($index)\">\n" +
-    "            <h2 class=\"alertBox-heading\">You have used 80B (80%) of your 100B monthly storage allowance</h2>\n" +
-    "            You can avoid charges and get extra features by <a href=\"#\">upgrading your plan</a>.\n" +
-    "        </alert>\n" +
-    "\n" +
-    "        <alert type=\"'error'\" close=\"closeAlert($index)\">\n" +
-    "            <h2 class=\"alertBox-heading\">Hey, the BigCommerce account owner has an unpaid invoice.</h2>\n" +
-    "            To avoid account suspension or termination, please pay your invoice or call <strong>1-808-699-0911 (US)</strong>.\n" +
-    "        </alert>\n" +
-    "\n" +
-    "        <alert type=\"'info'\" close=\"closeAlert($index)\">\n" +
-    "            Analytics just got a whole lot smarter. <button class=\"button button--primary button--small\">Learn More</button>\n" +
-    "        </alert>\n" +
-    "\n" +
-    "        <alert close=\"closeAlert($index)\">\n" +
-    "            You're cool\n" +
-    "        </alert>\n" +
-    "\n" +
-    "    <div class=\"labPanel-content\">\n" +
-    "\n" +
-    "<textarea ui-codemirror=\"{\n" +
-    "    'lineNumbers': true,\n" +
-    "    'theme':'default',\n" +
-    "    'readOnly': 'true',\n" +
-    "    'lineWrapping' : false,\n" +
-    "    'mode': 'text/html',\n" +
-    "    autoClearEmptyLines: true\n" +
-    "}\">\n" +
-    "<alert\n" +
-    "    type=\"'error'\"\n" +
-    "    close=\"closeAlert($index)\"\n" +
-    ">\n" +
-    "    <h2 class=\"alertBox-heading\">Alert title</h2>\n" +
-    "    Alert body text with some <strong>strong text</strong> and a\n" +
-    "    <button class=\"button button--primary button--small\">Button</button>\n" +
-    "</alert></textarea>\n" +
-    "\n" +
-    "    </div>\n" +
-    "    <div class=\"labPanel-content\">\n" +
-    "        <h5>Notes:</h5>\n" +
-    "        <p>\n" +
-    "            Alerts have the ability to take HTML in their body so you can build more\n" +
-    "            informative alerts.\n" +
-    "        </p>\n" +
-    "        <p>\n" +
-    "            Just remember to use <code>alertBox-heading</code> for your alert title.\n" +
-    "        </p>\n" +
-    "    </div>\n" +
-    "\n" +
-    "\n" +
-    "    </div>\n" +
-    "\n" +
-    "</section>\n" +
-    "</div>\n" +
-    "\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
   $templateCache.put("src/website/js/examples/banners/banners.tpl.html",
     "<section class=\"container\">\n" +
     "    <div class=\"panel labPanel\">\n" +
@@ -293,157 +219,91 @@ module.run(["$templateCache", function($templateCache) {
   "use strict";
   $templateCache.put("src/website/js/examples/bc-datepicker/bc-datepicker.tpl.html",
     "<div class=\"container\">\n" +
-    "<section class=\"panel labPanel\">\n" +
-    "    <h1>BC Datepicker</h1>\n" +
-    "    <div class=\"panel-body\">\n" +
+    "    <section class=\"panel labPanel\">\n" +
+    "        <h1>Datepicker</h1>\n" +
+    "        <div class=\"panel-body\">\n" +
     "\n" +
-    "        <p>\n" +
-    "            Datepickers are added with an attribute directive to a input element.\n" +
-    "            It can also be displayed in line if the directive is in a non-input element.\n" +
-    "        </p>\n" +
-    "\n" +
-    "        <div class=\"labPanel-row\">\n" +
-    "            <div class=\"labPanel-column\">\n" +
-    "                <div class=\"labBlock\">\n" +
-    "                    <div class=\"labBlock-preview\">\n" +
-    "                        <form action=\"#\" class=\"form\">\n" +
-    "                            <fieldset class=\"form-fieldset\">\n" +
-    "                                <div class=\"form-field\">\n" +
-    "                                    <label class=\"form-label\" for=\"datepicker\">Select a Date</label>\n" +
-    "                                    <input class=\"form-input has-action\" id=\"datepicker\" type=\"text\" bc-datepicker ng-model=\"date\" options=\"bcDatepickerCtrl.options\"/>\n" +
-    "                                    <button class=\"button button--icon button--inputAction\">\n" +
-    "                                        <span class=\"u-hiddenVisually\">Select a Date</span>\n" +
-    "                                        <icon glyph=\"ic-event\"></icon>\n" +
-    "                                    </button>\n" +
-    "                                </div>\n" +
-    "                            </fieldset>\n" +
-    "                        </form>\n" +
-    "                        <h5>Selected date: <span class=\"selected-date\">{{date}}</span></h5>\n" +
-    "                    </div>\n" +
-    "                    <pre class=\"labBlock-example u-bgGreysLightest\">input type=\"text\" bc-datepicker ng-model=\"date\"</pre>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "            <div class=\"labPanel-column\">\n" +
-    "                <div class=\"labBlock\">\n" +
-    "                    <div class=\"labBlock-preview\">\n" +
-    "                        <div bc-datepicker ng-model=\"date2\"></div>\n" +
-    "                    </div>\n" +
-    "                    <pre class=\"labBlock-example u-bgGreysLightest\">div bc-datepicker ng-model=\"date2\"</pre>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "\n" +
-    "    <div class=\"labPanel-content\">\n" +
-    "        <h4>Useage</h4>\n" +
-    "\n" +
-    "<textarea ui-codemirror=\"{\n" +
-    "'lineNumbers': true,\n" +
-    "'theme':'default',\n" +
-    "'readOnly': 'true',\n" +
-    "'lineWrapping' : false,\n" +
-    "'mode': 'text/html',\n" +
-    "autoClearEmptyLines: true\n" +
-    "}\">\n" +
-    "<input\n" +
-    "    class=\"form-input\"\n" +
-    "    type=\"text\"\n" +
-    "    bc-datepicker\n" +
-    "    options=\"bcDatepickerCtrl.options\"\n" +
-    "    ng-model=\"date\"\n" +
-    "/>\n" +
-    "\n" +
-    "<div bc-datepicker ng-model=\"date2\"></div></textarea>\n" +
-    "\n" +
-    "    </div>\n" +
-    "\n" +
-    "    <div class=\"labPanel-content\">\n" +
-    "        <h5>Notes:</h5>\n" +
-    "        <p>\n" +
-    "            BC Datepicker directive can be called with <code>bc-datepicker</code>\n" +
-    "            attribute. I can be placed on a text input or a basic <code>&lt;div /&gt;</code>\n" +
-    "        </p>\n" +
-    "        <p>\n" +
-    "            It takes an optional attribute of <code>options</code>, which you can\n" +
-    "            a JSON object to as defined below.\n" +
-    "        </p>\n" +
-    "    </div>\n" +
-    "    </div>\n" +
-    "\n" +
-    "</section>\n" +
-    "<section class=\"panel labPanel\">\n" +
-    "    <h4 class=\"labPanel-title\">Options</h4>\n" +
-    "    <div class=\"panel-body\">\n" +
-    "    <div class=\"labPanel-content\">\n" +
-    "\n" +
-    "<textarea ui-codemirror=\"{\n" +
-    "'lineNumbers': true,\n" +
-    "'theme':'default',\n" +
-    "'readOnly': 'true',\n" +
-    "'lineWrapping' : false,\n" +
-    "'mode': 'javascript',\n" +
-    "autoClearEmptyLines: true\n" +
-    "}\">\n" +
-    "{\n" +
-    "    'appendTo': document.body,\n" +
-    "    'autoClose': true,\n" +
-    "    'autoHideOnBlur': true,\n" +
-    "    'autoHideOnClick': true,\n" +
-    "    'date': true,\n" +
-    "    'dateValidator': Function.prototype,\n" +
-    "    'dayFormat': 'DD',\n" +
-    "    'initialValue': null,\n" +
-    "    'inputFormat': moment.localeData().longDateFormat('L'),\n" +
-    "    'invalidate': true,\n" +
-    "    'max': null,\n" +
-    "    'min': null,\n" +
-    "    'monthFormat': 'MMM YYYY',\n" +
-    "    'monthsInCalendar': 1,\n" +
-    "    'required': false,\n" +
-    "    'styles': {\n" +
-    "        back: 'datepicker-back',\n" +
-    "        container: 'datepicker',\n" +
-    "        date: 'datepicker-date',\n" +
-    "        dayBody: 'datepicker-days-body',\n" +
-    "        dayBodyElem: 'datepicker-day',\n" +
-    "        dayConcealed: 'datepicker-day-concealed',\n" +
-    "        dayDisabled: 'is-disabled',\n" +
-    "        dayHead: 'datepicker-days-head',\n" +
-    "        dayHeadElem: 'datepicker-day-name',\n" +
-    "        dayPrevMonth: 'datepicker-day-prev-month',\n" +
-    "        dayNextMonth: 'datepicker-day-next-month',\n" +
-    "        dayRow: 'datepicker-days-row',\n" +
-    "        dayTable: 'datepicker-days',\n" +
-    "        month: 'datepicker-month',\n" +
-    "        monthLabel: 'datepicker-month',\n" +
-    "        next: 'datepicker-next',\n" +
-    "        positioned: 'datepicker-attachment',\n" +
-    "        selectedDay: 'is-selected',\n" +
-    "        selectedTime: 'datepicker-time-selected',\n" +
-    "        time: 'datepicker-time',\n" +
-    "        timeList: 'datepicker-time-list',\n" +
-    "        timeOption: 'datepicker-time-option'\n" +
-    "    },\n" +
-    "    'time': false,\n" +
-    "    'timeFormat': 'HH:mm',\n" +
-    "    'timeInterval': 1800,\n" +
-    "    'timeValidator': Function.prototype,\n" +
-    "    'weekdayFormat': 'short',\n" +
-    "    'weekStart': moment().weekday(0).day()\n" +
-    "}</textarea>\n" +
-    "\n" +
-    "        </div>\n" +
-    "\n" +
-    "        <div class=\"labPanel-content\">\n" +
-    "            <h5>Notes:</h5>\n" +
     "            <p>\n" +
-    "                Description of each option can be found in <a href=\"https://github.com/bevacqua/rome/tree/v1.2.3\">Rome's (Calendar) Repo</a>\n" +
+    "                Datepickers are added with an attribute directive to a input element.\n" +
+    "                It can also be displayed in line if the directive is in a non-input element.\n" +
     "            </p>\n" +
+    "\n" +
+    "            <div class=\"labPanel-row\">\n" +
+    "                <div class=\"labPanel-column\">\n" +
+    "                    <div class=\"labBlock\">\n" +
+    "                        <div class=\"labBlock-preview\">\n" +
+    "                            <form action=\"#\" class=\"form\">\n" +
+    "                                <fieldset class=\"form-fieldset\">\n" +
+    "                                    <div class=\"form-field\">\n" +
+    "                                        <label class=\"form-label\" for=\"datepicker\">Select a Date</label>\n" +
+    "                                        <input class=\"form-input has-action\" id=\"datepicker\" type=\"text\" bc-datepicker ng-model=\"date\" options=\"bcDatepickerCtrl.options\"/>\n" +
+    "                                        <button class=\"button button--icon button--inputAction\">\n" +
+    "                                            <span class=\"u-hiddenVisually\">Select a Date</span>\n" +
+    "                                            <icon glyph=\"ic-event\"></icon>\n" +
+    "                                        </button>\n" +
+    "                                    </div>\n" +
+    "                                </fieldset>\n" +
+    "                            </form>\n" +
+    "                            <h5>Selected date: <span class=\"selected-date\">{{date}}</span></h5>\n" +
+    "                        </div>\n" +
+    "                        <pre class=\"labBlock-example u-bgGreysLightest\">input type=\"text\" bc-datepicker ng-model=\"date\"</pre>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "\n" +
+    "                <div class=\"labPanel-column\">\n" +
+    "                    <div class=\"labBlock\">\n" +
+    "                        <div class=\"labBlock-preview\">\n" +
+    "                            <div bc-datepicker ng-model=\"date2\"></div>\n" +
+    "                        </div>\n" +
+    "                        <pre class=\"labBlock-example u-bgGreysLightest\">div bc-datepicker ng-model=\"date2\"</pre>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "    </section>\n" +
+    "</div>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/website/js/examples/bc-pagination/bc-pagination.tpl.html",
+    "<section class=\"container\">\n" +
+    "    <div class=\"panel labPanel\">\n" +
+    "        <h1>Pagination Demo</h1>\n" +
+    "        <div class=\"panel-body\">\n" +
+    "            <div class=\"labPanel-content\">\n" +
+    "                <bc-pagination\n" +
+    "                    total-items=\"totalItems\"\n" +
+    "                    page=\"currentPage\"\n" +
+    "                    items-per-page=\"itemsPerPage\"\n" +
+    "                    on-change=\"onSelectPage\"\n" +
+    "                    rotate=\"false\"\n" +
+    "                    boundary-links=\"true\"\n" +
+    "                    max-size=\"maxSize\"\n" +
+    "                    show-limits=\"false\"\n" +
+    "                    class=\"pagination\">\n" +
+    "                </bc-pagination>\n" +
+    "            </div>\n" +
+    "            <div class=\"labPanel-content\">\n" +
+    "                <div class=\"form-field\">\n" +
+    "                    <label for=\"total\" class=\"form-label\">Total Items</label>\n" +
+    "                    <input type=\"text\" class=\"form-input\" id=\"total\" ng-model=\"totalItems\">\n" +
+    "                </div>\n" +
+    "                <div class=\"form-field\">\n" +
+    "                    <label for=\"items\" class=\"form-label\">Items per page</label>\n" +
+    "                    <input type=\"text\" class=\"form-input\" id=\"items\" ng-model=\"itemsPerPage\">\n" +
+    "                </div>\n" +
+    "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
-    "\n" +
     "</section>\n" +
-    "</div>\n" +
+    "\n" +
     "");
 }]);
 })();
@@ -535,181 +395,37 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/website/js/examples/bc-pagination/bc-pagination.tpl.html",
-    "<section class=\"container\">\n" +
-    "    <div class=\"panel labPanel\">\n" +
-    "        <h1>Pagination Demo</h1>\n" +
-    "        <div class=\"panel-body\">\n" +
-    "            <div class=\"labPanel-content\">\n" +
-    "                <bc-pagination\n" +
-    "                    total-items=\"totalItems\"\n" +
-    "                    page=\"currentPage\"\n" +
-    "                    items-per-page=\"itemsPerPage\"\n" +
-    "                    on-change=\"onSelectPage\"\n" +
-    "                    rotate=\"false\"\n" +
-    "                    boundary-links=\"true\"\n" +
-    "                    max-size=\"maxSize\"\n" +
-    "                    show-limits=\"false\"\n" +
-    "                    class=\"pagination\">\n" +
-    "                </bc-pagination>\n" +
-    "            </div>\n" +
-    "            <div class=\"labPanel-content\">\n" +
-    "                <div class=\"form-field\">\n" +
-    "                    <label for=\"total\" class=\"form-label\">Total Items</label>\n" +
-    "                    <input type=\"text\" class=\"form-input\" id=\"total\" ng-model=\"totalItems\">\n" +
-    "                </div>\n" +
-    "                <div class=\"form-field\">\n" +
-    "                    <label for=\"items\" class=\"form-label\">Items per page</label>\n" +
-    "                    <input type=\"text\" class=\"form-input\" id=\"items\" ng-model=\"itemsPerPage\">\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</section>\n" +
-    "\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
   $templateCache.put("src/website/js/examples/bc-server-table/bc-server-table.tpl.html",
-    "<h3>Data Table</h3>\n" +
+    "<div class=\"container\">\n" +
+    "    <section class=\"panel labPanel\">\n" +
+    "        <h1>Data Table</h1>\n" +
     "\n" +
-    "<!-- TODO: Fix this filter before adding it back – It doesn't actually work.\n" +
-    "<form method=\"post\" class=\"form\" ng-submit=\"bcServerTableDemoCtrl.bcServerTable.updateTable()\">\n" +
-    "    <fieldset class=\"form-fieldset\">\n" +
-    "        <div class=\"form-field\">\n" +
-    "            <label class=\"form-label\" for=\"time\">Filter:</label>\n" +
-    "            <div class=\"form-prefixPostfix\">\n" +
-    "                <input class=\"form-input\" id=\"time\" type=\"text\" placeholder=\"Keywords\" ng-model=\"bcServerTableDemoCtrl.bcServerTable.filters.time\">\n" +
-    "                <button class=\"button button--primary form-prefixPostfix-button--postfix\" id=\"updateFilter\" type=\"submit\">Update</button>\n" +
-    "                <button class=\"button form-prefixPostfix-button--postfix\" type=\"reset\" ng-click=\"bcServerTableDemoCtrl.clearTable($event)\">Reset table</button>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "    </fieldset>\n" +
-    "</form>\n" +
-    "-->\n" +
+    "        <bc-pagination class=\"pagination\" id=\"pagination\"\n" +
+    "           on-change=\"bcServerTableDemoCtrl.bcServerTable.updatePage(page, limit)\"\n" +
+    "           total-items=\"bcServerTableDemoCtrl.bcServerTable.pagination.total\"\n" +
+    "           page=\"bcServerTableDemoCtrl.bcServerTable.pagination.page\"\n" +
+    "           items-per-page=\"bcServerTableDemoCtrl.bcServerTable.pagination.limit\"\n" +
+    "           max-size=\"5\">\n" +
+    "        </bc-pagination>\n" +
     "\n" +
-    "<bc-pagination class=\"pagination\" id=\"pagination\"\n" +
-    "               on-change=\"bcServerTableDemoCtrl.bcServerTable.updatePage(page, limit)\"\n" +
-    "               total-items=\"bcServerTableDemoCtrl.bcServerTable.pagination.total\"\n" +
-    "               page=\"bcServerTableDemoCtrl.bcServerTable.pagination.page\"\n" +
-    "               items-per-page=\"bcServerTableDemoCtrl.bcServerTable.pagination.limit\"\n" +
-    "               max-size=\"5\">\n" +
-    "</bc-pagination>\n" +
-    "\n" +
-    "<table class=\"table\">\n" +
-    "    <thead class=\"table-thead\">\n" +
-    "        <th><input ng-click=\"bcServerTableDemoCtrl.bcServerTable.selectAllRows()\" ng-checked=\"bcServerTableDemoCtrl.bcServerTable.allSelected\" type=\"checkbox\"/></th>\n" +
-    "        <th><bc-sort-by table-id=\"{{ bcServerTableDemoCtrl.bcServerTable.id }}\" id=\"sortByName\" sort-value=\"name\" column-name=\"Name\"></bc-sort-by></th>\n" +
-    "        <th><bc-sort-by table-id=\"{{ bcServerTableDemoCtrl.bcServerTable.id }}\" id=\"sortByStar\" sort-value=\"star\" column-name=\"Star\"></bc-sort-by></th>\n" +
-    "        <th><bc-sort-by table-id=\"{{ bcServerTableDemoCtrl.bcServerTable.id }}\" id=\"sortByLocation\" sort-value=\"sf-location\" column-name=\"SF Location\"></bc-sort-by></th>\n" +
-    "    </thead>\n" +
-    "    <tbody class=\"table-tbody\">\n" +
-    "        <tr id=\"row-{{ $index }}\" class=\"tableRow\" ng-repeat=\"row in bcServerTableDemoCtrl.bcServerTable.rows\">\n" +
-    "            <td><input ng-model=\"bcServerTableDemoCtrl.bcServerTable.selectedRows[row[bcServerTableDemoCtrl.bcServerTable.tableConfig.rowIdKey]]\" type=\"checkbox\"/></td>\n" +
-    "            <td>{{row.name}}</td>\n" +
-    "            <td>{{row.star}}</td>\n" +
-    "            <td>{{row['sf-location']}}</td>\n" +
-    "        </tr>\n" +
-    "    </tbody>\n" +
-    "</table>\n" +
-    "\n" +
-    "<hr>\n" +
-    "\n" +
-    "    <div class=\"labPanel-content\">\n" +
-    "        <h4>Usage</h4>\n" +
-    "\n" +
-    "<textarea ui-codemirror=\"{\n" +
-    "'lineNumbers': true,\n" +
-    "'theme':'default',\n" +
-    "'readOnly': 'true',\n" +
-    "'lineWrapping' : false,\n" +
-    "'mode': 'text/html',\n" +
-    "autoClearEmptyLines: true\n" +
-    "}\">\n" +
-    "<form method=\"post\" class=\"form\" ng-submit=\"bcServerTableDemoCtrl.bcServerTable.updateTable()\">\n" +
-    "    <fieldset class=\"form-fieldset\">\n" +
-    "        <div class=\"form-field\">\n" +
-    "            <label class=\"form-label\" for=\"time\">Filter:</label>\n" +
-    "            <div class=\"form-prefixPostfix\">\n" +
-    "                <input class=\"form-input\" id=\"time\" type=\"text\" placeholder=\"Keywords\" ng-model=\"bcServerTableDemoCtrl.bcServerTable.filters.time\">\n" +
-    "                <button class=\"button button--primary form-prefixPostfix-button--postfix\" id=\"updateFilter\" type=\"submit\">Update</button>\n" +
-    "                <button class=\"button form-prefixPostfix-button--postfix\" type=\"reset\" ng-click=\"bcServerTableDemoCtrl.clearTable($event)\">Reset table</button>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "    </fieldset>\n" +
-    "</form>\n" +
-    "<bc-pagination class=\"pagination\" id=\"pagination\"\n" +
-    "               on-change=\"bcServerTableDemoCtrl.bcServerTable.updatePage(page, limit)\"\n" +
-    "               total-items=\"bcServerTableDemoCtrl.bcServerTable.pagination.total\"\n" +
-    "               page=\"bcServerTableDemoCtrl.bcServerTable.pagination.page\"\n" +
-    "               items-per-page=\"bcServerTableDemoCtrl.bcServerTable.pagination.limit\"\n" +
-    "               max-size=\"5\">\n" +
-    "</bc-pagination>\n" +
-    "<table class=\"table\">\n" +
-    "    <thead class=\"table-thead\">\n" +
-    "        <th><input type=\"checkbox\"/></th>\n" +
-    "        <th>Name</th>\n" +
-    "        <th>Star</th>\n" +
-    "        <th>Location</th>\n" +
-    "    </thead>\n" +
-    "    <tbody class=\"table-tbody\">\n" +
-    "        <tr id=\"row-{{ $index }}\" class=\"tableRow\">\n" +
-    "            <td><input type=\"checkbox\"/></td>\n" +
-    "            <td>{{row.name}}</td>\n" +
-    "            <td>{{row.star}}</td>\n" +
-    "            <td>{{row.location}}</td>\n" +
-    "        </tr>\n" +
-    "    </tbody>\n" +
-    "</table></textarea>\n" +
-    "\n" +
-    "    </div>\n" +
-    "\n" +
-    "    <div class=\"labPanel-content\">\n" +
-    "        <h5>Notes:</h5>\n" +
-    "        <p>The Data table uses a combination of the table component, pagination, and a filter to organise data and enable filtration\n" +
-    "            and navigation of large datasets. It should be used in interactive tables with possibly large amounts of rows; like Orders or Products.\n" +
-    "        </p>\n" +
-    "    </div>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("src/website/js/examples/buttons/buttons.tpl.html",
-    "<h3>Buttons</h3>\n" +
-    "<div>\n" +
-    "    <h4>Single toggle</h4>\n" +
-    "    <pre>{{singleModel}}</pre>\n" +
-    "    <button type=\"button\" class=\"button\" ng-model=\"singleModel\" btn-checkbox btn-checkbox-true=\"1\" btn-checkbox-false=\"0\">\n" +
-    "        Single Toggle\n" +
-    "    </button>\n" +
-    "    <h4>Checkbox</h4>\n" +
-    "    <pre>{{checkModel}}</pre>\n" +
-    "    <div class=\"buttonGroup\">\n" +
-    "        <button class=\"button\" ng-model=\"checkModel.left\" btn-checkbox>Left</button>\n" +
-    "        <button class=\"button\" ng-model=\"checkModel.middle\" btn-checkbox>Middle</button>\n" +
-    "        <button class=\"button\" ng-model=\"checkModel.right\" btn-checkbox>Right</button>\n" +
-    "    </div>\n" +
-    "    <h4>Radio</h4>\n" +
-    "    <pre>{{radioModel}}</pre>\n" +
-    "    <div class=\"buttonGroup\">\n" +
-    "        <button class=\"button\" ng-model=\"radioModel\" btn-radio=\"'Left'\">Left</button>\n" +
-    "        <button class=\"button\" ng-model=\"radioModel\" btn-radio=\"'Middle'\">Middle</button>\n" +
-    "        <button class=\"button\" ng-model=\"radioModel\" btn-radio=\"'Right'\">Right</button>\n" +
-    "    </div>\n" +
-    "</div>\n" +
-    "\n" +
-    "");
+    "        <table class=\"table\">\n" +
+    "            <thead class=\"table-thead\">\n" +
+    "                <th><input ng-click=\"bcServerTableDemoCtrl.bcServerTable.selectAllRows()\" ng-checked=\"bcServerTableDemoCtrl.bcServerTable.allSelected\" type=\"checkbox\"/></th>\n" +
+    "                <th><bc-sort-by table-id=\"{{ bcServerTableDemoCtrl.bcServerTable.id }}\" id=\"sortByName\" sort-value=\"name\" column-name=\"Name\"></bc-sort-by></th>\n" +
+    "                <th><bc-sort-by table-id=\"{{ bcServerTableDemoCtrl.bcServerTable.id }}\" id=\"sortByStar\" sort-value=\"star\" column-name=\"Star\"></bc-sort-by></th>\n" +
+    "                <th><bc-sort-by table-id=\"{{ bcServerTableDemoCtrl.bcServerTable.id }}\" id=\"sortByLocation\" sort-value=\"sf-location\" column-name=\"SF Location\"></bc-sort-by></th>\n" +
+    "            </thead>\n" +
+    "            <tbody class=\"table-tbody\">\n" +
+    "                <tr id=\"row-{{ $index }}\" class=\"tableRow\" ng-repeat=\"row in bcServerTableDemoCtrl.bcServerTable.rows\">\n" +
+    "                    <td><input ng-model=\"bcServerTableDemoCtrl.bcServerTable.selectedRows[row[bcServerTableDemoCtrl.bcServerTable.tableConfig.rowIdKey]]\" type=\"checkbox\"/></td>\n" +
+    "                    <td>{{row.name}}</td>\n" +
+    "                    <td>{{row.star}}</td>\n" +
+    "                    <td>{{row['sf-location']}}</td>\n" +
+    "                </tr>\n" +
+    "            </tbody>\n" +
+    "        </table>\n" +
+    "    </section>\n" +
+    "</div>");
 }]);
 })();
 
@@ -810,76 +526,31 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/website/js/examples/color-picker/color-picker.tpl.html",
-    "<div class=\"container\">\n" +
-    "    <section class=\"panel labPanel\">\n" +
-    "        <h1>Color Picker</h1>\n" +
-    "        <div class=\"panel-body\">\n" +
+  $templateCache.put("src/website/js/examples/buttons/buttons.tpl.html",
+    "<h3>Buttons</h3>\n" +
+    "<div>\n" +
+    "    <h4>Single toggle</h4>\n" +
+    "    <pre>{{singleModel}}</pre>\n" +
+    "    <button type=\"button\" class=\"button\" ng-model=\"singleModel\" btn-checkbox btn-checkbox-true=\"1\" btn-checkbox-false=\"0\">\n" +
+    "        Single Toggle\n" +
+    "    </button>\n" +
+    "    <h4>Checkbox</h4>\n" +
+    "    <pre>{{checkModel}}</pre>\n" +
+    "    <div class=\"buttonGroup\">\n" +
+    "        <button class=\"button\" ng-model=\"checkModel.left\" btn-checkbox>Left</button>\n" +
+    "        <button class=\"button\" ng-model=\"checkModel.middle\" btn-checkbox>Middle</button>\n" +
+    "        <button class=\"button\" ng-model=\"checkModel.right\" btn-checkbox>Right</button>\n" +
+    "    </div>\n" +
+    "    <h4>Radio</h4>\n" +
+    "    <pre>{{radioModel}}</pre>\n" +
+    "    <div class=\"buttonGroup\">\n" +
+    "        <button class=\"button\" ng-model=\"radioModel\" btn-radio=\"'Left'\">Left</button>\n" +
+    "        <button class=\"button\" ng-model=\"radioModel\" btn-radio=\"'Middle'\">Middle</button>\n" +
+    "        <button class=\"button\" ng-model=\"radioModel\" btn-radio=\"'Right'\">Right</button>\n" +
+    "    </div>\n" +
+    "</div>\n" +
     "\n" +
-    "            <color-picker\n" +
-    "                palette=\"palette\"\n" +
-    "                ng-model=\"modelValue\">\n" +
-    "            </color-picker>\n" +
-    "\n" +
-    "            <h4>Selected colour: <span style=\"color:{{modelValue}}\">{{modelValue}}</span></h4>\n" +
-    "\n" +
-    "            <div class=\"labPanel-content\">\n" +
-    "                <textarea ui-codemirror=\"{\n" +
-    "                    'lineNumbers': true,\n" +
-    "                    'theme':'default',\n" +
-    "                    'readOnly': 'true',\n" +
-    "                    'lineWrapping' : false,\n" +
-    "                    'mode': 'text/html',\n" +
-    "                    autoClearEmptyLines: true\n" +
-    "                }\">\n" +
-    "        <color-picker\n" +
-    "            palette=\"palette\"\n" +
-    "            ng-model=\"modelValue\">\n" +
-    "        </color-picker></textarea>\n" +
-    "            </div>\n" +
-    "\n" +
-    "            <div class=\"labPanel-content\">\n" +
-    "                <h5>Notes: </h5>\n" +
-    "\n" +
-    "            </div>\n" +
-    "\n" +
-    "        </div>\n" +
-    "    </section>\n" +
-    "\n" +
-    "    <section class=\"panel labPanel\">\n" +
-    "        <h2 class=\"labPanel-heading\">Color Input</h2>\n" +
-    "        <div class=\"panel-body\">\n" +
-    "            <div class=\"form-field\">\n" +
-    "                <form-input-color\n" +
-    "                    label-text=\"inputLabelText\"\n" +
-    "                    ng-model=\"inputModelValue\"\n" +
-    "                    palette=\"inputPalette\"\n" +
-    "                    placeholder-text=\"inputPlaceholderText\"\n" +
-    "                >\n" +
-    "                </form-input-color>\n" +
-    "            </div>\n" +
-    "            <h4>Selected colour: <span style=\"color:{{inputModelValue}}\">{{inputModelValue}}</span></h4>\n" +
-    "\n" +
-    "            <div class=\"labPanel-content\">\n" +
-    "<textarea ui-codemirror=\"{\n" +
-    "    'lineNumbers': true,\n" +
-    "    'theme':'default',\n" +
-    "    'readOnly': 'true',\n" +
-    "    'lineWrapping' : false,\n" +
-    "    'mode': 'text/html',\n" +
-    "    autoClearEmptyLines: true\n" +
-    "}\">\n" +
-    "<form-input-color\n" +
-    "    label-text=\"inputLabelText\"\n" +
-    "    ng-model=\"inputModelValue\"\n" +
-    "    palette=\"inputPalette\"\n" +
-    "    placeholder-text=\"inputPlaceholderText\"\n" +
-    ">\n" +
-    "</form-input-color></textarea>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "    </section>\n" +
-    "</div>");
+    "");
 }]);
 })();
 
@@ -1076,6 +747,58 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
+  $templateCache.put("src/website/js/examples/color-picker/color-picker.tpl.html",
+    "<div class=\"container\">\n" +
+    "    <section class=\"panel labPanel\">\n" +
+    "        <h1>Color Picker</h1>\n" +
+    "        <div class=\"panel-body\">\n" +
+    "            <div class=\"labPanel-content\">\n" +
+    "                <form-input-color\n" +
+    "                    label-text=\"inputLabelText\"\n" +
+    "                    ng-model=\"inputModelValue\"\n" +
+    "                    palette=\"inputPalette\"\n" +
+    "                    placeholder-text=\"inputPlaceholderText\"\n" +
+    "                >\n" +
+    "                </form-input-color>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </section>\n" +
+    "</div>");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/website/js/examples/global-message/global-message.tpl.html",
+    "<section class=\"container\">\n" +
+    "    <div class=\"panel labPanel\">\n" +
+    "        <h1>Global Message Demo</h1>\n" +
+    "\n" +
+    "        <section class=\"panel-body\">\n" +
+    "            <div class=\"globalMessage\" tabindex=\"1\">\n" +
+    "                <div class=\"globalMessage-column globalMessage-body\">\n" +
+    "                    Selected products deleted successfully\n" +
+    "                </div>\n" +
+    "                <div class=\"globalMessage-column globalMessage-actions\">\n" +
+    "                    <a href=\"\" class=\"globalMessage-link\" tabindex=\"2\">Dismiss</a>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            Static demo of the global message. Logic for animating the panel will be added in the future.\n" +
+    "        </section>\n" +
+    "    </div>\n" +
+    "</section>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
   $templateCache.put("src/website/js/examples/loading-indicators/loading-indicators.tpl.html",
     "<div class=\"container\">\n" +
     "<section class=\"panel labPanel\">\n" +
@@ -1255,7 +978,7 @@ module.run(["$templateCache", function($templateCache) {
     "    </p>\n" +
     "</div>\n" +
     "<div class=\"modal-footer\">\n" +
-    "    <a class=\"button button--small button--primary\" ng-click=\"modalContentCtrl.cancel($event)\" href=\"#\">\n" +
+    "    <a class=\"modal-footer-link\" ng-click=\"modalContentCtrl.cancel($event)\" href=\"#\">\n" +
     "        Cancel modal\n" +
     "    </a>\n" +
     "    <a class=\"button button--small button--primary\" ng-click=\"modalContentCtrl.ok($event)\" href=\"#\">\n" +

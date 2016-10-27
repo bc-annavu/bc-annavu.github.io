@@ -4974,7 +4974,6 @@ code {
   background-color: #f6f7f9; }
 
 .modal-footer-link {
-  color: #5d5b66;
   display: inline-block;
   vertical-align: middle; }
 
@@ -5170,6 +5169,57 @@ code {
 
 .banner-actions > .button {
   margin-bottom: 0.4rem; }
+
+.globalMessage {
+  display: table;
+  padding: 1.6rem;
+  background-color: #273a8a;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.14);
+  color: #fff;
+  left: 50%;
+  padding: 0.4rem 0.8rem;
+  position: fixed;
+  top: 0.06667rem;
+  transform: translateX(-50%);
+  z-index: 500; }
+  .globalMessage:before, .globalMessage:after {
+    content: " ";
+    display: table; }
+  .globalMessage:after {
+    clear: both; }
+  .globalMessage-column {
+    display: table-cell;
+    padding-right: 1.6rem;
+    vertical-align: middle; }
+    .globalMessage-column:last-child {
+      padding: 0; }
+  .globalMessage-figure {
+    text-align: center;
+    vertical-align: middle;
+    width: 15%; }
+  .globalMessage-body {
+    vertical-align: middle; }
+  .globalMessage-actions {
+    text-align: right;
+    vertical-align: middle;
+    width: 30%; }
+  @media (min-width: 769px) {
+    .globalMessage {
+      max-width: 66.666%; } }
+  .globalMessage:focus {
+    box-shadow: 0 0 0 2px #3e5ed6; }
+
+.globalMessage-actions {
+  width: auto;
+  word-wrap: nowrap; }
+
+.globalMessage-link {
+  color: #b7c6fe;
+  font-weight: 600;
+  margin-left: 0.8rem;
+  text-transform: uppercase; }
+  .globalMessage-link:hover {
+    color: #fff; }
 
 .pageMessage {
   text-align: center; }
