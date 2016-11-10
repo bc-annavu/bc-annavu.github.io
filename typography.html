@@ -87,34 +87,28 @@
         <main class="mainContent" role="main" ng-view>
                 <h1 class="mainContent-header">Typography</h1>
 
-                     <section class="panel labPanel">
-            <h3 class="labPanel-heading">Headings</h3>
-            <div class="panel-body">
-                <h1>Heading One: Source Sans Pro 300 &ndash; 30px</h1>
-                <h2>Heading Two: Source Sans Pro 600 &ndash; 24px</h2>
-                <h3>Heading Three: Source Sans Pro 600 &ndash; 20px</h3>
-                <h4>Heading Four: Source Sans Pro 600 &ndash; 18px</h4>
-                <h5>Heading Five: Source Sans Pro 600 &ndash; 16px</h5>
-            </div>
-        </section>
+                     <p>BigCommerce's primary typeface for design is Gotham Narrow. It should be used every time it is available. On the web, the font used is Source Sans Pro.</p>
+        <p>A cached version of the font stylesheet is included for most BC micro-applications in the template container. If the font is not readily available, either a new template container needs to be created to utilize the cached font stylesheet or the fonts can be hosted in the application. <strong>Do not use Google Fonts.</strong> Google Fonts will not work for internationalization.</p>
+        <p><a href="/assets/source_sans_pro.zip" class="button">Download Source Sans Pro</a></a>
         <section class="panel labPanel">
-            <h3 class="labPanel-heading">Body Copy</h3>
             <div class="panel-body">
-                <h1>Heading One: Source Sans Pro 300 &ndash; 30px</h1>
-                <h2>Heading Two: Source Sans Pro 600 &ndash; 24px</h2>
-                <h3>Heading Three: Source Sans Pro 600 &ndash; 20px</h3>
-                <h4>Heading Four: Source Sans Pro 600 &ndash; 18px</h4>
-                <h5>Heading Five: Source Sans Pro 600 &ndash; 16px</h5>
-            </div>
-        </section>
-        <section class="panel labPanel">
-            <h3 class="labPanel-heading">Blockquote</h3>
-            <div class="panel-body">
+                <div class="labPanel-content">
+                    <h1>Heading 1: This is the main heading style. There should only be one h1 tag per page.</h1>
+                    <p>Body copy: Default body style. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks.</p>
+                </div>
                 <blockquote>
-                    I do not fear computers. I fear the lack of them. Maecenas faucibus
+                    <strong>Blockquote:</strong> I do not fear computers. I fear the lack of them. Maecenas faucibus
                     mollis interdum. Aenean lacinia bibendum nulla sed consectetur.
                     <cite>Isaac Asimov</cite>
                 </blockquote>
+            </div>
+        </section>
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Accessibility</h3>
+            <div class="panel-body">
+                <p>Headings should be used for content structure. Screen readers and other assistive technologies allow the users to navigate web pages by heading structure so it is important to match heading tags with the content structure.</p>
+                <p>Pages should be structured in a hierarchical manner - where <code>h1</code> is the most important (page titles, main content heading, appearing only once on a page) and <code>h2</code> is the second most important and so on. Headings should also not be skipped (going from <code>h1</code> to <code>h4</code> for example).</p>
+                <p>Heading tags should not be used for text formatting or just visual appearance. If a design requires a particular visual treatment, use the <a href="/utilities-text.html">text developer utility</a> to adjust the visual formatting.</p>
             </div>
         </section>
 

@@ -3,21 +3,6 @@ try { module = angular.module("bcapp-pattern-lab-templates"); }
 catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/js/bigcommerce/bc-server-table/bc-sort-by.tpl.html",
-    "<a href=\"#\" ng-click=\"sort($event)\">\n" +
-    "    {{ columnName }}\n" +
-    "    <icon glyph=\"ic-expand-less\" ng-if=\"sortBy === sortValue && sortDir === asc\"></icon>\n" +
-    "    <icon glyph=\"ic-expand-more\" ng-if=\"sortBy === sortValue && sortDir === desc\"></icon>\n" +
-    "</a>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
   $templateCache.put("src/js/bigcommerce/bc-pagination/bc-pagination.tpl.html",
     "<pagination ng-show=\"show()\"></pagination>\n" +
     "\n" +
@@ -38,19 +23,12 @@ try { module = angular.module("bcapp-pattern-lab-templates"); }
 catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/js/bigcommerce/credit-card-types/credit-card-types.tpl.html",
-    "<ul class=\"creditCardTypes-list\">\n" +
-    "    <li class=\"creditCardTypes-list-item\"\n" +
-    "        ng-class=\"{\n" +
-    "            'is-active'  : creditCardTypesCtrl.hasSelectedType() && creditCardTypesCtrl.isSelectedType(ccType),\n" +
-    "            'not-active' : creditCardTypesCtrl.hasSelectedType() && !creditCardTypesCtrl.isSelectedType(ccType)\n" +
-    "        }\"\n" +
-    "        ng-repeat=\"ccType in creditCardTypesCtrl.getSupportedTypes()\">\n" +
-    "        <icon class=\"icon--medium\"\n" +
-    "              glyph=\"ic-payment-{{:: creditCardTypesCtrl.mapToSvg(ccType) }}\">\n" +
-    "        </icon>\n" +
-    "    </li>\n" +
-    "</ul>\n" +
+  $templateCache.put("src/js/bigcommerce/bc-server-table/bc-sort-by.tpl.html",
+    "<a href=\"#\" ng-click=\"sort($event)\">\n" +
+    "    {{ columnName }}\n" +
+    "    <icon glyph=\"ic-expand-less\" ng-if=\"sortBy === sortValue && sortDir === asc\"></icon>\n" +
+    "    <icon glyph=\"ic-expand-more\" ng-if=\"sortBy === sortValue && sortDir === desc\"></icon>\n" +
+    "</a>\n" +
     "");
 }]);
 })();
@@ -205,6 +183,28 @@ module.run(["$templateCache", function($templateCache) {
     "        </form-field-errors>\n" +
     "    </form-field>\n" +
     "</div>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/js/bigcommerce/credit-card-types/credit-card-types.tpl.html",
+    "<ul class=\"creditCardTypes-list\">\n" +
+    "    <li class=\"creditCardTypes-list-item\"\n" +
+    "        ng-class=\"{\n" +
+    "            'is-active'  : creditCardTypesCtrl.hasSelectedType() && creditCardTypesCtrl.isSelectedType(ccType),\n" +
+    "            'not-active' : creditCardTypesCtrl.hasSelectedType() && !creditCardTypesCtrl.isSelectedType(ccType)\n" +
+    "        }\"\n" +
+    "        ng-repeat=\"ccType in creditCardTypesCtrl.getSupportedTypes()\">\n" +
+    "        <icon class=\"icon--medium\"\n" +
+    "              glyph=\"ic-payment-{{:: creditCardTypesCtrl.mapToSvg(ccType) }}\">\n" +
+    "        </icon>\n" +
+    "    </li>\n" +
+    "</ul>\n" +
     "");
 }]);
 })();
@@ -372,6 +372,29 @@ try { module = angular.module("bcapp-pattern-lab-templates"); }
 catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
+  $templateCache.put("template/alert/alert.html",
+    "<div class=\"alertBox\" ng-class=\"type ? 'alertBox--' + type : ''\">\n" +
+    "    <div class=\"alertBox-column alertBox-icon\" ng-switch=\"type\">\n" +
+    "        <icon ng-switch-when=\"info\" glyph=\"ic-info\"></icon>\n" +
+    "        <icon ng-switch-when=\"success\" glyph=\"ic-check-circle\"></icon>\n" +
+    "        <icon ng-switch-when=\"warning\" glyph=\"ic-error\"></icon>\n" +
+    "        <icon ng-switch-when=\"error\" glyph=\"ic-error\"></icon>\n" +
+    "        <icon ng-switch-default glyph=\"ic-info\"></icon>\n" +
+    "    </div>\n" +
+    "    <div class=\"alertBox-column alertBox-message\" ng-transclude></div>\n" +
+    "    <a ng-show=\"closeable\" class=\"alertBox-column alertBox-close\" ng-click=\"close(); $event.preventDefault();\" tabindex=\"0\" href=\"#\">\n" +
+    "        <icon glyph=\"ic-close\"></icon>\n" +
+    "    </a>\n" +
+    "</div>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
   $templateCache.put("template/accordion/accordion-group.html",
     "<article ng-class=\"{ 'is-open': isOpen }\">\n" +
     "    <h2 class=\"accordion-navigation\"  ng-class=\"{ 'is-open': isOpen }\">\n" +
@@ -395,29 +418,6 @@ module.run(["$templateCache", function($templateCache) {
   "use strict";
   $templateCache.put("template/accordion/accordion.html",
     "<section class=\"accordion\" ng-transclude></section>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("template/alert/alert.html",
-    "<div class=\"alertBox\" ng-class=\"type ? 'alertBox--' + type : ''\">\n" +
-    "    <div class=\"alertBox-column alertBox-icon\" ng-switch=\"type\">\n" +
-    "        <icon ng-switch-when=\"info\" glyph=\"ic-info\"></icon>\n" +
-    "        <icon ng-switch-when=\"success\" glyph=\"ic-check-circle\"></icon>\n" +
-    "        <icon ng-switch-when=\"warning\" glyph=\"ic-error\"></icon>\n" +
-    "        <icon ng-switch-when=\"error\" glyph=\"ic-error\"></icon>\n" +
-    "        <icon ng-switch-default glyph=\"ic-info\"></icon>\n" +
-    "    </div>\n" +
-    "    <div class=\"alertBox-column alertBox-message\" ng-transclude></div>\n" +
-    "    <a ng-show=\"closeable\" class=\"alertBox-column alertBox-close\" ng-click=\"close(); $event.preventDefault();\" tabindex=\"0\" href=\"#\">\n" +
-    "        <icon glyph=\"ic-close\"></icon>\n" +
-    "    </a>\n" +
-    "</div>\n" +
     "");
 }]);
 })();
@@ -558,6 +558,46 @@ try { module = angular.module("bcapp-pattern-lab-templates"); }
 catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
+  $templateCache.put("template/tabs/tab.html",
+    "<li ng-class=\"{'is-active': active}\" class=\"tab\" role=\"presentation\">\n" +
+    "    <a ng-click=\"select()\"\n" +
+    "        href=\"javascript:void(0)\"\n" +
+    "        role=\"tab\"\n" +
+    "        aria-selected=\"{{active ? true : false}}\"\n" +
+    "        class=\"tab-title\"\n" +
+    "        tab-heading-transclude>{{heading}}</a>\n" +
+    "</li>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("template/tabs/tabset.html",
+    "<tabbed-content>\n" +
+    "    <ul class=\"tabs\" ng-class=\"{'tabs--vertical': vertical}\" role=\"tablist\" ng-transclude></ul>\n" +
+    "    <div class=\"tabs-contents\" ng-class=\"{'tabs-contents--vertical': vertical}\">\n" +
+    "        <div class=\"tab-content\"\n" +
+    "            ng-repeat=\"tab in tabs\"\n" +
+    "            ng-class=\"{'is-active': tab.active}\"\n" +
+    "            role=\"tabpanel\"\n" +
+    "            aria-hidden=\"{{tab.active ? false : true}}\"\n" +
+    "            tab-content-transclude=\"tab\">\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</tabbed-content>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
   $templateCache.put("template/tooltip/tooltip-html-unsafe-popup.html",
     "<span class=\"tooltip tip-{{placement}}\"\n" +
     "  ng-class=\"{ in: isOpen(), fade: animation() }\"\n" +
@@ -681,46 +721,6 @@ module.run(["$templateCache", function($templateCache) {
     "        <div typeahead-match index=\"$index\" match=\"match\" query=\"query\" template-url=\"templateUrl\"></div>\n" +
     "    </li>\n" +
     "</ul>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("template/tabs/tab.html",
-    "<li ng-class=\"{'is-active': active}\" class=\"tab\" role=\"presentation\">\n" +
-    "    <a ng-click=\"select()\"\n" +
-    "        href=\"javascript:void(0)\"\n" +
-    "        role=\"tab\"\n" +
-    "        aria-selected=\"{{active ? true : false}}\"\n" +
-    "        class=\"tab-title\"\n" +
-    "        tab-heading-transclude>{{heading}}</a>\n" +
-    "</li>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("template/tabs/tabset.html",
-    "<tabbed-content>\n" +
-    "    <ul class=\"tabs\" ng-class=\"{'tabs--vertical': vertical}\" role=\"tablist\" ng-transclude></ul>\n" +
-    "    <div class=\"tabs-contents\" ng-class=\"{'tabs-contents--vertical': vertical}\">\n" +
-    "        <div class=\"tab-content\"\n" +
-    "            ng-repeat=\"tab in tabs\"\n" +
-    "            ng-class=\"{'is-active': tab.active}\"\n" +
-    "            role=\"tabpanel\"\n" +
-    "            aria-hidden=\"{{tab.active ? false : true}}\"\n" +
-    "            tab-content-transclude=\"tab\">\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</tabbed-content>\n" +
     "");
 }]);
 })();

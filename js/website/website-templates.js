@@ -1116,38 +1116,22 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/website/js/examples/prompt/prompt-modal.tpl.html",
-    "<div class=\"modal-body\">\n" +
-    "    <p>\n" +
-    "        Are you sure you want to resend the invoice for order 12345678 to cindymayweather@gmail.com?\n" +
-    "    </p>\n" +
-    "</div>\n" +
-    "<div class=\"modal-footer\">\n" +
-    "    <a class=\"modal-footer-link\" ng-click=\"modalContentCtrl.cancel($event)\" href=\"#\">cancel</a>\n" +
-    "    <a class=\"button button--small button--primary modal-footer-button\" ng-click=\"promptContentCtrl.ok($event)\" href=\"#\">Resend</a>\n" +
-    "</div>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("src/website/js/examples/prompt/prompt.tpl.html",
+  $templateCache.put("src/website/js/examples/tabs/tabs.tpl.html",
     "<section class=\"container\">\n" +
     "    <div class=\"panel labPanel\">\n" +
-    "        <h1>Modal Component Demo</h1>\n" +
+    "    <h1>Tabs Demo</h1>\n" +
     "\n" +
     "        <div class=\"panel-body\">\n" +
-    "            <a\n" +
-    "                class=\"button\"\n" +
-    "                id=\"openPrompt\"\n" +
-    "                ng-click=\"promptCtrl.openPrompt($event)\"\n" +
-    "                href=\"#\">\n" +
-    "                Open Prompt\n" +
-    "            </a>\n" +
+    "            <tabset>\n" +
+    "                <tab heading=\"Static title\">Static content</tab>\n" +
+    "                <tab ng-repeat=\"tab in tabsCtrl.tabs\" heading=\"{{tab.title}}\" active=\"tab.active\">\n" +
+    "                    {{tab.content}}\n" +
+    "                </tab>\n" +
+    "                <tab select=\"tabsCtrl.tabClicked()\">\n" +
+    "                    <tab-heading>Log!</tab-heading>\n" +
+    "                    I've got an HTML heading, and a select callback. Pretty cool!\n" +
+    "                </tab>\n" +
+    "            </tabset>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "</section>\n" +
@@ -1211,22 +1195,38 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/website/js/examples/tabs/tabs.tpl.html",
+  $templateCache.put("src/website/js/examples/prompt/prompt-modal.tpl.html",
+    "<div class=\"modal-body\">\n" +
+    "    <p>\n" +
+    "        Are you sure you want to resend the invoice for order 12345678 to cindymayweather@gmail.com?\n" +
+    "    </p>\n" +
+    "</div>\n" +
+    "<div class=\"modal-footer\">\n" +
+    "    <a class=\"modal-footer-link\" ng-click=\"modalContentCtrl.cancel($event)\" href=\"#\">cancel</a>\n" +
+    "    <a class=\"button button--small button--primary modal-footer-button\" ng-click=\"promptContentCtrl.ok($event)\" href=\"#\">Resend</a>\n" +
+    "</div>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/website/js/examples/prompt/prompt.tpl.html",
     "<section class=\"container\">\n" +
     "    <div class=\"panel labPanel\">\n" +
-    "    <h1>Tabs Demo</h1>\n" +
+    "        <h1>Modal Component Demo</h1>\n" +
     "\n" +
     "        <div class=\"panel-body\">\n" +
-    "            <tabset>\n" +
-    "                <tab heading=\"Static title\">Static content</tab>\n" +
-    "                <tab ng-repeat=\"tab in tabsCtrl.tabs\" heading=\"{{tab.title}}\" active=\"tab.active\">\n" +
-    "                    {{tab.content}}\n" +
-    "                </tab>\n" +
-    "                <tab select=\"tabsCtrl.tabClicked()\">\n" +
-    "                    <tab-heading>Log!</tab-heading>\n" +
-    "                    I've got an HTML heading, and a select callback. Pretty cool!\n" +
-    "                </tab>\n" +
-    "            </tabset>\n" +
+    "            <a\n" +
+    "                class=\"button\"\n" +
+    "                id=\"openPrompt\"\n" +
+    "                ng-click=\"promptCtrl.openPrompt($event)\"\n" +
+    "                href=\"#\">\n" +
+    "                Open Prompt\n" +
+    "            </a>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "</section>\n" +
