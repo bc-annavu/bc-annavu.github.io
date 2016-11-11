@@ -584,6 +584,33 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
+  $templateCache.put("src/website/js/examples/global-message/global-message.tpl.html",
+    "<section class=\"container\">\n" +
+    "    <div class=\"panel labPanel\">\n" +
+    "        <h1>Global Message Demo</h1>\n" +
+    "\n" +
+    "        <section class=\"panel-body\">\n" +
+    "            <div class=\"globalMessage\" tabindex=\"1\">\n" +
+    "                <div class=\"globalMessage-column globalMessage-body\">\n" +
+    "                    Selected products deleted successfully\n" +
+    "                </div>\n" +
+    "                <div class=\"globalMessage-column globalMessage-actions\">\n" +
+    "                    <a href=\"\" class=\"globalMessage-link\" tabindex=\"2\">Dismiss</a>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            Static demo of the global message. Logic for animating the panel will be added in the future.\n" +
+    "        </section>\n" +
+    "    </div>\n" +
+    "</section>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
   $templateCache.put("src/website/js/examples/credit-card/credit-card-example.tpl.html",
     "<form>\n" +
     "    <fieldset class=\"form-fieldset\">\n" +
@@ -764,33 +791,6 @@ module.run(["$templateCache", function($templateCache) {
     "\n" +
     "</section>\n" +
     "</div>");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("src/website/js/examples/global-message/global-message.tpl.html",
-    "<section class=\"container\">\n" +
-    "    <div class=\"panel labPanel\">\n" +
-    "        <h1>Global Message Demo</h1>\n" +
-    "\n" +
-    "        <section class=\"panel-body\">\n" +
-    "            <div class=\"globalMessage\" tabindex=\"1\">\n" +
-    "                <div class=\"globalMessage-column globalMessage-body\">\n" +
-    "                    Selected products deleted successfully\n" +
-    "                </div>\n" +
-    "                <div class=\"globalMessage-column globalMessage-actions\">\n" +
-    "                    <a href=\"\" class=\"globalMessage-link\" tabindex=\"2\">Dismiss</a>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "            Static demo of the global message. Logic for animating the panel will be added in the future.\n" +
-    "        </section>\n" +
-    "    </div>\n" +
-    "</section>\n" +
-    "");
 }]);
 })();
 
@@ -1116,6 +1116,50 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
+  $templateCache.put("src/website/js/examples/prompt/prompt-modal.tpl.html",
+    "<div class=\"modal-body\">\n" +
+    "    <p>\n" +
+    "        Are you sure you want to resend the invoice for order 12345678 to cindymayweather@gmail.com?\n" +
+    "    </p>\n" +
+    "</div>\n" +
+    "<div class=\"modal-footer\">\n" +
+    "    <a class=\"modal-footer-link\" ng-click=\"modalContentCtrl.cancel($event)\" href=\"#\">cancel</a>\n" +
+    "    <a class=\"button button--small button--primary modal-footer-button\" ng-click=\"promptContentCtrl.ok($event)\" href=\"#\">Resend</a>\n" +
+    "</div>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/website/js/examples/prompt/prompt.tpl.html",
+    "<section class=\"container\">\n" +
+    "    <div class=\"panel labPanel\">\n" +
+    "        <h1>Modal Component Demo</h1>\n" +
+    "\n" +
+    "        <div class=\"panel-body\">\n" +
+    "            <a\n" +
+    "                class=\"button\"\n" +
+    "                id=\"openPrompt\"\n" +
+    "                ng-click=\"promptCtrl.openPrompt($event)\"\n" +
+    "                href=\"#\">\n" +
+    "                Open Prompt\n" +
+    "            </a>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</section>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
   $templateCache.put("src/website/js/examples/tabs/tabs.tpl.html",
     "<section class=\"container\">\n" +
     "    <div class=\"panel labPanel\">\n" +
@@ -1187,50 +1231,6 @@ module.run(["$templateCache", function($templateCache) {
     "        </table>\n" +
     "    </div>\n" +
     "</section>");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("src/website/js/examples/prompt/prompt-modal.tpl.html",
-    "<div class=\"modal-body\">\n" +
-    "    <p>\n" +
-    "        Are you sure you want to resend the invoice for order 12345678 to cindymayweather@gmail.com?\n" +
-    "    </p>\n" +
-    "</div>\n" +
-    "<div class=\"modal-footer\">\n" +
-    "    <a class=\"modal-footer-link\" ng-click=\"modalContentCtrl.cancel($event)\" href=\"#\">cancel</a>\n" +
-    "    <a class=\"button button--small button--primary modal-footer-button\" ng-click=\"promptContentCtrl.ok($event)\" href=\"#\">Resend</a>\n" +
-    "</div>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("src/website/js/examples/prompt/prompt.tpl.html",
-    "<section class=\"container\">\n" +
-    "    <div class=\"panel labPanel\">\n" +
-    "        <h1>Modal Component Demo</h1>\n" +
-    "\n" +
-    "        <div class=\"panel-body\">\n" +
-    "            <a\n" +
-    "                class=\"button\"\n" +
-    "                id=\"openPrompt\"\n" +
-    "                ng-click=\"promptCtrl.openPrompt($event)\"\n" +
-    "                href=\"#\">\n" +
-    "                Open Prompt\n" +
-    "            </a>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</section>\n" +
-    "");
 }]);
 })();
 

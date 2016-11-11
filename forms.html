@@ -271,21 +271,6 @@
 
                         </form>
                     </div>
-
-                    <div class="labPanel-content">
-                        <h4 class="labPanel-title">CSS Classes:</h4>
-                        <p>This is a useful component for trying to create flexible form layouts, but should be used with caution due to flexbox support. If in doubt, you should style your form using the <a href="/utilities-grid.html">grid</a> mixins.</p>
-                        <div class="labPanel-classDefs">
-                            <p>
-                                1. <code>.form-row</code>
-                                <ul class="u-listNoBullet">
-                                    <li>Container class which is applied to the container element of a group of horizontally aligned form fields.</li>
-                                    <li>Do not align more than four form fields using this method, for usability purposes.</li>
-                                    <li>Form field widths are equally divided by <code>flexbox</code>. Be wary of browser support when using this component.</li>
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
                 </tab>
                 <tab>
                     <tab-heading>HTML</tab-heading>
@@ -377,32 +362,6 @@
                         </form>
                     </div>
 
-                    <div class="labPanel-content">
-                        <h4 class="labPanel-title">CSS Classes:</h4>
-                        <p>As we don't style elements directly, the presence of the following form classes are extremely important.</p>
-                        <div class="labPanel-classDefs">
-                            <p>
-                                1. <code>.form-field</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        The container class for the form field component. Must be applied to the wrapping form element of the input and its corresponding label.
-                                    </li>
-                                    <li>
-                                        Modifications for the <code>disabled</code> state are styled using the <code>:disabled</code> pseudoclass, you should always use the attribute. <strong>No modifier class is necessary</strong>.
-                                    </li>
-                                    <li>
-                                        The above is also true for the <code>readonly</code> attribute.
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                2. <code>.form-label</code> and <code>.form-input</code>
-                                <ul class="u-listNoBullet">
-                                    <li>Classes for the label and input elements. You must associate these with each other by using the <code>[for=""]</code> attribute in the label, which refers to the input's id.</li>
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
                 </tab>
                 <tab>
                     <tab-heading>HTML</tab-heading>
@@ -512,42 +471,6 @@
                             </fieldset>
 
                         </form>
-                    </div>
-
-                    <div class="labPanel-content">
-                        <h4 class="labPanel-title">CSS Classes:</h4>
-                        <div class="labPanel-classDefs">
-                            <p>
-                                1. <code>.form-prefixPostfix</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        The container class for the form input component, which will have a prefix OR postfix. This container lives inside the <code>form-field</code> and contains a <code>form-input</code> and the prefixed/postfixed element.
-                                    </li>
-                                    <li>
-                                        This solution also uses <code>flexbox</code> to achieve the structure. Be aware of flexbox support for your browsers.
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                2. <code>.form-prefixPostfix-input</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        The classname for the input component to which you are applying your pre/postfix.
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                2. <code>.form-prefixPostfix-label</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        The classname for the component which will be pre/postfixed, using either the <code>--postfix</code> or <code>--prefix</code> modifier.
-                                    </li>
-                                    <li>
-                                        <strong>Note:</strong> While it is possible to apply a <code>form-prefixPostfix-button--prefix</code>, it is not recommended for usability purposes. Unless you are building an RTL interface.
-                                    </li>
-                                </ul>
-                            </p>
-                        </div>
                     </div>
                 </tab>
                 <tab>
@@ -665,36 +588,6 @@
                             </fieldset>
                         </form>
                     </div>
-
-                    <div class="labPanel-content">
-                        <h4 class="labPanel-title">CSS Classes:</h4>
-                        <div class="labPanel-classDefs">
-                            <p>
-                                1. <code>.has-action</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        The state class applied to the input which will have an inset icon as an action, meaning the button can be used to submit the value in the input. Particularly useful in search fields.
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                2. <code>.button--inputAction</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        The modifier class applied to the sibling <code>.button--icon</code> of the <code>input.has-action</code>. The button follows the same format as the <a href="/buttons.html">icon buttons</a>.
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                1. <code>.has-icon</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        The state class applied to the input which will have an inset icon as a non-interactive, informative icon. Simply place an <code>.icon</code> as a sibling to this element for the desired effect
-                                    </li>
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
                 </tab>
                 <tab>
                     <tab-heading>HTML</tab-heading>
@@ -792,20 +685,6 @@
 
                             </fieldset>
                         </form>
-                    </div>
-
-                    <div class="labPanel-content">
-                        <h4 class="labPanel-title">CSS Classes:</h4>
-                        <div class="labPanel-classDefs">
-                            <p>
-                                1. <code>.form-select</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        The only required class for the native select styling. This is used for both <code>[multiple]</code> and single <code>select</code>.
-                                    </li>
-                                </ul>
-                            </p>
-                        </div>
                     </div>
                 </tab>
                 <tab>
@@ -905,31 +784,6 @@
                                 </div>
                             </fieldset>
                         </form>
-                    </div>
-
-                    <div class="labPanel-content">
-                        <p>
-                            As we use the native HTML elements for our checkbox and radio buttons, the same rules apply. Corresponding <code>.form-label</code>s must have a <code>[for=""]</code> which corresponds to the radio/checkbox's id.
-                        </p>
-                        <h4 class="labPanel-title">CSS Classes:</h4>
-                        <div class="labPanel-classDefs">
-                            <p>
-                                1. <code>.form-checkbox</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        The component class for our native checkbox component.
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                2. <code>.form-radio</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        The component class for our native radio component.
-                                    </li>
-                                </ul>
-                            </p>
-                        </div>
                     </div>
                 </tab>
                 <tab>
@@ -1033,46 +887,6 @@
                             </fieldset>
 
                         </form>
-                    </div>
-                    <div class="labPanel-content">
-                        <h4 class="labPanel-title">Usage:</h4>
-                        <div class="labPanel-classDefs">
-                            <p>
-                                1. <code>ng-model</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        This is a required attribute, and must be a boolean value.
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                2. <code>toggle-off-label</code> and <code>toggle-on-label</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        Optional labels for both the on and off position of the switch.
-                                    </li>
-                                    <li>
-                                        Regardless of whether or not these are set, you should describe your switch using <code>[aria-description]</code>.
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                3. <code>has-icon</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        Optional setting which enables the tick/cross indicator for the switch.
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                4. <code>left-description</code> and <code>right-description</code>
-                                <ul class="u-listNoBullet">
-                                    <li>
-                                        Displays descriptions to the left/right of the switch, visible to the user.
-                                    </li>
-                                </ul>
-                            </p>
-                        </div>
                     </div>
                 </tab>
                 <tab>

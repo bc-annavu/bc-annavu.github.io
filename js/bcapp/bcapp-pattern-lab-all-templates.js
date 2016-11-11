@@ -347,54 +347,6 @@ try { module = angular.module("bcapp-pattern-lab-templates"); }
 catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/js/bigcommerce/credit-card/credit-card-cvv/tooltip.tpl.html",
-    "<div class=\"form-ccFields-cvvExample\">\n" +
-    "    <div class=\"form-ccFields-cvvExampleDescription\">\n" +
-    "        <p translate>\n" +
-    "            For VISA and Mastercard, the CVV is a three-digit code printed on the back. For American Express it is the four-digit code printed on the front. The CVV is a security measure to ensure that you are in possession of the card.\n" +
-    "        </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"form-ccFields-cvvExampleFigures\">\n" +
-    "        <figure>\n" +
-    "            <icon class=\"icon icon--large\" glyph=\"ic-payment-cvv-visa\"></icon>\n" +
-    "        </figure>\n" +
-    "        <figure>\n" +
-    "            <icon class=\"icon icon--large\" glyph=\"ic-payment-cvv-amex\"></icon>\n" +
-    "        </figure>\n" +
-    "    </div>\n" +
-    "</div>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("template/alert/alert.html",
-    "<div class=\"alertBox\" ng-class=\"type ? 'alertBox--' + type : ''\">\n" +
-    "    <div class=\"alertBox-column alertBox-icon\" ng-switch=\"type\">\n" +
-    "        <icon ng-switch-when=\"info\" glyph=\"ic-info\"></icon>\n" +
-    "        <icon ng-switch-when=\"success\" glyph=\"ic-check-circle\"></icon>\n" +
-    "        <icon ng-switch-when=\"warning\" glyph=\"ic-error\"></icon>\n" +
-    "        <icon ng-switch-when=\"error\" glyph=\"ic-error\"></icon>\n" +
-    "        <icon ng-switch-default glyph=\"ic-info\"></icon>\n" +
-    "    </div>\n" +
-    "    <div class=\"alertBox-column alertBox-message\" ng-transclude></div>\n" +
-    "    <a ng-show=\"closeable\" class=\"alertBox-column alertBox-close\" ng-click=\"close(); $event.preventDefault();\" tabindex=\"0\" href=\"#\">\n" +
-    "        <icon glyph=\"ic-close\"></icon>\n" +
-    "    </a>\n" +
-    "</div>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
   $templateCache.put("template/accordion/accordion-group.html",
     "<article ng-class=\"{ 'is-open': isOpen }\">\n" +
     "    <h2 class=\"accordion-navigation\"  ng-class=\"{ 'is-open': isOpen }\">\n" +
@@ -418,6 +370,29 @@ module.run(["$templateCache", function($templateCache) {
   "use strict";
   $templateCache.put("template/accordion/accordion.html",
     "<section class=\"accordion\" ng-transclude></section>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("template/alert/alert.html",
+    "<div class=\"alertBox\" ng-class=\"type ? 'alertBox--' + type : ''\">\n" +
+    "    <div class=\"alertBox-column alertBox-icon\" ng-switch=\"type\">\n" +
+    "        <icon ng-switch-when=\"info\" glyph=\"ic-info\"></icon>\n" +
+    "        <icon ng-switch-when=\"success\" glyph=\"ic-check-circle\"></icon>\n" +
+    "        <icon ng-switch-when=\"warning\" glyph=\"ic-error\"></icon>\n" +
+    "        <icon ng-switch-when=\"error\" glyph=\"ic-error\"></icon>\n" +
+    "        <icon ng-switch-default glyph=\"ic-info\"></icon>\n" +
+    "    </div>\n" +
+    "    <div class=\"alertBox-column alertBox-message\" ng-transclude></div>\n" +
+    "    <a ng-show=\"closeable\" class=\"alertBox-column alertBox-close\" ng-click=\"close(); $event.preventDefault();\" tabindex=\"0\" href=\"#\">\n" +
+    "        <icon glyph=\"ic-close\"></icon>\n" +
+    "    </a>\n" +
+    "</div>\n" +
     "");
 }]);
 })();
@@ -721,6 +696,31 @@ module.run(["$templateCache", function($templateCache) {
     "        <div typeahead-match index=\"$index\" match=\"match\" query=\"query\" template-url=\"templateUrl\"></div>\n" +
     "    </li>\n" +
     "</ul>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/js/bigcommerce/credit-card/credit-card-cvv/tooltip.tpl.html",
+    "<div class=\"form-ccFields-cvvExample\">\n" +
+    "    <div class=\"form-ccFields-cvvExampleDescription\">\n" +
+    "        <p translate>\n" +
+    "            For VISA and Mastercard, the CVV is a three-digit code printed on the back. For American Express it is the four-digit code printed on the front. The CVV is a security measure to ensure that you are in possession of the card.\n" +
+    "        </p>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-ccFields-cvvExampleFigures\">\n" +
+    "        <figure>\n" +
+    "            <icon class=\"icon icon--large\" glyph=\"ic-payment-cvv-visa\"></icon>\n" +
+    "        </figure>\n" +
+    "        <figure>\n" +
+    "            <icon class=\"icon icon--large\" glyph=\"ic-payment-cvv-amex\"></icon>\n" +
+    "        </figure>\n" +
+    "    </div>\n" +
+    "</div>\n" +
     "");
 }]);
 })();

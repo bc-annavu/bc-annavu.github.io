@@ -73,6 +73,9 @@
                                     <li class="asideNav-listItem" ng-class="{'is-active': isActive('/definitions.html')}">
                                         <a class="asideNav-link" href="/definitions.html">Definitions</a>
                                     </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/howto.html')}">
+                                        <a class="asideNav-link" href="/howto.html">How to...</a>
+                                    </li>
                             </ul>
             </nav>
         </aside>
@@ -83,56 +86,72 @@
              
         <div ui-view>
             <section class="panel labPanel">
-                <h3 class="labPanel-title">How do I introduce a new pattern (non project dependent)?</h3>
-                <div class="panel-body">
-                    <div class="labPanel-content">
-                        <ol class="labPanel-list">
-                            <li>Collaborate with a designer to create a new UI Pattern.</li>
-                            <li>Proposed pattern goes through the design review process.</li>
-                            <li>Approved pattern is documented with rules and specs.</li>
-                            <li>Documented pattern is reviewed with the UI Platform team during the weekly UI work session.</li>
-                            <li>UI Platform team builds the new pattern.</li>
-                            <li>Pattern is published to Pattern Lab.</li>
-                        </ol>
-                    </div>
+                <h3 class="labPanel-title">How do I use an existing pattern or create a new pattern?</h3>
+                <div class="panel-body flowDiagram">
+                    <p class="flowDiagram-u-alignLeft">Designers will reference Pattern Lab when working on their designs.
+                    <ul class="flowDiagram-list">
+                        <li class="flowDiagram-listItem">
+                            <label class="flowDiagram-label">
+                                Can I use an existing pattern to achieve this UX?
+                            </label>
+                            <ul class="flowDiagram-childList">
+                                <li class="flowDiagram-listItem">
+                                    <label class="flowDiagram-label">
+                                        <h6 class="flowDiagram-subtext">No</h6>
+                                        Could other projects benefit from a new pattern?
+                                    </label>
+                                    <ul class="flowDiagram-childList">
+                                        <li class="flowDiagram-listItem">
+                                            <label class="flowDiagram-label">
+                                                <h6 class="flowDiagram-subtext">No</h6>
+                                                Continue with design
+                                            </label>
+                                        </li>
+                                        <li class="flowDiagram-listItem">
+                                            <label class="flowDiagram-label">
+                                                <h6 class="flowDiagram-subtext">Yes</h6>
+                                                Create new pattern
+                                                <ul class="flowDiagram-u-alignLeft">
+                                                    <li>Review</li>
+                                                    <li>Document</li>
+                                                    <li>Publish</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="flowDiagram-listItem">
+                                    <label class="flowDiagram-label">
+                                        <h6 class="flowDiagram-subtext">Yes</h6>
+                                        Can I use this pattern as is?
+                                    </label>
+                                    <ul class="flowDiagram-childList">
+                                        <li class="flowDiagram-listItem">
+                                            <label class="flowDiagram-label">
+                                                <h6 class="flowDiagram-subtext">No</h6>
+                                                Modify Pattern
+                                                <ul class="flowDiagram-u-alignLeft">
+                                                    <li>Review</li>
+                                                    <li>Document</li>
+                                                    <li>Publish</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                        <li class="flowDiagram-listItem">
+                                            <label class="flowDiagram-label">
+                                                <h6 class="flowDiagram-subtext">Yes</h6>
+                                                Use Pattern
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </section>
             <section class="panel labPanel">
-                <h3 class="labPanel-title">I’ve identified a pattern in my app that will be useful to others. How do I promote a pattern (to the Pattern Lab)?</h3>
-                <div class="panel-body">
-                    <div class="labPanel-content">
-                        <ol class="labPanel-list">
-                            <li>Design creates a new pattern for an DT project.</li>
-                            <li>Proposed pattern goes through the design review process.</li>
-                            <li>Approved pattern is handed over to the DT for development.</li>
-                            <li>DT develops the pattern.</li>
-                            <li>Design documents the pattern with rules and specs to promote the pattern.</li>
-                            <li>Documented pattern is reviewed with the UI Platform team during the weekly UI work session.</li>
-                            <li>UI Platform collaborates with the DT to move the necessary code to PL.</li>
-                            <li>Promoted pattern is published to Pattern Lab.</li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
-            <section class="panel labPanel">
-                <h3 class="labPanel-title">How do I update a pattern?</h3>
-                <div class="panel-body">
-                    <div class="labPanel-content">
-                        <ol class="labPanel-list">
-                            <li>Design creates an updated pattern design.</li>
-                            <li>Design audits pattern use and assess the risk to updating the pattern.</li>
-                            <li>Proposed pattern goes through the design review process.</li>
-                            <li>Approved pattern is documented with rules and specs.</li>
-                            <li>Documented pattern is reviewed with the UI Platform team during the weekly UI work session.</li>
-                            <li>UI Platform updates the existing pattern.</li>
-                            <li>Updated pattern is published to Pattern Lab.</li>
-
-                        </ol>
-                    </div>
-                </div>
-            </section>
-            <section class="panel labPanel">
-                <h3 class="labPanel-title">How can design promote a pattern?</h3>
+                <h3 class="labPanel-title">How do I promote or update a pattern/component that isn't project dependent</h3>
                 <div class="panel-body">
                     <div class="labPanel-content">
                         <ol class="labPanel-list">
@@ -160,6 +179,7 @@
                                 </ul>
                             </li>
                         </ol>
+                        <p><strong>Note:</strong> For durable team developed pattern/component make sure that the necessary code is moved to pattern lab so it can be properly published and archived</p>
                     </div>
                 </div>
             </section>
@@ -196,6 +216,11 @@
                                     <li>s: edlou</li>
                                 </ul>
                             </li>
+                        </ul>
+                        <ul class="u-listNoBullet">
+                            <li><strong>Slack Channel:</strong> #cp-pattern-lab</li>
+                            <li><strong>Github Repo:</strong> <a href="http://www.github.com/bigcommerce-labs/bcapp-pattern-lab">http://www.github.com/bigcommerce-labs/bcapp-pattern-lab</a></li>
+                            <li><strong>@mention for PRs:</strong>  @bigcommerce/ui-platform | @bigcommerce-labs/ui-platform</li>
                         </ul>
                     </div>
                 </div>
