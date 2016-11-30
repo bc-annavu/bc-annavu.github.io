@@ -121,100 +121,144 @@
         </aside>
 
         <main class="mainContent" role="main" ng-view>
-                <h1 class="mainContent-header">Display Utilities</h1>
+                <h1 class="mainContent-header">Sticky Utilities</h1>
 
-             
+                     <p>
+            A "Sticky" element is one that has its position fixed to a certain side of your container or viewport.
+            The Control Panel Pattern Lab exposes a few utilities to help you achieve this in a standard way with your
+            component.
+        </p>
+
         <section class="panel labPanel">
-            <h3 class="labPanel-heading">Display</h3>
+            <h3 class="labPanel-heading">The Sticky Mixin</h3>
+            <div class="panel-body">
 
-            <table class="table">
-                <thead class="tbale-thead">
-                    <tr>
-                        <th>Mixin</th>
-                        <th>Purpose</th>
-                    </tr>
-                </thead>
-                <tbody class="table-tbody">
-                    <tr>
-                        <td>
-                            <code>u-display("none")</code>
-                        </td>
-                        <td>
-                            Sets component display property to "none"
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <code>u-display("block")</code>
-                        </td>
-                        <td>
-                            Sets component display property to "block"
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <code>u-display("inlineBlock")</code>
-                        </td>
-                        <td>
-                            Sets component display property to "inline-block"
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section class="panel labPanel">
-            <h3 class="labPanel-heading">Hidden</h3>
+                <div class="labPanel-content">
+                    <p>
+                        By default, the <code>sticky()</code> mixin will position your element to the top of the container,
+                        and stretch it to the left and right of the container. Caveat emptor, this may mess with the layout of your component, depending on its contents.
+                    </p>
 
-            <table class="table">
-                <thead class="tbale-thead">
-                    <tr>
-                        <th>Mixin</th>
-                        <th>Purpose</th>
-                    </tr>
-                </thead>
-                <tbody class="table-tbody">
-                    <tr>
-                        <td>
-                            <code>u-hidden("fully")</code>
-                        </td>
-                        <td>
-                            Completely hides a component, even from a screen reader
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <code>u-hidden("visually")</code>
-                        </td>
-                        <td>
-                            Visually hides a component, but still screen reader accessible
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section class="panel labPanel">
-            <h3 class="labPanel-heading">Utility Class</h3>
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'sass',
+    autoClearEmptyLines: true
+}">
+.componentName {
+    @include sticky;
+}</textarea>
 
-            <table class="table">
-                <thead class="tbale-thead">
-                    <tr>
-                        <th>Class name</th>
-                        <th>Purpose</th>
-                    </tr>
-                </thead>
-                <tbody class="table-tbody">
-                    <tr>
-                        <td>
-                            <code>is-srOnly</code>
-                        </td>
-                        <td>
-                            Utility class for <code>u-hidden("visually")</code>. Handy for supportive text
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                </div>
+
+                <div class="labPanel-content">
+                    <p>
+                        The <code>sticky</code> mixin will generate the following CSS to reposition your element.
+                    </p>
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'sass',
+    autoClearEmptyLines: true
+}">
+.componentName {
+    left: 0;
+    right: 0;
+    top: 0;
+    position: fixed;
+}</textarea>
+                </div>
+
+                <div class="labPanel-content">
+                    <p>
+                        The following options are available for the mixin. The appropriate values get set depending on what position you pass to the mixin. E.g. if you're positioning an element to the right of the screen, the <code>left</code> value will not be set.
+                    </p>
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'sass',
+    autoClearEmptyLines: true
+}">
+@mixin sticky(
+    $position: "top",
+    $stickyBottom: 0,
+    $stickyLeft: 0,
+    $stickyRight: 0,
+    $stickyTop: 0
+)</textarea>
+                </div>
+            </div>
         </section>
 
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">The Sticky State Class</h3>
+            <div class="panel-body">
+
+                <div class="labPanel-content">
+                    <p>
+                        The <code>.is-sticky</code> state class assumes that your component is stuck to the top of the container, and is acting as a sticky header. It is intended to be coupled with the Sticky directive, which is outlined further down the page.
+                    </p>
+                    <p>
+                        <strong>Note:</strong> The <code>.is-sticky</code> state does not have to be the class you use as your sticky class. It is only a helper. You may use the mixin and create a variation that suits you.
+                    </p>
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'sass',
+    autoClearEmptyLines: true
+}">
+.is-sticky {
+    @include sticky;
+    z-index: zIndex("higher");
+}</textarea>
+                </div>
+                <div class="labPanel-content">
+                    <p>
+                        The <code>z-index</code> value resolves to <code>100</code>, which is in front of all content but behind modal overlays.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">The Sticky Class Directive</h3>
+            <div class="panel-body">
+
+                <div class="labPanel-content">
+                    <p>
+                        A simple angular directive used to trigger a class on your component when the element that uses the directive scrolls past the top of the viewport.
+                    </p>
+
+                    <h4>Usage:</h4>
+
+<textarea ui-codemirror="{
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'sass',
+    autoClearEmptyLines: true
+}">
+<div class="headerNavigation" sticky-class="is-sticky">
+    <nav>
+        <ul>
+            &vellip;
+        </ul>
+    </nav>
+<div>
+</textarea>
+                </div>
+            </div>
+        </section>
 
         </main>
     </div>
