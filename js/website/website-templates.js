@@ -584,33 +584,6 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/website/js/examples/global-message/global-message.tpl.html",
-    "<section class=\"container\">\n" +
-    "    <div class=\"panel labPanel\">\n" +
-    "        <h1>Global Message Demo</h1>\n" +
-    "\n" +
-    "        <section class=\"panel-body\">\n" +
-    "            <div class=\"globalMessage\" tabindex=\"1\">\n" +
-    "                <div class=\"globalMessage-column globalMessage-body\">\n" +
-    "                    Selected products deleted successfully\n" +
-    "                </div>\n" +
-    "                <div class=\"globalMessage-column globalMessage-actions\">\n" +
-    "                    <a href=\"\" class=\"globalMessage-link\" tabindex=\"2\">Dismiss</a>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "            Static demo of the global message. Logic for animating the panel will be added in the future.\n" +
-    "        </section>\n" +
-    "    </div>\n" +
-    "</section>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
   $templateCache.put("src/website/js/examples/credit-card/credit-card-example.tpl.html",
     "<form>\n" +
     "    <fieldset class=\"form-fieldset\">\n" +
@@ -791,6 +764,63 @@ module.run(["$templateCache", function($templateCache) {
     "\n" +
     "</section>\n" +
     "</div>");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/website/js/examples/copy-clipboard/copy-clipboard.tpl.html",
+    "<section class=\"container\">\n" +
+    "    <div class=\"panel labPanel\">\n" +
+    "        <h1>Copy to Clipboard Demo</h1>\n" +
+    "        <div class=\"panel-body\">\n" +
+    "            <div class=\"labPanel-row\">\n" +
+    "                <div class=\"labPanel-column\">\n" +
+    "                    <copy-clipboard\n" +
+    "                        copy-text=\"Editable input with text to be copied\">\n" +
+    "                    </copy-clipboard>\n" +
+    "                </div>\n" +
+    "                <div class=\"labPanel-column\">\n" +
+    "                    <copy-clipboard\n" +
+    "                        copy-text=\"Readonly input with text to be copied\"\n" +
+    "                        readonly=\"true\">\n" +
+    "                    </copy-clipboard>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</section>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/website/js/examples/global-message/global-message.tpl.html",
+    "<section class=\"container\">\n" +
+    "    <div class=\"panel labPanel\">\n" +
+    "        <h1>Global Message Demo</h1>\n" +
+    "\n" +
+    "        <section class=\"panel-body\">\n" +
+    "            <div class=\"globalMessage\" tabindex=\"1\">\n" +
+    "                <div class=\"globalMessage-column globalMessage-body\">\n" +
+    "                    Selected products deleted successfully\n" +
+    "                </div>\n" +
+    "                <div class=\"globalMessage-column globalMessage-actions\">\n" +
+    "                    <a href=\"\" class=\"globalMessage-link\" tabindex=\"2\">Dismiss</a>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            Static demo of the global message. Logic for animating the panel will be added in the future.\n" +
+    "        </section>\n" +
+    "    </div>\n" +
+    "</section>\n" +
+    "");
 }]);
 })();
 
@@ -1160,34 +1190,6 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/website/js/examples/tabs/tabs.tpl.html",
-    "<section class=\"container\">\n" +
-    "    <div class=\"panel labPanel\">\n" +
-    "    <h1>Tabs Demo</h1>\n" +
-    "\n" +
-    "        <div class=\"panel-body\">\n" +
-    "            <tabset>\n" +
-    "                <tab heading=\"Static title\">Static content</tab>\n" +
-    "                <tab ng-repeat=\"tab in tabsCtrl.tabs\" heading=\"{{tab.title}}\" active=\"tab.active\">\n" +
-    "                    {{tab.content}}\n" +
-    "                </tab>\n" +
-    "                <tab select=\"tabsCtrl.tabClicked()\">\n" +
-    "                    <tab-heading>Log!</tab-heading>\n" +
-    "                    I've got an HTML heading, and a select callback. Pretty cool!\n" +
-    "                </tab>\n" +
-    "            </tabset>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</section>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
   $templateCache.put("src/website/js/examples/tables/tables.tpl.html",
     "<section class=\"container\">\n" +
     "    <div class=\"panel labPanel\">\n" +
@@ -1231,6 +1233,34 @@ module.run(["$templateCache", function($templateCache) {
     "        </table>\n" +
     "    </div>\n" +
     "</section>");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/website/js/examples/tabs/tabs.tpl.html",
+    "<section class=\"container\">\n" +
+    "    <div class=\"panel labPanel\">\n" +
+    "    <h1>Tabs Demo</h1>\n" +
+    "\n" +
+    "        <div class=\"panel-body\">\n" +
+    "            <tabset>\n" +
+    "                <tab heading=\"Static title\">Static content</tab>\n" +
+    "                <tab ng-repeat=\"tab in tabsCtrl.tabs\" heading=\"{{tab.title}}\" active=\"tab.active\">\n" +
+    "                    {{tab.content}}\n" +
+    "                </tab>\n" +
+    "                <tab select=\"tabsCtrl.tabClicked()\">\n" +
+    "                    <tab-heading>Log!</tab-heading>\n" +
+    "                    I've got an HTML heading, and a select callback. Pretty cool!\n" +
+    "                </tab>\n" +
+    "            </tabset>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</section>\n" +
+    "");
 }]);
 })();
 

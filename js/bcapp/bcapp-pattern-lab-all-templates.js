@@ -39,20 +39,33 @@ catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
   $templateCache.put("src/js/bigcommerce/color-picker/color-picker-palette.tpl.html",
+    "<div class=\"colorPicker-label\">\n" +
+    "    <label class=\"colorPicker-label-column colorPicker-label-body\" translate>\n" +
+    "    Set Colors:\n" +
+    "    </label>\n" +
+    "    <a class=\"colorPicker-label-column colorPicker-label-actions\"\n" +
+    "      ng-click=\"colorPickerPaletteCtrl.removeExistingColor($event)\"\n" +
+    "      ng-hide=\"colorPickerPaletteCtrl.colors.length < 1\"\n" +
+    "      href=\"#\">\n" +
+    "        <span class=\"is-srOnly\" translate>Remove color from palette</span>\n" +
+    "        <icon glyph=\"ic-delete\" class=\"colorPicker-label-action-icon\"></icon>\n" +
+    "    </a>\n" +
+    "</div>\n" +
     "<ul class=\"colorPicker-palette-list\">\n" +
     "    <li class=\"colorPicker-palette-item\"\n" +
     "        ng-repeat=\"color in colorPickerPaletteCtrl.colors\">\n" +
     "        <a class=\"colorPicker-palette-action\"\n" +
-    "           href=\"#\"\n" +
-    "           ng-click=\"colorPickerPaletteCtrl.setNewColor($event, color)\"\n" +
-    "           ng-style=\"{ 'background-color': color }\">\n" +
+    "            href=\"#\"\n" +
+    "            ng-class=\"{ 'active' : colorPickerPaletteCtrl.isActive(color) }\"\n" +
+    "            ng-click=\"colorPickerPaletteCtrl.setNewColor($event, color)\"\n" +
+    "            ng-style=\"{ 'background-color': color }\">\n" +
     "        </a>\n" +
     "    </li>\n" +
     "    <li class=\"colorPicker-palette-item\">\n" +
-    "        <a class=\"colorPicker-palette-action\"\n" +
-    "           href=\"#\"\n" +
-    "           ng-click=\"colorPickerPaletteCtrl.createNewColor($event)\">\n" +
-    "            <span class=\"u-hiddenVisually\" translate>Add color to palette</span>\n" +
+    "        <a class=\"colorPicker-palette-action colorPicker-palette-action--icon\"\n" +
+    "            href=\"#\"\n" +
+    "            ng-click=\"colorPickerPaletteCtrl.createNewColor($event)\">\n" +
+    "            <span class=\"is-srOnly\" translate>Add color to palette</span>\n" +
     "            <icon glyph=\"ic-add\"></icon>\n" +
     "        </a>\n" +
     "    </li>\n" +
@@ -80,8 +93,42 @@ module.run(["$templateCache", function($templateCache) {
     "    ng-if=\"colorPickerCtrl.palette\"\n" +
     "    colors=\"colorPickerCtrl.palette\"\n" +
     "    set-new-color=\"colorPickerCtrl.setNewColor\"\n" +
-    "    create-new-palette-color=\"colorPickerCtrl.createNewPaletteColor\">\n" +
+    "    create-new-palette-color=\"colorPickerCtrl.createNewPaletteColor\"\n" +
+    "    remove-palette-color=\"colorPickerCtrl.removePaletteColor\"\n" +
+    "    is-active-color=\"colorPickerCtrl.isActiveColor\"\n" +
+    "    selected-color=\"{{ colorPickerCtrl.getSelectedColor() }}\">\n" +
     "</color-picker-palette>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/js/bigcommerce/copy-clipboard/copy-clipboard.tpl.html",
+    "<div class=\"form-prefixPostfix\">\n" +
+    "    <input\n" +
+    "        class=\"form-input\"\n" +
+    "        type=\"text\"\n" +
+    "        id=\"{{copyClipboardCtrl.uniqueId}}\"\n" +
+    "        ng-model=\"copyClipboardCtrl.copyText\"\n" +
+    "        ng-readonly=\"copyClipboardCtrl.readonly\"\n" +
+    "        tooltip-placement=\"bottom\"\n" +
+    "        tooltip=\"{{copyClipboardCtrl.dynamicTooltip}}\"\n" +
+    "        tooltip-trigger=\"tooltipTriggerOpen\"\n" +
+    "    />\n" +
+    "    <button\n" +
+    "        class=\"form-prefixPostfix-button--postfix button button--icon\"\n" +
+    "        data-clipboard-target=\"{{'#' + copyClipboardCtrl.uniqueId}}\"\n" +
+    "        ngclipboard\n" +
+    "        ngclipboard-success=\"copyClipboardCtrl.onSuccess()\"\n" +
+    "        ngclipboard-error=\"copyClipboardCtrl.onError()\">\n" +
+    "            <icon glyph=\"ic-content-paste\" alt=\"Copy to Clipboard\"></icon>\n" +
+    "            <span class=\"is-srOnly\" translate>Copy to Clipboard</span>\n" +
+    "    </button>\n" +
+    "</div>\n" +
     "");
 }]);
 })();
@@ -337,6 +384,31 @@ module.run(["$templateCache", function($templateCache) {
     "        ng-class=\"{'switch-ariaDescription': switchCtrl.ariaDescription }\">\n" +
     "        {{ switchCtrl.ariaDescription || 'Please use aria-description to describe this switch to screen readers' }}\n" +
     "    </span>\n" +
+    "</div>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/js/bigcommerce/credit-card/credit-card-cvv/tooltip.tpl.html",
+    "<div class=\"form-ccFields-cvvExample\">\n" +
+    "    <div class=\"form-ccFields-cvvExampleDescription\">\n" +
+    "        <p translate>\n" +
+    "            For VISA and Mastercard, the CVV is a three-digit code printed on the back. For American Express it is the four-digit code printed on the front. The CVV is a security measure to ensure that you are in possession of the card.\n" +
+    "        </p>\n" +
+    "    </div>\n" +
+    "    <div class=\"form-ccFields-cvvExampleFigures\">\n" +
+    "        <figure>\n" +
+    "            <icon class=\"icon icon--large\" glyph=\"ic-payment-cvv-visa\"></icon>\n" +
+    "        </figure>\n" +
+    "        <figure>\n" +
+    "            <icon class=\"icon icon--large\" glyph=\"ic-payment-cvv-amex\"></icon>\n" +
+    "        </figure>\n" +
+    "    </div>\n" +
     "</div>\n" +
     "");
 }]);
@@ -696,31 +768,6 @@ module.run(["$templateCache", function($templateCache) {
     "        <div typeahead-match index=\"$index\" match=\"match\" query=\"query\" template-url=\"templateUrl\"></div>\n" +
     "    </li>\n" +
     "</ul>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("src/js/bigcommerce/credit-card/credit-card-cvv/tooltip.tpl.html",
-    "<div class=\"form-ccFields-cvvExample\">\n" +
-    "    <div class=\"form-ccFields-cvvExampleDescription\">\n" +
-    "        <p translate>\n" +
-    "            For VISA and Mastercard, the CVV is a three-digit code printed on the back. For American Express it is the four-digit code printed on the front. The CVV is a security measure to ensure that you are in possession of the card.\n" +
-    "        </p>\n" +
-    "    </div>\n" +
-    "    <div class=\"form-ccFields-cvvExampleFigures\">\n" +
-    "        <figure>\n" +
-    "            <icon class=\"icon icon--large\" glyph=\"ic-payment-cvv-visa\"></icon>\n" +
-    "        </figure>\n" +
-    "        <figure>\n" +
-    "            <icon class=\"icon icon--large\" glyph=\"ic-payment-cvv-amex\"></icon>\n" +
-    "        </figure>\n" +
-    "    </div>\n" +
-    "</div>\n" +
     "");
 }]);
 })();

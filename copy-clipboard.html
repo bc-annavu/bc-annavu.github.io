@@ -105,158 +105,84 @@
         </aside>
 
         <main class="mainContent" role="main" ng-view>
-                <h1 class="mainContent-header">Date Picker and Inputs</h1>
+                <h1 class="mainContent-header">Copy to Clipboard</h1>
 
                      <p>
-            Allows the user to select a date from a calendar format as an alternative to manual input.
+           Copy text inside an input to clipboard without using flash.
         </p>
         <section class="panel labPanel">
             <h4 class="labPanel-title">Subcomponents</h4>
             <ul class="u-listNoBullet labRelated-list">
-                <li><a href="/buttons.html">Buttons</a></li>
-                <li><a href="/interface-icons">Icons</a></li>
                 <li><a href="/forms.html">Forms</a></li>
+                <li><a href="/tooltips.html">Tooltips</a></li>
             </ul>
         </section>
-
         <hr>
-
         <section class="panel labPanel">
-
             <div class="labPanel-docs">
                 <div class="labPanel-docsDemo">
-                    <a href="/demo.html#/components/bc-datepicker" class="button--icon demo-button" target="_blank">
+                    <a href="/demo.html#/components/copy-clipboard" class="button--icon demo-button" target="_blank">
                         View Demo <icon glyph="ic-open-in-new"></icon>
                     </a>
                 </div>
                 <tabset class="labPanel-docsTabs">
-                    <tab>
+                    <tab select="modalCtrl.handleTabSelect('structure')">
                         <tab-heading>Design</tab-heading>
                         <div class="labPanel-content">
-                            <div class="labBlock-preview">
-                                <form action="#" class="form">
-                                    <fieldset class="form-fieldset">
-                                        <div class="form-field">
-                                            <label class="form-label" for="datepicker">Select a Date</label>
-                                            <input class="form-input has-action" id="datepicker" type="text" bc-datepicker ng-model="date" options="bcDatepickerCtrl.options"/>
-                                            <button class="button button--icon button--inputAction">
-                                                <span class="u-hiddenVisually">Select a Date</span>
-                                                <icon glyph="ic-event"></icon>
-                                            </button>
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </div>
+                            <img class="labPanel-docsTabs-figure" src="images/copyClipboard_screen.png">
                         </div>
+
                         <div class="labPanel-content">
                             <h4 class="labPanel-title">Usage:</h4>
-                            <p>A date picker includes a grid of distinct calendar values, each of which has a single selected value—appearing in primary color circular background with value in the center. In addition each value has a single on hover state with a gray color circular background. Off-state hover background turns to none.</p>
-                            <p>A picker is often displayed at the bottom of the text field when the user is editing a field or tapping on the calendar icon. Pickers can also appear inline, such as while editing a date in a Calendar event. The height of a picker is roughly the height of five rows of list values. The width of a picker is either the width of the screen or its enclosing view, depending on the device and context.</p>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    The Copy to Clipboard pattern uses a standard input and postfix button form design with a tooltip confirmation. Copy to Clipboard should be used for API keys and/or long token strings.
+                                </p>
+                                <p>
+                                    When copying is successful, a tooltip will appear with either "Copied!" (for success) or "Press Ctrl+C to copy" (for failure). Tooltip will display for 1000ms before disappearing.
+                                </p>
+                            </div>
                         </div>
                     </tab>
 
-                    <tab>
+                    <tab select="modalCtrl.handleTabSelect('html')">
                         <tab-heading>Developer</tab-heading>
                         <div class="labPanel-content">
-                            <h4 class="labPanel-title">Usage:</h4>
-
 <textarea ui-codemirror="{
 'lineNumbers': true,
 'theme':'default',
 'readOnly': 'true',
 'lineWrapping' : false,
 'mode': 'text/html',
-autoClearEmptyLines: true
+'autoClearEmptyLines': true
 }">
-<input
-    class="form-input"
-    type="text"
-    bc-datepicker
-    options="bcDatepickerCtrl.options"
-    ng-model="date"
-/>
-
-<div bc-datepicker ng-model="date2"></div></textarea>
-                            </div>
-                            <div class="labPanel-content">
-                            <h4 class="labPanel-title">Usage:</h4>
-<textarea ui-codemirror="{
-'lineNumbers': true,
-'theme':'default',
-'readOnly': 'true',
-'lineWrapping' : false,
-'mode': 'javascript',
-autoClearEmptyLines: true
-}">
-{
-    'appendTo': document.body,
-    'autoClose': true,
-    'autoHideOnBlur': true,
-    'autoHideOnClick': true,
-    'date': true,
-    'dateValidator': Function.prototype,
-    'dayFormat': 'DD',
-    'initialValue': null,
-    'inputFormat': moment.localeData().longDateFormat('L'),
-    'invalidate': true,
-    'max': null,
-    'min': null,
-    'monthFormat': 'MMM YYYY',
-    'monthsInCalendar': 1,
-    'required': false,
-    'styles': {
-        back: 'datepicker-back',
-        container: 'datepicker',
-        date: 'datepicker-date',
-        dayBody: 'datepicker-days-body',
-        dayBodyElem: 'datepicker-day',
-        dayConcealed: 'datepicker-day-concealed',
-        dayDisabled: 'is-disabled',
-        dayHead: 'datepicker-days-head',
-        dayHeadElem: 'datepicker-day-name',
-        dayPrevMonth: 'datepicker-day-prev-month',
-        dayNextMonth: 'datepicker-day-next-month',
-        dayRow: 'datepicker-days-row',
-        dayTable: 'datepicker-days',
-        month: 'datepicker-month',
-        monthLabel: 'datepicker-month',
-        next: 'datepicker-next',
-        positioned: 'datepicker-attachment',
-        selectedDay: 'is-selected',
-        selectedTime: 'datepicker-time-selected',
-        time: 'datepicker-time',
-        timeList: 'datepicker-time-list',
-        timeOption: 'datepicker-time-option'
-    },
-    'time': false,
-    'timeFormat': 'HH:mm',
-    'timeInterval': 1800,
-    'timeValidator': Function.prototype,
-    'weekdayFormat': 'short',
-    'weekStart': moment().weekday(0).day()
-}</textarea>
+<copy-clipboard
+    copy-text="This is the content that will be copied to the clipboard"
+    readonly="true">
+</copy-clipboard></textarea>
                         </div>
+
                         <div class="labPanel-content">
+                            <h4 class="labPanel-title">Rules:</h4>
                             <div class="labPanel-classDefs">
                                 <p>
-                                    Datepickers are added with an attribute directive to a input element.
-                                    It can also be displayed in line if the directive is in a non-input element.
+                                    1. <code>copy-text</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The text that will be copied.</li>
+                                    </ul>
                                 </p>
                                 <p>
-                                    BC Datepicker directive can be called with bc-datepicker attribute. I can be placed on a text input or a basic <code>&lt;div/&gt;</code>
-                                </p>
-                                <p>
-                                    It takes an optional attribute of options, which you can a JSON object to as defined below.
-                                    Description of each option can be found in Rome's (Calendar) Repo
+                                    2. <code>readonly="true"</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Optional field. This adds a <code>readonly</code> parameter to the input so the user cannot make any changes to the field before copying the value in the input.</li>
+                                    </ul>
                                 </p>
                             </div>
                         </div>
                     </tab>
                 </tabset>
             </div>
-
         </section>
-
 
         </main>
     </div>
@@ -277,3 +203,7 @@ autoClearEmptyLines: true
 
 </body>
 </html>
+
+
+
+
