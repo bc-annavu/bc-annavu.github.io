@@ -30,7 +30,7 @@
             </li>
             <li class="navBar-item topNavBar-item">
                 <div class="topNavBar-label">
-                    Pattern Lab (v2.8.2)
+                    Pattern Lab (v2.9.1)
                 </div>
             </li>
         </ul>
@@ -92,6 +92,9 @@
                                     <li class="asideNav-listItem" ng-class="{'is-active': isActive('/panels.html')}">
                                         <a class="asideNav-link" href="/panels.html">Panels</a>
                                     </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/pills.html')}">
+                                        <a class="asideNav-link" href="/pills.html">Pill Group</a>
+                                    </li>
                                     <li class="asideNav-listItem" ng-class="{'is-active': isActive('/progress-bars.html')}">
                                         <a class="asideNav-link" href="/progress-bars.html">Progress Bars</a>
                                     </li>
@@ -124,14 +127,14 @@
                 </div>
                 <tabset class="labPanel-docsTabs">
 
-                    <tab select="modalCtrl.handleTabSelect('structure')">
+                    <tab>
                         <tab-heading>Design</tab-heading>
                         <div class="labPanel-content demo">
                             <img class="labPanel-docsTabs-figure" src="images/accordion_screen.png">
                         </div>
                     </tab>
 
-                    <tab select="modalCtrl.handleTabSelect('html')">
+                    <tab>
                         <tab-heading>HTML</tab-heading>
                         <div class="labPanel-content">
 <textarea ui-codemirror="{
@@ -184,7 +187,7 @@
                             </div>
                         </div>
                     </tab>
-                    <tab select="modalCtrl.handleTabSelect('html')">
+                    <tab>
                         <tab-heading>JS</tab-heading>
                         <div class="labPanel-content">
 <textarea ui-codemirror="{

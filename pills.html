@@ -112,145 +112,97 @@
         </aside>
 
         <main class="mainContent" role="main" ng-view>
-                <h1 class="mainContent-header">Tabs</h1>
+                <h1 class="mainContent-header">Pill Group</h1>
 
-             
-        <p>
-            Tabs allows you to navigate between multiple documents in a single window. Instead of a single title bar, a tabbed window may include multiple tabs along the top. Clicking one of the tabs will display the contents of the corresponding document.
+                     <p>
+            A horizontal link list with a pill button as an active state. It is a visual treatment for tabs that are used to filter content within the table or panel. In mobile, the pill group is replaced by a select input.
         </p>
-
         <hr>
         <section class="panel labPanel">
-
             <div class="labPanel-docs">
-                <div class="labPanel-docsDemo">
-                    <a href="/demo.html#/components/tabs" class="button--icon demo-button" target="_blank">
-                        View Demo <icon glyph="ic-open-in-new"></icon>
-                    </a>
-                </div>
                 <tabset class="labPanel-docsTabs">
-                    <tab>
+                    <tab heading="Design">
                         <tab-heading>Design</tab-heading>
-                        <div class="labPanel-content demo">
-                            <img class="labPanel-docsTabs-figure" src="images/tab_screen.png">
+                        <div class="labPanel-content">
+                            <ul class="pillGroup">
+                                <li>
+                                    <a class="pill pill--active" href="#">One</a>
+                                </li>
+                                <li>
+                                    <a class="pill" href="#">Two</a>
+                                </li>
+                                <li>
+                                    <a class="pill" href="#">Three</a>
+                                </li>
+                            </ul>
+                            <label for="pillID1" class="is-srOnly">Label</label>
+                            <select class="form-select pillGroup-select" id="pillID1">
+                                <option selected>One</option>
+                                <option>Two</option>
+                                <option>Three</option>
+                            </select>
                         </div>
                     </tab>
-
-                    <tab>
+                    <tab heading="HTML">
                         <tab-heading>HTML</tab-heading>
                         <div class="labPanel-content">
 <textarea ui-codemirror="{
-'lineNumbers': true,
-'theme':'default',
-'readOnly': 'true',
-'lineWrapping' : false,
-'mode': 'text/html',
-'autoClearEmptyLines': true
-}">
-<ul class="tabs">
-    <li class="tab"><a class="tab-title" href="#panel1">Tab 1</a></li>
-    <li class="tab is-active"><a class="tab-title" href="#panel2">Tab 2</a></li>
-    <li class="tab"><a class="tab-title" href="#panel3">Tab 3</a></li>
+    'lineNumbers': true,
+    'theme':'default',
+    'readOnly': 'true',
+    'lineWrapping' : false,
+    'mode': 'text/html',
+    autoClearEmptyLines: true
+}"><ul class="pillGroup">
+    <li>
+        <a class="pill pill--active" href="#">One</a>
+    </li>
+    <li>
+        <a class="pill" href="#">Two</a>
+    </li>
+    <li>
+        <a class="pill" href="#">Three</a>
+    </li>
 </ul>
-<div class="tabs-contents">
-    <div class="tab-content is-active" id="panel1">
-        <p>This is the first panel of the basic tab example. This is the first panel of the basic tab example.</p>
-    </div>
-    <div class="tab-content" id="panel2">
-        <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
-    </div>
-    <div class="tab-content" id="panel3">
-        <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
-    </div>
-</div></textarea>
+<label for="pillID2" class="is-srOnly">Label</label>
+<select class="form-select pillGroup-select" id="pillID2">
+    <option>One</option>
+    <option>Two</option>
+    <option>Three</option>
+</select></textarea>
                         </div>
-
                         <div class="labPanel-content">
                             <h4 class="labPanel-title">CSS Classes:</h4>
                             <div class="labPanel-classDefs">
                                 <p>
-                                    1. <code>.tabs</code>
+                                    1. <code>.pillGroup</code>
                                     <ul class="u-listNoBullet">
-                                        <li>The parent element which wraps the tab navigation.</li>
+                                        <li>The parent element that wraps the pills.</li>
+                                        <li>Element is hidden in mobile screens.</li>
                                     </ul>
                                 </p>
                                 <p>
-                                    2. <code>.tab</code>
+                                    2. <code>.pillGroup-select</code>
                                     <ul class="u-listNoBullet">
-                                        <li>The individual clickable tabs. The active tab will have the <code>.is-active</code> state class.</li>
-                                        <li>Must be assigned to <code>li</code>, the child <code>a.tab-title</code> should have the <code>[href]</code> set to the ID of the tab's content.</li>
+                                        <li>The input element that displays in mobile screens.</li>
                                     </ul>
                                 </p>
                                 <p>
-                                    3. <code>.tabs-contents</code>
+                                    3. <code>.pill</code>
                                     <ul class="u-listNoBullet">
-                                        <li>The parent element which wraps the tab component's contents.</li>
+                                        <li>Can be either a <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code>. By default, it displays as a gray text link.</li>
                                     </ul>
                                 </p>
                                 <p>
-                                    4. <code>.tab-content</code>
+                                    4. <code>.pill--active</code>
                                     <ul class="u-listNoBullet">
-                                        <li>The individual panel which corresponds to each tab.</li>
-                                        <li>This should contain <code>.is-active</code>, and an ID for the tab to link to.</li>
+                                        <li>The active modifier appended to <code>.pill</code> when segment is selected.</li>
                                     </ul>
                                 </p>
                             </div>
                         </div>
                     </tab>
-<tab>
-                        <tab-heading>JS</tab-heading>
-                        <div class="labPanel-content">
-<textarea ui-codemirror="{
-'lineNumbers': true,
-'theme':'default',
-'readOnly': 'true',
-'lineWrapping' : false,
-'mode': 'text/html',
-'autoClearEmptyLines': true
-}">
-<tabset>
-    <tab heading="Static title">Static content</tab>
-    <tab ng-repeat="tab in tabsCtrl.tabs" heading="" active="tab.active">
-        
-    </tab>
-    <tab select="tabsCtrl.tabClicked()">
-        <tab-heading>Log!</tab-heading>
-        I've got an HTML heading, and a select callback. Pretty cool!
-    </tab>
-</tabset></textarea>
-                        </div>
-
-                        <div class="labPanel-content">
-                            <p>Headings can be set via the <code>heading</code> attribute or the <code>tab-heading</code> element in side the tab.</p>
-
-                            <p><code>active</code> sets the currently active tab.</p>
-
-                            <p><code>select</code> allows for an optional expression to be called when the tab is selected.</p>
-                        </div>
-                    </tab>
                 </tabset>
-            </div>
-        </section>
-
-        <section class="panel labPanel">
-            <h3 class="labPanel-heading">Accessibility</h3>
-            <div class="panel-body">
-                <p>
-                    <ul>
-                        <li>
-                            The <code>ul.tabs</code> should contain the <code>role="tablist"</code>
-                        </li>
-                        <li>
-                            The <code>a.tab-title</code> should contain the <code>role="tab"</code>, and be wrapped in a <code>li.tab</code> with the <code>role="presentation"</code>. It should also have an <code>aria-controls</code> attribute which is the id of its tabpanel.
-                        </li>
-                        <li>
-                            If a tab is selected, the <code>role="tab"</code> should have <code>aria-selected="true"</code> and <code>tabindex="0"</code>, otherwise it should be <code>aria-selected="false"</code> with <code>tabindex="-1"</code>.
-                        </li>
-                        <li>
-                            Each <code>div.tab-content</code> should have <code>role="tabpanel"</code>, and should have an <code>aria-labelledby</code> attribute which is the id of its corresponding <code>role="tab"</code>.
-                        </li>
-                    </ul>
-                </p>
             </div>
         </section>
 

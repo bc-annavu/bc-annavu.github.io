@@ -460,10 +460,23 @@ module.run(["$templateCache", function($templateCache) {
     "        <icon ng-switch-when=\"error\" glyph=\"ic-error\"></icon>\n" +
     "        <icon ng-switch-default glyph=\"ic-info\"></icon>\n" +
     "    </div>\n" +
-    "    <div class=\"alertBox-column alertBox-message\" ng-transclude></div>\n" +
-    "    <a ng-show=\"closeable\" class=\"alertBox-column alertBox-close\" ng-click=\"close(); $event.preventDefault();\" tabindex=\"0\" href=\"#\">\n" +
-    "        <icon glyph=\"ic-close\"></icon>\n" +
-    "    </a>\n" +
+    "    <div class=\"alertBox-column alertBox-message\" translate ng-transclude></div>\n" +
+    "    <ul class=\"alertBox-actions\" ng-show=\"closeable || links.length\">\n" +
+    "        <li ng-show=\"closeable\">\n" +
+    "            <a class=\"alertBox-close\"\n" +
+    "                href=\"javascript:void(0);\"\n" +
+    "                ng-click=\"close(); $event.preventDefault();\"\n" +
+    "                tabindex=\"0\"\n" +
+    "                translate>\n" +
+    "                Dismiss\n" +
+    "            </a>\n" +
+    "        </li>\n" +
+    "        <li ng-repeat=\"link in $parent.alert.links\">\n" +
+    "            <a ng-href=\"{{ link.href }}\" \n" +
+    "                class=\"alertBox-actionLink\" \n" +
+    "                ng-attr-target=\"{{ link.target }}\">{{ link.title | translate }}</a>\n" +
+    "        </li>\n" +
+    "    </ul>\n" +
     "</div>\n" +
     "");
 }]);
@@ -491,6 +504,20 @@ module.run(["$templateCache", function($templateCache) {
     "    tabindex=\"-1\"\n" +
     "    ng-transclude\n" +
     "></section>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("template/popover/popover.html",
+    "<div class=\"dropdown-menu dropdown-menu--content\">\n" +
+    "    <h4 ng-bind=\"title\" ng-show=\"title\"></h4>\n" +
+    "    <p ng-bind-html=\"content | trustAsHtml\"></p>\n" +
+    "</div>\n" +
     "");
 }]);
 })();
@@ -533,20 +560,6 @@ module.run(["$templateCache", function($templateCache) {
     "        </a>\n" +
     "    </li>\n" +
     "</ul>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("template/popover/popover.html",
-    "<div class=\"dropdown-menu dropdown-menu--content\">\n" +
-    "    <h4 ng-bind=\"title\" ng-show=\"title\"></h4>\n" +
-    "    <p ng-bind-html=\"content | trustAsHtml\"></p>\n" +
-    "</div>\n" +
     "");
 }]);
 })();
@@ -645,6 +658,38 @@ try { module = angular.module("bcapp-pattern-lab-templates"); }
 catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
+  $templateCache.put("template/tooltip/tooltip-html-unsafe-popup.html",
+    "<span class=\"tooltip tip-{{placement}}\"\n" +
+    "  ng-class=\"{ in: isOpen(), fade: animation() }\"\n" +
+    "  style=\"width: auto\">\n" +
+    "  <span bind-html-unsafe=\"content\"></span>\n" +
+    "  <span class=\"nub\"></span>\n" +
+    "</span>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("template/tooltip/tooltip-popup.html",
+    "<span class=\"tooltip tip-{{placement}}\"\n" +
+    "  ng-class=\"{ in: isOpen(), fade: animation() }\"\n" +
+    "  style=\"width: auto\">\n" +
+    "  <span ng-bind=\"content\"></span>\n" +
+    "  <span class=\"nub\"></span>\n" +
+    "</span>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
   $templateCache.put("template/topbar/has-dropdown.html",
     "<li class=\"has-dropdown\" ng-transclude></li>");
 }]);
@@ -687,38 +732,6 @@ module.run(["$templateCache", function($templateCache) {
   "use strict";
   $templateCache.put("template/topbar/top-bar.html",
     "<nav class=\"top-bar\" ng-transclude></nav>");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("template/tooltip/tooltip-html-unsafe-popup.html",
-    "<span class=\"tooltip tip-{{placement}}\"\n" +
-    "  ng-class=\"{ in: isOpen(), fade: animation() }\"\n" +
-    "  style=\"width: auto\">\n" +
-    "  <span bind-html-unsafe=\"content\"></span>\n" +
-    "  <span class=\"nub\"></span>\n" +
-    "</span>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("template/tooltip/tooltip-popup.html",
-    "<span class=\"tooltip tip-{{placement}}\"\n" +
-    "  ng-class=\"{ in: isOpen(), fade: animation() }\"\n" +
-    "  style=\"width: auto\">\n" +
-    "  <span ng-bind=\"content\"></span>\n" +
-    "  <span class=\"nub\"></span>\n" +
-    "</span>\n" +
-    "");
 }]);
 })();
 

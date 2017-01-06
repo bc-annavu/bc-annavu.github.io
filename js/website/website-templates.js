@@ -3,25 +3,6 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/website/js/asideHeaderToggle/asideHeaderToggle.tpl.html",
-    "<h2 class=\"asideNav-header\"\n" +
-    "    ng-class=\"{ 'is-open': asideHeaderToggleCtrl.isOpen }\">\n" +
-    "    <a class=\"asideNav-header-link\"\n" +
-    "       href=\"#\"\n" +
-    "       ng-click=\"asideHeaderToggleCtrl.clickHandler($event)\">\n" +
-    "        {{ asideHeaderToggleCtrl.title }}\n" +
-    "        <icon class=\"asideNav-header-icon\" glyph=\"{{ asideHeaderToggleCtrl.isOpen ? 'ic-remove' : 'ic-add' }}\"></icon>\n" +
-    "    </a>\n" +
-    "</h2>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
   $templateCache.put("src/website/js/icons/icons.tpl.html",
     "<form action=\"#\" class=\"form labPanel-content\">\n" +
     "    <fieldset class=\"form-fieldset\">\n" +
@@ -145,7 +126,10 @@ module.run(["$templateCache", function($templateCache) {
     "    <section class=\"panel labPanel\">\n" +
     "        <h1>Alerts</h1>\n" +
     "        <div class=\"labPanel-content\">\n" +
-    "            <alert ng-repeat=\"alert in alerts\" type=\"alert.type\" close=\"closeAlert($index)\">{{alert.msg}}</alert>\n" +
+    "            <alert type=\"'error'\">\n" +
+    "                Testing error alert with no dismiss option.\n" +
+    "            </alert>\n" +
+    "            <alert ng-repeat=\"alert in alerts\" type=\"alert.type\" close=\"closeAlert($index)\" links=\"alert.links\">{{ alert.msg }}</alert>\n" +
     "            <button class=\"button\" ng-click=\"addAlert()\">Add Alert</button>\n" +
     "        </div>\n" +
     "\n" +
@@ -163,6 +147,11 @@ module.run(["$templateCache", function($templateCache) {
     "\n" +
     "            <alert type=\"'error'\" close=\"closeAlert($index)\">\n" +
     "                <h2 class=\"alertBox-heading\">Hey, the BigCommerce account owner has an unpaid invoice.</h2>\n" +
+    "                <ul>\n" +
+    "                    <li>The invoice is overdue</li>\n" +
+    "                    <li>They should pay the invoice</li>\n" +
+    "                    <li>More invoices may follow if the invoice is left unpaid</li>\n" +
+    "                </ul>\n" +
     "                To avoid account suspension or termination, please pay your invoice or call <strong>1-808-699-0911 (US)</strong>.\n" +
     "            </alert>\n" +
     "\n" +
@@ -294,18 +283,6 @@ module.run(["$templateCache", function($templateCache) {
     "            </li>\n" +
     "\n" +
     "            <li>\n" +
-    "                <span>Large</span>\n" +
-    "                <div id=\"dropdown-standard\" bc-dropdown>\n" +
-    "                    <button type=\"button\" class=\"button button--large dropdown-button\" bc-dropdown-toggle>Click</button>\n" +
-    "                    <ul bc-dropdown-menu>\n" +
-    "                        <li class=\"dropdown-menu-item\"><a href=\"#\" ng-click=\"$event.preventDefault()\">One</a></li>\n" +
-    "                        <li class=\"dropdown-menu-item\"><a href=\"#\" ng-click=\"$event.preventDefault()\">Two</a></li>\n" +
-    "                        <li class=\"dropdown-menu-item\"><a href=\"#\" ng-click=\"$event.preventDefault()\">Three</a></li>\n" +
-    "                    </ul>\n" +
-    "                </div>\n" +
-    "            </li>\n" +
-    "\n" +
-    "            <li>\n" +
     "                <span>Primary</span>\n" +
     "                <div bc-dropdown>\n" +
     "                    <button type=\"button\" class=\"button button--primary dropdown-button\" bc-dropdown-toggle>Click</button>\n" +
@@ -345,7 +322,8 @@ module.run(["$templateCache", function($templateCache) {
     "        </ul>\n" +
     "        </div>\n" +
     "\n" +
-    "</section>");
+    "</section>\n" +
+    "");
 }]);
 })();
 
@@ -802,33 +780,6 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/website/js/examples/global-message/global-message.tpl.html",
-    "<section class=\"container\">\n" +
-    "    <div class=\"panel labPanel\">\n" +
-    "        <h1>Global Message Demo</h1>\n" +
-    "\n" +
-    "        <section class=\"panel-body\">\n" +
-    "            <div class=\"globalMessage\" tabindex=\"1\">\n" +
-    "                <div class=\"globalMessage-column globalMessage-body\">\n" +
-    "                    Selected products deleted successfully\n" +
-    "                </div>\n" +
-    "                <div class=\"globalMessage-column globalMessage-actions\">\n" +
-    "                    <a href=\"\" class=\"globalMessage-link\" tabindex=\"2\">Dismiss</a>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "            Static demo of the global message. Logic for animating the panel will be added in the future.\n" +
-    "        </section>\n" +
-    "    </div>\n" +
-    "</section>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
   $templateCache.put("src/website/js/examples/loading-indicators/loading-indicators.tpl.html",
     "<div class=\"container\">\n" +
     "<section class=\"panel labPanel\">\n" +
@@ -994,6 +945,55 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
+  $templateCache.put("src/website/js/examples/global-message/global-message.tpl.html",
+    "<section class=\"container\">\n" +
+    "    <div class=\"panel labPanel\">\n" +
+    "        <h1>Global Message Demo</h1>\n" +
+    "\n" +
+    "        <section class=\"panel-body\">\n" +
+    "            <div class=\"globalMessage\" tabindex=\"1\">\n" +
+    "                <div class=\"globalMessage-column globalMessage-body\">\n" +
+    "                    Selected products deleted successfully\n" +
+    "                </div>\n" +
+    "                <div class=\"globalMessage-column globalMessage-actions\">\n" +
+    "                    <a href=\"\" class=\"globalMessage-link\" tabindex=\"2\">Dismiss</a>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            Static demo of the global message. Logic for animating the panel will be added in the future.\n" +
+    "        </section>\n" +
+    "    </div>\n" +
+    "</section>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/website/js/examples/modal/modal-fixed.tpl.html",
+    "<div class=\"modal-header\">\n" +
+    "    <h2 class=\"modal-header-title\">A Fixed Height Modal</h2>\n" +
+    "</div>\n" +
+    "<div class=\"modal-body\">\n" +
+    "    <p>\n" +
+    "        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore\n" +
+    "    </p>\n" +
+    "</div>\n" +
+    "<div class=\"modal-footer\">\n" +
+    "    <a class=\"modal-footer-link\" ng-click=\"modalContentCtrl.cancel($event)\" href=\"#\">Cancel</a>\n" +
+    "    <a class=\"button button--small button--primary modal-footer-button\" ng-click=\"modalContentCtrl.ok($event)\" href=\"#\">OK</a>\n" +
+    "</div>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
   $templateCache.put("src/website/js/examples/modal/modal-formatted.tpl.html",
     "<div class=\"modal-header\">\n" +
     "    <h2 class=\"modal-header-title\">A Modal Title</h2>\n" +
@@ -1014,28 +1014,6 @@ module.run(["$templateCache", function($templateCache) {
     "    <a class=\"button button--small button--primary\" ng-click=\"modalContentCtrl.ok($event)\" href=\"#\">\n" +
     "        Primary modal action\n" +
     "    </a>\n" +
-    "</div>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("src/website/js/examples/modal/modal-large.tpl.html",
-    "<div class=\"modal-header\">\n" +
-    "    <h2 class=\"modal-header-title\">A Large Modal</h2>\n" +
-    "</div>\n" +
-    "<div class=\"modal-body\">\n" +
-    "    <p>\n" +
-    "        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore\n" +
-    "    </p>\n" +
-    "</div>\n" +
-    "<div class=\"modal-footer\">\n" +
-    "    <a class=\"modal-footer-link\" ng-click=\"modalContentCtrl.cancel($event)\" href=\"#\">cancel</a>\n" +
-    "    <a class=\"button button--small button--primary modal-footer-button\" ng-click=\"modalContentCtrl.ok($event)\" href=\"#\">OK</a>\n" +
     "</div>\n" +
     "");
 }]);
@@ -1078,9 +1056,35 @@ module.run(["$templateCache", function($templateCache) {
     "                <a\n" +
     "                    class=\"button\"\n" +
     "                    id=\"openModal--formatted\"\n" +
-    "                    ng-click=\"modalCtrl.openLargeModal($event)\"\n" +
+    "                    ng-click=\"modalCtrl.openFixedModal($event)\"\n" +
     "                    href=\"#\">\n" +
-    "                    Large modal\n" +
+    "                    Fixed modal\n" +
+    "                </a>\n" +
+    "                <a\n" +
+    "                    class=\"button\"\n" +
+    "                    id=\"openModal--formatted\"\n" +
+    "                    ng-click=\"modalCtrl.openPrompt($event)\"\n" +
+    "                    href=\"#\">\n" +
+    "                    Prompt\n" +
+    "                </a>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"panel-body\" style=\"margin-top: 2000px;\">\n" +
+    "            <div class=\"labPanel-content\">\n" +
+    "                <a\n" +
+    "                    class=\"button\"\n" +
+    "                    id=\"openModal--formatted\"\n" +
+    "                    ng-click=\"modalCtrl.openFormattedModal($event)\"\n" +
+    "                    href=\"#\">\n" +
+    "                    Default modal\n" +
+    "                </a>\n" +
+    "                <a\n" +
+    "                    class=\"button\"\n" +
+    "                    id=\"openModal--formatted\"\n" +
+    "                    ng-click=\"modalCtrl.openFixedModal($event)\"\n" +
+    "                    href=\"#\">\n" +
+    "                    Fixed modal\n" +
     "                </a>\n" +
     "                <a\n" +
     "                    class=\"button\"\n" +
@@ -1190,34 +1194,6 @@ try { module = angular.module("website-templates"); }
 catch(err) { module = angular.module("website-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("src/website/js/examples/tabs/tabs.tpl.html",
-    "<section class=\"container\">\n" +
-    "    <div class=\"panel labPanel\">\n" +
-    "    <h1>Tabs Demo</h1>\n" +
-    "\n" +
-    "        <div class=\"panel-body\">\n" +
-    "            <tabset>\n" +
-    "                <tab heading=\"Static title\">Static content</tab>\n" +
-    "                <tab ng-repeat=\"tab in tabsCtrl.tabs\" heading=\"{{tab.title}}\" active=\"tab.active\">\n" +
-    "                    {{tab.content}}\n" +
-    "                </tab>\n" +
-    "                <tab select=\"tabsCtrl.tabClicked()\">\n" +
-    "                    <tab-heading>Log!</tab-heading>\n" +
-    "                    I've got an HTML heading, and a select callback. Pretty cool!\n" +
-    "                </tab>\n" +
-    "            </tabset>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</section>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("website-templates"); }
-catch(err) { module = angular.module("website-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
   $templateCache.put("src/website/js/examples/tables/tables.tpl.html",
     "<section class=\"container\">\n" +
     "    <div class=\"panel labPanel\">\n" +
@@ -1261,6 +1237,34 @@ module.run(["$templateCache", function($templateCache) {
     "        </table>\n" +
     "    </div>\n" +
     "</section>");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("website-templates"); }
+catch(err) { module = angular.module("website-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("src/website/js/examples/tabs/tabs.tpl.html",
+    "<section class=\"container\">\n" +
+    "    <div class=\"panel labPanel\">\n" +
+    "    <h1>Tabs Demo</h1>\n" +
+    "\n" +
+    "        <div class=\"panel-body\">\n" +
+    "            <tabset>\n" +
+    "                <tab heading=\"Static title\">Static content</tab>\n" +
+    "                <tab ng-repeat=\"tab in tabsCtrl.tabs\" heading=\"{{tab.title}}\" active=\"tab.active\">\n" +
+    "                    {{tab.content}}\n" +
+    "                </tab>\n" +
+    "                <tab select=\"tabsCtrl.tabClicked()\">\n" +
+    "                    <tab-heading>Log!</tab-heading>\n" +
+    "                    I've got an HTML heading, and a select callback. Pretty cool!\n" +
+    "                </tab>\n" +
+    "            </tabset>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</section>\n" +
+    "");
 }]);
 })();
 

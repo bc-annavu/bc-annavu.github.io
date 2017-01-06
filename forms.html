@@ -30,7 +30,7 @@
             </li>
             <li class="navBar-item topNavBar-item">
                 <div class="topNavBar-label">
-                    Pattern Lab (v2.8.2)
+                    Pattern Lab (v2.9.1)
                 </div>
             </li>
         </ul>
@@ -91,6 +91,9 @@
                                     </li>
                                     <li class="asideNav-listItem" ng-class="{'is-active': isActive('/panels.html')}">
                                         <a class="asideNav-link" href="/panels.html">Panels</a>
+                                    </li>
+                                    <li class="asideNav-listItem" ng-class="{'is-active': isActive('/pills.html')}">
+                                        <a class="asideNav-link" href="/pills.html">Pill Group</a>
                                     </li>
                                     <li class="asideNav-listItem" ng-class="{'is-active': isActive('/progress-bars.html')}">
                                         <a class="asideNav-link" href="/progress-bars.html">Progress Bars</a>
@@ -651,6 +654,238 @@
     </div>
 
 </section>
+
+        <section class="panel labPanel">
+
+    <h2>Input Validation States</h2>
+    <div class="labPanel-docs">
+        <tabset class="labPanel-docsTabs">
+            <tab>
+                <tab-heading>Design</tab-heading>
+                <div class="labPanel-content">
+                    <form>
+
+                        <fieldset class="form-fieldset">
+
+                            <div class="form-field form-field--success" id="labExampleInputValid">
+                                <label class="form-label" for="valid_simple">Valid field</label>
+                                <input class="form-input" id="valid_simple" type="text" value="Some Valid text">
+                                <icon class="form-input-indicator" glyph="ic-check-circle"></icon>
+                            </div>
+
+                            <div class="form-field form-field--error" id="labExampleInputError">
+                                <label class="form-label" for="invalid_simple">Invalid field</label>
+                                <input class="form-input" id="invalid_simple" type="text" value="Some Invalid text">
+                                <icon class="form-input-indicator" glyph="ic-error"></icon>
+                                <ul class="form-field-errors">
+                                    <li class="form-field-error">
+                                        <label class="form-inlineMessage" for="invalid_simple">
+                                            This is not a valid email address
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="form-field form-field--warning" id="labExampleInputWarning">
+                                <label class="form-label" for="warning_simple">Warning field</label>
+                                <input class="form-input" id="warning_simple" type="text" value="Text that generated a Warning">
+                                <icon class="form-input-indicator" glyph="ic-error"></icon>
+                                <ul class="form-field-errors">
+                                    <li class="form-field-error">
+                                        <label class="form-inlineMessage" for="warning_simple">
+                                            Did you mean&hellip;
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="form-field form-field--error" id="labExampleSelectError">
+                                <label class="form-label" for="invalid_select">Select label</label>
+                                <select class="form-select" name="invalid_select" id="invalid_select">
+                                    <option>Please select a value</option>
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                </select>
+                                <ul class="form-field-errors">
+                                    <li class="form-field-error">
+                                        <label class="form-inlineMessage" for="invalid_select">
+                                            You must select a value
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="form-field form-field--error" id="labExampleCheckboxError">
+                                <label class="form-label">Checkbox label</label>
+                                <input class="form-checkbox" type="checkbox" id="invalid_check1">
+                                <label class="form-label" for="invalid_check1">Checkbox 1 label</label>
+                                <input class="form-checkbox" type="checkbox" id="invalid_check2">
+                                <label class="form-label" for="invalid_check2">Checkbox 2 label</label>
+                                <ul class="form-field-errors">
+                                    <li class="form-field-error">
+                                        <label class="form-inlineMessage">
+                                            Please select one or more
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="form-field form-field--error" id="labExampleRadioError">
+                                <label class="form-label">Radio label</label>
+                                <input class="form-radio" type="radio" name="invalid_radio_example" id="invalid_radio1">
+                                <label class="form-label" for="invalid_radio1">Radio 1 label</label>
+                                <input class="form-radio" type="radio" name="invalid_radio_example" id="invalid_radio2">
+                                <label class="form-label" for="invalid_radio2">Radio 2 label</label>
+                                <ul class="form-field-errors">
+                                    <li class="form-field-error">
+                                        <label class="form-inlineMessage">
+                                            Please select an option
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="form-field form-field--error" id="labExampleInputPrefixError">
+                                <label class="form-label" for="invalid_prefix">Prefixed Label <small>(Inc. tax)</small></label>
+                                <div class="form-prefixPostfix">
+                                    <span class="form-prefixPostfix-label form-prefixPostfix-label--prefix" id="prefixDesc1">AUD $</span>
+                                    <input class="form-input form-prefixPostfix-input" id="invalid_prefix" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc1">
+                                    <icon class="form-input-indicator" glyph="ic-error"></icon>
+                                </div>
+                                <ul class="form-field-errors">
+                                    <li class="form-field-error">
+                                        <label class="form-inlineMessage" for="invalid_prefix">
+                                            Please input a dollar amount
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="form-field form-field--error" id="labExampleInputPostfixError">
+                                <label class="form-label" for="invalid_postfix">Postfixed Label</label>
+                                <div class="form-prefixPostfix">
+                                    <input class="form-input form-prefixPostfix-input" id="invalid_postfix" type="text" placeholder="Placeholder text" aria-describedby="prefixDesc2">
+                                    <span class="form-prefixPostfix-label form-prefixPostfix-label--postfix" id="prefixDesc2">KG</span>
+                                </div>
+                                <ul class="form-field-errors">
+                                    <li class="form-field-error">
+                                        <label class="form-inlineMessage" for="invalid_postfix">
+                                            Please enter the weight in kilograms
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="form-field form-field--error" id="labExampleInputPostfixButtonError">
+                                <label class="form-label" for="invalid_postfix_button">Postfixed Button</label>
+                                <div class="form-prefixPostfix">
+                                    <input class="form-input" id="invalid_postfix_button" type="text" placeholder="Placeholder text">
+                                    <input class="button form-prefixPostfix-button--postfix" type="submit" value="Save">
+                                </div>
+                                <ul class="form-field-errors">
+                                    <li class="form-field-error">
+                                        <label class="form-inlineMessage" for="invalid_postfix_button">
+                                            This is a detailed error message explaining all the things that went wrong on this input field.
+                                        </label>
+                                    </li>
+                                    <li class="form-field-error">
+                                        <label class="form-inlineMessage" for="invalid_postfix_button">
+                                            This is another line of error messaging.
+                                        </label>
+                                    </li>
+                                    <li class="form-field-error">
+                                        <label class="form-inlineMessage" for="invalid_postfix_button">
+                                            And another line. You really messed up here.
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </fieldset>
+
+                    </form>
+                </div>
+
+            </tab>
+            <tab>
+                <tab-heading>HTML</tab-heading>
+                <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<!-- form-field wrappers -->
+<div class="form-field form-field--success">
+    &hellip;
+</div>
+<div class="form-field form-field--error">
+    &hellip;
+</div>
+<div class="form-field form-field--warning">
+    &hellip;
+</div>
+
+<!-- Inline messages for errors -->
+<div class="form-field form-field--error">
+    <label class="form-label" for="invalid_simple">Invalid field</label>
+    <input class="form-input" id="invalid_simple" type="text" value="Some Invalid text">
+    <ul class="form-field-errors">
+        <li class="form-field-error">
+            <label class="form-inlineMessage" for="invalid_simple">
+                This is not a valid email address
+            </label>
+        </li>
+    </ul>
+</div>
+
+<div class="form-field form-field--error">
+    <label class="form-label" for="invalid_simple">Invalid field</label>
+    <input class="form-input" id="invalid_simple" type="text" value="Some Invalid text">
+    <icon class="form-input-indicator" glyph="ic-error"></icon>
+    <ul class="form-field-errors">
+        <li class="form-field-error">
+            <label class="form-inlineMessage" for="invalid_simple">
+                This is not a valid email address
+            </label>
+        </li>
+    </ul>
+</div></textarea>
+                </div>
+
+                <div class="labPanel-content">
+                    <h4 class="labPanel-title">CSS Classes:</h4>
+
+                    <div class="labPanel-classDefs">
+                        <p>
+                            1. <code>.form-field--success</code>, <code>.form-field--error</code> and <code>.form-field--warning</code>
+                            <ul class="u-listNoBullet">
+                                <li>
+                                    Modifier classes for the <code>.form-field</code> component. No need for further modifying, it takes care of child elements.
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            2. <code>.form-inlineMessage</code>
+                            <ul class="u-listNoBullet">
+                                <li>
+                                    Applied to <code>label</code> element which is appended to the <code>form-field</code> to give descriptions of the problem to the user. Must be placed last.
+                                </li>
+                                <li>
+                                    Don't forget to associate the error label to the input using the <code>[for]</code> attribute, wherever possible.
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+</section>
+
 
         <section class="panel labPanel">
 

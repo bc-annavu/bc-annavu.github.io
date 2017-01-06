@@ -29,7 +29,7 @@
             </li>
             <li class="navBar-item topNavBar-item">
                 <div class="topNavBar-label">
-                    Pattern Lab (v2.8.2)
+                    Pattern Lab (v2.9.1)
                 </div>
             </li>
         </ul>
@@ -125,15 +125,36 @@
                     <tab>
                         <tab-heading>Design</tab-heading>
                         <div class="labPanel-content">
-                            <img class="labPanel-docsTabs-figure" src="images/alerts_screen.png">
+                            <img class="labPanel-docsTabs-figure" src="images/alerts_screen.png" width="400">
                         </div>
 
                         <div class="labPanel-content">
                             <h4 class="labPanel-title">Usage:</h4>
-                            <p>Alerts can be used to inform users about the actions they perform. They can be displayed at a page level or inside a specific container.</p>
-                            <p>Please use the appropriate level alert for the message. Not everything is an error.
-                            Alerts have the ability to take HTML in their body so you can build more informative alerts.
-                            Just remember to use alertBox-heading for your alert title.</p>
+                            <p>A notification is a message that appears within the control panel. They primarily elevate time sensitive or important information to the user.</p>
+
+                            <strong>Warning and Informational messages:</strong>
+                            <ul>
+                                <li>Messages are displayed under the page title (or tabs if tabs are) and will be providing messages concerning the page content (Can’t be inside a panel or a table - use other pattern for that)</li>
+                                <li>Can include 2 types of actions: Primary Action, Dismiss (always on the left of the primary action)</li>
+                            </ul>
+                            <strong>Critical (Red background):</strong>
+                            <ul>
+                                <li>Requires an action to be taken by the user to be able to run business correctly (business critical - use best judgment)</li>
+                                <li>Can’t be dismissed</li>
+                            </ul>
+
+                            <strong>Warning (Yellow background):</strong>
+                            <ul>
+                                <li>Used when we require people’s attention → need to take an action.</li>
+                                <li>Messages can be as long as we want but we recommend to keep them short (around 200 characters max)</li>
+                                <li>When dismiss, the message will not appear for the rest of the session.</li>
+                            </ul>
+
+                            <strong>Informational (Blue background):</strong>
+                            <ul>
+                                <li>Inform users about something that will impact their experience with the page they are on.</li>
+                                <li>When dismissed, the message will never appear again</li>
+                            </ul>
                         </div>
                     </tab>
 
@@ -152,16 +173,53 @@
     ng-repeat="alert in alerts"
     type="alert.type"
     close="closeAlert($index)"
+    links="alert.links"
 >
-    
+    Alert Message
 </alert></textarea>
                         </div>
                         <div class="labPanel-content">
                             <h4 class="labPanel-title">Usage:</h4>
-                            <p>Alerts can be used to inform users about the actions they perform. They can be displayed at a page level or inside a specific container.</p>
-                            <p>Please use the appropriate level alert for the message. Not everything is an error.
-                            Alerts have the ability to take HTML in their body so you can build more informative alerts.
-                            Just remember to use alertBox-heading for your alert title.</p>
+                            <p>
+                                1. <code>&lt;alert&gt;</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Alerts can be used to inform users about the actions they perform. They can be displayed at a page level or inside a specific container.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                2. <code>type="alert.type"</code>
+                                <p>Please use the appropriate level alert for the message. Not everything is an error.</p>
+                                <ul>
+                                    <li><strong>type: 'success'</strong> - Green alert for success messages. It can have a link or dismiss button.</li>
+                                    <li><strong>type: 'warning'</strong> - Yellow alert for warning messages. It can have a link or dismiss button.</li>
+                                    <li><strong>type: 'info'</strong> - Blue alert for informative messages. It can have a link or dismiss button.</li>
+                                    <li><strong>type: 'error'</strong> - Red alert for critical messages. Users need to take an action so message is not dismissable.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                3. <code>links="alert.links"</code>
+                                <p>Optional primary action link that can be provided. <code>alert.links</code> takes in the following arguments as an array:</p>
+
+                                <ul>
+                                    <li><strong>title: 'Primary Link Text'</strong></li>
+                                    <li><strong>href: 'url'</strong></li>
+                                    <li><strong>target: '_blank'</strong></li>
+                                </ul>
+                            </p>
+                            <p>
+                                4. <code>close="closeAlert($index)"</code>
+                                <ul class="u-listNoBullet">
+                                    <li>When included, this property adds a Dismiss button to the alert message. For critical messages, a dismiss button should not be included since the user needs to complete an action.</li>
+                                </ul>
+                            </p>
+                            <!-- TODO: Verify with Cat what type of HTML is allowed in an alert
+                            <p>
+                                5. <code>.alertBox-heading</code>
+                                <ul class="u-listNoBullet">
+                                    <li>Alerts have the ability to take HTML into their body. Use <code>alertBox-heading</code> for your alert title.</li>
+                                </ul>
+                            </p>
+                            -->
                         </div>
                     </tab>
                 </tabset>
