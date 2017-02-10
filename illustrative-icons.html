@@ -30,7 +30,7 @@
             </li>
             <li class="navBar-item topNavBar-item">
                 <div class="topNavBar-label">
-                    Pattern Lab (v2.9.1)
+                    Pattern Lab (v2.12.1)
                 </div>
             </li>
         </ul>
@@ -253,6 +253,13 @@
             <h3 class="labPanel-heading">Sprite based icons</h3>
 
             <div class="panel-body">
+                <alert
+                    type="'warning'"
+                >
+                The Sprite directive is currently used only by the Flag icon set. These will be deprecated in an upcoming version,
+                and this documentation will be changing soon. Please take this as reference for any current implementation,
+                and not as instructions for development.
+                </alert>
                 <p class="labPanel-description">
                     We created a rasterized image sprite to be used as a background image of our <code>&lt;sprite /&gt;</code> component.
                 </p>
@@ -313,6 +320,12 @@
         <section class="panel labPanel">
             <h3 class="labPanel-heading">flag icons</h3>
             <div class="panel-body">
+                <alert
+                    type="'error'"
+                >
+                The Flag Icon set will be deprecated in an upcoming version. Please use this only as reference for current implementations.
+                If your project requires Flag icons, please discuss this with the Design team and/or the UI Platform team.
+                </alert>
                 <ul class="iconExample">
                     <li class="iconExample-item">
                         <span class="iconExample-glyph">

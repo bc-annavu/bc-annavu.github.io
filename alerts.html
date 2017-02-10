@@ -29,7 +29,7 @@
             </li>
             <li class="navBar-item topNavBar-item">
                 <div class="topNavBar-label">
-                    Pattern Lab (v2.9.1)
+                    Pattern Lab (v2.12.1)
                 </div>
             </li>
         </ul>
@@ -121,7 +121,7 @@
                         View Demo <icon glyph="ic-open-in-new"></icon>
                     </a>
                 </div>
-                <tabset class="labPanel-docsTabs">
+                <tabset buttons="true">
                     <tab>
                         <tab-heading>Design</tab-heading>
                         <div class="labPanel-content">
@@ -235,7 +235,7 @@
                         View Demo <icon glyph="ic-open-in-new"></icon>
                     </a>
                 </div>
-                <tabset class="labPanel-docsTabs">
+                <tabset buttons="true">
                     <tab>
                         <tab-heading>Design</tab-heading>
                         <div class="labPanel-content demo">
@@ -315,7 +315,7 @@
         <section class="panel labPanel">
             <h3 class="labPanel-heading">Page Messaging</h3>
             <div class="labPanel-docs">
-                <tabset class="labPanel-docsTabs">
+                <tabset buttons="true">
                     <tab>
                         <tab-heading>Design</tab-heading>
                         <div class="labPanel-content">
@@ -374,7 +374,7 @@
                         View Demo <icon glyph="ic-open-in-new"></icon>
                     </a>
                 </div>
-                <tabset class="labPanel-docsTabs">
+                <tabset buttons="true">
                     <tab>
                         <tab-heading>Design</tab-heading>
                         <div class="labPanel-content">
@@ -402,14 +402,14 @@
 'mode': 'text/html',
 'autoClearEmptyLines': true
 }">
-<div class="globalMessage" tabindex="1">
-    <div class="globalMessage-column globalMessage-body">
-        Selected products deleted successfully
-    </div>
-    <div class="globalMessage-column globalMessage-actions">
-        <a href="" class="globalMessage-link" tabindex="2">Dismiss</a>
-    </div>
-</div></textarea>
+<global-message
+    ng-if="shouldShow"
+    action="{{action}}"
+    action-callback="actionCallback()"
+    dismiss-callback="dismissCallback()">
+    {{message}}
+</global-message>
+</textarea>
                         </div>
                         <div class="labPanel-content">
                             <p>The markup for the global message should be inserted somewhere near the top. Default <code>[tabindex="1"]</code> so the user can focus on it quickly and thus when it is dismissed, the entire block of code either needs to be removed from the DOM or else tabindex needs to be changed to <code>[tabindex="-1"]</code>.</p>

@@ -29,7 +29,7 @@
             </li>
             <li class="navBar-item topNavBar-item">
                 <div class="topNavBar-label">
-                    Pattern Lab (v2.9.1)
+                    Pattern Lab (v2.12.1)
                 </div>
             </li>
         </ul>
@@ -125,11 +125,11 @@
 
             <div class="labPanel-docs">
                 <div class="labPanel-docsDemo">
-                    <a href="/demo.html#/components/bc-server-table" class="button--icon demo-button" target="_blank">
+                    <a href="/demo.html#/components/bc-server-table#standard" class="button--icon demo-button" target="_blank">
                         View Demo <icon glyph="ic-open-in-new"></icon>
                     </a>
                 </div>
-                <tabset class="labPanel-docsTabs">
+                <tabset buttons="true">
                     <tab>
                         <tab-heading>Design</tab-heading>
                         <div class="labPanel-content">
@@ -203,6 +203,100 @@
 
         </section>
 
+        <section class="panel labPanel">
+            <h3>Empty Treatment</h3>
+            <div class="labPanel-docs">
+                <div class="labPanel-docsDemo">
+                    <a href="/demo.html#/components/bc-server-table#emptyTreatment" class="button--icon demo-button" target="_blank">
+                        View Demo <icon glyph="ic-open-in-new"></icon>
+                    </a>
+                </div>
+                <tabset buttons="true">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content">
+                            <img class="labPanel-docsTabs-figure" src="images/empty_dataTable_screen.png">
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>
+                               When there isn’t any content to display in a table, an empty treatment should be used to provide users with contextual information.
+                               An Illustration is optional, and should be sized at a maximum height of 40px, or maximum width of 200px. The empty treatment may also have a
+                               maximum of one link or button. This should help the user to populate the data table, either through education (via a knowledgebase article),
+                               or direct action (Create a Product).
+                            </p>
+                        </div>
+                    </tab>
+
+                    <tab>
+                        <tab-heading>Developer</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<table class="table">
+    <tbody class="table-tbody">
+        <tr class="tableRow">
+            <td class="tableCol emptyTable">
+                <img class="emptyTable-image" src="images/empty_table_illustration.png">
+                <strong class="emptyTable-title">No Store Performance available yet.</strong>
+                <p class="emptyTable-description">Once you begin to receive visitors and orders, information about your store performance will be displayed in this section.</p>
+                <a href="http://cp-pattern-lab.bigcommerce.net" target="_blank" class="emptyTable-action">Learn More</a>
+            </td>
+        </tr>
+    </tbody>
+</table></textarea>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <p>
+                               As an empty table has no content, the table doesn't require a <code>thead</code>. There is only one <code>tr</code> which contains one <code>td</code>,
+                                which is the <code>.emptyTable</code> component.
+                            </p>
+                        </div>
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.emptyTable</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The component's container class. Should be applied to the only <code>td</code> in the table.</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    2. <code>.emptyTable-image</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Applied to an optional illustration that may be used to enhance the message.</li>
+                                        <li>Maximum image width is 200px; Maximum image height is 40px.</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    3. <code>.emptyTable-title</code> and <code>.emptyTable-description</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The default classes for the title and description of the message, respectively. Styled to default text styles.</li>
+                                        <li><code>.emptyTable-title</code> is expected to be a <code>strong</code>, <code>.emptyTable-description</code> is expected to be a <code>p</code>.</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    4. <code>.emptyTable-action</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>The only action allowed for this message. Should aid user in populating table.</li>
+                                        <li>Expected to be applied to <code>a</code>.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+
+        </section>
 
         </main>
     </div>

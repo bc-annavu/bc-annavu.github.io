@@ -30,7 +30,7 @@
             </li>
             <li class="navBar-item topNavBar-item">
                 <div class="topNavBar-label">
-                    Pattern Lab (v2.9.1)
+                    Pattern Lab (v2.12.1)
                 </div>
             </li>
         </ul>
@@ -121,14 +121,14 @@
 
         <hr>
         <section class="panel labPanel">
-
+            <h3 class="labPanel-heading">Default Tabs</h3>
             <div class="labPanel-docs">
                 <div class="labPanel-docsDemo">
                     <a href="/demo.html#/components/tabs" class="button--icon demo-button" target="_blank">
                         View Demo <icon glyph="ic-open-in-new"></icon>
                     </a>
                 </div>
-                <tabset class="labPanel-docsTabs">
+                <tabset buttons="true">
                     <tab>
                         <tab-heading>Design</tab-heading>
                         <div class="labPanel-content demo">
@@ -197,7 +197,7 @@
                             </div>
                         </div>
                     </tab>
-<tab>
+                    <tab>
                         <tab-heading>JS</tab-heading>
                         <div class="labPanel-content">
 <textarea ui-codemirror="{
@@ -232,6 +232,113 @@
             </div>
         </section>
 
+        <section class="panel labPanel">
+            <h3 class="labPanel-heading">Button Group Tabs</h3>
+            <div class="labPanel-docs">
+                <div class="labPanel-docsDemo">
+                    <a href="/demo.html#/components/tabs" class="button--icon demo-button" target="_blank">
+                        View Demo <icon glyph="ic-open-in-new"></icon>
+                    </a>
+                </div>
+                <tabset buttons="true">
+                    <tab>
+                        <tab-heading>Design</tab-heading>
+                        <div class="labPanel-content demo">
+                            <img class="labPanel-docsTabs-figure" src="images/buttonGroupTabs_screen.png" width="700">
+                        </div>
+
+                        <div class="labPanel-content">
+                            <p>Button Group tabs should have at least 2, but ideally, no more than 3 segments</p>
+                        </div>
+                    </tab>
+                    <tab>
+                        <tab-heading>HTML</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<ul class="tabs tabs--buttonGroup">
+    <li class="tab"><a class="tab-title" href="#panel1">Tab 1</a></li>
+    <li class="tab is-active"><a class="tab-title" href="#panel2">Tab 2</a></li>
+    <li class="tab"><a class="tab-title" href="#panel3">Tab 3</a></li>
+</ul>
+<div class="tabs-contents tabs-contents--buttonGroup">
+    <div class="tab-content is-active" id="panel1">
+        <p>This is the first panel of the segmented tab example.</p>
+    </div>
+    <div class="tab-content" id="panel2">
+        <p>This is the second panel of the segmented tab example.</p>
+    </div>
+    <div class="tab-content" id="panel3">
+        <p>This is the third panel of the segmented tab example.</p>
+    </div>
+</div></textarea>
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">CSS Classes:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>.tabs--buttonGroup</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Modifier appended to the <code>.tabs</code> element.</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    2. <code>.tabs-contents--buttonGroup</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Modifier appended to the <code>.tabs-contents</code>.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+
+                    <tab select="modalCtrl.handleTabSelect('html')" heading="JS">
+                        <tab-heading>JS</tab-heading>
+                        <div class="labPanel-content">
+<textarea ui-codemirror="{
+'lineNumbers': true,
+'theme':'default',
+'readOnly': 'true',
+'lineWrapping' : false,
+'mode': 'text/html',
+'autoClearEmptyLines': true
+}">
+<tabset buttons="true">
+    <tab heading="Tab Heading 1">
+        This is the first panel of the segmented tab example.
+    </tab>
+    <tab>
+        <tab-heading>Tab Heading 2</tab-heading>
+        This is the second panel of the segmented tab example.
+    </tab>
+    <tab heading="Tab Heading 3">
+        This is the third panel of the segmented tab example.
+    </tab>
+</tabset></textarea>
+                        </div>
+
+                        <div class="labPanel-content">
+                            <h4 class="labPanel-title">Usage:</h4>
+                            <div class="labPanel-classDefs">
+                                <p>
+                                    1. <code>buttons="true"</code>
+                                    <ul class="u-listNoBullet">
+                                        <li>Required to set <code>buttons="true"</code> so that it does not default to tab styling.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+        </section>
         <section class="panel labPanel">
             <h3 class="labPanel-heading">Accessibility</h3>
             <div class="panel-body">

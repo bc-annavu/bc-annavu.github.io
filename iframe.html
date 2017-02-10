@@ -112,98 +112,12 @@
         </aside>
 
         <main class="mainContent" role="main" ng-view>
-                <h1 class="mainContent-header">Tooltip</h1>
+                <h1 class="mainContent-header">iFrame</h1>
 
-                     <p>
-            Tooltips are small items of information which are displayed in the context of an item that needs further explanation.
-        </p>
-        <hr>
-        <section class="panel labPanel">
-            <div class="labPanel-docs">
-                <tabset buttons="true">
-                    <tab>
-                        <tab-heading>Design</tab-heading>
-                        <div class="labPanel-content demo">
-                                <p>
-                                    <a
-                                    href="#"
-                                    class="has-tip"
-                                    tooltip-append-to-body="true"
-                                    tooltip-placement="right"
-                                    tooltip="Hello World!"
-                                >Check out this tooltip</a>
-                                </p>
-                        </div>
-                    </tab>
+                     <div>
+            <iframe src="/demo.html#/components/banners" width="100%" height="3000" frameborder="0"></iframe>
+        </div>
 
-                    <tab>
-                        <tab-heading>HTML</tab-heading>
-                        <div class="labPanel-content">
-<textarea ui-codemirror="{
-    'lineNumbers': true,
-    'theme':'default',
-    'readOnly': 'true',
-    'lineWrapping' : false,
-    'mode': 'text/html',
-    autoClearEmptyLines: true
-}">
-<a
-    href="#"
-    class="has-tip"
-    tooltip-append-to-body="true"
-    tooltip-placement="right"
-    tooltip="Hello World!"
->Check out this tooltip</a>
-</textarea>
-                        </div>
-                        <div class="labPanel-content">
-                            <h4 class="labPanel-title">CSS Classes:</h4>
-                            <div class="labPanel-classDefs">
-                                <p>
-                                    1. <code>[tooltip]</code>
-                                    <ul class="u-listNoBullet">
-                                        <li>Sets the content of the tooltip. Only text is allowed - HTML and other content is not supported.</li>
-                                    </ul>
-                                </p>
-                                <p>
-                                    2. <code>[tooltip-placement]</code>
-                                    <ul class="u-listNoBullet">
-                                        <li>Controls tooltip positioning. Value should be <code>right</code>, unless there is insufficient space, in which case it should be <code>left</code>.</li>
-                                    </ul>
-                                </p>
-                                <p>
-                                    N.B. Please always use <code>tooltip-append-to-body="true"</code>. You cannot guarantee your tooltip is wrapped in a close enough parent that is relatively positioned, for the inline tooltip to have the correctly calculated top value. This is a naive default by Angular Foundation, which Foundation itself doesn't do.
-                                </p>
-                            </div>
-                        </div>
-                    </tab>
-                </tabset>
-            </div>
-        </section>
-
-        <section class="panel labPanel">
-            <h3 class="labPanel-heading">Accessibility</h3>
-            <div class="panel-body">
-                <p>
-                    The tooltip is a hidden element from the user, unless the appropriate content is interfaced with. It should be hidden from screen readers until it is revealed.
-                </p>
-
-                <ul>
-                    <li>
-                        The tooltip should be triggered by focus on its trigger.
-                    </li>
-                    <li>
-                        The tooltip should receive focus once it is revealed, and should disappear when it loses focus.
-                    </li>
-                    <li>
-                        The tooltip should contain <code>[aria-describedby]</code> which refers to its trigger.
-                    </li>
-                    <li>
-                        You should be able to leave the dropdown by tabbing out, or pressing the escape key.
-                    </li>
-                </ul>
-            </div>
-        </section>
 
 
         </main>

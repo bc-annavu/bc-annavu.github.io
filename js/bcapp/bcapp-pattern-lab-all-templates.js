@@ -23,6 +23,37 @@ try { module = angular.module("bcapp-pattern-lab-templates"); }
 catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
+  $templateCache.put("src/js/bigcommerce/copy-clipboard/copy-clipboard.tpl.html",
+    "<div class=\"form-prefixPostfix\">\n" +
+    "    <input\n" +
+    "        class=\"form-input\"\n" +
+    "        type=\"text\"\n" +
+    "        id=\"{{copyClipboardCtrl.uniqueId}}\"\n" +
+    "        ng-model=\"copyClipboardCtrl.copyText\"\n" +
+    "        ng-readonly=\"copyClipboardCtrl.readonly\"\n" +
+    "        tooltip-placement=\"bottom\"\n" +
+    "        tooltip=\"{{copyClipboardCtrl.dynamicTooltip}}\"\n" +
+    "        tooltip-trigger=\"tooltipTriggerOpen\"\n" +
+    "    />\n" +
+    "    <button\n" +
+    "        class=\"form-prefixPostfix-button--postfix button button--icon\"\n" +
+    "        data-clipboard-target=\"{{'#' + copyClipboardCtrl.uniqueId}}\"\n" +
+    "        ngclipboard\n" +
+    "        ngclipboard-success=\"copyClipboardCtrl.onSuccess()\"\n" +
+    "        ngclipboard-error=\"copyClipboardCtrl.onError()\">\n" +
+    "            <icon glyph=\"ic-content-paste\" alt=\"Copy to Clipboard\"></icon>\n" +
+    "            <span class=\"is-srOnly\" translate>Copy to Clipboard</span>\n" +
+    "    </button>\n" +
+    "</div>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
   $templateCache.put("src/js/bigcommerce/bc-server-table/bc-sort-by.tpl.html",
     "<a href=\"#\" ng-click=\"sort($event)\">\n" +
     "    {{ columnName }}\n" +
@@ -98,37 +129,6 @@ module.run(["$templateCache", function($templateCache) {
     "    is-active-color=\"colorPickerCtrl.isActiveColor\"\n" +
     "    selected-color=\"{{ colorPickerCtrl.getSelectedColor() }}\">\n" +
     "</color-picker-palette>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("src/js/bigcommerce/copy-clipboard/copy-clipboard.tpl.html",
-    "<div class=\"form-prefixPostfix\">\n" +
-    "    <input\n" +
-    "        class=\"form-input\"\n" +
-    "        type=\"text\"\n" +
-    "        id=\"{{copyClipboardCtrl.uniqueId}}\"\n" +
-    "        ng-model=\"copyClipboardCtrl.copyText\"\n" +
-    "        ng-readonly=\"copyClipboardCtrl.readonly\"\n" +
-    "        tooltip-placement=\"bottom\"\n" +
-    "        tooltip=\"{{copyClipboardCtrl.dynamicTooltip}}\"\n" +
-    "        tooltip-trigger=\"tooltipTriggerOpen\"\n" +
-    "    />\n" +
-    "    <button\n" +
-    "        class=\"form-prefixPostfix-button--postfix button button--icon\"\n" +
-    "        data-clipboard-target=\"{{'#' + copyClipboardCtrl.uniqueId}}\"\n" +
-    "        ngclipboard\n" +
-    "        ngclipboard-success=\"copyClipboardCtrl.onSuccess()\"\n" +
-    "        ngclipboard-error=\"copyClipboardCtrl.onError()\">\n" +
-    "            <icon glyph=\"ic-content-paste\" alt=\"Copy to Clipboard\"></icon>\n" +
-    "            <span class=\"is-srOnly\" translate>Copy to Clipboard</span>\n" +
-    "    </button>\n" +
-    "</div>\n" +
     "");
 }]);
 })();
@@ -325,6 +325,22 @@ try { module = angular.module("bcapp-pattern-lab-templates"); }
 catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
+  $templateCache.put("src/js/bigcommerce/global-message/global-message.tpl.html",
+    "<div class=\"globalMessage\">\n" +
+    "    <div class=\"globalMessage-column globalMessage-body\" ng-transclude></div>\n" +
+    "    <div ng-if=\"actionCallback || dismissCallback\" class=\"globalMessage-column globalMessage-actions\">\n" +
+    "        <a ng-if=\"actionCallback\" href=\"#\" class=\"globalMessage-link\" ng-click=\"$event.preventDefault();actionCallback()\">{{action}}</a>\n" +
+    "        <a ng-if=\"dismissCallback\" href=\"#\" class=\"globalMessage-link\" ng-click=\"$event.preventDefault();dismissCallback()\" translate>Dismiss</a>\n" +
+    "    </div>\n" +
+    "</div>");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
   $templateCache.put("src/js/bigcommerce/loading-notification/loading-notification.tpl.html",
     "<div class=\"loadingNotification\" ng-show=\"requestInProgress\">\n" +
     "    <div class=\"loadingNotification-label\" translate>Loading&hellip;</div>\n" +
@@ -420,13 +436,13 @@ catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
   $templateCache.put("template/accordion/accordion-group.html",
-    "<article ng-class=\"{ 'is-open': isOpen }\">\n" +
+    "<article class=\"accordion-article\" ng-class=\"{ 'is-open': isOpen }\">\n" +
     "    <h2 class=\"accordion-navigation\"  ng-class=\"{ 'is-open': isOpen }\">\n" +
     "        <a href=\"javascript:void(0)\" class=\"accordion-title\" ng-click=\"isOpen = !isOpen\">\n" +
     "            <span accordion-transclude=\"heading\">\n" +
     "                {{heading}}\n" +
     "            </span>\n" +
-    "            <icon class=\"accordion-indicator\" glyph=\"{{ isOpen ? 'ic-remove' : 'ic-add' }}\"></icon>\n" +
+    "            <icon class=\"accordion-indicator\" glyph=\"{{ isOpen ? 'ic-arrow-drop-up' : 'ic-arrow-drop-down' }}\"></icon>\n" +
     "        </a>\n" +
     "    </h2>\n" +
     "    <div class=\"accordion-content\" ng-class=\"{ 'is-open': isOpen }\" ng-transclude></div>\n" +
@@ -487,46 +503,6 @@ try { module = angular.module("bcapp-pattern-lab-templates"); }
 catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("template/modal/backdrop.html",
-    "<div class=\"modal-background\" ng-class=\"{'is-active': animate}\" ng-click=\"close($event)\"></div>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("template/modal/window.html",
-    "<section class=\"modal fade {{ windowClass }}\"\n" +
-    "    ng-class=\"{'is-active': animate}\"\n" +
-    "    tabindex=\"-1\"\n" +
-    "    ng-transclude\n" +
-    "></section>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("template/popover/popover.html",
-    "<div class=\"dropdown-menu dropdown-menu--content\">\n" +
-    "    <h4 ng-bind=\"title\" ng-show=\"title\"></h4>\n" +
-    "    <p ng-bind-html=\"content | trustAsHtml\"></p>\n" +
-    "</div>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
   $templateCache.put("template/pagination/pager.html",
     "<ul class=\"pagination-list\">\n" +
     "    <li\n" +
@@ -560,6 +536,46 @@ module.run(["$templateCache", function($templateCache) {
     "        </a>\n" +
     "    </li>\n" +
     "</ul>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("template/modal/backdrop.html",
+    "<div class=\"modal-background\" ng-class=\"{'is-active': animate}\" ng-click=\"close($event)\"></div>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("template/modal/window.html",
+    "<section class=\"modal fade {{ windowClass }}\"\n" +
+    "    ng-class=\"{'is-active': animate}\"\n" +
+    "    tabindex=\"-1\"\n" +
+    "    ng-transclude\n" +
+    "></section>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("template/rating/rating.html",
+    "<span ng-mouseleave=\"reset()\">\n" +
+    "  <i ng-repeat=\"r in range\" ng-mouseenter=\"enter($index + 1)\" ng-click=\"rate($index + 1)\" class=\"fa\"\n" +
+    "    ng-class=\"$index < val && (r.stateOn || 'fa-star') || (r.stateOff || 'fa-star-o')\"></i>\n" +
+    "</span>\n" +
     "");
 }]);
 })();
@@ -604,51 +620,11 @@ try { module = angular.module("bcapp-pattern-lab-templates"); }
 catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
 module.run(["$templateCache", function($templateCache) {
   "use strict";
-  $templateCache.put("template/rating/rating.html",
-    "<span ng-mouseleave=\"reset()\">\n" +
-    "  <i ng-repeat=\"r in range\" ng-mouseenter=\"enter($index + 1)\" ng-click=\"rate($index + 1)\" class=\"fa\"\n" +
-    "    ng-class=\"$index < val && (r.stateOn || 'fa-star') || (r.stateOff || 'fa-star-o')\"></i>\n" +
-    "</span>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("template/tabs/tab.html",
-    "<li ng-class=\"{'is-active': active}\" class=\"tab\" role=\"presentation\">\n" +
-    "    <a ng-click=\"select()\"\n" +
-    "        href=\"javascript:void(0)\"\n" +
-    "        role=\"tab\"\n" +
-    "        aria-selected=\"{{active ? true : false}}\"\n" +
-    "        class=\"tab-title\"\n" +
-    "        tab-heading-transclude>{{heading}}</a>\n" +
-    "</li>\n" +
-    "");
-}]);
-})();
-
-(function(module) {
-try { module = angular.module("bcapp-pattern-lab-templates"); }
-catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
-module.run(["$templateCache", function($templateCache) {
-  "use strict";
-  $templateCache.put("template/tabs/tabset.html",
-    "<tabbed-content>\n" +
-    "    <ul class=\"tabs\" ng-class=\"{'tabs--vertical': vertical}\" role=\"tablist\" ng-transclude></ul>\n" +
-    "    <div class=\"tabs-contents\" ng-class=\"{'tabs-contents--vertical': vertical}\">\n" +
-    "        <div class=\"tab-content\"\n" +
-    "            ng-repeat=\"tab in tabs\"\n" +
-    "            ng-class=\"{'is-active': tab.active}\"\n" +
-    "            role=\"tabpanel\"\n" +
-    "            aria-hidden=\"{{tab.active ? false : true}}\"\n" +
-    "            tab-content-transclude=\"tab\">\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</tabbed-content>\n" +
+  $templateCache.put("template/popover/popover.html",
+    "<div class=\"dropdown-menu dropdown-menu--content\">\n" +
+    "    <h4 ng-bind=\"title\" ng-show=\"title\"></h4>\n" +
+    "    <p ng-bind-html=\"content | trustAsHtml\"></p>\n" +
+    "</div>\n" +
     "");
 }]);
 })();
@@ -781,6 +757,57 @@ module.run(["$templateCache", function($templateCache) {
     "        <div typeahead-match index=\"$index\" match=\"match\" query=\"query\" template-url=\"templateUrl\"></div>\n" +
     "    </li>\n" +
     "</ul>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("template/tabs/tab.html",
+    "<li ng-class=\"{'is-active': active}\" class=\"tab\" role=\"presentation\">\n" +
+    "    <a ng-click=\"select()\"\n" +
+    "        href=\"javascript:void(0)\"\n" +
+    "        role=\"tab\"\n" +
+    "        aria-selected=\"{{active ? true : false}}\"\n" +
+    "        class=\"tab-title\"\n" +
+    "        tab-heading-transclude>{{heading}}</a>\n" +
+    "</li>\n" +
+    "");
+}]);
+})();
+
+(function(module) {
+try { module = angular.module("bcapp-pattern-lab-templates"); }
+catch(err) { module = angular.module("bcapp-pattern-lab-templates", []); }
+module.run(["$templateCache", function($templateCache) {
+  "use strict";
+  $templateCache.put("template/tabs/tabset.html",
+    "<tabbed-content>\n" +
+    "    <ul class=\"tabs\"\n" +
+    "        ng-class=\"{\n" +
+    "            'tabs--vertical': vertical,\n" +
+    "            'tabs--buttonGroup': buttons\n" +
+    "        }\" role=\"tablist\" ng-transclude>\n" +
+    "    </ul>\n" +
+    "    <div\n" +
+    "        class=\"tabs-contents\"\n" +
+    "        ng-class=\"{\n" +
+    "            'tabs-contents--vertical': vertical,\n" +
+    "            'tabs-contents--buttonGroup': buttons\n" +
+    "        }\"\n" +
+    "        >\n" +
+    "        <div class=\"tab-content\"\n" +
+    "            ng-repeat=\"tab in tabs\"\n" +
+    "            ng-class=\"{'is-active': tab.active}\"\n" +
+    "            role=\"tabpanel\"\n" +
+    "            aria-hidden=\"{{tab.active ? false : true}}\"\n" +
+    "            tab-content-transclude=\"tab\">\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</tabbed-content>\n" +
     "");
 }]);
 })();

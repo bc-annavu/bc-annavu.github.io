@@ -96,6 +96,48 @@ meta.foundation-data-attribute-namespace {
 
 /*doc
 ---
+title: Accordion
+name: accordion
+category: Components
+---
+```html_example
+<section class="accordion">
+    <article heading="Dynamic Group Header - 1" class="is-open">
+        <h2 class="accordion-navigation is-open">
+            <a href="javascript:void(0)" class="accordion-title">
+                Dynamic Group Header - 1
+                <icon class="accordion-indicator icon" glyph="ic-remove" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"></path></svg></icon>
+            </a>
+        </h2>
+        <div class="accordion-content is-open">
+            Dynamic Group Body - 1
+        </div>
+    </article>
+    <article heading="Dynamic Group Header - 2">
+        <h2 class="accordion-navigation">
+            <a href="javascript:void(0)" class="accordion-title">
+                Dynamic Group Header - 2
+                <icon class="accordion-indicator icon" glyph="ic-remove" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"></path></svg></icon>
+            </a>
+        </h2>
+    </article>
+<article heading="Dynamic Group Header - 3">
+        <h2 class="accordion-navigation accordion-navigation--error">
+            <a href="javascript:void(0)" class="accordion-title">
+                Dynamic Group Header - 3
+                <icon class="accordion-indicator icon" glyph="ic-remove" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"></path></svg></icon>
+            </a>
+        </h2>
+    </article>
+</section>
+```
+
+```sass_file_example
+src/settings/foundation/accordion/_settings.scss
+```
+*/
+/*doc
+---
 title: ActionBar
 name: action_bar
 category: Patterns
@@ -538,52 +580,6 @@ body {
     height: 1rem;
     position: relative;
     width: 1rem; }
-
-.labPanel-docsTabs > .tabs {
-  border-bottom: 0;
-  display: inline-block;
-  margin-bottom: 0.8rem; }
-
-.labPanel-docsTabs > .tabs-contents {
-  border-style: solid;
-  border-width: 0;
-  border-color: #e4e7ed;
-  margin-bottom: 1.6rem;
-  padding: 2.13333rem 2.66667rem;
-  background: #fff;
-  color: #5d5b66;
-  border-color: #e4e7ed;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.14); }
-  .labPanel-docsTabs > .tabs-contents > :first-child {
-    margin-top: 0; }
-  .labPanel-docsTabs > .tabs-contents > :last-child {
-    margin-bottom: 0; }
-
-.labPanel-docsTabs .tab-content {
-  padding: 0; }
-
-.labPanel-docsTabs .tab {
-  background-color: #fff;
-  border: 1px solid #4b71fc;
-  border-right: 0;
-  float: left;
-  text-align: center; }
-  @media (min-width: 769px) {
-    .labPanel-docsTabs .tab {
-      min-width: 100px; } }
-  .labPanel-docsTabs .tab a {
-    color: #4b71fc; }
-  .labPanel-docsTabs .tab:first-child {
-    border-bottom-left-radius: 2px;
-    border-top-left-radius: 2px; }
-  .labPanel-docsTabs .tab:last-child {
-    border-bottom-right-radius: 2px;
-    border-right: 1px solid #4b71fc;
-    border-top-right-radius: 2px; }
-  .labPanel-docsTabs .tab.is-active {
-    background-color: #4b71fc; }
-    .labPanel-docsTabs .tab.is-active a {
-      color: #fff; }
 
 .labPanel-docsTabs-figure {
   display: block;
